@@ -28,3 +28,10 @@ https://github.com/iqyx/ov2640-stm32
 
 - Has additional notes for register settings etc.
 - Source .c in folder.
+
+
+
+# General Notes
+
+0xFF 0xD8 is the start of a JPEG frame.
+0xFF 0xD9 is the end of the JPEG frame.

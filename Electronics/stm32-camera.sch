@@ -60,7 +60,7 @@ $EndSheet
 $Sheet
 S 3200 1625 1950 2125
 U 58721310
-F0 "Battery Regulation and Charging" 60
+F0 "Regulation" 60
 F1 "PowerSupply.sch" 60
 $EndSheet
 $Sheet
