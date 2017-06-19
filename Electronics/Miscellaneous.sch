@@ -556,10 +556,10 @@ NoConn ~ 2525 6975
 Text Notes 1650 1150 0    118  ~ 24
 IR Cut Filter Driver
 Text Notes 1300 1475 0    60   ~ 0
-Hardware switching IR-Cut behaves like a latching solenoid.\nUse a H-Bridge style driver to control.
-Text Notes 5950 1100 0    118  ~ 24
+Hardware switching IR-Cut is like a latching solenoid.\nUse a H-Bridge style driver to control.
+Text Notes 5950 1150 0    118  ~ 24
 IR Flash Driver
-Text Notes 5925 1375 0    60   ~ 0
+Text Notes 5725 1400 0    60   ~ 0
 Allow the board to drive a IR flash.
 $Comp
 L 1UF_X5R_1005M C?
@@ -579,4 +579,22 @@ F 10 "100" V 7540 5300 20  0001 C CNN "Supplier Price Break"
 	1    7200 5400
 	1    0    0    -1  
 $EndComp
+Text GLabel 5825 1975 0    60   Input ~ 0
+FLASH_DAC
+Text GLabel 1475 2050 0    60   Input ~ 0
+IRCUT_A
+Text GLabel 1475 2325 0    60   Input ~ 0
+IRCUT_B
+Text Notes 8675 1150 0    118  ~ 24
+Ambient Light Sensor
+Text Notes 8850 1500 0    60   ~ 0
+Read the ambient light directly to\nallow auto-cut filter selection etc.
+Text GLabel 9650 1950 0    60   Output ~ 0
+AMBIENT_LIGHT
+Text Notes 8625 2225 0    60   ~ 0
+Light sensor should have an IR cut filter.
+Text Notes 6050 2050 0    60   ~ 0
+Constant current drive?
+Text Notes 2075 2175 0    60   ~ 0
+Approx 100mA rating.
 $EndSCHEMATC

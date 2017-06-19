@@ -51,56 +51,54 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 3325 8350 0    79   ~ 16
+Text Notes 3275 8575 0    79   ~ 16
 Programming Header
 Wire Wire Line
-	4200 8750 4275 8750
+	4150 8975 4225 8975
 Wire Wire Line
-	4200 8850 4275 8850
+	4150 9075 4225 9075
 Wire Wire Line
-	4200 9150 4275 9150
+	4150 9375 4225 9375
 Wire Wire Line
-	3300 8950 3600 8950
+	3250 9175 3550 9175
 Wire Wire Line
-	3300 8850 3600 8850
+	3250 9075 3550 9075
 Wire Wire Line
-	3300 8750 3600 8750
-Text GLabel 4275 8750 2    60   Output ~ 0
+	3250 8975 3550 8975
+Text GLabel 4225 8975 2    60   Output ~ 0
 SWDIO
-Text GLabel 4275 8850 2    60   Output ~ 0
+Text GLabel 4225 9075 2    60   Output ~ 0
 SWDCLK
-Text GLabel 4275 9150 2    60   Output ~ 0
+Text GLabel 4225 9375 2    60   Output ~ 0
 NRST
 $Comp
 L +3.3V #PWR?
 U 1 1 5891D7C5
-P 3300 8750
-F 0 "#PWR?" H 3300 8710 30  0001 C CNN
-F 1 "+3.3V" H 3309 8888 30  0000 C CNN
-F 2 "" H 3300 8750 60  0000 C CNN
-F 3 "" H 3300 8750 60  0000 C CNN
-	1    3300 8750
+P 3250 8975
+F 0 "#PWR?" H 3250 8935 30  0001 C CNN
+F 1 "+3.3V" H 3259 9113 30  0000 C CNN
+F 2 "" H 3250 8975 60  0000 C CNN
+F 3 "" H 3250 8975 60  0000 C CNN
+	1    3250 8975
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
 U 1 1 5891D817
-P 3200 8900
-F 0 "#PWR?" H 3200 8650 50  0001 C CNN
-F 1 "GND" V 3205 8772 50  0000 R CNN
-F 2 "" H 3200 8900 60  0000 C CNN
-F 3 "" H 3200 8900 60  0000 C CNN
-	1    3200 8900
+P 3150 9125
+F 0 "#PWR?" H 3150 8875 50  0001 C CNN
+F 1 "GND" V 3155 8997 50  0000 R CNN
+F 2 "" H 3150 9125 60  0000 C CNN
+F 3 "" H 3150 9125 60  0000 C CNN
+	1    3150 9125
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3300 8850 3300 8900
+	3250 9075 3250 9175
 Wire Wire Line
-	3300 8900 3300 8950
-Wire Wire Line
-	3300 8900 3200 8900
-Connection ~ 3300 8900
-NoConn ~ 4200 9050
+	3250 9125 3150 9125
+Connection ~ 3250 9125
+NoConn ~ 4150 9275
 Text Notes 1575 1650 0    60   ~ 0
 BOOT0 Jumper
 $Comp
@@ -341,9 +339,7 @@ MICROSD_CMD
 Text GLabel 13600 4300 2    60   Input ~ 0
 MICROSD_DETECT
 Wire Wire Line
-	1825 2700 1925 2700
-Wire Wire Line
-	1925 2700 3250 2700
+	1825 2700 3250 2700
 Wire Wire Line
 	1925 2775 1925 2700
 Connection ~ 1925 2700
@@ -372,9 +368,7 @@ F 3 "" H 2275 2500 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2850 2500 3075 2500
-Wire Wire Line
-	3075 2500 3250 2500
+	2850 2500 3250 2500
 Wire Wire Line
 	2275 2500 2550 2500
 Wire Wire Line
@@ -413,13 +407,7 @@ $EndComp
 Wire Wire Line
 	8050 8050 8050 8325
 Wire Wire Line
-	8050 8325 8250 8325
-Wire Wire Line
-	8250 8325 8350 8325
-Wire Wire Line
-	8350 8325 8450 8325
-Wire Wire Line
-	8450 8325 8650 8325
+	8050 8325 8650 8325
 Wire Wire Line
 	8650 8325 8650 8050
 Wire Wire Line
@@ -445,9 +433,7 @@ $EndComp
 Wire Wire Line
 	9350 8525 9350 8700
 Wire Wire Line
-	8700 8525 9150 8525
-Wire Wire Line
-	9150 8525 9350 8525
+	8700 8525 9350 8525
 Wire Wire Line
 	8700 8525 8700 8700
 Wire Wire Line
@@ -456,26 +442,20 @@ Connection ~ 9150 8525
 Wire Wire Line
 	9350 9075 9350 8900
 Wire Wire Line
-	8700 9075 9150 9075
-Wire Wire Line
-	9150 9075 9350 9075
+	8700 9075 9350 9075
 Wire Wire Line
 	8700 9075 8700 8900
 Wire Wire Line
 	9150 9075 9150 9175
 Connection ~ 9150 9075
 Wire Wire Line
-	10100 8250 10100 8525
-Wire Wire Line
-	10100 8525 10100 8700
+	10100 8250 10100 8700
 Wire Wire Line
 	10750 8525 10750 8700
 Wire Wire Line
 	10750 9075 10750 8900
 Wire Wire Line
-	10100 9075 10450 9075
-Wire Wire Line
-	10450 9075 10750 9075
+	10100 9075 10750 9075
 Wire Wire Line
 	10100 9075 10100 8900
 Connection ~ 10100 8525
@@ -547,17 +527,13 @@ F 10 "10" V 6540 1050 20  0001 C CNN "Supplier Price Break"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6050 1050 6200 1050
-Wire Wire Line
-	6200 1050 6500 1050
+	6050 1050 6500 1050
 Wire Wire Line
 	6200 1050 6200 1150
 Wire Wire Line
 	5075 1125 5075 1050
 Wire Wire Line
-	4900 1050 5075 1050
-Wire Wire Line
-	5075 1050 5350 1050
+	4900 1050 5350 1050
 Wire Wire Line
 	6500 1050 6500 2050
 Connection ~ 6200 1050
@@ -625,17 +601,7 @@ F 3 "" H 5625 875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7350 1850 7500 1850
-Wire Wire Line
-	7500 1850 7800 1850
-Wire Wire Line
-	7800 1850 8100 1850
-Wire Wire Line
-	8100 1850 8400 1850
-Wire Wire Line
-	8400 1850 8700 1850
-Wire Wire Line
-	8700 1850 9000 1850
+	7350 1850 9000 1850
 Wire Wire Line
 	9000 1850 9000 2050
 Wire Wire Line
@@ -667,17 +633,7 @@ Wire Wire Line
 Wire Wire Line
 	7500 1350 7500 1600
 Wire Wire Line
-	7500 1600 7800 1600
-Wire Wire Line
-	7800 1600 8100 1600
-Wire Wire Line
-	8100 1600 8400 1600
-Wire Wire Line
-	8400 1600 8700 1600
-Wire Wire Line
-	8700 1600 9000 1600
-Wire Wire Line
-	9000 1600 9200 1600
+	7500 1600 9200 1600
 Wire Wire Line
 	8100 1600 8100 1350
 Wire Wire Line
@@ -707,17 +663,7 @@ Connection ~ 9000 1600
 Wire Wire Line
 	7500 1150 7500 900 
 Wire Wire Line
-	7350 900  7500 900 
-Wire Wire Line
-	7500 900  7800 900 
-Wire Wire Line
-	7800 900  8100 900 
-Wire Wire Line
-	8100 900  8400 900 
-Wire Wire Line
-	8400 900  8700 900 
-Wire Wire Line
-	8700 900  9000 900 
+	7350 900  9000 900 
 Wire Wire Line
 	9000 900  9000 1125
 Connection ~ 7500 900 
@@ -746,28 +692,28 @@ Wire Wire Line
 Connection ~ 8700 900 
 Wire Wire Line
 	9500 1850 9500 2050
-NoConn ~ 4200 8950
+NoConn ~ 4150 9175
 Text Notes 1450 2100 0    60   ~ 0
 Boot 0    Boot 1\n   x         0     Main Mem\n   0         1     System Mem
 Wire Wire Line
 	3250 5800 2900 5800
-NoConn ~ 3600 9150
+NoConn ~ 3550 9375
 $Comp
 L SWD X?
 U 1 1 58CD8186
-P 3900 8950
-F 0 "X?" H 3900 9394 60  0000 C CNN
-F 1 "SWD" H 3900 9288 60  0000 C CNB
-F 2 "Applidyne_Connector:HARWIN_M50-3600542" H 3950 8550 39  0001 L BNN
-F 3 "https://cdn.harwin.com/pdfs/M50-360.pdf" H 3700 8450 39  0001 L BNN
-F 4 "HARWIN" H 3700 8550 39  0001 L BNN "manf"
-F 5 "M50-3600542" H 3700 8500 39  0001 L BNN "manf#"
-F 6 "Digi-Key" H 3700 8400 39  0001 L BNN "Supplier"
-F 7 "952-1389-ND" H 3700 8350 39  0001 L BNN "Supplier Part No"
-F 8 "http://www.digikey.com.au/product-detail/en/M50-3600542/952-1389-ND/2264370" H 3700 8300 39  0001 L BNN "Supplier URL"
-F 9 "1.71" H 3700 8250 39  0001 L BNN "Supplier Price"
-F 10 "1" H 3700 8200 39  0001 L BNN "Supplier Price Break "
-	1    3900 8950
+P 3850 9175
+F 0 "X?" H 3850 9619 60  0000 C CNN
+F 1 "SWD" H 3850 9513 60  0000 C CNB
+F 2 "Applidyne_Connector:HARWIN_M50-3600542" H 3900 8775 39  0001 L BNN
+F 3 "https://cdn.harwin.com/pdfs/M50-360.pdf" H 3650 8675 39  0001 L BNN
+F 4 "HARWIN" H 3650 8775 39  0001 L BNN "manf"
+F 5 "M50-3600542" H 3650 8725 39  0001 L BNN "manf#"
+F 6 "Digi-Key" H 3650 8625 39  0001 L BNN "Supplier"
+F 7 "952-1389-ND" H 3650 8575 39  0001 L BNN "Supplier Part No"
+F 8 "http://www.digikey.com.au/product-detail/en/M50-3600542/952-1389-ND/2264370" H 3650 8525 39  0001 L BNN "Supplier URL"
+F 9 "1.71" H 3650 8475 39  0001 L BNN "Supplier Price"
+F 10 "1" H 3650 8425 39  0001 L BNN "Supplier Price Break "
+	1    3850 9175
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1051,46 +997,170 @@ F 3 "" H 9500 1850 60  0000 C CNN
 	1    9500 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 2900 10250 0    60   Output ~ 0
+Text GLabel 2400 10275 0    60   Output ~ 0
 PWDN
-Text GLabel 2900 10375 0    60   Output ~ 0
+Text GLabel 2400 10400 0    60   Output ~ 0
 RESET
-Text GLabel 3150 10575 2    60   Output ~ 0
+Text GLabel 2650 10600 2    60   Output ~ 0
 XCLK
-Text GLabel 3150 10450 2    60   Input ~ 0
+Text GLabel 2650 10475 2    60   Input ~ 0
 HREF
-Text GLabel 3150 10325 2    60   Input ~ 0
+Text GLabel 2650 10350 2    60   Input ~ 0
 VSYNC
-Text GLabel 3150 10200 2    60   Input ~ 0
+Text GLabel 2650 10225 2    60   Input ~ 0
 PIXCK
-Text GLabel 2900 10500 0    60   Input ~ 0
+Text GLabel 2400 10525 0    60   Input ~ 0
 STROBE
-Text GLabel 2900 10125 0    60   Output ~ 0
+Text GLabel 2400 10150 0    60   Output ~ 0
 FREX
-Text GLabel 2900 10000 0    60   Output ~ 0
+Text GLabel 2400 10025 0    60   Output ~ 0
 EXPSTB
-Text GLabel 3700 9975 2    60   Input ~ 0
+Text GLabel 3200 10000 2    60   Input ~ 0
 D0
-Text GLabel 3700 10100 2    60   Input ~ 0
+Text GLabel 3200 10125 2    60   Input ~ 0
 D1
-Text GLabel 3700 10225 2    60   Input ~ 0
+Text GLabel 3200 10250 2    60   Input ~ 0
 D2
-Text GLabel 3700 10350 2    60   Input ~ 0
+Text GLabel 3200 10375 2    60   Input ~ 0
 D3
-Text GLabel 3700 10475 2    60   Input ~ 0
+Text GLabel 3200 10500 2    60   Input ~ 0
 D4
-Text GLabel 3700 10600 2    60   Input ~ 0
+Text GLabel 3200 10625 2    60   Input ~ 0
 D5
-Text GLabel 3700 10725 2    60   Input ~ 0
+Text GLabel 3200 10750 2    60   Input ~ 0
 D6
-Text GLabel 3700 10850 2    60   Input ~ 0
+Text GLabel 3200 10875 2    60   Input ~ 0
 D7
-Text Notes 2900 9750 0    60   ~ 0
+Text Notes 2500 9925 0    60   ~ 0
 Camera lines
-Text GLabel 4200 10300 2    60   Input ~ 0
+Text GLabel 3700 10325 2    60   Input ~ 0
 SIO_C
-Text GLabel 4225 10475 2    60   BiDi ~ 0
+Text GLabel 3725 10500 2    60   BiDi ~ 0
 SIO_D
-Text Notes 4300 10200 0    60   ~ 0
+Text Notes 3800 10225 0    60   ~ 0
 i2c
+$Comp
+L LED_GREEN_1608M D?
+U 1 1 5948E009
+P 5175 9300
+F 0 "D?" V 5221 9192 50  0000 R CNN
+F 1 "LED_GREEN_1608M" V 5130 9192 50  0000 R CNN
+F 2 "" H 5075 9300 50  0000 C CNN
+F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 5175 9090 50  0001 C CNN
+F 4 "DIALIGHT" H 5175 8880 60  0001 C CNN "manf"
+F 5 "5988070107F" H 5175 8790 60  0001 C CNN "manf#"
+F 6 "Element 14" H 5175 8690 60  0001 C CNN "Supplier"
+F 7 "1465991" H 5175 8590 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/dialight/5988070107f/led-0603-green-20mcd-566nm/dp/1465991" H 5185 8510 60  0001 C CNN "Supplier URL"
+F 9 "0.4" H 5175 8410 60  0001 C CNN "Supplier Price"
+F 10 "10" H 5175 8310 60  0001 C CNN "Supplier Price Break"
+	1    5175 9300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED_RED_1608M D?
+U 1 1 5948E26E
+P 6175 9300
+F 0 "D?" V 6221 9192 50  0000 R CNN
+F 1 "LED_RED_1608M" V 6130 9192 50  0000 R CNN
+F 2 "" H 6075 9300 50  0000 C CNN
+F 3 "http://www.farnell.com/datasheets/87215.pdf?_ga=1.108371586.1676120999.1492995984" H 6175 9090 50  0001 C CNN
+F 4 "DIALIGHT" H 6175 8880 60  0001 C CNN "manf"
+F 5 "597-5004-407F" H 6175 8790 60  0001 C CNN "manf#"
+F 6 "Element 14" H 6175 8690 60  0001 C CNN "Supplier"
+F 7 "1867024" H 6175 8590 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/dialight/597-5004-407f/led-red-0-8mm-x-1-2mm-50mcd-630nm/dp/1867024" H 6185 8510 60  0001 C CNN "Supplier URL"
+F 9 "1.71" H 6175 8410 60  0001 C CNN "Supplier Price"
+F 10 "10" H 6175 8310 60  0001 C CNN "Supplier Price Break"
+	1    6175 9300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948E41A
+P 6175 9625
+F 0 "#PWR?" H 6175 9375 50  0001 C CNN
+F 1 "GND" H 6180 9452 50  0000 C CNN
+F 2 "" H 6175 9625 60  0000 C CNN
+F 3 "" H 6175 9625 60  0000 C CNN
+	1    6175 9625
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948E458
+P 5175 9625
+F 0 "#PWR?" H 5175 9375 50  0001 C CNN
+F 1 "GND" H 5180 9452 50  0000 C CNN
+F 2 "" H 5175 9625 60  0000 C CNN
+F 3 "" H 5175 9625 60  0000 C CNN
+	1    5175 9625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5175 9625 5175 9500
+Wire Wire Line
+	6175 9500 6175 9625
+$Comp
+L 1K_1005M R?
+U 1 1 5948E833
+P 5175 8700
+F 0 "R?" H 5248 8585 50  0000 L CNN
+F 1 "1K_1005M" H 5248 8505 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 5285 8550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 5310 8550 20  0001 C CNN
+F 4 "VISHAY" V 5360 8550 20  0001 C CNN "manf"
+F 5 "CRCW04021K00FKED" V 5385 8550 20  0001 C CNN "manf#"
+F 6 "Element14" V 5410 8550 20  0001 C CNN "Supplier"
+F 7 "1469669" V 5435 8550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 5460 8550 20  0001 C CNN "Supplier URL"
+F 9 "0.09" V 5485 8550 20  0001 C CNN "Supplier Price"
+F 10 "10" V 5510 8550 20  0001 C CNN "Supplier Price Break"
+	1    5175 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1K_1005M R?
+U 1 1 5948E8C5
+P 6175 8700
+F 0 "R?" H 6248 8585 50  0000 L CNN
+F 1 "1K_1005M" H 6248 8505 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 6285 8550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 6310 8550 20  0001 C CNN
+F 4 "VISHAY" V 6360 8550 20  0001 C CNN "manf"
+F 5 "CRCW04021K00FKED" V 6385 8550 20  0001 C CNN "manf#"
+F 6 "Element14" V 6410 8550 20  0001 C CNN "Supplier"
+F 7 "1469669" V 6435 8550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 6460 8550 20  0001 C CNN "Supplier URL"
+F 9 "0.09" V 6485 8550 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6510 8550 20  0001 C CNN "Supplier Price Break"
+	1    6175 8700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6175 9000 6175 9100
+Wire Wire Line
+	5175 9000 5175 9100
+Wire Wire Line
+	5175 8700 5175 8575
+Wire Wire Line
+	6175 8700 6175 8575
+Text GLabel 5175 8575 1    60   Input ~ 0
+STATUS0
+Text GLabel 6175 8575 1    60   Input ~ 0
+STATUS1
+Text GLabel 1050 10375 1    60   Output ~ 0
+STATUS0
+Text GLabel 1200 10425 1    60   Output ~ 0
+STATUS1
+Text Notes 925  9750 0    60   ~ 0
+Status Leds
+Text GLabel 4975 10750 0    60   Output ~ 0
+IRCUT_A
+Text GLabel 5025 10950 0    60   Output ~ 0
+IRCUT_B
+Text GLabel 6225 10650 0    60   Output ~ 0
+FLASH_DAC
+Text GLabel 6250 10925 0    60   Input ~ 0
+AMBIENT_LIGHT
 $EndSCHEMATC
