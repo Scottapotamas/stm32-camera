@@ -31,3 +31,8 @@ This seeks to provide higher quality photos or short videos in an integrated dev
 
 # Other notes
 
+https://github.com/nothings/stb
+
+Seems like a possible option for direct jpeg manipulation.
+
+
