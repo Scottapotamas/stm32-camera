@@ -14,6 +14,7 @@ LIBS:appli_fuse
 LIBS:appli_inductor
 LIBS:appli_linear
 LIBS:appli_link
+LIBS:appli_logic_devices
 LIBS:appli_logo
 LIBS:appli_memory
 LIBS:appli_mount
@@ -35,6 +36,7 @@ LIBS:appli_ublox
 LIBS:appli_uC
 LIBS:appli_usb
 LIBS:appli_wireless
+LIBS:stm32-camera-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -100,9 +102,13 @@ F 3 "" H 8700 2875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6300 2350 6300 2500
+	6300 2350 6300 2425
 Wire Wire Line
-	6300 2425 7000 2425
+	6300 2425 6300 2500
+Wire Wire Line
+	6300 2425 6900 2425
+Wire Wire Line
+	6900 2425 7000 2425
 Connection ~ 6300 2425
 Wire Wire Line
 	7000 2575 6900 2575
@@ -114,7 +120,11 @@ Wire Wire Line
 Wire Wire Line
 	7450 2875 7450 2775
 Wire Wire Line
-	7900 2425 9500 2425
+	7900 2425 8150 2425
+Wire Wire Line
+	8150 2425 8700 2425
+Wire Wire Line
+	8700 2425 9500 2425
 Wire Wire Line
 	8700 2700 8700 2875
 Wire Wire Line
@@ -166,10 +176,8 @@ F 10 "100" H 7450 1125 60  0001 C CNN "Supplier Price Break"
 	1    7450 2475
 	1    0    0    -1  
 $EndComp
-Text Notes 9700 1875 0    60   ~ 0
+Text Notes 9575 1875 0    60   ~ 0
 VOUT=1.25V*(1+R2/R1) 
-Text Notes 9525 5825 0    60   ~ 0
-100k as R1\n4k as R2
 $Comp
 L GND #PWR?
 U 1 1 5948E8F8
@@ -204,21 +212,24 @@ F 3 "" H 8725 4400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6325 3875 6325 4025
+	6325 3875 6325 3950
+Wire Wire Line
+	6325 3950 6325 4150
 Wire Wire Line
 	6325 3950 7025 3950
 Connection ~ 6325 3950
 Wire Wire Line
 	7025 4100 6925 4100
 Wire Wire Line
-	6925 4100 6925 3950
-Connection ~ 6925 3950
-Wire Wire Line
-	6325 4225 6325 4400
+	6325 4350 6325 4400
 Wire Wire Line
 	7475 4400 7475 4300
 Wire Wire Line
-	7925 3950 9525 3950
+	7925 3950 8175 3950
+Wire Wire Line
+	8175 3950 8725 3950
+Wire Wire Line
+	8725 3950 9525 3950
 Wire Wire Line
 	8725 4225 8725 4400
 Wire Wire Line
@@ -300,21 +311,24 @@ F 3 "" H 8750 5800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6350 5275 6350 5425
+	6350 5275 6350 5350
+Wire Wire Line
+	6350 5350 6350 5550
 Wire Wire Line
 	6350 5350 7050 5350
 Connection ~ 6350 5350
 Wire Wire Line
 	7050 5500 6950 5500
 Wire Wire Line
-	6950 5500 6950 5350
-Connection ~ 6950 5350
-Wire Wire Line
-	6350 5625 6350 5800
+	6350 5750 6350 5800
 Wire Wire Line
 	7500 5800 7500 5700
 Wire Wire Line
-	7950 5350 9550 5350
+	7950 5350 8200 5350
+Wire Wire Line
+	8200 5350 8750 5350
+Wire Wire Line
+	8750 5350 9550 5350
 Wire Wire Line
 	8750 5625 8750 5800
 Wire Wire Line
@@ -367,13 +381,13 @@ F 10 "5" V 8535 5275 20  0001 C CNN "Supplier Price Break"
 	1    8200 5425
 	1    0    0    -1  
 $EndComp
-Text Notes 8025 6000 0    60   ~ 0
-4k
 Wire Wire Line
 	8200 5425 8200 5350
 Connection ~ 8200 5350
 Wire Wire Line
-	8200 5725 8200 5825
+	8200 5725 8200 5775
+Wire Wire Line
+	8200 5775 8200 5825
 Wire Wire Line
 	8200 5775 8050 5775
 Wire Wire Line
@@ -393,9 +407,11 @@ F 3 "" H 8200 6150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8200 6150 8200 6075
+	8200 6150 8200 6125
 Wire Wire Line
-	8175 4325 8175 4425
+	8175 4325 8175 4375
+Wire Wire Line
+	8175 4375 8175 4425
 Wire Wire Line
 	8175 4375 8025 4375
 Wire Wire Line
@@ -415,12 +431,14 @@ F 3 "" H 8175 4750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8175 4750 8175 4675
+	8175 4750 8175 4725
 Wire Wire Line
 	8175 4025 8175 3950
 Connection ~ 8175 3950
 Wire Wire Line
-	8150 2800 8150 2900
+	8150 2800 8150 2850
+Wire Wire Line
+	8150 2850 8150 2900
 Wire Wire Line
 	8150 2850 8000 2850
 Wire Wire Line
@@ -440,7 +458,7 @@ F 3 "" H 8150 3225 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8150 3225 8150 3150
+	8150 3225 8150 3200
 Wire Wire Line
 	8150 2500 8150 2425
 Connection ~ 8150 2425
@@ -501,37 +519,37 @@ $EndComp
 $Comp
 L 2.2UF_X7R_1608M C?
 U 1 1 5948F9E4
-P 6325 4025
-F 0 "C?" H 6403 3960 50  0000 L CNN
-F 1 "2.2UF_X7R_1608M" H 6403 3880 35  0000 L CNN
-F 2 "CAPC1608*" V 6440 3925 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6465 3925 20  0001 C CNN
-F 4 "MURATA" V 6515 3925 20  0001 C CNN "manf"
-F 5 "GRM188R61H225KE11D" V 6540 3925 20  0001 C CNN "manf#"
-F 6 "Element14" V 6565 3925 20  0001 C CNN "Supplier"
-F 7 "2611925" V 6590 3925 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6615 3925 20  0001 C CNN "Supplier URL"
-F 9 "0.0256" V 6640 3925 20  0001 C CNN "Supplier Price"
-F 10 "10" V 6665 3925 20  0001 C CNN "Supplier Price Break"
-	1    6325 4025
+P 6325 4150
+F 0 "C?" H 6403 4085 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 6403 4005 35  0000 L CNN
+F 2 "CAPC1608*" V 6440 4050 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6465 4050 20  0001 C CNN
+F 4 "MURATA" V 6515 4050 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 6540 4050 20  0001 C CNN "manf#"
+F 6 "Element14" V 6565 4050 20  0001 C CNN "Supplier"
+F 7 "2611925" V 6590 4050 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6615 4050 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 6640 4050 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6665 4050 20  0001 C CNN "Supplier Price Break"
+	1    6325 4150
 	1    0    0    -1  
 $EndComp
 $Comp
 L 2.2UF_X7R_1608M C?
 U 1 1 5948FA28
-P 6350 5425
-F 0 "C?" H 6428 5360 50  0000 L CNN
-F 1 "2.2UF_X7R_1608M" H 6428 5280 35  0000 L CNN
-F 2 "CAPC1608*" V 6465 5325 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6490 5325 20  0001 C CNN
-F 4 "MURATA" V 6540 5325 20  0001 C CNN "manf"
-F 5 "GRM188R61H225KE11D" V 6565 5325 20  0001 C CNN "manf#"
-F 6 "Element14" V 6590 5325 20  0001 C CNN "Supplier"
-F 7 "2611925" V 6615 5325 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6640 5325 20  0001 C CNN "Supplier URL"
-F 9 "0.0256" V 6665 5325 20  0001 C CNN "Supplier Price"
-F 10 "10" V 6690 5325 20  0001 C CNN "Supplier Price Break"
-	1    6350 5425
+P 6350 5550
+F 0 "C?" H 6428 5485 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 6428 5405 35  0000 L CNN
+F 2 "CAPC1608*" V 6465 5450 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6490 5450 20  0001 C CNN
+F 4 "MURATA" V 6540 5450 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 6565 5450 20  0001 C CNN "manf#"
+F 6 "Element14" V 6590 5450 20  0001 C CNN "Supplier"
+F 7 "2611925" V 6615 5450 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6640 5450 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 6665 5450 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6690 5450 20  0001 C CNN "Supplier Price Break"
+	1    6350 5550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -550,6 +568,106 @@ F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-06
 F 9 "0.0256" V 6615 2400 20  0001 C CNN "Supplier Price"
 F 10 "10" V 6640 2400 20  0001 C CNN "Supplier Price Break"
 	1    6300 2500
+	1    0    0    -1  
+$EndComp
+Text GLabel 6950 5500 0    60   Input ~ 0
+PWR_EN
+Text GLabel 6925 4100 0    60   Input ~ 0
+PWR_EN
+Text Notes 9775 5425 0    60   ~ 0
+Aims for 1.295V
+Text Notes 9800 4175 0    60   ~ 0
+Aims for 2.744V
+Text Notes 9775 2675 0    60   ~ 0
+Aims for 3.259V
+$Comp
+L 47K_1005M R?
+U 1 1 59495399
+P 8175 4025
+F 0 "R?" H 8248 3910 50  0000 L CNN
+F 1 "47K_1005M" H 8248 3830 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8285 3875 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2167052.pdf" V 8310 3875 20  0001 C CNN
+F 4 "YAGEO" V 8360 3875 20  0001 C CNN "manf"
+F 5 "RC0402FR-0747KL" V 8385 3875 20  0001 C CNN "manf#"
+F 6 "Element14" V 8410 3875 20  0001 C CNN "Supplier"
+F 7 "9239430" V 8435 3875 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/yageo-phycomp/rc0402fr-0747kl/res-thick-film-47k-1-0-063w-0402/dp/9239430" V 8460 3875 20  0001 C CNN "Supplier URL"
+F 9 "0.003" V 8485 3875 20  0001 C CNN "Supplier Price"
+F 10 "10" V 8510 3875 20  0001 C CNN "Supplier Price Break"
+	1    8175 4025
+	1    0    0    -1  
+$EndComp
+$Comp
+L 56K2_1005M R?
+U 1 1 59495584
+P 8175 4425
+F 0 "R?" H 8248 4310 50  0000 L CNN
+F 1 "56K2_1005M" H 8248 4230 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8285 4275 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2052875.pdf" V 8310 4275 20  0001 C CNN
+F 4 "PANASONIC" V 8360 4275 20  0001 C CNN "manf"
+F 5 "ERA2AEB5622X" V 8385 4275 20  0001 C CNN "manf#"
+F 6 "Element14" V 8410 4275 20  0001 C CNN "Supplier"
+F 7 "2563631" V 8435 4275 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/era2aeb5622x/res-aec-q200-thin-film-56k2-0402/dp/2563631" V 8460 4275 20  0001 C CNN "Supplier URL"
+F 9 "0.318" V 8485 4275 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8510 4275 20  0001 C CNN "Supplier Price Break"
+	1    8175 4425
+	1    0    0    -1  
+$EndComp
+$Comp
+L 51K_1005M R?
+U 1 1 5949707D
+P 8150 2500
+F 0 "R?" H 8223 2385 50  0000 L CNN
+F 1 "51K_1005M" H 8223 2305 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8260 2350 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2052875.pdf" V 8285 2350 20  0001 C CNN
+F 4 "PANASONIC" V 8335 2350 20  0001 C CNN "manf"
+F 5 "ERA2AEB513X" V 8360 2350 20  0001 C CNN "manf#"
+F 6 "Element14" V 8385 2350 20  0001 C CNN "Supplier"
+F 7 "2324790" V 8410 2350 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/era2aeb513x/res-metal-film-51k-0-1-0-063w/dp/2324790" V 8435 2350 20  0001 C CNN "Supplier URL"
+F 9 "0.3" V 8460 2350 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8485 2350 20  0001 C CNN "Supplier Price Break"
+	1    8150 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 82K_1005M R?
+U 1 1 59497EAB
+P 8150 2900
+F 0 "R?" H 8223 2785 50  0000 L CNN
+F 1 "82K_1005M" H 8223 2705 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8260 2750 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2059623.pdf" V 8285 2750 20  0001 C CNN
+F 4 "PANASONIC" V 8335 2750 20  0001 C CNN "manf"
+F 5 "ERJ2GEJ823X" V 8360 2750 20  0001 C CNN "manf#"
+F 6 "Element14" V 8385 2750 20  0001 C CNN "Supplier"
+F 7 "2324353" V 8410 2750 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/erj2gej823x/res-thick-film-82k-5-0-1w-0402/dp/2324353" V 8435 2750 20  0001 C CNN "Supplier URL"
+F 9 "0.012" V 8460 2750 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8485 2750 20  0001 C CNN "Supplier Price Break"
+	1    8150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3K6_1005M R?
+U 1 1 59498FB3
+P 8200 5825
+F 0 "R?" H 8273 5710 50  0000 L CNN
+F 1 "3K6_1005M" H 8273 5630 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8310 5675 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2059623.pdf" V 8335 5675 20  0001 C CNN
+F 4 "PANASONIC" V 8385 5675 20  0001 C CNN "manf"
+F 5 "ERJ2GEJ362X" V 8410 5675 20  0001 C CNN "manf#"
+F 6 "Element14" V 8435 5675 20  0001 C CNN "Supplier"
+F 7 "2324307" V 8460 5675 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/erj2gej362x/res-thick-film-3k6-5-0-1w-0402/dp/2324307" V 8485 5675 20  0001 C CNN "Supplier URL"
+F 9 "0.01" V 8510 5675 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8535 5675 20  0001 C CNN "Supplier Price Break"
+	1    8200 5825
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

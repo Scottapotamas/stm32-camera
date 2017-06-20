@@ -14,6 +14,7 @@ LIBS:appli_fuse
 LIBS:appli_inductor
 LIBS:appli_linear
 LIBS:appli_link
+LIBS:appli_logic_devices
 LIBS:appli_logo
 LIBS:appli_memory
 LIBS:appli_mount
@@ -35,6 +36,7 @@ LIBS:appli_ublox
 LIBS:appli_uC
 LIBS:appli_usb
 LIBS:appli_wireless
+LIBS:stm32-camera-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -156,8 +158,6 @@ Text GLabel 6225 3450 2    60   Output ~ 0
 VSYNC
 Text Notes 6325 2650 0    60   ~ 0
 PIXCK - Pixel clock from sensor\nVSYNC - Active FRAME\nHREF - Active Pixels/Line
-Text Notes 6425 2975 0    39   ~ 8
-investigate if stm32 internal pullups (30-50k) \nwould be even close to driving this... reduce parts
 Text GLabel 4150 1950 1    60   Output ~ 0
 D7
 Text GLabel 4250 1950 1    60   Output ~ 0
@@ -337,8 +337,8 @@ Wire Wire Line
 	5050 5000 5050 4600
 Wire Wire Line
 	5150 5000 5150 4600
-Text Notes 950  1250 0    60   ~ 0
-WRITE STATS FOR CAMERA HERE
+Text Notes 1025 1625 0    60   ~ 0
+1600x1200px resolution.\n140mW for 15fps 2MP.\n1/4" sensor. 2.2um pitch.\n0.6V/Lux-sec sensitivity.\n40dB S/N with 50dB dynamic range.\nADC run at 20Mhz at 10-bit.
 Text Label 10150 1250 2    60   ~ 0
 AVDD
 Text Label 8275 1250 2    60   ~ 0
@@ -569,4 +569,6 @@ Text Notes 9875 925  0    60   ~ 0
 Analog Frontend
 Text Notes 1150 950  0    59   ~ 12
 Camera Specifications
+Text Notes 7475 5850 0    60   ~ 0
+If micro is disabling/enabling regs sequentially, ensure turn on order is:\n3.3V -> 1.3V -> 2.8V or the camera gets angry.\nAfter last supply is on for 3ms, the reset line on the OV2460 can go high.\n
 $EndSCHEMATC
