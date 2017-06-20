@@ -14,7 +14,6 @@ LIBS:appli_fuse
 LIBS:appli_inductor
 LIBS:appli_linear
 LIBS:appli_link
-LIBS:appli_logic_devices
 LIBS:appli_logo
 LIBS:appli_memory
 LIBS:appli_mount
@@ -36,7 +35,6 @@ LIBS:appli_ublox
 LIBS:appli_uC
 LIBS:appli_usb
 LIBS:appli_wireless
-LIBS:stm32-camera-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -254,13 +252,9 @@ Wire Wire Line
 Wire Wire Line
 	4050 4600 4050 5000
 Wire Wire Line
-	5700 3650 7025 3650
+	5700 3650 7600 3650
 Wire Wire Line
-	7025 3650 7600 3650
-Wire Wire Line
-	5700 3750 7500 3750
-Wire Wire Line
-	7500 3750 7600 3750
+	5700 3750 7600 3750
 Wire Wire Line
 	7025 3475 7025 3650
 Connection ~ 7025 3650
@@ -523,13 +517,9 @@ F 3 "" H 10225 1750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10225 1550 10225 1675
+	10225 1550 10225 1750
 Wire Wire Line
-	10225 1675 10225 1750
-Wire Wire Line
-	10225 1150 10225 1250
-Wire Wire Line
-	10225 1250 10225 1350
+	10225 1150 10225 1350
 Wire Wire Line
 	10150 1250 10225 1250
 Connection ~ 10225 1250
@@ -537,13 +527,9 @@ Wire Wire Line
 	10150 1675 10225 1675
 Connection ~ 10225 1675
 Wire Wire Line
-	9300 1550 9300 1675
+	9300 1550 9300 1750
 Wire Wire Line
-	9300 1675 9300 1750
-Wire Wire Line
-	9300 1150 9300 1250
-Wire Wire Line
-	9300 1250 9300 1350
+	9300 1150 9300 1350
 Wire Wire Line
 	9225 1675 9300 1675
 Connection ~ 9300 1675
@@ -551,16 +537,12 @@ Wire Wire Line
 	9225 1250 9300 1250
 Connection ~ 9300 1250
 Wire Wire Line
-	8350 1150 8350 1250
-Wire Wire Line
-	8350 1250 8350 1350
+	8350 1150 8350 1350
 Wire Wire Line
 	8275 1250 8350 1250
 Connection ~ 8350 1250
 Wire Wire Line
-	8350 1550 8350 1675
-Wire Wire Line
-	8350 1675 8350 1750
+	8350 1550 8350 1750
 Wire Wire Line
 	8275 1675 8350 1675
 Connection ~ 8350 1675

@@ -14,7 +14,6 @@ LIBS:appli_fuse
 LIBS:appli_inductor
 LIBS:appli_linear
 LIBS:appli_link
-LIBS:appli_logic_devices
 LIBS:appli_logo
 LIBS:appli_memory
 LIBS:appli_mount
@@ -36,7 +35,6 @@ LIBS:appli_ublox
 LIBS:appli_uC
 LIBS:appli_usb
 LIBS:appli_wireless
-LIBS:stm32-camera-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -53,203 +51,505 @@ Comment4 ""
 $EndDescr
 Text Notes 4725 1200 0    118  ~ 24
 Input Protection and Regulation
-Text Notes 7175 1825 0    63   ~ 13
+Text Notes 7175 1775 0    63   ~ 13
 3.3V Regulator
-Text Notes 6575 2200 0    60   ~ 0
+Text Notes 6575 2050 0    60   ~ 0
 Regulator provides for microcontroller, other IC's \nand is used predominantly on all pullups etc.
 $Comp
 L +3.3V #PWR?
 U 1 1 5898ACD8
-P 9500 2600
-F 0 "#PWR?" H 9500 2560 30  0001 C CNN
-F 1 "+3.3V" H 9509 2738 30  0000 C CNN
-F 2 "" H 9500 2600 60  0000 C CNN
-F 3 "" H 9500 2600 60  0000 C CNN
-	1    9500 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5898DF8B
-P 8025 3050
-F 0 "#PWR?" H 8025 2800 50  0001 C CNN
-F 1 "GND" H 8030 2877 50  0000 C CNN
-F 2 "" H 8025 3050 60  0000 C CNN
-F 3 "" H 8025 3050 60  0000 C CNN
-	1    8025 3050
+P 9500 2425
+F 0 "#PWR?" H 9500 2385 30  0001 C CNN
+F 1 "+3.3V" H 9509 2563 30  0000 C CNN
+F 2 "" H 9500 2425 60  0000 C CNN
+F 3 "" H 9500 2425 60  0000 C CNN
+	1    9500 2425
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
 U 1 1 5898E012
-P 7450 3050
-F 0 "#PWR?" H 7450 2800 50  0001 C CNN
-F 1 "GND" H 7455 2877 50  0000 C CNN
-F 2 "" H 7450 3050 60  0000 C CNN
-F 3 "" H 7450 3050 60  0000 C CNN
-	1    7450 3050
+P 7450 2875
+F 0 "#PWR?" H 7450 2625 50  0001 C CNN
+F 1 "GND" H 7455 2702 50  0000 C CNN
+F 2 "" H 7450 2875 60  0000 C CNN
+F 3 "" H 7450 2875 60  0000 C CNN
+	1    7450 2875
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
 U 1 1 5898E2B4
-P 6300 3050
-F 0 "#PWR?" H 6300 2800 50  0001 C CNN
-F 1 "GND" H 6305 2877 50  0000 C CNN
-F 2 "" H 6300 3050 60  0000 C CNN
-F 3 "" H 6300 3050 60  0000 C CNN
-	1    6300 3050
+P 6300 2875
+F 0 "#PWR?" H 6300 2625 50  0001 C CNN
+F 1 "GND" H 6305 2702 50  0000 C CNN
+F 2 "" H 6300 2875 60  0000 C CNN
+F 3 "" H 6300 2875 60  0000 C CNN
+	1    6300 2875
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
 U 1 1 5898F1EE
-P 8700 3050
-F 0 "#PWR?" H 8700 2800 50  0001 C CNN
-F 1 "GND" H 8705 2877 50  0000 C CNN
-F 2 "" H 8700 3050 60  0000 C CNN
-F 3 "" H 8700 3050 60  0000 C CNN
-	1    8700 3050
+P 8700 2875
+F 0 "#PWR?" H 8700 2625 50  0001 C CNN
+F 1 "GND" H 8705 2702 50  0000 C CNN
+F 2 "" H 8700 2875 60  0000 C CNN
+F 3 "" H 8700 2875 60  0000 C CNN
+	1    8700 2875
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6300 2525 6300 2675
+	6300 2350 6300 2500
 Wire Wire Line
-	6300 2600 7000 2600
-Connection ~ 6300 2600
+	6300 2425 7000 2425
+Connection ~ 6300 2425
 Wire Wire Line
-	7000 2750 6900 2750
+	7000 2575 6900 2575
 Wire Wire Line
-	6900 2750 6900 2600
-Connection ~ 6900 2600
+	6900 2575 6900 2425
+Connection ~ 6900 2425
 Wire Wire Line
-	6300 2875 6300 3050
+	6300 2700 6300 2875
 Wire Wire Line
-	7450 3050 7450 2950
+	7450 2875 7450 2775
 Wire Wire Line
-	7900 2600 9500 2600
+	7900 2425 9500 2425
 Wire Wire Line
-	7900 2750 8025 2750
+	8700 2700 8700 2875
 Wire Wire Line
-	8025 2750 8025 2800
-Wire Wire Line
-	8025 3000 8025 3050
-Wire Wire Line
-	8700 2875 8700 3050
-$Comp
-L +12V #PWR?
-U 1 1 58CBCCE7
-P 6300 2525
-F 0 "#PWR?" H 6300 2375 50  0001 C CNN
-F 1 "+12V" H 6315 2698 50  0000 C CNN
-F 2 "" H 6300 2525 60  0000 C CNN
-F 3 "" H 6300 2525 60  0000 C CNN
-	1    6300 2525
-	1    0    0    -1  
-$EndComp
-$Comp
-L AP2210K U?
-U 1 1 58CE8C55
-P 7450 2650
-F 0 "U?" H 7450 2944 40  0000 C CNN
-F 1 "AP2210K" H 7450 2868 40  0000 C CNN
-F 2 "Applidyne_SOT:SOT95P280X145-5L30N" H 7150 2850 35  0001 L CIN
-F 3 "http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf" H 7450 1500 60  0001 C CNN
-F 4 "DIODES ZETEX" H 7450 2000 60  0001 C CNN "manf"
-F 5 "AP2210K-3.3TRG1" H 7450 1900 60  0001 C CNN "manf#"
-F 6 "RS Online" H 7450 1800 60  0001 C CNN "Supplier"
-F 7 "828-7429" H 7450 1700 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.rs-online.com/web/p/low-dropout-voltage-regulators/8287429/" H 7450 1600 60  0001 C CNN "Supplier URL"
-F 9 "0.176" H 7450 1400 60  0001 C CNN "Supplier Price"
-F 10 "100" H 7450 1300 60  0001 C CNN "Supplier Price Break"
-	1    7450 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L 10UF_X7R_3225M C?
-U 1 1 58CE57BE
-P 6300 2675
-F 0 "C?" H 6378 2610 50  0000 L CNN
-F 1 "10UF_X7R_3225M" H 6378 2530 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC3225X170L" V 6415 2575 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1880583.pdf" V 6440 2575 20  0001 C CNN
-F 4 "WURTH ELEKTRONIK" V 6490 2575 20  0001 C CNN "manf"
-F 5 "885012209028" V 6515 2575 20  0001 C CNN "manf#"
-F 6 "Element14" V 6540 2575 20  0001 C CNN "Supplier"
-F 7 "2466740" V 6565 2575 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/wurth-elektronik/885012209028/cap-mlcc-x7r-10uf-25v-1210/dp/2466740" V 6590 2575 20  0001 C CNN "Supplier URL"
-F 9 "0.569" V 6615 2575 20  0001 C CNN "Supplier Price"
-F 10 "1" V 6640 2575 20  0001 C CNN "Supplier Price Break"
-	1    6300 2675
-	1    0    0    -1  
-$EndComp
-$Comp
-L 10UF_X7R_3225M C?
-U 1 1 58CE58B0
-P 8700 2675
-F 0 "C?" H 8778 2610 50  0000 L CNN
-F 1 "10UF_X7R_3225M" H 8778 2530 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC3225X170L" V 8815 2575 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1880583.pdf" V 8840 2575 20  0001 C CNN
-F 4 "WURTH ELEKTRONIK" V 8890 2575 20  0001 C CNN "manf"
-F 5 "885012209028" V 8915 2575 20  0001 C CNN "manf#"
-F 6 "Element14" V 8940 2575 20  0001 C CNN "Supplier"
-F 7 "2466740" V 8965 2575 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/wurth-elektronik/885012209028/cap-mlcc-x7r-10uf-25v-1210/dp/2466740" V 8990 2575 20  0001 C CNN "Supplier URL"
-F 9 "0.569" V 9015 2575 20  0001 C CNN "Supplier Price"
-F 10 "1" V 9040 2575 20  0001 C CNN "Supplier Price Break"
-	1    8700 2675
-	1    0    0    -1  
-$EndComp
-$Comp
-L 100PF_C0G_1005M C?
-U 1 1 5942E50F
-P 8025 2800
-F 0 "C?" H 8103 2735 50  0000 L CNN
-F 1 "100PF_C0G_1005M" H 8103 2655 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8140 2700 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1955634.pdf" V 8165 2700 20  0001 C CNN
-F 4 "MURATA" V 8215 2700 20  0001 C CNN "manf"
-F 5 "GCM1555C1H101JA16D" V 8240 2700 20  0001 C CNN "manf#"
-F 6 "Element14" V 8265 2700 20  0001 C CNN "Supplier"
-F 7 "2494184" V 8290 2700 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/murata/gcm1555c1h101ja16d/cap-mlcc-c0g-np0-100pf-50v-0402/dp/2494184" V 8315 2700 20  0001 C CNN "Supplier URL"
-F 9 "0.025" V 8340 2700 20  0001 C CNN "Supplier Price"
-F 10 "10" V 8365 2700 20  0001 C CNN "Supplier Price Break"
-	1    8025 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8700 2675 8700 2600
-Connection ~ 8700 2600
+	8700 2500 8700 2425
+Connection ~ 8700 2425
 $Comp
 L +1.3V #PWR?
 U 1 1 5948D3E9
-P 9600 5625
-F 0 "#PWR?" H 9600 5585 30  0001 C CNN
-F 1 "+1.3V" H 9609 5763 30  0000 C CNN
-F 2 "" H 9600 5625 60  0000 C CNN
-F 3 "" H 9600 5625 60  0000 C CNN
-	1    9600 5625
+P 9550 5350
+F 0 "#PWR?" H 9550 5310 30  0001 C CNN
+F 1 "+1.3V" H 9559 5488 30  0000 C CNN
+F 2 "" H 9550 5350 60  0000 C CNN
+F 3 "" H 9550 5350 60  0000 C CNN
+	1    9550 5350
 	1    0    0    -1  
 $EndComp
 $Comp
 L +2.8V #PWR?
 U 1 1 5948D459
-P 9475 4225
-F 0 "#PWR?" H 9475 4185 30  0001 C CNN
-F 1 "+2.8V" H 9484 4363 30  0000 C CNN
-F 2 "" H 9475 4225 60  0000 C CNN
-F 3 "" H 9475 4225 60  0000 C CNN
-	1    9475 4225
+P 9525 3950
+F 0 "#PWR?" H 9525 3910 30  0001 C CNN
+F 1 "+2.8V" H 9534 4088 30  0000 C CNN
+F 2 "" H 9525 3950 60  0000 C CNN
+F 3 "" H 9525 3950 60  0000 C CNN
+	1    9525 3950
 	1    0    0    -1  
 $EndComp
-Text Notes 7125 4050 0    63   ~ 13
+Text Notes 7125 3575 0    63   ~ 13
 2.8V Regulator
-Text Notes 7125 5600 0    63   ~ 13
-1.3V Regulator
 Text Notes 2425 5000 0    60   ~ 0
 Input Filter?
 Text Notes 2375 1900 0    63   ~ 13
 Main Connector
+$Comp
+L AP2210K-ADJ U?
+U 1 1 5948E321
+P 7450 2475
+F 0 "U?" H 7450 2769 40  0000 C CNN
+F 1 "AP2210K-ADJ" H 7450 2693 40  0000 C CNN
+F 2 "SOT95P280X145-5L30N" H 7150 2675 35  0001 L CIN
+F 3 "http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf" H 7450 1325 60  0001 C CNN
+F 4 "DIODES ZETEX" H 7450 1825 60  0001 C CNN "manf"
+F 5 "AP2210K-ADJTRG1" H 7450 1725 60  0001 C CNN "manf#"
+F 6 "RS Online" H 7450 1625 60  0001 C CNN "Supplier"
+F 7 "828-7422" H 7450 1525 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/low-dropout-voltage-regulators/8287422/" H 7450 1425 60  0001 C CNN "Supplier URL"
+F 9 "0.272" H 7450 1225 60  0001 C CNN "Supplier Price"
+F 10 "100" H 7450 1125 60  0001 C CNN "Supplier Price Break"
+	1    7450 2475
+	1    0    0    -1  
+$EndComp
+Text Notes 9700 1875 0    60   ~ 0
+VOUT=1.25V*(1+R2/R1) 
+Text Notes 9525 5825 0    60   ~ 0
+100k as R1\n4k as R2
+$Comp
+L GND #PWR?
+U 1 1 5948E8F8
+P 7475 4400
+F 0 "#PWR?" H 7475 4150 50  0001 C CNN
+F 1 "GND" H 7480 4227 50  0000 C CNN
+F 2 "" H 7475 4400 60  0000 C CNN
+F 3 "" H 7475 4400 60  0000 C CNN
+	1    7475 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948E8FE
+P 6325 4400
+F 0 "#PWR?" H 6325 4150 50  0001 C CNN
+F 1 "GND" H 6330 4227 50  0000 C CNN
+F 2 "" H 6325 4400 60  0000 C CNN
+F 3 "" H 6325 4400 60  0000 C CNN
+	1    6325 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948E904
+P 8725 4400
+F 0 "#PWR?" H 8725 4150 50  0001 C CNN
+F 1 "GND" H 8730 4227 50  0000 C CNN
+F 2 "" H 8725 4400 60  0000 C CNN
+F 3 "" H 8725 4400 60  0000 C CNN
+	1    8725 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6325 3875 6325 4025
+Wire Wire Line
+	6325 3950 7025 3950
+Connection ~ 6325 3950
+Wire Wire Line
+	7025 4100 6925 4100
+Wire Wire Line
+	6925 4100 6925 3950
+Connection ~ 6925 3950
+Wire Wire Line
+	6325 4225 6325 4400
+Wire Wire Line
+	7475 4400 7475 4300
+Wire Wire Line
+	7925 3950 9525 3950
+Wire Wire Line
+	8725 4225 8725 4400
+Wire Wire Line
+	8725 4025 8725 3950
+Connection ~ 8725 3950
+$Comp
+L AP2210K-ADJ U?
+U 1 1 5948E91D
+P 7475 4000
+F 0 "U?" H 7475 4294 40  0000 C CNN
+F 1 "AP2210K-ADJ" H 7475 4218 40  0000 C CNN
+F 2 "SOT95P280X145-5L30N" H 7175 4200 35  0001 L CIN
+F 3 "http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf" H 7475 2850 60  0001 C CNN
+F 4 "DIODES ZETEX" H 7475 3350 60  0001 C CNN "manf"
+F 5 "AP2210K-ADJTRG1" H 7475 3250 60  0001 C CNN "manf#"
+F 6 "RS Online" H 7475 3150 60  0001 C CNN "Supplier"
+F 7 "828-7422" H 7475 3050 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/low-dropout-voltage-regulators/8287422/" H 7475 2950 60  0001 C CNN "Supplier URL"
+F 9 "0.272" H 7475 2750 60  0001 C CNN "Supplier Price"
+F 10 "100" H 7475 2650 60  0001 C CNN "Supplier Price Break"
+	1    7475 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR?
+U 1 1 5948E93A
+P 6300 2350
+F 0 "#PWR?" H 6300 2300 20  0001 C CNN
+F 1 "+BATT" H 6303 2488 30  0000 C CNN
+F 2 "" H 6300 2350 60  0000 C CNN
+F 3 "" H 6300 2350 60  0000 C CNN
+	1    6300 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR?
+U 1 1 5948E952
+P 6325 3875
+F 0 "#PWR?" H 6325 3825 20  0001 C CNN
+F 1 "+BATT" H 6328 4013 30  0000 C CNN
+F 2 "" H 6325 3875 60  0000 C CNN
+F 3 "" H 6325 3875 60  0000 C CNN
+	1    6325 3875
+	1    0    0    -1  
+$EndComp
+Text Notes 7150 4975 0    63   ~ 13
+1.3V Regulator
+$Comp
+L GND #PWR?
+U 1 1 5948EA7B
+P 7500 5800
+F 0 "#PWR?" H 7500 5550 50  0001 C CNN
+F 1 "GND" H 7505 5627 50  0000 C CNN
+F 2 "" H 7500 5800 60  0000 C CNN
+F 3 "" H 7500 5800 60  0000 C CNN
+	1    7500 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948EA81
+P 6350 5800
+F 0 "#PWR?" H 6350 5550 50  0001 C CNN
+F 1 "GND" H 6355 5627 50  0000 C CNN
+F 2 "" H 6350 5800 60  0000 C CNN
+F 3 "" H 6350 5800 60  0000 C CNN
+	1    6350 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5948EA87
+P 8750 5800
+F 0 "#PWR?" H 8750 5550 50  0001 C CNN
+F 1 "GND" H 8755 5627 50  0000 C CNN
+F 2 "" H 8750 5800 60  0000 C CNN
+F 3 "" H 8750 5800 60  0000 C CNN
+	1    8750 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 5275 6350 5425
+Wire Wire Line
+	6350 5350 7050 5350
+Connection ~ 6350 5350
+Wire Wire Line
+	7050 5500 6950 5500
+Wire Wire Line
+	6950 5500 6950 5350
+Connection ~ 6950 5350
+Wire Wire Line
+	6350 5625 6350 5800
+Wire Wire Line
+	7500 5800 7500 5700
+Wire Wire Line
+	7950 5350 9550 5350
+Wire Wire Line
+	8750 5625 8750 5800
+Wire Wire Line
+	8750 5425 8750 5350
+Connection ~ 8750 5350
+$Comp
+L AP2210K-ADJ U?
+U 1 1 5948EAA0
+P 7500 5400
+F 0 "U?" H 7500 5694 40  0000 C CNN
+F 1 "AP2210K-ADJ" H 7500 5618 40  0000 C CNN
+F 2 "SOT95P280X145-5L30N" H 7200 5600 35  0001 L CIN
+F 3 "http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf" H 7500 4250 60  0001 C CNN
+F 4 "DIODES ZETEX" H 7500 4750 60  0001 C CNN "manf"
+F 5 "AP2210K-ADJTRG1" H 7500 4650 60  0001 C CNN "manf#"
+F 6 "RS Online" H 7500 4550 60  0001 C CNN "Supplier"
+F 7 "828-7422" H 7500 4450 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/low-dropout-voltage-regulators/8287422/" H 7500 4350 60  0001 C CNN "Supplier URL"
+F 9 "0.272" H 7500 4150 60  0001 C CNN "Supplier Price"
+F 10 "100" H 7500 4050 60  0001 C CNN "Supplier Price Break"
+	1    7500 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR?
+U 1 1 5948EAA6
+P 6350 5275
+F 0 "#PWR?" H 6350 5225 20  0001 C CNN
+F 1 "+BATT" H 6353 5413 30  0000 C CNN
+F 2 "" H 6350 5275 60  0000 C CNN
+F 3 "" H 6350 5275 60  0000 C CNN
+	1    6350 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L 100K_1005M R?
+U 1 1 5948EAFE
+P 8200 5425
+F 0 "R?" H 8273 5310 50  0000 L CNN
+F 1 "100K_1005M" H 8273 5230 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 8310 5275 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1911175.pdf" V 8335 5275 20  0001 C CNN
+F 4 "PANASONIC" V 8385 5275 20  0001 C CNN "manf"
+F 5 "ERJ2RKF1003X" V 8410 5275 20  0001 C CNN "manf#"
+F 6 "Element14" V 8435 5275 20  0001 C CNN "Supplier"
+F 7 "2302839" V 8460 5275 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/erj2rkf1003x/res-thick-film-100k-1-0-1w-0402/dp/2302839" V 8485 5275 20  0001 C CNN "Supplier URL"
+F 9 "0.016" V 8510 5275 20  0001 C CNN "Supplier Price"
+F 10 "5" V 8535 5275 20  0001 C CNN "Supplier Price Break"
+	1    8200 5425
+	1    0    0    -1  
+$EndComp
+Text Notes 8025 6000 0    60   ~ 0
+4k
+Wire Wire Line
+	8200 5425 8200 5350
+Connection ~ 8200 5350
+Wire Wire Line
+	8200 5725 8200 5825
+Wire Wire Line
+	8200 5775 8050 5775
+Wire Wire Line
+	8050 5775 8050 5500
+Wire Wire Line
+	8050 5500 7950 5500
+Connection ~ 8200 5775
+$Comp
+L GND #PWR?
+U 1 1 5948EC54
+P 8200 6150
+F 0 "#PWR?" H 8200 5900 50  0001 C CNN
+F 1 "GND" H 8205 5977 50  0000 C CNN
+F 2 "" H 8200 6150 60  0000 C CNN
+F 3 "" H 8200 6150 60  0000 C CNN
+	1    8200 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 6150 8200 6075
+Wire Wire Line
+	8175 4325 8175 4425
+Wire Wire Line
+	8175 4375 8025 4375
+Wire Wire Line
+	8025 4375 8025 4100
+Wire Wire Line
+	8025 4100 7925 4100
+Connection ~ 8175 4375
+$Comp
+L GND #PWR?
+U 1 1 5948ED24
+P 8175 4750
+F 0 "#PWR?" H 8175 4500 50  0001 C CNN
+F 1 "GND" H 8180 4577 50  0000 C CNN
+F 2 "" H 8175 4750 60  0000 C CNN
+F 3 "" H 8175 4750 60  0000 C CNN
+	1    8175 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8175 4750 8175 4675
+Wire Wire Line
+	8175 4025 8175 3950
+Connection ~ 8175 3950
+Wire Wire Line
+	8150 2800 8150 2900
+Wire Wire Line
+	8150 2850 8000 2850
+Wire Wire Line
+	8000 2850 8000 2575
+Wire Wire Line
+	8000 2575 7900 2575
+Connection ~ 8150 2850
+$Comp
+L GND #PWR?
+U 1 1 5948EE42
+P 8150 3225
+F 0 "#PWR?" H 8150 2975 50  0001 C CNN
+F 1 "GND" H 8155 3052 50  0000 C CNN
+F 2 "" H 8150 3225 60  0000 C CNN
+F 3 "" H 8150 3225 60  0000 C CNN
+	1    8150 3225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3225 8150 3150
+Wire Wire Line
+	8150 2500 8150 2425
+Connection ~ 8150 2425
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948F7B8
+P 8750 5425
+F 0 "C?" H 8828 5360 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 8828 5280 35  0000 L CNN
+F 2 "CAPC1608*" V 8865 5325 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 8890 5325 20  0001 C CNN
+F 4 "MURATA" V 8940 5325 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 8965 5325 20  0001 C CNN "manf#"
+F 6 "Element14" V 8990 5325 20  0001 C CNN "Supplier"
+F 7 "2611925" V 9015 5325 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 9040 5325 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 9065 5325 20  0001 C CNN "Supplier Price"
+F 10 "10" V 9090 5325 20  0001 C CNN "Supplier Price Break"
+	1    8750 5425
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948F8D4
+P 8725 4025
+F 0 "C?" H 8803 3960 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 8803 3880 35  0000 L CNN
+F 2 "CAPC1608*" V 8840 3925 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 8865 3925 20  0001 C CNN
+F 4 "MURATA" V 8915 3925 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 8940 3925 20  0001 C CNN "manf#"
+F 6 "Element14" V 8965 3925 20  0001 C CNN "Supplier"
+F 7 "2611925" V 8990 3925 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 9015 3925 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 9040 3925 20  0001 C CNN "Supplier Price"
+F 10 "10" V 9065 3925 20  0001 C CNN "Supplier Price Break"
+	1    8725 4025
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948F90C
+P 8700 2500
+F 0 "C?" H 8778 2435 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 8778 2355 35  0000 L CNN
+F 2 "CAPC1608*" V 8815 2400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 8840 2400 20  0001 C CNN
+F 4 "MURATA" V 8890 2400 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 8915 2400 20  0001 C CNN "manf#"
+F 6 "Element14" V 8940 2400 20  0001 C CNN "Supplier"
+F 7 "2611925" V 8965 2400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 8990 2400 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 9015 2400 20  0001 C CNN "Supplier Price"
+F 10 "10" V 9040 2400 20  0001 C CNN "Supplier Price Break"
+	1    8700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948F9E4
+P 6325 4025
+F 0 "C?" H 6403 3960 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 6403 3880 35  0000 L CNN
+F 2 "CAPC1608*" V 6440 3925 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6465 3925 20  0001 C CNN
+F 4 "MURATA" V 6515 3925 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 6540 3925 20  0001 C CNN "manf#"
+F 6 "Element14" V 6565 3925 20  0001 C CNN "Supplier"
+F 7 "2611925" V 6590 3925 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6615 3925 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 6640 3925 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6665 3925 20  0001 C CNN "Supplier Price Break"
+	1    6325 4025
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948FA28
+P 6350 5425
+F 0 "C?" H 6428 5360 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 6428 5280 35  0000 L CNN
+F 2 "CAPC1608*" V 6465 5325 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6490 5325 20  0001 C CNN
+F 4 "MURATA" V 6540 5325 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 6565 5325 20  0001 C CNN "manf#"
+F 6 "Element14" V 6590 5325 20  0001 C CNN "Supplier"
+F 7 "2611925" V 6615 5325 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6640 5325 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 6665 5325 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6690 5325 20  0001 C CNN "Supplier Price Break"
+	1    6350 5425
+	1    0    0    -1  
+$EndComp
+$Comp
+L 2.2UF_X7R_1608M C?
+U 1 1 5948FA6B
+P 6300 2500
+F 0 "C?" H 6378 2435 50  0000 L CNN
+F 1 "2.2UF_X7R_1608M" H 6378 2355 35  0000 L CNN
+F 2 "CAPC1608*" V 6415 2400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889" V 6440 2400 20  0001 C CNN
+F 4 "MURATA" V 6490 2400 20  0001 C CNN "manf"
+F 5 "GRM188R61H225KE11D" V 6515 2400 20  0001 C CNN "manf#"
+F 6 "Element14" V 6540 2400 20  0001 C CNN "Supplier"
+F 7 "2611925" V 6565 2400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-0603/dp/2611925" V 6590 2400 20  0001 C CNN "Supplier URL"
+F 9 "0.0256" V 6615 2400 20  0001 C CNN "Supplier Price"
+F 10 "10" V 6640 2400 20  0001 C CNN "Supplier Price Break"
+	1    6300 2500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
