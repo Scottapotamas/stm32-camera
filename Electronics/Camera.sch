@@ -343,10 +343,8 @@ Text Label 10150 1250 2    60   ~ 0
 AVDD
 Text Label 8275 1250 2    60   ~ 0
 DVDD
-Text Label 9325 2775 2    60   ~ 0
+Text Label 9300 2775 2    60   ~ 0
 DOVDD
-Text Notes 9450 2400 0    60   ~ 0
-1.8V to 3.0V
 $Comp
 L 1UF_X5R_1005M C?
 U 1 1 594872C0
@@ -381,22 +379,22 @@ $EndComp
 $Comp
 L 100NF_X7R_1005M C?
 U 1 1 5948770F
-P 10400 2800
-F 0 "C?" H 10478 2735 50  0000 L CNN
-F 1 "100NF_X7R_1005M" H 10478 2655 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10515 2700 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10540 2700 20  0001 C CNN
-F 4 "TDK" V 10590 2700 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 10615 2700 20  0001 C CNN "manf#"
-F 6 "Element14" V 10640 2700 20  0001 C CNN "Supplier"
-F 7 "2210822" V 10665 2700 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 10690 2700 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 10715 2700 20  0001 C CNN "Supplier Price"
-F 10 "100" V 10740 2700 20  0001 C CNN "Supplier Price Break"
-	1    10400 2800
+P 10400 2825
+F 0 "C?" H 10478 2760 50  0000 L CNN
+F 1 "100NF_X7R_1005M" H 10478 2680 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10515 2725 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10540 2725 20  0001 C CNN
+F 4 "TDK" V 10590 2725 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 10615 2725 20  0001 C CNN "manf#"
+F 6 "Element14" V 10640 2725 20  0001 C CNN "Supplier"
+F 7 "2210822" V 10665 2725 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 10690 2725 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 10715 2725 20  0001 C CNN "Supplier Price"
+F 10 "100" V 10740 2725 20  0001 C CNN "Supplier Price Break"
+	1    10400 2825
 	1    0    0    -1  
 $EndComp
-Text Label 10375 2750 2    60   ~ 0
+Text Label 10300 2775 2    60   ~ 0
 EVDD
 $Comp
 L GND #PWR?
@@ -409,39 +407,39 @@ F 3 "" H 10400 3125 60  0000 C CNN
 	1    10400 3125
 	1    0    0    -1  
 $EndComp
-Text Label 10325 3100 2    60   ~ 0
+Text Label 10300 3075 2    60   ~ 0
 EGND
 Text Label 9225 1675 2    60   ~ 0
 SGND
 $Comp
 L 100NF_X7R_1005M C?
 U 1 1 59487AE8
-P 9425 2800
-F 0 "C?" H 9503 2735 50  0000 L CNN
-F 1 "100NF_X7R_1005M" H 9503 2655 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9540 2700 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9565 2700 20  0001 C CNN
-F 4 "TDK" V 9615 2700 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 9640 2700 20  0001 C CNN "manf#"
-F 6 "Element14" V 9665 2700 20  0001 C CNN "Supplier"
-F 7 "2210822" V 9690 2700 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9715 2700 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 9740 2700 20  0001 C CNN "Supplier Price"
-F 10 "100" V 9765 2700 20  0001 C CNN "Supplier Price Break"
-	1    9425 2800
+P 9425 2825
+F 0 "C?" H 9503 2760 50  0000 L CNN
+F 1 "100NF_X7R_1005M" H 9503 2680 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9540 2725 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9565 2725 20  0001 C CNN
+F 4 "TDK" V 9615 2725 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 9640 2725 20  0001 C CNN "manf#"
+F 6 "Element14" V 9665 2725 20  0001 C CNN "Supplier"
+F 7 "2210822" V 9690 2725 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9715 2725 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 9740 2725 20  0001 C CNN "Supplier Price"
+F 10 "100" V 9765 2725 20  0001 C CNN "Supplier Price Break"
+	1    9425 2825
 	1    0    0    -1  
 $EndComp
-Text Label 9350 3025 2    60   ~ 0
+Text Label 9300 3075 2    60   ~ 0
 DOGND
 $Comp
 L GND #PWR?
 U 1 1 59487BCE
-P 9425 3100
-F 0 "#PWR?" H 9425 2850 50  0001 C CNN
-F 1 "GND" H 9430 2927 50  0000 C CNN
-F 2 "" H 9425 3100 60  0000 C CNN
-F 3 "" H 9425 3100 60  0000 C CNN
-	1    9425 3100
+P 9425 3125
+F 0 "#PWR?" H 9425 2875 50  0001 C CNN
+F 1 "GND" H 9430 2952 50  0000 C CNN
+F 2 "" H 9425 3125 60  0000 C CNN
+F 3 "" H 9425 3125 60  0000 C CNN
+	1    9425 3125
 	1    0    0    -1  
 $EndComp
 Text Label 8275 1675 2    60   ~ 0
@@ -571,4 +569,68 @@ Text Notes 1150 950  0    59   ~ 12
 Camera Specifications
 Text Notes 7475 5850 0    60   ~ 0
 If micro is disabling/enabling regs sequentially, ensure turn on order is:\n3.3V -> 1.3V -> 2.8V or the camera gets angry.\nAfter last supply is on for 3ms, the reset line on the OV2460 can go high.\n
+$Comp
+L +3.3V #PWR?
+U 1 1 594A76B0
+P 9425 2700
+F 0 "#PWR?" H 9425 2660 30  0001 C CNN
+F 1 "+3.3V" H 9434 2838 30  0000 C CNN
+F 2 "" H 9425 2700 60  0000 C CNN
+F 3 "" H 9425 2700 60  0000 C CNN
+	1    9425 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9425 2700 9425 2825
+Wire Wire Line
+	9425 3025 9425 3125
+Wire Wire Line
+	9425 3075 9300 3075
+Connection ~ 9425 3075
+Wire Wire Line
+	9300 2775 9425 2775
+Connection ~ 9425 2775
+Wire Wire Line
+	10400 2825 10400 2700
+Wire Wire Line
+	10400 2775 10300 2775
+Connection ~ 10400 2775
+Wire Wire Line
+	10400 3125 10400 3025
+Wire Wire Line
+	10400 3075 10300 3075
+Connection ~ 10400 3075
+$Comp
+L +3.3V #PWR?
+U 1 1 594A7A32
+P 10400 2700
+F 0 "#PWR?" H 10400 2660 30  0001 C CNN
+F 1 "+3.3V" H 10409 2838 30  0000 C CNN
+F 2 "" H 10400 2700 60  0000 C CNN
+F 3 "" H 10400 2700 60  0000 C CNN
+	1    10400 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 594A7B15
+P 7500 3100
+F 0 "#PWR?" H 7500 3060 30  0001 C CNN
+F 1 "+3.3V" H 7509 3238 30  0000 C CNN
+F 2 "" H 7500 3100 60  0000 C CNN
+F 3 "" H 7500 3100 60  0000 C CNN
+	1    7500 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 594A7B32
+P 7025 3100
+F 0 "#PWR?" H 7025 3060 30  0001 C CNN
+F 1 "+3.3V" H 7034 3238 30  0000 C CNN
+F 2 "" H 7025 3100 60  0000 C CNN
+F 3 "" H 7025 3100 60  0000 C CNN
+	1    7025 3100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
