@@ -49,7 +49,7 @@ Should connect to a GPIO (at least to know if the camera wants a flash, probably
 
 # IR Switcher
 
-As far as I can tell, its basically a solenoid which moves the IR cut filter infront or away from the sensor. Unclear if spring loaded or not.
+As far as I can tell, its basically a bistable solenoid which moves the IR cut filter infront or away from the sensor. ~~Unclear if spring loaded or not.~~
 
 The aliexpress page I got my samples from (below link) has no real information other than images (but hey, $2.50AUD).
 
@@ -69,7 +69,7 @@ This ebay page http://www.ebay.com/itm/400938137287 seems to have more info (cop
 - Inductor cores:HP V5
 - Shake length：625+-10nm
 
-Unsure if it can be switched with 3v3 supply. I found another page with similar looking units which states the following:
+~~Unsure if it can be switched with 3v3 supply.~~ I found another page with similar looking units which states the following:
 
 - Start voltage: 1.8V±10%
 - Applied voltage: 3.0V±10%
@@ -77,6 +77,31 @@ Unsure if it can be switched with 3v3 supply. I found another page with similar 
 - Trigger current: 100mA or less
 - Working current: 200mA or less
 
-If the filter needs to be held in place during aquisition then some interesting software might need to manage the power consumption cleverly. I'm hopeful pendulum switching means a short pulse high or low to set and forget.
+~~If the filter needs to be held in place during aquisition then some interesting software might need to manage the power consumption cleverly.~~ Pendulum switching means a short pulse high or low to set and forget. Drive with inverted polarity to change back.
 
-A 100mA spec'ed H-Bridge driver is probably the route to go.
+It appears the units I recieved use a 1.25mm(?) pitch molex 2-pin connector. I'm pretty sure its molex because locking tab instead of slot. Seems like a Picoblade connector.
+
+## IR Switch Testing
+
+Tests with bench supply show switching latches setting after power is removed.
+
+With the supply set to 3.000V, the minimum current which triggers a full switch is 60mA. At 40mA and above, it appears to half-hold and reset on removal of power. Below 40mA nothing happens.
+
+Switching would not occur at 2.0V. At 2.5V 50mA was able to activate the shutter, but 60-70mA was more reliable.
+
+At 3.250V (rough design target for regulator and hence micro VDD) 45mA was enough to trigger a switch but sounded 'slower'. It seems the solenoid will draw 54mA, or 0.175W.
+
+As some of these cameras will be in potentially extreme outdoor environments, a switching unit was cooled to -10°C and tested. At the same 3.250V, it requires 60mA to switch (0.195W). 
+
+## Decision
+
+It is unclear how the power requirements might change with manufacturing tolerances, temp cycling etc. Effects such as stiction etc haven't been tested for.
+
+A 100mA spec'ed H-Bridge driver or equiv is probably the route to go.
+
+As this eats a lot of room on the board using even small H-bridge drivers, and cost is a luxury, I'm strongly considering using multiple parallel GPIO pins (shared port for bitwise simultaneous control) to allow for push pull drive. As we only need short impulses this seems reasonable.
+
+Unclear if the body diodes in the micro will be happy with this arrangement.
+
+
+
