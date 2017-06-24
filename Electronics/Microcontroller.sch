@@ -51,1118 +51,1070 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 3275 8575 0    79   ~ 16
+Text Notes 2600 8050 0    79   ~ 16
 Programming Header
-Wire Wire Line
-	4150 8975 4225 8975
-Wire Wire Line
-	4150 9075 4225 9075
-Wire Wire Line
-	4150 9375 4225 9375
-Wire Wire Line
-	3250 9175 3550 9175
-Wire Wire Line
-	3250 9075 3550 9075
-Wire Wire Line
-	3250 8975 3550 8975
-Text GLabel 4225 8975 2    60   Output ~ 0
+Text GLabel 3800 8450 2    60   Output ~ 0
 SWDIO
-Text GLabel 4225 9075 2    60   Output ~ 0
+Text GLabel 3800 8550 2    60   Output ~ 0
 SWDCLK
-Text GLabel 4225 9375 2    60   Output ~ 0
+Text GLabel 3800 8850 2    60   Output ~ 0
 NRST
 $Comp
-L +3.3V #PWR?
+L +3.3V #PWR01
 U 1 1 5891D7C5
-P 3250 8975
-F 0 "#PWR?" H 3250 8935 30  0001 C CNN
-F 1 "+3.3V" H 3259 9113 30  0000 C CNN
-F 2 "" H 3250 8975 60  0000 C CNN
-F 3 "" H 3250 8975 60  0000 C CNN
-	1    3250 8975
+P 2750 8450
+F 0 "#PWR01" H 2750 8410 30  0001 C CNN
+F 1 "+3.3V" H 2759 8588 30  0000 C CNN
+F 2 "" H 2750 8450 60  0000 C CNN
+F 3 "" H 2750 8450 60  0000 C CNN
+	1    2750 8450
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR02
 U 1 1 5891D817
-P 3150 9125
-F 0 "#PWR?" H 3150 8875 50  0001 C CNN
-F 1 "GND" V 3155 8997 50  0000 R CNN
-F 2 "" H 3150 9125 60  0000 C CNN
-F 3 "" H 3150 9125 60  0000 C CNN
-	1    3150 9125
+P 2750 8600
+F 0 "#PWR02" H 2750 8350 50  0001 C CNN
+F 1 "GND" V 2755 8472 50  0000 R CNN
+F 2 "" H 2750 8600 60  0000 C CNN
+F 3 "" H 2750 8600 60  0000 C CNN
+	1    2750 8600
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3250 9075 3250 9175
-Wire Wire Line
-	3250 9125 3150 9125
-Connection ~ 3250 9125
-NoConn ~ 4150 9275
-Text Notes 1575 1650 0    60   ~ 0
-BOOT0 Jumper
+NoConn ~ 3600 8750
+Text Notes 13850 975  0    60   ~ 12
+Bootloader Boot-strap Circuit
 $Comp
-L STM32F407VGT6 U?
-U 1 1 58C74B6D
-P 8250 5050
-F 0 "U?" H 8250 5200 60  0000 C CNN
-F 1 "STM32F407VGT6" H 8250 5075 60  0000 C CNN
-F 2 "Applidyne_QFP:QFP50P1600X1600X160-100L25N" H 8250 4900 20  0001 C CNN
-F 3 "http://docs-asia.electrocomponents.com/webdocs/13e2/0900766b813e2847.pdf" H 8250 4875 20  0001 C CNN
-F 4 "ST MICROELECTRONICS" H 8250 4825 20  0001 C CNN "manf"
-F 5 "STM32F407VGT6" H 8250 4800 20  0001 C CNN "manf#"
-F 6 "RS Online" H 8250 4775 20  0001 C CNN "Supplier"
-F 7 "746-8226" H 8250 4750 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 8250 4725 20  0001 C CNN "Supplier URL"
-F 9 "19.2" H 8250 4700 20  0001 C CNN "Supplier Price"
-F 10 "1" H 8250 4675 20  0001 C CNN "Supplier Price Break"
-	1    8250 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L CSTCE8M00G55Z X?
+L CSTCE8M00G55Z X1
 U 1 1 58C74CCA
-P 2700 3200
-F 0 "X?" V 2654 3327 50  0000 L CNN
-F 1 "CSTCE8M00G55Z" V 2745 3327 50  0000 L CNN
-F 2 "Applidyne_Crystal:OSCSC-CSCTE-CERALOCK" H 2700 3200 60  0001 C CNN
-F 3 "http://docs-asia.electrocomponents.com/webdocs/0655/0900766b80655dc4.pdf" H 2700 2780 60  0001 C CNN
-F 4 "Murata" H 2700 2530 60  0001 C CNN "manf"
-F 5 "CSTCE8M00G55Z-R0" H 2700 2410 60  0001 C CNN "manf#"
-F 6 "RS Online" H 2700 2300 60  0001 C CNN "Supplier"
-F 7 "792-6533" H 2700 2190 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.rs-online.com/web/p/ceramic-resonators/7926533/" H 2700 2090 60  0001 C CNN "Supplier URL"
-F 9 "0.43" H 2700 1980 60  0001 C CNN "Supplier Price"
-F 10 "5" H 2700 1860 60  0001 C CNN "Supplier Price Break"
-	1    2700 3200
+P 1000 1800
+F 0 "X1" V 954 1927 50  0000 L CNN
+F 1 "CSTCE8M00G55Z" V 1045 1927 50  0000 L CNN
+F 2 "Applidyne_Crystal:OSCSC-CSCTE-CERALOCK" H 1000 1800 60  0001 C CNN
+F 3 "http://docs-asia.electrocomponents.com/webdocs/0655/0900766b80655dc4.pdf" H 1000 1380 60  0001 C CNN
+F 4 "Murata" H 1000 1130 60  0001 C CNN "manf"
+F 5 "CSTCE8M00G55Z-R0" H 1000 1010 60  0001 C CNN "manf#"
+F 6 "RS Online" H 1000 900 60  0001 C CNN "Supplier"
+F 7 "792-6533" H 1000 790 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/ceramic-resonators/7926533/" H 1000 690 60  0001 C CNN "Supplier URL"
+F 9 "0.43" H 1000 580 60  0001 C CNN "Supplier Price"
+F 10 "5" H 1000 460 60  0001 C CNN "Supplier Price Break"
+	1    1000 1800
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3250 2900 2700 2900
-Wire Wire Line
-	2700 2900 2700 2950
-Wire Wire Line
-	3250 3500 2700 3500
-Wire Wire Line
-	2700 3500 2700 3450
-Wire Wire Line
-	2400 3200 2200 3200
-Wire Wire Line
-	2200 3200 2200 3500
-$Comp
-L GND #PWR?
-U 1 1 58C74E02
-P 2200 3500
-F 0 "#PWR?" H 2200 3250 50  0001 C CNN
-F 1 "GND" H 2205 3327 50  0000 C CNN
-F 2 "" H 2200 3500 60  0000 C CNN
-F 3 "" H 2200 3500 60  0000 C CNN
-	1    2200 3500
-	1    0    0    -1  
-$EndComp
-Text GLabel 2900 5200 0    60   Input ~ 0
-USB_VBUS
-Text GLabel 2900 5500 0    60   BiDi ~ 0
-USB_D+
-Text GLabel 2900 5400 0    60   BiDi ~ 0
-USB_D-
-Text GLabel 2900 5300 0    60   UnSpc ~ 0
-USB_OTG
-Text GLabel 2900 5600 0    60   Input ~ 0
+Text GLabel 1500 4600 0    60   Input ~ 0
 SWDIO
-Text GLabel 2900 5700 0    60   Input ~ 0
+Text GLabel 1500 4700 0    60   Input ~ 0
 SWDCLK
-Text GLabel 1825 2700 0    60   Input ~ 0
+Text GLabel 975  1000 0    60   Input ~ 0
 NRST
 Wire Wire Line
-	3250 5700 2900 5700
+	1900 3800 1500 3800
 Wire Wire Line
-	3250 5600 2900 5600
+	1900 3700 1500 3700
 Wire Wire Line
-	3250 5500 2900 5500
+	1900 3600 1500 3600
 Wire Wire Line
-	3250 5400 2900 5400
+	1900 3500 1500 3500
 Wire Wire Line
-	3250 5300 2900 5300
+	1900 3400 1500 3400
 Wire Wire Line
-	3250 5200 2900 5200
-Wire Wire Line
-	3250 5100 2900 5100
-Wire Wire Line
-	3250 5000 2900 5000
-Wire Wire Line
-	3250 4900 2900 4900
-Wire Wire Line
-	3250 4800 2900 4800
-Wire Wire Line
-	3250 4700 2900 4700
-Wire Wire Line
-	3250 4600 2900 4600
-Wire Wire Line
-	3250 4500 2900 4500
-Wire Wire Line
-	3250 4400 2900 4400
-Wire Wire Line
-	3250 4300 2900 4300
-Wire Wire Line
-	3250 7500 2900 7500
-Wire Wire Line
-	3250 7400 2900 7400
-Wire Wire Line
-	3250 7300 2900 7300
-Wire Wire Line
-	3250 7200 2900 7200
-Wire Wire Line
-	3250 7100 2900 7100
-Wire Wire Line
-	3250 7000 2900 7000
-Wire Wire Line
-	3250 6900 2900 6900
-Wire Wire Line
-	3250 6800 2900 6800
-Wire Wire Line
-	3250 6700 2900 6700
-Wire Wire Line
-	3250 6600 2900 6600
-Wire Wire Line
-	3250 6500 2900 6500
-Wire Wire Line
-	3250 6400 2900 6400
-Wire Wire Line
-	3250 6300 2900 6300
-Wire Wire Line
-	3250 6200 2900 6200
-Wire Wire Line
-	3250 6100 2900 6100
-Wire Wire Line
-	3250 7600 2900 7600
-Wire Wire Line
-	13600 5700 13250 5700
-Wire Wire Line
-	13600 5600 13250 5600
-Wire Wire Line
-	13600 5500 13250 5500
-Wire Wire Line
-	13600 5400 13250 5400
-Wire Wire Line
-	13600 5300 13250 5300
-Wire Wire Line
-	13600 5000 13250 5000
-Wire Wire Line
-	13600 4900 13250 4900
-Wire Wire Line
-	13600 4800 13250 4800
-Wire Wire Line
-	13600 4700 13250 4700
-Wire Wire Line
-	13600 4600 13250 4600
-Wire Wire Line
-	13600 4500 13250 4500
-Wire Wire Line
-	13600 4400 13250 4400
-Wire Wire Line
-	13600 4300 13250 4300
-Wire Wire Line
-	13600 5800 13250 5800
-Wire Wire Line
-	13600 7400 13250 7400
-Wire Wire Line
-	13600 7300 13250 7300
-Wire Wire Line
-	13600 7200 13250 7200
-Wire Wire Line
-	13600 7100 13250 7100
-Wire Wire Line
-	13600 7000 13250 7000
-Wire Wire Line
-	13600 6900 13250 6900
-Wire Wire Line
-	13600 6800 13250 6800
-Wire Wire Line
-	13600 6700 13250 6700
-Wire Wire Line
-	13600 6600 13250 6600
-Wire Wire Line
-	13600 6500 13250 6500
-Wire Wire Line
-	13600 6400 13250 6400
-Wire Wire Line
-	13600 6300 13250 6300
-Wire Wire Line
-	13600 6200 13250 6200
-Wire Wire Line
-	13600 6100 13250 6100
-Wire Wire Line
-	13600 3900 13250 3900
-Wire Wire Line
-	13600 3800 13250 3800
-Wire Wire Line
-	13600 3700 13250 3700
-Wire Wire Line
-	13600 3600 13250 3600
-Wire Wire Line
-	13600 3500 13250 3500
-Wire Wire Line
-	13600 3400 13250 3400
-Wire Wire Line
-	13600 3300 13250 3300
-Wire Wire Line
-	13600 3200 13250 3200
-Wire Wire Line
-	13600 3100 13250 3100
-Wire Wire Line
-	13600 3000 13250 3000
-Wire Wire Line
-	13600 2900 13250 2900
-Wire Wire Line
-	13600 2800 13250 2800
-Wire Wire Line
-	13600 2700 13250 2700
-Wire Wire Line
-	13600 2600 13250 2600
-Wire Wire Line
-	13600 2500 13250 2500
-Wire Wire Line
-	13600 4000 13250 4000
-Text GLabel 13600 7000 2    60   BiDi ~ 0
+	1900 3300 1500 3300
+Text GLabel 9500 4200 0    60   BiDi ~ 0
 MICROSD_D1
-Text GLabel 13600 7100 2    60   BiDi ~ 0
+Text GLabel 9500 4300 0    60   BiDi ~ 0
 MICROSD_D2
-Text GLabel 13600 7200 2    60   BiDi ~ 0
+Text GLabel 9500 4400 0    60   BiDi ~ 0
 MICROSD_D3
-Text GLabel 13600 7300 2    60   Output ~ 0
+Text GLabel 9500 4500 0    60   Output ~ 0
 MICROSD_CK
-Text GLabel 13600 6900 2    60   BiDi ~ 0
+Text GLabel 9500 4100 0    60   BiDi ~ 0
 MICROSD_D0
-Text GLabel 13600 4500 2    60   Output ~ 0
+Text GLabel 9500 5700 0    60   Output ~ 0
 MICROSD_CMD
-Text GLabel 13600 4300 2    60   Input ~ 0
+Text GLabel 9500 5500 0    60   Input ~ 0
 MICROSD_DETECT
 Wire Wire Line
-	1825 2700 3250 2700
-Wire Wire Line
-	1925 2775 1925 2700
-Connection ~ 1925 2700
+	1075 1050 1075 1000
+Connection ~ 1075 1000
 $Comp
-L GND #PWR?
+L GND #PWR03
 U 1 1 58C7F2EE
-P 1925 3050
-F 0 "#PWR?" H 1925 2800 50  0001 C CNN
-F 1 "GND" H 1930 2877 50  0000 C CNN
-F 2 "" H 1925 3050 60  0000 C CNN
-F 3 "" H 1925 3050 60  0000 C CNN
-	1    1925 3050
+P 1075 1275
+F 0 "#PWR03" H 1075 1025 50  0001 C CNN
+F 1 "GND" H 1080 1102 50  0000 C CNN
+F 2 "" H 1075 1275 60  0000 C CNN
+F 3 "" H 1075 1275 60  0000 C CNN
+	1    1075 1275
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1925 3050 1925 2975
+	1075 1275 1075 1250
 $Comp
-L GND #PWR?
-U 1 1 58C7F383
-P 2275 2500
-F 0 "#PWR?" H 2275 2250 50  0001 C CNN
-F 1 "GND" H 2280 2327 50  0000 C CNN
-F 2 "" H 2275 2500 60  0000 C CNN
-F 3 "" H 2275 2500 60  0000 C CNN
-	1    2275 2500
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2850 2500 3250 2500
-Wire Wire Line
-	2275 2500 2550 2500
-Wire Wire Line
-	3075 2500 3075 2225
-Wire Wire Line
-	3075 2225 3250 2225
-Connection ~ 3075 2500
-Wire Wire Line
-	3250 1925 3075 1925
-Wire Wire Line
-	3075 1925 3075 1900
-$Comp
-L +3.3V #PWR?
-U 1 1 58C7F67B
-P 3075 1900
-F 0 "#PWR?" H 3075 1860 30  0001 C CNN
-F 1 "+3.3V" H 3084 2038 30  0000 C CNN
-F 2 "" H 3075 1900 60  0000 C CNN
-F 3 "" H 3075 1900 60  0000 C CNN
-	1    3075 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7850 8050 7850 9175
-$Comp
-L GND #PWR?
-U 1 1 58C7FFF1
-P 7850 9175
-F 0 "#PWR?" H 7850 8925 50  0001 C CNN
-F 1 "GND" H 7855 9002 50  0000 C CNN
-F 2 "" H 7850 9175 60  0000 C CNN
-F 3 "" H 7850 9175 60  0000 C CNN
-	1    7850 9175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8050 8050 8050 8325
-Wire Wire Line
-	8050 8325 8650 8325
-Wire Wire Line
-	8650 8325 8650 8050
-Wire Wire Line
-	8450 8050 8450 8325
-Connection ~ 8450 8325
-Wire Wire Line
-	8250 8050 8250 8325
-Connection ~ 8250 8325
-Wire Wire Line
-	8350 8325 8350 9175
-Connection ~ 8350 8325
-$Comp
-L GND #PWR?
-U 1 1 58C80253
-P 8350 9175
-F 0 "#PWR?" H 8350 8925 50  0001 C CNN
-F 1 "GND" H 8355 9002 50  0000 C CNN
-F 2 "" H 8350 9175 60  0000 C CNN
-F 3 "" H 8350 9175 60  0000 C CNN
-	1    8350 9175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9350 8525 9350 8700
-Wire Wire Line
-	8700 8525 9350 8525
-Wire Wire Line
-	8700 8525 8700 8700
-Wire Wire Line
-	9150 8050 9150 8525
-Connection ~ 9150 8525
-Wire Wire Line
-	9350 9075 9350 8900
-Wire Wire Line
-	8700 9075 9350 9075
-Wire Wire Line
-	8700 9075 8700 8900
-Wire Wire Line
-	9150 9075 9150 9175
-Connection ~ 9150 9075
-Wire Wire Line
-	10100 8250 10100 8700
-Wire Wire Line
-	10750 8525 10750 8700
-Wire Wire Line
-	10750 9075 10750 8900
-Wire Wire Line
-	10100 9075 10750 9075
-Wire Wire Line
-	10100 9075 10100 8900
-Connection ~ 10100 8525
-Wire Wire Line
-	10450 9075 10450 9175
-Connection ~ 10450 9075
-$Comp
-L GND #PWR?
-U 1 1 58C8087A
-P 10450 9175
-F 0 "#PWR?" H 10450 8925 50  0001 C CNN
-F 1 "GND" H 10455 9002 50  0000 C CNN
-F 2 "" H 10450 9175 60  0000 C CNN
-F 3 "" H 10450 9175 60  0000 C CNN
-	1    10450 9175
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58C808C0
-P 9150 9175
-F 0 "#PWR?" H 9150 8925 50  0001 C CNN
-F 1 "GND" H 9155 9002 50  0000 C CNN
-F 2 "" H 9150 9175 60  0000 C CNN
-F 3 "" H 9150 9175 60  0000 C CNN
-	1    9150 9175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9650 8050 9650 8250
-Wire Wire Line
-	9650 8250 10100 8250
-Wire Wire Line
-	10100 8525 10750 8525
-$Comp
-L 10UF_X7R_2012M C?
-U 1 1 58C80C38
-P 5075 1125
-F 0 "C?" V 4950 975 50  0000 L CNN
-F 1 "10UF_X7R_2012M" V 5175 725 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC2012X110L" V 5190 1025 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1870456.pdf" V 5215 1025 20  0001 C CNN
-F 4 "MULTICOMP" V 5265 1025 20  0001 C CNN "manf"
-F 5 "MC0805B106K6R3CT" V 5290 1025 20  0001 C CNN "manf#"
-F 6 "Element14" V 5315 1025 20  0001 C CNN "Supplier"
-F 7 "2320851" V 5340 1025 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/multicomp/mc0805b106k6r3ct/cap-mlcc-x7r-10uf-6-3v-0805/dp/2320851" V 5365 1025 20  0001 C CNN "Supplier URL"
-F 9 "0.241" V 5390 1025 20  0001 C CNN "Supplier Price"
-F 10 "10" V 5415 1025 20  0001 C CNN "Supplier Price Break"
-	1    5075 1125
-	1    0    0    -1  
-$EndComp
-$Comp
-L 10UF_X7R_2012M C?
-U 1 1 58C80CA9
-P 6200 1150
-F 0 "C?" V 6075 1000 50  0000 L CNN
-F 1 "10UF_X7R_2012M" V 6325 750 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC2012X110L" V 6315 1050 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1870456.pdf" V 6340 1050 20  0001 C CNN
-F 4 "MULTICOMP" V 6390 1050 20  0001 C CNN "manf"
-F 5 "MC0805B106K6R3CT" V 6415 1050 20  0001 C CNN "manf#"
-F 6 "Element14" V 6440 1050 20  0001 C CNN "Supplier"
-F 7 "2320851" V 6465 1050 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/multicomp/mc0805b106k6r3ct/cap-mlcc-x7r-10uf-6-3v-0805/dp/2320851" V 6490 1050 20  0001 C CNN "Supplier URL"
-F 9 "0.241" V 6515 1050 20  0001 C CNN "Supplier Price"
-F 10 "10" V 6540 1050 20  0001 C CNN "Supplier Price Break"
-	1    6200 1150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6050 1050 6500 1050
-Wire Wire Line
-	6200 1050 6200 1150
-Wire Wire Line
-	5075 1125 5075 1050
-Wire Wire Line
-	4900 1050 5350 1050
-Wire Wire Line
-	6500 1050 6500 2050
-Connection ~ 6200 1050
-Wire Wire Line
-	5750 1050 5625 1050
-Wire Wire Line
-	5625 1050 5625 875 
-Wire Wire Line
-	6200 1350 6200 1475
-$Comp
-L GND #PWR?
-U 1 1 58C81316
-P 6200 1475
-F 0 "#PWR?" H 6200 1225 50  0001 C CNN
-F 1 "GND" H 6205 1302 50  0000 C CNN
-F 2 "" H 6200 1475 60  0000 C CNN
-F 3 "" H 6200 1475 60  0000 C CNN
-	1    6200 1475
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 58C8136C
-P 5075 1475
-F 0 "#PWR?" H 5075 1225 50  0001 C CNN
-F 1 "GND" H 5080 1302 50  0000 C CNN
-F 2 "" H 5075 1475 60  0000 C CNN
-F 3 "" H 5075 1475 60  0000 C CNN
-	1    5075 1475
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5075 1475 5075 1325
-Wire Wire Line
-	5350 1050 5350 1900
-Wire Wire Line
-	5350 1900 6000 1900
-Wire Wire Line
-	6000 1900 6000 2050
-Connection ~ 5075 1050
-Wire Wire Line
-	4600 1050 4375 1050
-Wire Wire Line
-	4375 1050 4375 875 
-$Comp
-L +3.3V #PWR?
-U 1 1 58C816C1
-P 4375 875
-F 0 "#PWR?" H 4375 835 30  0001 C CNN
-F 1 "+3.3V" H 4384 1013 30  0000 C CNN
-F 2 "" H 4375 875 60  0000 C CNN
-F 3 "" H 4375 875 60  0000 C CNN
-	1    4375 875 
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3.3V #PWR?
-U 1 1 58C81706
-P 5625 875
-F 0 "#PWR?" H 5625 835 30  0001 C CNN
-F 1 "+3.3V" H 5634 1013 30  0000 C CNN
-F 2 "" H 5625 875 60  0000 C CNN
-F 3 "" H 5625 875 60  0000 C CNN
-	1    5625 875 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7350 1850 9000 1850
-Wire Wire Line
-	9000 1850 9000 2050
-Wire Wire Line
-	8700 2050 8700 1850
-Connection ~ 8700 1850
-Wire Wire Line
-	8400 2050 8400 1850
-Connection ~ 8400 1850
-Wire Wire Line
-	8100 2050 8100 1850
-Connection ~ 8100 1850
-Wire Wire Line
-	7800 2050 7800 1850
-Connection ~ 7800 1850
-Connection ~ 7500 1850
-$Comp
-L +3.3V #PWR?
+L +3.3V #PWR04
 U 1 1 58C829C9
-P 7350 900
-F 0 "#PWR?" H 7350 860 30  0001 C CNN
-F 1 "+3.3V" H 7359 1038 30  0000 C CNN
-F 2 "" H 7350 900 60  0000 C CNN
-F 3 "" H 7350 900 60  0000 C CNN
-	1    7350 900 
+P 9250 1200
+F 0 "#PWR04" H 9250 1160 30  0001 C CNN
+F 1 "+3.3V" H 9259 1338 30  0000 C CNN
+F 2 "" H 9250 1200 60  0000 C CNN
+F 3 "" H 9250 1200 60  0000 C CNN
+	1    9250 1200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7500 2050 7500 1850
+	9250 1700 9250 1950
 Wire Wire Line
-	7500 1350 7500 1600
+	9250 1950 10750 1950
 Wire Wire Line
-	7500 1600 9200 1600
+	9850 1950 9850 1700
 Wire Wire Line
-	8100 1600 8100 1350
+	10750 1700 10750 2025
+Connection ~ 9850 1950
 Wire Wire Line
-	9000 1600 9000 1325
-Connection ~ 8100 1600
+	10150 1700 10150 1950
+Connection ~ 10150 1950
 Wire Wire Line
-	8400 1350 8400 1600
-Connection ~ 8400 1600
+	10450 1700 10450 1950
+Connection ~ 10450 1950
 Wire Wire Line
-	8700 1325 8700 1600
-Connection ~ 8700 1600
+	9550 1700 9550 1950
+Connection ~ 9550 1950
+Connection ~ 10750 1950
 Wire Wire Line
-	7800 1350 7800 1600
-Connection ~ 7800 1600
+	9250 1200 9250 1500
+Wire Wire Line
+	10750 1250 10750 1500
+Connection ~ 9250 1250
+Wire Wire Line
+	9550 1500 9550 1250
+Connection ~ 9550 1250
+Wire Wire Line
+	9850 1250 9850 1500
+Connection ~ 9850 1250
+Wire Wire Line
+	10150 1250 10150 1500
+Connection ~ 10150 1250
+Wire Wire Line
+	10450 1250 10450 1500
+Connection ~ 10450 1250
+Text Notes 13900 2650 0    60   ~ 0
+BOOT1    BOOT0\n   x         0     Main Mem\n   0         1     System Mem
+NoConn ~ 3000 8850
 $Comp
-L GND #PWR?
-U 1 1 58C83532
-P 9200 1600
-F 0 "#PWR?" H 9200 1350 50  0001 C CNN
-F 1 "GND" H 9205 1427 50  0000 C CNN
-F 2 "" H 9200 1600 60  0000 C CNN
-F 3 "" H 9200 1600 60  0000 C CNN
-	1    9200 1600
-	1    0    0    -1  
-$EndComp
-Connection ~ 9000 1600
-Wire Wire Line
-	7500 1150 7500 900 
-Wire Wire Line
-	7350 900  9000 900 
-Wire Wire Line
-	9000 900  9000 1125
-Connection ~ 7500 900 
-$Comp
-L +3.3V #PWR?
-U 1 1 58C838D4
-P 7350 1850
-F 0 "#PWR?" H 7350 1810 30  0001 C CNN
-F 1 "+3.3V" H 7359 1988 30  0000 C CNN
-F 2 "" H 7350 1850 60  0000 C CNN
-F 3 "" H 7350 1850 60  0000 C CNN
-	1    7350 1850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7800 1150 7800 900 
-Connection ~ 7800 900 
-Wire Wire Line
-	8100 1150 8100 900 
-Connection ~ 8100 900 
-Wire Wire Line
-	8400 1150 8400 900 
-Connection ~ 8400 900 
-Wire Wire Line
-	8700 1125 8700 900 
-Connection ~ 8700 900 
-Wire Wire Line
-	9500 1850 9500 2050
-NoConn ~ 4150 9175
-Text Notes 1450 2100 0    60   ~ 0
-Boot 0    Boot 1\n   x         0     Main Mem\n   0         1     System Mem
-Wire Wire Line
-	3250 5800 2900 5800
-NoConn ~ 3550 9375
-$Comp
-L SWD X?
+L SWD X2
 U 1 1 58CD8186
-P 3850 9175
-F 0 "X?" H 3850 9619 60  0000 C CNN
-F 1 "SWD" H 3850 9513 60  0000 C CNB
-F 2 "Applidyne_Connector:HARWIN_M50-3600542" H 3900 8775 39  0001 L BNN
-F 3 "https://cdn.harwin.com/pdfs/M50-360.pdf" H 3650 8675 39  0001 L BNN
-F 4 "HARWIN" H 3650 8775 39  0001 L BNN "manf"
-F 5 "M50-3600542" H 3650 8725 39  0001 L BNN "manf#"
-F 6 "Digi-Key" H 3650 8625 39  0001 L BNN "Supplier"
-F 7 "952-1389-ND" H 3650 8575 39  0001 L BNN "Supplier Part No"
-F 8 "http://www.digikey.com.au/product-detail/en/M50-3600542/952-1389-ND/2264370" H 3650 8525 39  0001 L BNN "Supplier URL"
-F 9 "1.71" H 3650 8475 39  0001 L BNN "Supplier Price"
-F 10 "1" H 3650 8425 39  0001 L BNN "Supplier Price Break "
-	1    3850 9175
+P 3300 8650
+F 0 "X2" H 3300 9094 60  0000 C CNN
+F 1 "SWD" H 3300 8988 60  0000 C CNB
+F 2 "Applidyne_Connector:HARWIN_M50-3600542" H 3350 8250 39  0001 L BNN
+F 3 "https://cdn.harwin.com/pdfs/M50-360.pdf" H 3100 8150 39  0001 L BNN
+F 4 "HARWIN" H 3100 8250 39  0001 L BNN "manf"
+F 5 "M50-3600542" H 3100 8200 39  0001 L BNN "manf#"
+F 6 "Digi-Key" H 3100 8100 39  0001 L BNN "Supplier"
+F 7 "952-1389-ND" H 3100 8050 39  0001 L BNN "Supplier Part No"
+F 8 "http://www.digikey.com.au/product-detail/en/M50-3600542/952-1389-ND/2264370" H 3100 8000 39  0001 L BNN "Supplier URL"
+F 9 "1.71" H 3100 7950 39  0001 L BNN "Supplier Price"
+F 10 "1" H 3100 7900 39  0001 L BNN "Supplier Price Break "
+	1    3300 8650
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
-U 1 1 5942E47D
-P 9350 8700
-F 0 "C?" H 9428 8635 50  0000 L CNN
-F 1 "100NF_X7R_1005M" H 9428 8555 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9465 8600 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9490 8600 20  0001 C CNN
-F 4 "TDK" V 9540 8600 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 9565 8600 20  0001 C CNN "manf#"
-F 6 "Element14" V 9590 8600 20  0001 C CNN "Supplier"
-F 7 "2210822" V 9615 8600 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9640 8600 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 9665 8600 20  0001 C CNN "Supplier Price"
-F 10 "100" V 9690 8600 20  0001 C CNN "Supplier Price Break"
-	1    9350 8700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 100NF_X7R_1005M C?
-U 1 1 5942E501
-P 10750 8700
-F 0 "C?" H 10828 8635 50  0000 L CNN
-F 1 "100NF_X7R_1005M" H 10828 8555 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10865 8600 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10890 8600 20  0001 C CNN
-F 4 "TDK" V 10940 8600 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 10965 8600 20  0001 C CNN "manf#"
-F 6 "Element14" V 10990 8600 20  0001 C CNN "Supplier"
-F 7 "2210822" V 11015 8600 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 11040 8600 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 11065 8600 20  0001 C CNN "Supplier Price"
-F 10 "100" V 11090 8600 20  0001 C CNN "Supplier Price Break"
-	1    10750 8700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C2
 U 1 1 59430B8C
-P 1925 2775
-F 0 "C?" H 2002 2710 50  0000 L CNN
-F 1 "100NF_X7R_1005M" H 2002 2630 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 2040 2675 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 2065 2675 20  0001 C CNN
-F 4 "TDK" V 2115 2675 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 2140 2675 20  0001 C CNN "manf#"
-F 6 "Element14" V 2165 2675 20  0001 C CNN "Supplier"
-F 7 "2210822" V 2190 2675 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 2215 2675 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 2240 2675 20  0001 C CNN "Supplier Price"
-F 10 "100" V 2265 2675 20  0001 C CNN "Supplier Price Break"
-	1    1925 2775
+P 1075 1050
+F 0 "C2" H 1152 985 50  0000 L CNN
+F 1 "100NF_X7R_1005M" H 1152 905 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 1190 950 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 1215 950 20  0001 C CNN
+F 4 "TDK" V 1265 950 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 1290 950 20  0001 C CNN "manf#"
+F 6 "Element14" V 1315 950 20  0001 C CNN "Supplier"
+F 7 "2210822" V 1340 950 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 1365 950 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 1390 950 20  0001 C CNN "Supplier Price"
+F 10 "100" V 1415 950 20  0001 C CNN "Supplier Price Break"
+	1    1075 1050
 	-1   0    0    -1  
 $EndComp
 $Comp
-L 10K_1005M R?
-U 1 1 59430CAB
-P 2850 2500
-F 0 "R?" V 2662 2350 50  0000 C CNN
-F 1 "10K_1005M" V 2742 2350 35  0000 C CNN
-F 2 "Applidyne_Resistor:RESC1005X40N" V 2960 2350 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 2985 2350 20  0001 C CNN
-F 4 "VISHAY" V 3035 2350 20  0001 C CNN "manf"
-F 5 "CRCW040210K0FKED" V 3060 2350 20  0001 C CNN "manf#"
-F 6 "Element14" V 3085 2350 20  0001 C CNN "Supplier"
-F 7 "1469669" V 3110 2350 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 3135 2350 20  0001 C CNN "Supplier URL"
-F 9 "0.009" V 3160 2350 20  0001 C CNN "Supplier Price"
-F 10 "10" V 3185 2350 20  0001 C CNN "Supplier Price Break"
-	1    2850 2500
-	0    1    1    0   
-$EndComp
-$Comp
-L 2.2NF_X7R_1005M C?
-U 1 1 59430EF3
-P 8700 8700
-F 0 "C?" H 8778 8635 50  0000 L CNN
-F 1 "2.2NF_X7R_1005M" H 8778 8555 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8815 8600 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2305821.pdf" V 8840 8600 20  0001 C CNN
-F 4 "KEMET" V 8890 8600 20  0001 C CNN "manf"
-F 5 "C0402C222J3RACAUTO" V 8915 8600 20  0001 C CNN "manf#"
-F 6 "Element14" V 8940 8600 20  0001 C CNN "Supplier"
-F 7 "2478233" V 8965 8600 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/kemet/c0402c222j3racauto/cap-mlcc-x7r-2200pf-25v-0402/dp/2478233" V 8990 8600 20  0001 C CNN "Supplier URL"
-F 9 "0.3" V 9015 8600 20  0001 C CNN "Supplier Price"
-F 10 "100" V 9040 8600 20  0001 C CNN "Supplier Price Break"
-	1    8700 8700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 2.2NF_X7R_1005M C?
-U 1 1 5943118A
-P 10100 8700
-F 0 "C?" H 10178 8635 50  0000 L CNN
-F 1 "2.2NF_X7R_1005M" H 10178 8555 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10215 8600 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2305821.pdf" V 10240 8600 20  0001 C CNN
-F 4 "KEMET" V 10290 8600 20  0001 C CNN "manf"
-F 5 "C0402C222J3RACAUTO" V 10315 8600 20  0001 C CNN "manf#"
-F 6 "Element14" V 10340 8600 20  0001 C CNN "Supplier"
-F 7 "2478233" V 10365 8600 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/kemet/c0402c222j3racauto/cap-mlcc-x7r-2200pf-25v-0402/dp/2478233" V 10390 8600 20  0001 C CNN "Supplier URL"
-F 9 "0.3" V 10415 8600 20  0001 C CNN "Supplier Price"
-F 10 "100" V 10440 8600 20  0001 C CNN "Supplier Price Break"
-	1    10100 8700
-	1    0    0    -1  
-$EndComp
-$Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C6
 U 1 1 594317AB
-P 7500 1150
-F 0 "C?" V 7375 1000 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 7600 800 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 7615 1050 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 7640 1050 20  0001 C CNN
-F 4 "TDK" V 7690 1050 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 7715 1050 20  0001 C CNN "manf#"
-F 6 "Element14" V 7740 1050 20  0001 C CNN "Supplier"
-F 7 "2210822" V 7765 1050 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 7790 1050 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 7815 1050 20  0001 C CNN "Supplier Price"
-F 10 "100" V 7840 1050 20  0001 C CNN "Supplier Price Break"
-	1    7500 1150
+P 9250 1500
+F 0 "C6" V 9125 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 9350 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9365 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9390 1400 20  0001 C CNN
+F 4 "TDK" V 9440 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 9465 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 9490 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 9515 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9540 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 9565 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 9590 1400 20  0001 C CNN "Supplier Price Break"
+	1    9250 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C7
 U 1 1 59431B86
-P 7800 1150
-F 0 "C?" V 7675 1000 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 7900 800 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 7915 1050 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 7940 1050 20  0001 C CNN
-F 4 "TDK" V 7990 1050 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 8015 1050 20  0001 C CNN "manf#"
-F 6 "Element14" V 8040 1050 20  0001 C CNN "Supplier"
-F 7 "2210822" V 8065 1050 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 8090 1050 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 8115 1050 20  0001 C CNN "Supplier Price"
-F 10 "100" V 8140 1050 20  0001 C CNN "Supplier Price Break"
-	1    7800 1150
+P 9550 1500
+F 0 "C7" V 9425 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 9650 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9665 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9690 1400 20  0001 C CNN
+F 4 "TDK" V 9740 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 9765 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 9790 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 9815 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9840 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 9865 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 9890 1400 20  0001 C CNN "Supplier Price Break"
+	1    9550 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C8
 U 1 1 59431BD4
-P 8100 1150
-F 0 "C?" V 7975 1000 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 8200 800 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8215 1050 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 8240 1050 20  0001 C CNN
-F 4 "TDK" V 8290 1050 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 8315 1050 20  0001 C CNN "manf#"
-F 6 "Element14" V 8340 1050 20  0001 C CNN "Supplier"
-F 7 "2210822" V 8365 1050 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 8390 1050 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 8415 1050 20  0001 C CNN "Supplier Price"
-F 10 "100" V 8440 1050 20  0001 C CNN "Supplier Price Break"
-	1    8100 1150
+P 9850 1500
+F 0 "C8" V 9725 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 9950 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9965 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9990 1400 20  0001 C CNN
+F 4 "TDK" V 10040 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 10065 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 10090 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 10115 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 10140 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 10165 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 10190 1400 20  0001 C CNN "Supplier Price Break"
+	1    9850 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C9
 U 1 1 59431C26
-P 8400 1150
-F 0 "C?" V 8275 1000 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 8500 800 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8515 1050 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 8540 1050 20  0001 C CNN
-F 4 "TDK" V 8590 1050 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 8615 1050 20  0001 C CNN "manf#"
-F 6 "Element14" V 8640 1050 20  0001 C CNN "Supplier"
-F 7 "2210822" V 8665 1050 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 8690 1050 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 8715 1050 20  0001 C CNN "Supplier Price"
-F 10 "100" V 8740 1050 20  0001 C CNN "Supplier Price Break"
-	1    8400 1150
+P 10150 1500
+F 0 "C9" V 10025 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 10250 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10265 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10290 1400 20  0001 C CNN
+F 4 "TDK" V 10340 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 10365 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 10390 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 10415 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 10440 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 10465 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 10490 1400 20  0001 C CNN "Supplier Price Break"
+	1    10150 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C10
 U 1 1 59431C72
-P 8700 1125
-F 0 "C?" V 8575 975 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 8800 775 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8815 1025 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 8840 1025 20  0001 C CNN
-F 4 "TDK" V 8890 1025 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 8915 1025 20  0001 C CNN "manf#"
-F 6 "Element14" V 8940 1025 20  0001 C CNN "Supplier"
-F 7 "2210822" V 8965 1025 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 8990 1025 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 9015 1025 20  0001 C CNN "Supplier Price"
-F 10 "100" V 9040 1025 20  0001 C CNN "Supplier Price Break"
-	1    8700 1125
+P 10450 1500
+F 0 "C10" V 10325 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 10550 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10565 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10590 1400 20  0001 C CNN
+F 4 "TDK" V 10640 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 10665 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 10690 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 10715 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 10740 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 10765 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 10790 1400 20  0001 C CNN "Supplier Price Break"
+	1    10450 1500
 	1    0    0    -1  
 $EndComp
 $Comp
-L 100NF_X7R_1005M C?
+L 100NF_X7R_1005M C11
 U 1 1 59431CC4
-P 9000 1125
-F 0 "C?" V 8875 975 50  0000 L CNN
-F 1 "100NF_X7R_1005M" V 9100 775 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1005X60N" V 9115 1025 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 9140 1025 20  0001 C CNN
-F 4 "TDK" V 9190 1025 20  0001 C CNN "manf"
-F 5 "CGA2B3X7R1H104K050BB" V 9215 1025 20  0001 C CNN "manf#"
-F 6 "Element14" V 9240 1025 20  0001 C CNN "Supplier"
-F 7 "2210822" V 9265 1025 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 9290 1025 20  0001 C CNN "Supplier URL"
-F 9 "0.087" V 9315 1025 20  0001 C CNN "Supplier Price"
-F 10 "100" V 9340 1025 20  0001 C CNN "Supplier Price Break"
-	1    9000 1125
+P 10750 1500
+F 0 "C11" V 10625 1350 50  0000 L CNN
+F 1 "100NF_X7R_1005M" V 10850 1150 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 10865 1400 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 10890 1400 20  0001 C CNN
+F 4 "TDK" V 10940 1400 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 10965 1400 20  0001 C CNN "manf#"
+F 6 "Element14" V 10990 1400 20  0001 C CNN "Supplier"
+F 7 "2210822" V 11015 1400 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 11040 1400 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 11065 1400 20  0001 C CNN "Supplier Price"
+F 10 "100" V 11090 1400 20  0001 C CNN "Supplier Price Break"
+	1    10750 1500
 	1    0    0    -1  
 $EndComp
-$Comp
-L 10R_1005M R?
-U 1 1 59432145
-P 6050 1050
-F 0 "R?" V 5862 900 50  0000 C CNN
-F 1 "10R_1005M" V 5942 900 35  0000 C CNN
-F 2 "Applidyne_Resistor:RESC1005X40N" V 6160 900 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 6185 900 20  0001 C CNN
-F 4 "VISHAY" V 6235 900 20  0001 C CNN "manf"
-F 5 "CRCW040210R0FKED" V 6260 900 20  0001 C CNN "manf#"
-F 6 "Element14" V 6285 900 20  0001 C CNN "Supplier"
-F 7 "1652742" V 6310 900 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/vishay/crcw040210r0fked/res-thick-film-10r-1-0-063w-0402/dp/1652742" V 6335 900 20  0001 C CNN "Supplier URL"
-F 9 "0.009" V 6360 900 20  0001 C CNN "Supplier Price"
-F 10 "10" V 6385 900 20  0001 C CNN "Supplier Price Break"
-	1    6050 1050
-	0    1    1    0   
-$EndComp
-$Comp
-L 10R_1005M R?
-U 1 1 59432275
-P 4900 1050
-F 0 "R?" V 4712 900 50  0000 C CNN
-F 1 "10R_1005M" V 4792 900 35  0000 C CNN
-F 2 "Applidyne_Resistor:RESC1005X40N" V 5010 900 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 5035 900 20  0001 C CNN
-F 4 "VISHAY" V 5085 900 20  0001 C CNN "manf"
-F 5 "CRCW040210R0FKED" V 5110 900 20  0001 C CNN "manf#"
-F 6 "Element14" V 5135 900 20  0001 C CNN "Supplier"
-F 7 "1652742" V 5160 900 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/vishay/crcw040210r0fked/res-thick-film-10r-1-0-063w-0402/dp/1652742" V 5185 900 20  0001 C CNN "Supplier URL"
-F 9 "0.009" V 5210 900 20  0001 C CNN "Supplier Price"
-F 10 "10" V 5235 900 20  0001 C CNN "Supplier Price Break"
-	1    4900 1050
-	0    1    1    0   
-$EndComp
-$Comp
-L SOLDER-LINK-2 SL?
-U 1 1 5947CB5D
-P 3250 2075
-F 0 "SL?" V 3212 2133 40  0000 L CNN
-F 1 "SOLDER-LINK-2" V 3288 2133 40  0000 L CNN
-F 2 "Applidyne_Link:SJ1608-2N" V 3365 1975 20  0001 C CNN
-F 3 "DatasheetURL" V 3390 1975 20  0001 C CNN
-F 4 "Manufacturer" V 3440 1975 20  0001 C CNN "manf"
-F 5 "ManufacturerPartNo" V 3465 1975 20  0001 C CNN "manf#"
-F 6 "Supplier" V 3490 1975 20  0001 C CNN "Supplier"
-F 7 "SupplierPartNo" V 3515 1975 20  0001 C CNN "Supplier Part No"
-F 8 "SupplierURL" V 3540 1975 20  0001 C CNN "Supplier URL"
-F 9 "0" V 3565 1975 20  0001 C CNN "Supplier Price"
-F 10 "1" V 3590 1975 20  0001 C CNN "Supplier Price Break"
-	1    3250 2075
-	0    1    1    0   
-$EndComp
-$Comp
-L +3.3V #PWR?
-U 1 1 59480FA5
-P 9500 1850
-F 0 "#PWR?" H 9500 1810 30  0001 C CNN
-F 1 "+3.3V" H 9509 1988 30  0000 C CNN
-F 2 "" H 9500 1850 60  0000 C CNN
-F 3 "" H 9500 1850 60  0000 C CNN
-	1    9500 1850
-	1    0    0    -1  
-$EndComp
-Text GLabel 2400 10275 0    60   Output ~ 0
+Text GLabel 9500 8100 0    60   Output ~ 0
 PWDN
-Text GLabel 2400 10400 0    60   Output ~ 0
+Text GLabel 9500 8000 0    60   Output ~ 0
 RESET
-Text GLabel 2650 10600 2    60   Output ~ 0
+Text GLabel 1500 4100 0    60   Output ~ 0
 XCLK
-Text GLabel 2650 10475 2    60   Input ~ 0
+Text GLabel 1500 3700 0    60   Input ~ 0
 HREF
-Text GLabel 2650 10350 2    60   Input ~ 0
+Text GLabel 1500 6200 0    60   Input ~ 0
 VSYNC
-Text GLabel 2650 10225 2    60   Input ~ 0
+Text GLabel 1500 3900 0    60   Input ~ 0
 PIXCK
-Text GLabel 2400 10525 0    60   Input ~ 0
+Text GLabel 9500 6200 0    60   Input ~ 0
 STROBE
-Text GLabel 2400 10150 0    60   Output ~ 0
+Text GLabel 1500 5900 0    60   Output ~ 0
 FREX
-Text GLabel 2400 10025 0    60   Output ~ 0
+Text GLabel 1500 6000 0    60   Output ~ 0
 EXPSTB
-Text GLabel 3200 10000 2    60   Input ~ 0
+Text GLabel 9500 3900 0    60   Input ~ 0
 D0
-Text GLabel 3200 10125 2    60   Input ~ 0
+Text GLabel 9500 4000 0    60   Input ~ 0
 D1
-Text GLabel 3200 10250 2    60   Input ~ 0
+Text GLabel 9500 7800 0    60   Input ~ 0
 D2
-Text GLabel 3200 10375 2    60   Input ~ 0
+Text GLabel 9500 7900 0    60   Input ~ 0
 D3
-Text GLabel 3200 10500 2    60   Input ~ 0
+Text GLabel 9500 8200 0    60   Input ~ 0
 D4
-Text GLabel 3200 10625 2    60   Input ~ 0
+Text GLabel 1500 6100 0    60   Input ~ 0
 D5
-Text GLabel 3200 10750 2    60   Input ~ 0
+Text GLabel 1500 6300 0    60   Input ~ 0
 D6
-Text GLabel 3200 10875 2    60   Input ~ 0
+Text GLabel 1500 6400 0    60   Input ~ 0
 D7
-Text Notes 2500 9925 0    60   ~ 0
-Camera lines
-Text GLabel 3700 10325 2    60   Input ~ 0
+Text GLabel 1600 6500 0    60   Input ~ 0
 SIO_C
-Text GLabel 3725 10500 2    60   BiDi ~ 0
+Text GLabel 1600 6600 0    60   BiDi ~ 0
 SIO_D
-Text Notes 3800 10225 0    60   ~ 0
-i2c
+Text Notes 550  6600 0    60   ~ 0
+SSCB Interface
 $Comp
-L LED_GREEN_1608M D?
+L LED_GREEN_1608M D1
 U 1 1 5948E009
-P 5175 9300
-F 0 "D?" V 5221 9192 50  0000 R CNN
-F 1 "LED_GREEN_1608M" V 5130 9192 50  0000 R CNN
-F 2 "" H 5075 9300 50  0000 C CNN
-F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 5175 9090 50  0001 C CNN
-F 4 "DIALIGHT" H 5175 8880 60  0001 C CNN "manf"
-F 5 "5988070107F" H 5175 8790 60  0001 C CNN "manf#"
-F 6 "Element 14" H 5175 8690 60  0001 C CNN "Supplier"
-F 7 "1465991" H 5175 8590 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/dialight/5988070107f/led-0603-green-20mcd-566nm/dp/1465991" H 5185 8510 60  0001 C CNN "Supplier URL"
-F 9 "0.4" H 5175 8410 60  0001 C CNN "Supplier Price"
-F 10 "10" H 5175 8310 60  0001 C CNN "Supplier Price Break"
-	1    5175 9300
+P 4650 9100
+F 0 "D1" V 4696 8992 50  0000 R CNN
+F 1 "LED_GREEN_1608M" V 4605 8992 50  0000 R CNN
+F 2 "" H 4550 9100 50  0000 C CNN
+F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 4650 8890 50  0001 C CNN
+F 4 "DIALIGHT" H 4650 8680 60  0001 C CNN "manf"
+F 5 "5988070107F" H 4650 8590 60  0001 C CNN "manf#"
+F 6 "Element 14" H 4650 8490 60  0001 C CNN "Supplier"
+F 7 "1465991" H 4650 8390 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/dialight/5988070107f/led-0603-green-20mcd-566nm/dp/1465991" H 4660 8310 60  0001 C CNN "Supplier URL"
+F 9 "0.4" H 4650 8210 60  0001 C CNN "Supplier Price"
+F 10 "10" H 4650 8110 60  0001 C CNN "Supplier Price Break"
+	1    4650 9100
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED_RED_1608M D?
-U 1 1 5948E26E
-P 6175 9300
-F 0 "D?" V 6221 9192 50  0000 R CNN
-F 1 "LED_RED_1608M" V 6130 9192 50  0000 R CNN
-F 2 "" H 6075 9300 50  0000 C CNN
-F 3 "http://www.farnell.com/datasheets/87215.pdf?_ga=1.108371586.1676120999.1492995984" H 6175 9090 50  0001 C CNN
-F 4 "DIALIGHT" H 6175 8880 60  0001 C CNN "manf"
-F 5 "597-5004-407F" H 6175 8790 60  0001 C CNN "manf#"
-F 6 "Element 14" H 6175 8690 60  0001 C CNN "Supplier"
-F 7 "1867024" H 6175 8590 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/dialight/597-5004-407f/led-red-0-8mm-x-1-2mm-50mcd-630nm/dp/1867024" H 6185 8510 60  0001 C CNN "Supplier URL"
-F 9 "1.71" H 6175 8410 60  0001 C CNN "Supplier Price"
-F 10 "10" H 6175 8310 60  0001 C CNN "Supplier Price Break"
-	1    6175 9300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L GND #PWR?
+L GND #PWR05
 U 1 1 5948E41A
-P 6175 9625
-F 0 "#PWR?" H 6175 9375 50  0001 C CNN
-F 1 "GND" H 6180 9452 50  0000 C CNN
-F 2 "" H 6175 9625 60  0000 C CNN
-F 3 "" H 6175 9625 60  0000 C CNN
-	1    6175 9625
+P 5650 9450
+F 0 "#PWR05" H 5650 9200 50  0001 C CNN
+F 1 "GND" H 5655 9277 50  0000 C CNN
+F 2 "" H 5650 9450 60  0000 C CNN
+F 3 "" H 5650 9450 60  0000 C CNN
+	1    5650 9450
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR06
 U 1 1 5948E458
-P 5175 9625
-F 0 "#PWR?" H 5175 9375 50  0001 C CNN
-F 1 "GND" H 5180 9452 50  0000 C CNN
-F 2 "" H 5175 9625 60  0000 C CNN
-F 3 "" H 5175 9625 60  0000 C CNN
-	1    5175 9625
+P 4650 9450
+F 0 "#PWR06" H 4650 9200 50  0001 C CNN
+F 1 "GND" H 4655 9277 50  0000 C CNN
+F 2 "" H 4650 9450 60  0000 C CNN
+F 3 "" H 4650 9450 60  0000 C CNN
+	1    4650 9450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5175 9625 5175 9500
+	4650 9450 4650 9300
 Wire Wire Line
-	6175 9500 6175 9625
+	5650 9300 5650 9450
 $Comp
-L 1K_1005M R?
+L 1K_1005M R1
 U 1 1 5948E833
-P 5175 8700
-F 0 "R?" H 5248 8585 50  0000 L CNN
-F 1 "1K_1005M" H 5248 8505 35  0000 L CNN
-F 2 "Applidyne_Resistor:RESC1005X40N" V 5285 8550 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 5310 8550 20  0001 C CNN
-F 4 "VISHAY" V 5360 8550 20  0001 C CNN "manf"
-F 5 "CRCW04021K00FKED" V 5385 8550 20  0001 C CNN "manf#"
-F 6 "Element14" V 5410 8550 20  0001 C CNN "Supplier"
-F 7 "1469669" V 5435 8550 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 5460 8550 20  0001 C CNN "Supplier URL"
-F 9 "0.09" V 5485 8550 20  0001 C CNN "Supplier Price"
-F 10 "10" V 5510 8550 20  0001 C CNN "Supplier Price Break"
-	1    5175 8700
+P 4650 8525
+F 0 "R1" H 4723 8410 50  0000 L CNN
+F 1 "1K_1005M" H 4723 8330 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 4760 8375 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 4785 8375 20  0001 C CNN
+F 4 "VISHAY" V 4835 8375 20  0001 C CNN "manf"
+F 5 "CRCW04021K00FKED" V 4860 8375 20  0001 C CNN "manf#"
+F 6 "Element14" V 4885 8375 20  0001 C CNN "Supplier"
+F 7 "1469669" V 4910 8375 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 4935 8375 20  0001 C CNN "Supplier URL"
+F 9 "0.09" V 4960 8375 20  0001 C CNN "Supplier Price"
+F 10 "10" V 4985 8375 20  0001 C CNN "Supplier Price Break"
+	1    4650 8525
 	1    0    0    -1  
 $EndComp
 $Comp
-L 1K_1005M R?
+L 1K_1005M R2
 U 1 1 5948E8C5
-P 6175 8700
-F 0 "R?" H 6248 8585 50  0000 L CNN
-F 1 "1K_1005M" H 6248 8505 35  0000 L CNN
-F 2 "Applidyne_Resistor:RESC1005X40N" V 6285 8550 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 6310 8550 20  0001 C CNN
-F 4 "VISHAY" V 6360 8550 20  0001 C CNN "manf"
-F 5 "CRCW04021K00FKED" V 6385 8550 20  0001 C CNN "manf#"
-F 6 "Element14" V 6410 8550 20  0001 C CNN "Supplier"
-F 7 "1469669" V 6435 8550 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 6460 8550 20  0001 C CNN "Supplier URL"
-F 9 "0.09" V 6485 8550 20  0001 C CNN "Supplier Price"
-F 10 "10" V 6510 8550 20  0001 C CNN "Supplier Price Break"
-	1    6175 8700
+P 5650 8525
+F 0 "R2" H 5723 8410 50  0000 L CNN
+F 1 "1K_1005M" H 5723 8330 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 5760 8375 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2111203.pdf" V 5785 8375 20  0001 C CNN
+F 4 "VISHAY" V 5835 8375 20  0001 C CNN "manf"
+F 5 "CRCW04021K00FKED" V 5860 8375 20  0001 C CNN "manf#"
+F 6 "Element14" V 5885 8375 20  0001 C CNN "Supplier"
+F 7 "1469669" V 5910 8375 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669" V 5935 8375 20  0001 C CNN "Supplier URL"
+F 9 "0.09" V 5960 8375 20  0001 C CNN "Supplier Price"
+F 10 "10" V 5985 8375 20  0001 C CNN "Supplier Price Break"
+	1    5650 8525
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6175 9000 6175 9100
+	5650 8825 5650 8900
 Wire Wire Line
-	5175 9000 5175 9100
+	4650 8825 4650 8900
 Wire Wire Line
-	5175 8700 5175 8575
+	4650 8525 4650 8400
 Wire Wire Line
-	6175 8700 6175 8575
-Text GLabel 5175 8575 1    60   Input ~ 0
+	5650 8525 5650 8400
+Text GLabel 4650 8400 1    60   Input ~ 0
 STATUS0
-Text GLabel 6175 8575 1    60   Input ~ 0
+Text GLabel 5650 8400 1    60   Input ~ 0
 STATUS1
-Text GLabel 1050 10375 1    60   Output ~ 0
+Text GLabel 1500 3400 0    60   Output ~ 0
 STATUS0
-Text GLabel 1200 10425 1    60   Output ~ 0
+Text GLabel 1500 3500 0    60   Output ~ 0
 STATUS1
-Text Notes 925  9750 0    60   ~ 0
+Text Notes 4900 7800 0    79   ~ 16
 Status Leds
-Text GLabel 4975 10750 0    60   Output ~ 0
+Text GLabel 9500 6300 0    60   Output ~ 0
 IRCUT_A
-Text GLabel 5025 10950 0    60   Output ~ 0
+Text GLabel 9500 6700 0    60   Output ~ 0
 IRCUT_B
-Text GLabel 6225 10650 0    60   Output ~ 0
+Text GLabel 1500 3800 0    60   Output ~ 0
 FLASH_DAC
-Text GLabel 6250 10925 0    60   Input ~ 0
+Text GLabel 9500 3300 0    60   Input ~ 0
 AMBIENT_LIGHT
-Text GLabel 4575 10100 2    60   Input ~ 0
+Text GLabel 1500 4400 0    60   Input ~ 0
 PWR_EN
+$Comp
+L STM32F429VET6 U1
+U 2 1 594F36A3
+P 4550 4000
+F 0 "U1" H 4675 5075 60  0000 L CNN
+F 1 "STM32F429VET6" H 4375 4975 60  0000 L CNN
+F 2 "TQFP100" H 4550 2975 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 4550 2950 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 4550 2900 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 4550 2875 20  0001 C CNN "manf#"
+F 6 "Element14" H 4550 2850 20  0001 C CNN "Supplier"
+F 7 "2469586" H 4550 2825 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 4550 2800 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 4550 2775 20  0001 C CNN "Supplier Price"
+F 10 "10" H 4550 2750 20  0001 C CNN "Supplier Price Break"
+	2    4550 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F429VET6 U1
+U 3 1 594F3871
+P 4550 6200
+F 0 "U1" H 4775 7300 60  0000 C CNN
+F 1 "STM32F429VET6" H 4750 7175 60  0000 C CNN
+F 2 "TQFP100" H 4550 5175 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 4550 5150 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 4550 5100 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 4550 5075 20  0001 C CNN "manf#"
+F 6 "Element14" H 4550 5050 20  0001 C CNN "Supplier"
+F 7 "2469586" H 4550 5025 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 4550 5000 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 4550 4975 20  0001 C CNN "Supplier Price"
+F 10 "10" H 4550 4950 20  0001 C CNN "Supplier Price Break"
+	3    4550 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F429VET6 U1
+U 4 1 594F38D1
+P 12650 4000
+F 0 "U1" H 12750 5075 60  0000 L CNN
+F 1 "STM32F429VET6" H 12500 4975 60  0000 L CNN
+F 2 "TQFP100" H 12650 2975 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 12650 2950 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 12650 2900 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 12650 2875 20  0001 C CNN "manf#"
+F 6 "Element14" H 12650 2850 20  0001 C CNN "Supplier"
+F 7 "2469586" H 12650 2825 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 12650 2800 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 12650 2775 20  0001 C CNN "Supplier Price"
+F 10 "10" H 12650 2750 20  0001 C CNN "Supplier Price Break"
+	4    12650 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F429VET6 U1
+U 5 1 594F3927
+P 12650 6200
+F 0 "U1" H 12775 7300 60  0000 L CNN
+F 1 "STM32F429VET6" H 12500 7175 60  0000 L CNN
+F 2 "TQFP100" H 12650 5175 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 12650 5150 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 12650 5100 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 12650 5075 20  0001 C CNN "manf#"
+F 6 "Element14" H 12650 5050 20  0001 C CNN "Supplier"
+F 7 "2469586" H 12650 5025 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 12650 5000 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 12650 4975 20  0001 C CNN "Supplier Price"
+F 10 "10" H 12650 4950 20  0001 C CNN "Supplier Price Break"
+	5    12650 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F429VET6 U1
+U 6 1 594F3B43
+P 12650 8500
+F 0 "U1" H 12775 9625 60  0000 L CNN
+F 1 "STM32F429VET6" H 12500 9500 60  0000 L CNN
+F 2 "TQFP100" H 12650 7475 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 12650 7450 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 12650 7400 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 12650 7375 20  0001 C CNN "manf#"
+F 6 "Element14" H 12650 7350 20  0001 C CNN "Supplier"
+F 7 "2469586" H 12650 7325 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 12650 7300 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 12650 7275 20  0001 C CNN "Supplier Price"
+F 10 "10" H 12650 7250 20  0001 C CNN "Supplier Price Break"
+	6    12650 8500
+	1    0    0    -1  
+$EndComp
+$Comp
+L STM32F429VET6 U1
+U 1 1 594F34EA
+P 4500 1650
+F 0 "U1" H 4700 2737 60  0000 C CNN
+F 1 "STM32F429VET6" H 4700 2631 60  0000 C CNN
+F 2 "TQFP100" H 4500 625 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2283387.pdf" H 4500 600 20  0001 C CNN
+F 4 "ST MICROELECTRONICS" H 4500 550 20  0001 C CNN "manf"
+F 5 "STM32F429VET6" H 4500 525 20  0001 C CNN "manf#"
+F 6 "Element14" H 4500 500 20  0001 C CNN "Supplier"
+F 7 "2469586" H 4500 475 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/microcontrollers/7468226/" H 4500 450 20  0001 C CNN "Supplier URL"
+F 9 "14.22" H 4500 425 20  0001 C CNN "Supplier Price"
+F 10 "10" H 4500 400 20  0001 C CNN "Supplier Price Break"
+	1    4500 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 2050 1800 2050
+Wire Wire Line
+	1800 2050 1800 1750
+Wire Wire Line
+	1000 1550 1800 1550
+Wire Wire Line
+	1800 1550 1800 1650
+Wire Wire Line
+	1800 1650 1850 1650
+Wire Wire Line
+	1800 1750 1850 1750
+Wire Wire Line
+	700  1800 600  1800
+Wire Wire Line
+	600  1800 600  2000
+$Comp
+L GND #PWR07
+U 1 1 594F6A2C
+P 600 2000
+F 0 "#PWR07" H 600 1750 50  0001 C CNN
+F 1 "GND" H 605 1827 50  0000 C CNN
+F 2 "" H 600 2000 60  0000 C CNN
+F 3 "" H 600 2000 60  0000 C CNN
+	1    600  2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 1450 1250 1450
+Wire Wire Line
+	1250 1000 1250 1450
+Wire Wire Line
+	975  1000 1250 1000
+Wire Wire Line
+	7800 1450 7550 1450
+Wire Wire Line
+	7800 850  7800 1450
+Wire Wire Line
+	7800 950  7550 950 
+Wire Wire Line
+	7550 2050 7800 2050
+Wire Wire Line
+	7800 2050 7800 2450
+Wire Wire Line
+	7800 2350 7550 2350
+Wire Wire Line
+	7550 2250 7800 2250
+Connection ~ 7800 2250
+Wire Wire Line
+	7550 2150 7800 2150
+Connection ~ 7800 2150
+Wire Wire Line
+	7550 1350 7800 1350
+Connection ~ 7800 1350
+Wire Wire Line
+	7550 1250 7800 1250
+Connection ~ 7800 1250
+Wire Wire Line
+	7550 1150 7800 1150
+Connection ~ 7800 1150
+Wire Wire Line
+	7550 1050 7800 1050
+Connection ~ 7800 1050
+$Comp
+L +3.3V #PWR08
+U 1 1 594FE0A0
+P 1700 1150
+F 0 "#PWR08" H 1700 1110 30  0001 C CNN
+F 1 "+3.3V" H 1709 1288 30  0000 C CNN
+F 2 "" H 1700 1150 60  0000 C CNN
+F 3 "" H 1700 1150 60  0000 C CNN
+	1    1700 1150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1700 1150 1850 1150
+Wire Wire Line
+	1850 1350 1550 1350
+$Comp
+L 100NF_X7R_1005M C13
+U 1 1 594FEA0C
+P 12325 1650
+F 0 "C13" H 12402 1585 50  0000 L CNN
+F 1 "100NF_X7R_1005M" H 12402 1505 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 12440 1550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 12465 1550 20  0001 C CNN
+F 4 "TDK" V 12515 1550 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 12540 1550 20  0001 C CNN "manf#"
+F 6 "Element14" V 12565 1550 20  0001 C CNN "Supplier"
+F 7 "2210822" V 12590 1550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 12615 1550 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 12640 1550 20  0001 C CNN "Supplier Price"
+F 10 "100" V 12665 1550 20  0001 C CNN "Supplier Price Break"
+	1    12325 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1UF_X5R_1005M C3
+U 1 1 594FF1C2
+P 1550 2350
+F 0 "C3" H 1628 2285 50  0000 L CNN
+F 1 "1UF_X5R_1005M" H 1628 2205 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 1665 2250 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 1690 2250 20  0001 C CNN
+F 4 "TDK" V 1740 2250 20  0001 C CNN "manf"
+F 5 "C1005X5R1V105K050BC" V 1765 2250 20  0001 C CNN "manf#"
+F 6 "Element14" V 1790 2250 20  0001 C CNN "Supplier"
+F 7 "2346885" V 1815 2250 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1005x5r1v105k050bc/cap-mlcc-x5r-1uf-35v-0402/dp/2346885" V 1840 2250 20  0001 C CNN "Supplier URL"
+F 9 "0.101" V 1865 2250 20  0001 C CNN "Supplier Price"
+F 10 "100" V 1890 2250 20  0001 C CNN "Supplier Price Break"
+	1    1550 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1UF_X5R_1005M C1
+U 1 1 594FF27C
+P 950 2350
+F 0 "C1" H 1028 2285 50  0000 L CNN
+F 1 "1UF_X5R_1005M" H 1028 2205 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 1065 2250 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 1090 2250 20  0001 C CNN
+F 4 "TDK" V 1140 2250 20  0001 C CNN "manf"
+F 5 "C1005X5R1V105K050BC" V 1165 2250 20  0001 C CNN "manf#"
+F 6 "Element14" V 1190 2250 20  0001 C CNN "Supplier"
+F 7 "2346885" V 1215 2250 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1005x5r1v105k050bc/cap-mlcc-x5r-1uf-35v-0402/dp/2346885" V 1240 2250 20  0001 C CNN "Supplier URL"
+F 9 "0.101" V 1265 2250 20  0001 C CNN "Supplier Price"
+F 10 "100" V 1290 2250 20  0001 C CNN "Supplier Price Break"
+	1    950  2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	950  2350 950  2150
+Wire Wire Line
+	950  2150 1850 2150
+Wire Wire Line
+	1850 2250 1550 2250
+Wire Wire Line
+	1550 2250 1550 2350
+Wire Wire Line
+	1550 2550 1550 2650
+Wire Wire Line
+	950  2550 950  2650
+$Comp
+L GND #PWR09
+U 1 1 594FF524
+P 950 2650
+F 0 "#PWR09" H 950 2400 50  0001 C CNN
+F 1 "GND" H 955 2477 50  0000 C CNN
+F 2 "" H 950 2650 60  0000 C CNN
+F 3 "" H 950 2650 60  0000 C CNN
+	1    950  2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 594FF56E
+P 1550 2650
+F 0 "#PWR010" H 1550 2400 50  0001 C CNN
+F 1 "GND" H 1555 2477 50  0000 C CNN
+F 2 "" H 1550 2650 60  0000 C CNN
+F 3 "" H 1550 2650 60  0000 C CNN
+	1    1550 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1UF_X5R_1005M C4
+U 1 1 594FFF9E
+P 7800 1650
+F 0 "C4" H 7878 1585 50  0000 L CNN
+F 1 "1UF_X5R_1005M" H 7878 1505 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 7915 1550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 7940 1550 20  0001 C CNN
+F 4 "TDK" V 7990 1550 20  0001 C CNN "manf"
+F 5 "C1005X5R1V105K050BC" V 8015 1550 20  0001 C CNN "manf#"
+F 6 "Element14" V 8040 1550 20  0001 C CNN "Supplier"
+F 7 "2346885" V 8065 1550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1005x5r1v105k050bc/cap-mlcc-x5r-1uf-35v-0402/dp/2346885" V 8090 1550 20  0001 C CNN "Supplier URL"
+F 9 "0.101" V 8115 1550 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8140 1550 20  0001 C CNN "Supplier Price Break"
+	1    7800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 100NF_X7R_1005M C5
+U 1 1 59500284
+P 8400 1650
+F 0 "C5" H 8477 1585 50  0000 L CNN
+F 1 "100NF_X7R_1005M" H 8477 1505 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8515 1550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1936565.pdf" V 8540 1550 20  0001 C CNN
+F 4 "TDK" V 8590 1550 20  0001 C CNN "manf"
+F 5 "CGA2B3X7R1H104K050BB" V 8615 1550 20  0001 C CNN "manf#"
+F 6 "Element14" V 8640 1550 20  0001 C CNN "Supplier"
+F 7 "2210822" V 8665 1550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822" V 8690 1550 20  0001 C CNN "Supplier URL"
+F 9 "0.087" V 8715 1550 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8740 1550 20  0001 C CNN "Supplier Price Break"
+	1    8400 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1UF_X5R_1005M C12
+U 1 1 59500942
+P 11675 1650
+F 0 "C12" H 11753 1585 50  0000 L CNN
+F 1 "1UF_X5R_1005M" H 11753 1505 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 11790 1550 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 11815 1550 20  0001 C CNN
+F 4 "TDK" V 11865 1550 20  0001 C CNN "manf"
+F 5 "C1005X5R1V105K050BC" V 11890 1550 20  0001 C CNN "manf#"
+F 6 "Element14" V 11915 1550 20  0001 C CNN "Supplier"
+F 7 "2346885" V 11940 1550 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1005x5r1v105k050bc/cap-mlcc-x5r-1uf-35v-0402/dp/2346885" V 11965 1550 20  0001 C CNN "Supplier URL"
+F 9 "0.101" V 11990 1550 20  0001 C CNN "Supplier Price"
+F 10 "100" V 12015 1550 20  0001 C CNN "Supplier Price Break"
+	1    11675 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 950  1550 950 
+Text Label 1550 950  0    60   ~ 0
+VREF
+Text Label 12125 1550 0    60   ~ 0
+VREF
+$Comp
+L +3.3V #PWR011
+U 1 1 59501137
+P 8400 1450
+F 0 "#PWR011" H 8400 1410 30  0001 C CNN
+F 1 "+3.3V" H 8409 1588 30  0000 C CNN
+F 2 "" H 8400 1450 60  0000 C CNN
+F 3 "" H 8400 1450 60  0000 C CNN
+	1    8400 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 5950118F
+P 8400 2050
+F 0 "#PWR012" H 8400 1800 50  0001 C CNN
+F 1 "GND" H 8405 1877 50  0000 C CNN
+F 2 "" H 8400 2050 60  0000 C CNN
+F 3 "" H 8400 2050 60  0000 C CNN
+	1    8400 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR013
+U 1 1 595011D7
+P 7800 850
+F 0 "#PWR013" H 7800 810 30  0001 C CNN
+F 1 "+3.3V" H 7809 988 30  0000 C CNN
+F 2 "" H 7800 850 60  0000 C CNN
+F 3 "" H 7800 850 60  0000 C CNN
+	1    7800 850 
+	1    0    0    -1  
+$EndComp
+Connection ~ 7800 950 
+Connection ~ 7800 2350
+$Comp
+L GND #PWR014
+U 1 1 595014B5
+P 7800 2450
+F 0 "#PWR014" H 7800 2200 50  0001 C CNN
+F 1 "GND" H 7805 2277 50  0000 C CNN
+F 2 "" H 7800 2450 60  0000 C CNN
+F 3 "" H 7800 2450 60  0000 C CNN
+	1    7800 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 1650 7650 1650
+Wire Wire Line
+	7650 1650 7650 1550
+Wire Wire Line
+	7650 1550 8400 1550
+Wire Wire Line
+	8400 1450 8400 1650
+Wire Wire Line
+	7550 1850 7650 1850
+Wire Wire Line
+	7650 1850 7650 1950
+Wire Wire Line
+	7650 1950 8400 1950
+Wire Wire Line
+	8400 1850 8400 2050
+Connection ~ 8400 1550
+Connection ~ 8400 1950
+Wire Wire Line
+	7800 1650 7800 1550
+Connection ~ 7800 1550
+Wire Wire Line
+	7800 1850 7800 1950
+Connection ~ 7800 1950
+Text Notes 9525 950  0    60   ~ 12
+VDD Bypass Capacitors
+Text Notes 11675 975  0    60   ~ 12
+VREF Bypass Capacitors
+$Comp
+L +3.3V #PWR015
+U 1 1 5950200B
+P 11675 1450
+F 0 "#PWR015" H 11675 1410 30  0001 C CNN
+F 1 "+3.3V" H 11684 1588 30  0000 C CNN
+F 2 "" H 11675 1450 60  0000 C CNN
+F 3 "" H 11675 1450 60  0000 C CNN
+	1    11675 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11675 1450 11675 1650
+Wire Wire Line
+	11675 1850 11675 2050
+$Comp
+L GND #PWR016
+U 1 1 59502320
+P 11675 2050
+F 0 "#PWR016" H 11675 1800 50  0001 C CNN
+F 1 "GND" H 11680 1877 50  0000 C CNN
+F 2 "" H 11675 2050 60  0000 C CNN
+F 3 "" H 11675 2050 60  0000 C CNN
+	1    11675 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12325 1650 12325 1550
+Wire Wire Line
+	12325 1550 11675 1550
+Connection ~ 11675 1550
+Wire Wire Line
+	12325 1850 12325 1950
+Wire Wire Line
+	12325 1950 11675 1950
+Connection ~ 11675 1950
+Text Label 1550 1350 0    60   ~ 0
+BOOT0
+Text Label 13500 1700 0    60   ~ 0
+BOOT0
+Wire Wire Line
+	13500 1700 13950 1700
+Wire Wire Line
+	1900 5700 1550 5700
+Text Label 1550 5700 0    60   ~ 0
+BOOT1
+Text Label 13500 1900 0    60   ~ 0
+BOOT1
+Wire Wire Line
+	13500 1900 13950 1900
+$Comp
+L GND #PWR017
+U 1 1 5950530F
+P 13950 2050
+F 0 "#PWR017" H 13950 1800 50  0001 C CNN
+F 1 "GND" H 13955 1877 50  0000 C CNN
+F 2 "" H 13950 2050 60  0000 C CNN
+F 3 "" H 13950 2050 60  0000 C CNN
+	1    13950 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13950 1900 13950 2050
+Text Notes 13325 1425 0    60   ~ 0
+To update firmware, send request to micro.\nMicro will latch BOOT0 high, and then nvReset.\nWill boot into ST Bootloader and accept update \nover USART1. Once complete, power cycle the camera.
+$Comp
+L GND #PWR018
+U 1 1 59505CC0
+P 10750 2025
+F 0 "#PWR018" H 10750 1775 50  0001 C CNN
+F 1 "GND" H 10755 1852 50  0000 C CNN
+F 2 "" H 10750 2025 60  0000 C CNN
+F 3 "" H 10750 2025 60  0000 C CNN
+	1    10750 2025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9250 1250 10750 1250
+Wire Wire Line
+	9700 7000 10000 7000
+Wire Wire Line
+	9700 6700 9700 7000
+Wire Wire Line
+	9500 6700 10000 6700
+Wire Wire Line
+	10000 6800 9700 6800
+Connection ~ 9700 6800
+Wire Wire Line
+	10000 6900 9700 6900
+Connection ~ 9700 6900
+Connection ~ 9700 6700
+Wire Wire Line
+	9700 6600 10000 6600
+Wire Wire Line
+	9700 6300 9700 6600
+Wire Wire Line
+	9500 6300 10000 6300
+Wire Wire Line
+	10000 6400 9700 6400
+Connection ~ 9700 6400
+Wire Wire Line
+	10000 6500 9700 6500
+Connection ~ 9700 6500
+Connection ~ 9700 6300
+Text GLabel 3800 8650 2    60   Input ~ 0
+SWO
+Wire Wire Line
+	3800 8850 3600 8850
+Wire Wire Line
+	3600 8650 3800 8650
+Wire Wire Line
+	3800 8550 3600 8550
+Wire Wire Line
+	3600 8450 3800 8450
+Wire Wire Line
+	3000 8550 2850 8550
+Wire Wire Line
+	2850 8550 2850 8650
+Wire Wire Line
+	2850 8650 3000 8650
+Wire Wire Line
+	2850 8600 2750 8600
+Connection ~ 2850 8600
+Wire Wire Line
+	2750 8450 3000 8450
+Wire Wire Line
+	1500 4700 1900 4700
+Wire Wire Line
+	1900 4600 1500 4600
+Text GLabel 1500 5800 0    60   Output ~ 0
+SWO
+Wire Wire Line
+	1500 5800 1900 5800
+Wire Wire Line
+	1600 6600 1900 6600
+Wire Wire Line
+	1900 6500 1600 6500
+Text GLabel 1500 4200 0    60   Output ~ 0
+UART_TX
+Text GLabel 1500 4300 0    60   Output ~ 0
+UART_RX
+Wire Wire Line
+	1500 4300 1900 4300
+Wire Wire Line
+	1900 4200 1500 4200
+Wire Wire Line
+	1500 4400 1900 4400
+Wire Wire Line
+	1500 3900 1900 3900
+Wire Wire Line
+	1500 6400 1900 6400
+Wire Wire Line
+	1900 6300 1500 6300
+Wire Wire Line
+	1500 6200 1900 6200
+Wire Wire Line
+	1900 6100 1500 6100
+Wire Wire Line
+	9500 7800 10000 7800
+Wire Wire Line
+	10000 7900 9500 7900
+Wire Wire Line
+	9500 8200 10000 8200
+Wire Wire Line
+	9500 4000 10000 4000
+Wire Wire Line
+	10000 3900 9500 3900
+Wire Wire Line
+	9500 8100 10000 8100
+Wire Wire Line
+	10000 8000 9500 8000
+Wire Wire Line
+	9500 4100 10000 4100
+Wire Wire Line
+	10000 4200 9500 4200
+Wire Wire Line
+	9500 4300 10000 4300
+Wire Wire Line
+	10000 4400 9500 4400
+Wire Wire Line
+	9500 4500 10000 4500
+Wire Wire Line
+	9500 5500 10000 5500
+Wire Wire Line
+	9500 5700 10000 5700
+Text Notes 7600 7150 0    60   ~ 0
+Manual pg136 discusses pin current.\nWe can get +-8mA per pin at VDD level.\nCan get +-20mA with relaxed output voltage (VDD-1.3).
+Text Notes 7600 6650 0    60   ~ 0
+Use parallel IO to make\nH-Bridge for IR-Filter.\nUse direct port operations to ensure\nsafe switching.
+Wire Wire Line
+	1500 5900 1900 5900
+Wire Wire Line
+	1900 6000 1500 6000
+Wire Wire Line
+	9500 6200 10000 6200
+Wire Wire Line
+	9500 3300 10000 3300
+Wire Wire Line
+	1500 4100 1900 4100
+$Comp
+L LED_RED_1608M D2
+U 1 1 594E9581
+P 5650 9100
+F 0 "D2" V 5696 8992 50  0000 R CNN
+F 1 "LED_RED_1608M" V 5605 8992 50  0000 R CNN
+F 2 "Applidyne_LED:LEDC1608X80L40N" H 5650 9300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 5650 8890 50  0001 C CNN
+F 4 "DIALIGHT" H 5650 8680 60  0001 C CNN "manf"
+F 5 "5988010107F" H 5650 8590 60  0001 C CNN "manf#"
+F 6 "Element 14" H 5650 8490 60  0001 C CNN "Supplier"
+F 7 "1465988" H 5650 8390 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/dialight/5988010107f/led-0603-red-40mcd-635nm/dp/1465988" H 5660 8310 60  0001 C CNN "Supplier URL"
+F 9 "0.18" H 5650 8210 60  0001 C CNN "Supplier Price"
+F 10 "10" H 5650 8110 60  0001 C CNN "Supplier Price Break"
+	1    5650 9100
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
