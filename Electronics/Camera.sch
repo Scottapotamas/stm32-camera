@@ -464,8 +464,6 @@ F 10 "100" V 10565 1250 20  0001 C CNN "Supplier Price Break"
 	1    10225 1350
 	1    0    0    -1  
 $EndComp
-Text Notes 8100 1500 0    60   ~ 0
-4.7uF 0603
 Text Notes 7825 2125 0    60   ~ 0
 AGND and DGND should be connected outside sensor area grounding
 Text Notes 7700 750  0    60   ~ 0
@@ -631,6 +629,24 @@ F 1 "+3.3V" H 7034 3238 30  0000 C CNN
 F 2 "" H 7025 3100 60  0000 C CNN
 F 3 "" H 7025 3100 60  0000 C CNN
 	1    7025 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4.7UF_X5R_1608M C?
+U 1 1 594D1663
+P 8350 1350
+F 0 "C?" H 8428 1285 50  0000 L CNN
+F 1 "4.7UF_X5R_1608M" H 8428 1205 35  0000 L CNN
+F 2 "CAPC1608*" V 8465 1250 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 8490 1250 20  0001 C CNN
+F 4 "TDK" V 8540 1250 20  0001 C CNN "manf"
+F 5 "C1608X5R1C475K080AC" V 8565 1250 20  0001 C CNN "manf#"
+F 6 "Element14" V 8590 1250 20  0001 C CNN "Supplier"
+F 7 "2211173" V 8615 1250 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1608x5r1c475k080ac/cap-mlcc-x5r-4-7uf-16v-0603/dp/2211173" V 8640 1250 20  0001 C CNN "Supplier URL"
+F 9 "0.179" V 8665 1250 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8690 1250 20  0001 C CNN "Supplier Price Break"
+	1    8350 1350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

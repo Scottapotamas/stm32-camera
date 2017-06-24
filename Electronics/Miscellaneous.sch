@@ -323,8 +323,8 @@ F 3 "" H 3025 3675 60  0000 C CNN
 $EndComp
 Text Notes 1650 1150 0    118  ~ 24
 IR Cut Filter Driver
-Text Notes 1300 1475 0    60   ~ 0
-Hardware switching IR-Cut is like a latching solenoid.\nUse a H-Bridge style driver to control.
+Text Notes 1300 1600 0    60   ~ 0
+Hardware switching IR-Cut is bistable solenoid.\nUse a H-Bridge style drive for control. Approx 100mA rating.\nSee the electronics readme for test info.\n
 Text Notes 5950 1150 0    118  ~ 24
 IR Flash Driver
 Text Notes 5725 1400 0    60   ~ 0
@@ -349,9 +349,9 @@ F 10 "100" V 7540 5300 20  0001 C CNN "Supplier Price Break"
 $EndComp
 Text GLabel 5825 1975 0    60   Input ~ 0
 FLASH_DAC
-Text GLabel 1475 2050 0    60   Input ~ 0
+Text GLabel 2150 1900 0    60   Input ~ 0
 IRCUT_A
-Text GLabel 1475 2325 0    60   Input ~ 0
+Text GLabel 2150 2200 0    60   Input ~ 0
 IRCUT_B
 Text Notes 8675 1150 0    118  ~ 24
 Ambient Light Sensor
@@ -363,8 +363,6 @@ Text Notes 8625 2225 0    60   ~ 0
 Light sensor should have an IR cut filter.
 Text Notes 6050 2050 0    60   ~ 0
 Constant current drive?
-Text Notes 2075 2175 0    60   ~ 0
-Approx 100mA rating.
 $Comp
 L 47K_QUAD_ARRAY_1608M R?
 U 1 1 594A8889
@@ -437,4 +435,34 @@ F 10 "1" V 4500 3740 20  0001 C CNN "Supplier Price Break"
 	4    4075 3875
 	1    0    0    -1  
 $EndComp
+$Comp
+L MOLEX_PICO_PTH_VERT_2_WAY P?
+U 1 1 594D4823
+P 2675 2050
+F 0 "P?" H 2752 2080 50  0000 L CNN
+F 1 "MOLEX_PICO_PTH_VERT_2_WAY" H 2752 2000 35  0000 L CNN
+F 2 "Applidyne_Connector_Molex:MOLEX_PICOBLADE_53047-0210" V 2790 2050 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1861728.pdf" V 2815 2050 20  0001 C CNN
+F 4 "MOLEX" V 2865 2050 20  0001 C CNN "manf"
+F 5 "53047-0210" V 2890 2050 20  0001 C CNN "manf#"
+F 6 "Element14" V 2915 2050 20  0001 C CNN "Supplier"
+F 7 "9733051" V 2940 2050 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/molex/53047-0210/header-tht-vertical-1-25mm-2way/dp/9733051" V 2965 2050 20  0001 C CNN "Supplier URL"
+F 9 "0.414" V 2990 2050 20  0001 C CNN "Supplier Price"
+F 10 "5" V 3015 2050 20  0001 C CNN "Supplier Price Break"
+	1    2675 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2475 2000 2350 2000
+Wire Wire Line
+	2350 2000 2350 1900
+Wire Wire Line
+	2350 1900 2150 1900
+Wire Wire Line
+	2475 2100 2350 2100
+Wire Wire Line
+	2350 2100 2350 2200
+Wire Wire Line
+	2350 2200 2150 2200
 $EndSCHEMATC

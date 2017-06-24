@@ -1163,4 +1163,6 @@ Text GLabel 6225 10650 0    60   Output ~ 0
 FLASH_DAC
 Text GLabel 6250 10925 0    60   Input ~ 0
 AMBIENT_LIGHT
+Text GLabel 4575 10100 2    60   Input ~ 0
+PWR_EN
 $EndSCHEMATC
