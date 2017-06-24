@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>F:\Projects\stm32-camera\Electronics\stm32-camera.sch</source>
-    <date>24/06/2017 10:11:23 PM</date>
+    <date>25/06/2017 1:23:17 AM</date>
     <tool>Eeschema (2017-03-19 revision 2637835a1)-makepkg</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -226,6 +226,7 @@
     </comp>
     <comp ref="D1">
       <value>LED_GREEN_1608M</value>
+      <footprint>Applidyne_LED:LEDC1608X80L40N</footprint>
       <datasheet>http://www.farnell.com/datasheets/1720200.pdf</datasheet>
       <fields>
         <field name="manf">DIALIGHT</field>
@@ -276,7 +277,7 @@
     </comp>
     <comp ref="U1">
       <value>STM32F429VET6</value>
-      <footprint>TQFP100</footprint>
+      <footprint>Applidyne_QFP:QFP50P1600X1600X160-100L25N</footprint>
       <datasheet>http://www.farnell.com/datasheets/2283387.pdf</datasheet>
       <fields>
         <field name="manf">ST MICROELECTRONICS</field>
@@ -412,7 +413,7 @@
     </comp>
     <comp ref="U2">
       <value>AP2210K-ADJ</value>
-      <footprint>SOT95P280X145-5L30N</footprint>
+      <footprint>Applidyne_SOT:SOT95P280X145-5L30N</footprint>
       <datasheet>http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf</datasheet>
       <fields>
         <field name="manf">DIODES ZETEX</field>
@@ -429,7 +430,7 @@
     </comp>
     <comp ref="U3">
       <value>AP2210K-ADJ</value>
-      <footprint>SOT95P280X145-5L30N</footprint>
+      <footprint>Applidyne_SOT:SOT95P280X145-5L30N</footprint>
       <datasheet>http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf</datasheet>
       <fields>
         <field name="manf">DIODES ZETEX</field>
@@ -446,7 +447,7 @@
     </comp>
     <comp ref="U4">
       <value>AP2210K-ADJ</value>
-      <footprint>SOT95P280X145-5L30N</footprint>
+      <footprint>Applidyne_SOT:SOT95P280X145-5L30N</footprint>
       <datasheet>http://docs-asia.electrocomponents.com/webdocs/1332/0900766b8133217a.pdf</datasheet>
       <fields>
         <field name="manf">DIODES ZETEX</field>
@@ -480,7 +481,7 @@
     </comp>
     <comp ref="C19">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -497,7 +498,7 @@
     </comp>
     <comp ref="C18">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -514,7 +515,7 @@
     </comp>
     <comp ref="C17">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -531,7 +532,7 @@
     </comp>
     <comp ref="C15">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -548,7 +549,7 @@
     </comp>
     <comp ref="C16">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -565,7 +566,7 @@
     </comp>
     <comp ref="C14">
       <value>2.2UF_X7R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2079169.pdf?_ga=1.116328000.774814437.1442284889</datasheet>
       <fields>
         <field name="manf">MURATA</field>
@@ -665,6 +666,23 @@
       <sheetpath names="/Regulation/" tstamps="/58721310/"/>
       <tstamp>59498FB3</tstamp>
     </comp>
+    <comp ref="P1">
+      <value>HEADER_MALE_2MM_01X06</value>
+      <footprint>Applidyne_Connector:HDRV6W50P200_6X1_1200X200H400</footprint>
+      <datasheet>http://www.farnell.com/datasheets/1693770.pdf</datasheet>
+      <fields>
+        <field name="manf">HARWIN</field>
+        <field name="manf#">M22-2510605</field>
+        <field name="Supplier">Element14</field>
+        <field name="Supplier Part No">2289779</field>
+        <field name="Supplier URL">http://au.element14.com/harwin/m22-2510605/header-board-board-6way/dp/2289779</field>
+        <field name="Supplier Price">0.7</field>
+        <field name="Supplier Price Break">1</field>
+      </fields>
+      <libsource lib="appli_connector" part="HEADER_MALE_2MM_01X06"/>
+      <sheetpath names="/Regulation/" tstamps="/58721310/"/>
+      <tstamp>594EB88C</tstamp>
+    </comp>
     <comp ref="FID2">
       <value>FIDUCIAL</value>
       <footprint>Applidyne_Fiducial:FID100X300</footprint>
@@ -720,7 +738,7 @@
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>594A8889</tstamp>
     </comp>
-    <comp ref="P1">
+    <comp ref="P2">
       <value>MOLEX_PICO_PTH_VERT_2_WAY</value>
       <footprint>Applidyne_Connector_Molex:MOLEX_PICOBLADE_53047-0210</footprint>
       <datasheet>http://www.farnell.com/datasheets/1861728.pdf</datasheet>
@@ -739,28 +757,28 @@
     </comp>
     <comp ref="MNT1">
       <value>MNT_M3_PLATED</value>
-      <footprint>MTGP650H330</footprint>
+      <footprint>Applidyne_Mount:MTGP650H330</footprint>
       <libsource lib="appli_mount" part="MNT_M3_PLATED"/>
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>59512A53</tstamp>
     </comp>
     <comp ref="MNT3">
       <value>MNT_M3_PLATED</value>
-      <footprint>MTGP650H330</footprint>
+      <footprint>Applidyne_Mount:MTGP650H330</footprint>
       <libsource lib="appli_mount" part="MNT_M3_PLATED"/>
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>59512AC9</tstamp>
     </comp>
     <comp ref="MNT4">
       <value>MNT_M3_PLATED</value>
-      <footprint>MTGP650H330</footprint>
+      <footprint>Applidyne_Mount:MTGP650H330</footprint>
       <libsource lib="appli_mount" part="MNT_M3_PLATED"/>
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>59512BAB</tstamp>
     </comp>
     <comp ref="MNT2">
       <value>MNT_M3_PLATED</value>
-      <footprint>MTGP650H330</footprint>
+      <footprint>Applidyne_Mount:MTGP650H330</footprint>
       <libsource lib="appli_mount" part="MNT_M3_PLATED"/>
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>59512C63</tstamp>
@@ -781,6 +799,41 @@
       <libsource lib="appli_connector_molex" part="MOLEX_47309-2651"/>
       <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
       <tstamp>594E6989</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>VEMT3700</value>
+      <footprint>Applidyne_Device:VISHAY_VEMT3700N</footprint>
+      <datasheet>http://www.vishay.com/docs/81478/vemt3700.pdf</datasheet>
+      <fields>
+        <field name="manf">VISHAY</field>
+        <field name="desc">Vishay Phototransistor, NPN, 120degrees, 2-Pin PLCC package</field>
+        <field name="manf#">VEMT3700-GS08</field>
+        <field name="Supplier">RS Online</field>
+        <field name="Supplier Part No">710-3948</field>
+        <field name="Supplier URL">http://au.rs-online.com/web/p/phototransistors/7103948</field>
+        <field name="Supplier Price">0.347</field>
+        <field name="Supplier Price Break">10</field>
+      </fields>
+      <libsource lib="appli_transistor" part="VEMT3700"/>
+      <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
+      <tstamp>594F0B89</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>10K_1005M</value>
+      <footprint>Applidyne_Resistor:RESC1005X40N</footprint>
+      <datasheet>http://www.farnell.com/datasheets/2111203.pdf</datasheet>
+      <fields>
+        <field name="manf">VISHAY</field>
+        <field name="manf#">CRCW040210K0FKED</field>
+        <field name="Supplier">Element14</field>
+        <field name="Supplier Part No">1469669</field>
+        <field name="Supplier URL">http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669</field>
+        <field name="Supplier Price">0.009</field>
+        <field name="Supplier Price Break">10</field>
+      </fields>
+      <libsource lib="appli_resistor" part="10K_1005M"/>
+      <sheetpath names="/Interface Electronics, Mechanicals/" tstamps="/587213A7/"/>
+      <tstamp>594F0F97</tstamp>
     </comp>
     <comp ref="U5">
       <value>OV02640-VL9A</value>
@@ -816,7 +869,7 @@
       <sheetpath names="/Camera Sensor and Mount/" tstamps="/58B99D94/"/>
       <tstamp>594832D1</tstamp>
     </comp>
-    <comp ref="R11">
+    <comp ref="R12">
       <value>4K7_1005M</value>
       <footprint>Applidyne_Resistor:RESC1005X40N</footprint>
       <datasheet>http://www.farnell.com/datasheets/2049157.pdf</datasheet>
@@ -833,7 +886,7 @@
       <sheetpath names="/Camera Sensor and Mount/" tstamps="/58B99D94/"/>
       <tstamp>5948382E</tstamp>
     </comp>
-    <comp ref="R10">
+    <comp ref="R11">
       <value>4K7_1005M</value>
       <footprint>Applidyne_Resistor:RESC1005X40N</footprint>
       <datasheet>http://www.farnell.com/datasheets/2049157.pdf</datasheet>
@@ -937,7 +990,7 @@
     </comp>
     <comp ref="C23">
       <value>4.7UF_X5R_1608M</value>
-      <footprint>CAPC1608*</footprint>
+      <footprint>Applidyne_Capacitor:CAPC1608X90L</footprint>
       <datasheet>http://www.farnell.com/datasheets/2291921.pdf</datasheet>
       <fields>
         <field name="manf">TDK</field>
@@ -951,6 +1004,22 @@
       <libsource lib="appli_capacitor" part="4.7UF_X5R_1608M"/>
       <sheetpath names="/Camera Sensor and Mount/" tstamps="/58B99D94/"/>
       <tstamp>594D1663</tstamp>
+    </comp>
+    <comp ref="MP1">
+      <value>M12_LENS_MOUNT_IR_SWITCHNG</value>
+      <footprint>Applidyne_Special:M12x0.5_LENS_MOUNT_IR_SWITCHNG</footprint>
+      <fields>
+        <field name="manf">NOVOXY</field>
+        <field name="manf#">UNKNOWN</field>
+        <field name="Supplier">Aliexpress</field>
+        <field name="Supplier Part No">IR CUT</field>
+        <field name="Supplier URL">https://www.aliexpress.com/item/Full-Metal-High-Quality-CCTV-Camera-IP-camera-Module-Accessories-M12-0-5-MTV-Mount-Lense/32709601083.html</field>
+        <field name="Supplier Price">3.07</field>
+        <field name="Supplier Price Break">2</field>
+      </fields>
+      <libsource lib="appli_special" part="M12_LENS_MOUNT_IR_SWITCHNG"/>
+      <sheetpath names="/Camera Sensor and Mount/" tstamps="/58B99D94/"/>
+      <tstamp>594F9921</tstamp>
     </comp>
   </components>
   <libparts>
@@ -996,6 +1065,30 @@
         <field name="Supplier URL">http://au.element14.com/tdk/cga2b3x7r1h104k050bb/cap-mlcc-x7r-100nf-50v-0402/dp/2210822</field>
         <field name="Supplier Price">0.087</field>
         <field name="Supplier Price Break">100</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="appli_resistor" part="10K_1005M">
+      <description>RESISTOR, THICK FILM, 10K, 63mW, 1%, 0402, 1005M</description>
+      <docs>http://www.farnell.com/datasheets/2111203.pdf</docs>
+      <footprints>
+        <fp>RESC1005*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10K_1005M</field>
+        <field name="Footprint">Applidyne_Resistor:RESC1005X40N</field>
+        <field name="Datasheet">http://www.farnell.com/datasheets/2111203.pdf</field>
+        <field name="manf">VISHAY</field>
+        <field name="manf#">CRCW040210K0FKED</field>
+        <field name="Supplier">Element14</field>
+        <field name="Supplier Part No">1469669</field>
+        <field name="Supplier URL">http://au.element14.com/vishay/crcw040210k0fked/res-thick-film-10k-1-0-063w-0402/dp/1469669</field>
+        <field name="Supplier Price">0.009</field>
+        <field name="Supplier Price Break">10</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -1331,6 +1424,33 @@
         <field name="Footprint">FID*</field>
       </fields>
     </libpart>
+    <libpart lib="appli_connector" part="HEADER_MALE_2MM_01X06">
+      <description>Board-To-Board Connector, 2 mm, 6 Contacts, Header, Male, M22 Series, Through Hole, 1 Rows</description>
+      <docs>http://www.farnell.com/datasheets/1693770.pdf</docs>
+      <footprints>
+        <fp>HDRV6W50P200_6X1_1200X200H400</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">HEADER_MALE_2MM_01X06</field>
+        <field name="Datasheet">http://www.farnell.com/datasheets/1693770.pdf</field>
+        <field name="manf">HARWIN</field>
+        <field name="manf#">M22-2510605</field>
+        <field name="Supplier">Element14</field>
+        <field name="Supplier Part No">2289779</field>
+        <field name="Supplier URL">http://au.element14.com/harwin/m22-2510605/header-board-board-6way/dp/2289779</field>
+        <field name="Supplier Price">0.7</field>
+        <field name="Supplier Price Break">1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="appli_device" part="LED_GREEN_1608M">
       <description>DIALIGHT ChipLED Green, 0603, 1608M</description>
       <docs>http://www.farnell.com/datasheets/1720200.pdf</docs>
@@ -1377,6 +1497,24 @@
         <pin num="A" name="A" type="passive"/>
         <pin num="C" name="C" type="passive"/>
       </pins>
+    </libpart>
+    <libpart lib="appli_special" part="M12_LENS_MOUNT_IR_SWITCHNG">
+      <description>M12x0.5 Lens Mount, Metal Body, M2-20mm holes, IR and Daylight Filter, Switchable</description>
+      <footprints>
+        <fp>M12x0.5_LENS_MOUNT_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">MP</field>
+        <field name="Value">M12_LENS_MOUNT_IR_SWITCHNG</field>
+        <field name="Footprint">Applidyne_Special:M12x0.5_LENS_MOUNT_IR_SWITCHNG</field>
+        <field name="manf">NOVOXY</field>
+        <field name="manf#">UNKNOWN</field>
+        <field name="Supplier">Aliexpress</field>
+        <field name="Supplier Part No">IR CUT</field>
+        <field name="Supplier URL">https://www.aliexpress.com/item/Full-Metal-High-Quality-CCTV-Camera-IP-camera-Module-Accessories-M12-0-5-MTV-Mount-Lense/32709601083.html</field>
+        <field name="Supplier Price">3.07</field>
+        <field name="Supplier Price Break">2</field>
+      </fields>
     </libpart>
     <libpart lib="appli_mount" part="MNT_M3_PLATED">
       <description>Mounting Hole, Plated, M3</description>
@@ -1663,6 +1801,31 @@
         <pin num="10" name="~RESET" type="output"/>
       </pins>
     </libpart>
+    <libpart lib="appli_transistor" part="VEMT3700">
+      <description>PHOTO TRANSISTOR, Vishay, NPN, 120degrees, 2-Pin PLCC package</description>
+      <docs>http://www.vishay.com/docs/81478/vemt3700.pdf</docs>
+      <footprints>
+        <fp>VISHAY_VEMT3700*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">VEMT3700</field>
+        <field name="Footprint">VISHAY_VEMT3700*</field>
+        <field name="Datasheet">http://www.vishay.com/docs/81478/vemt3700.pdf</field>
+        <field name="manf">VISHAY</field>
+        <field name="desc">Vishay Phototransistor, NPN, 120degrees, 2-Pin PLCC package</field>
+        <field name="manf#">VEMT3700-GS08</field>
+        <field name="Supplier">RS Online</field>
+        <field name="Supplier Part No">710-3948</field>
+        <field name="Supplier URL">http://au.rs-online.com/web/p/phototransistors/7103948</field>
+        <field name="Supplier Price">0.347</field>
+        <field name="Supplier Price Break">10</field>
+      </fields>
+      <pins>
+        <pin num="C" name="C" type="passive"/>
+        <pin num="E" name="E" type="passive"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
     <library logical="appli_crystal">
@@ -1673,6 +1836,9 @@
     </library>
     <library logical="appli_mount">
       <uri>F:\Projects\ECAD\KiCad\library\appli_mount.lib</uri>
+    </library>
+    <library logical="appli_transistor">
+      <uri>F:\Projects\ECAD\KiCad\library\appli_transistor.lib</uri>
     </library>
     <library logical="appli_capacitor">
       <uri>F:\Projects\ECAD\KiCad\library\appli_capacitor.lib</uri>
@@ -1700,317 +1866,325 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="GND">
-      <node ref="U2" pin="2"/>
-      <node ref="C17" pin="2"/>
-      <node ref="C18" pin="2"/>
-      <node ref="C19" pin="2"/>
-      <node ref="R8" pin="2"/>
-      <node ref="R4" pin="2"/>
-      <node ref="R6" pin="2"/>
-      <node ref="C15" pin="2"/>
-      <node ref="C14" pin="2"/>
-      <node ref="C16" pin="2"/>
-      <node ref="U4" pin="2"/>
-      <node ref="MNT4" pin="1"/>
-      <node ref="MNT3" pin="1"/>
-      <node ref="MNT1" pin="1"/>
-      <node ref="U3" pin="2"/>
-      <node ref="C2" pin="2"/>
-      <node ref="X1" pin="2"/>
-      <node ref="C9" pin="2"/>
-      <node ref="C10" pin="2"/>
-      <node ref="C11" pin="2"/>
-      <node ref="X2" pin="3"/>
-      <node ref="X2" pin="5"/>
-      <node ref="C6" pin="2"/>
-      <node ref="C7" pin="2"/>
-      <node ref="C8" pin="2"/>
-      <node ref="D1" pin="C"/>
-      <node ref="U1" pin="37"/>
-      <node ref="C20" pin="2"/>
-      <node ref="C26" pin="2"/>
-      <node ref="C23" pin="2"/>
-      <node ref="U5" pin="A4"/>
-      <node ref="C22" pin="2"/>
-      <node ref="U5" pin="E4"/>
-      <node ref="U5" pin="A3"/>
-      <node ref="U5" pin="A1"/>
-      <node ref="U5" pin="G2"/>
-      <node ref="C21" pin="2"/>
-      <node ref="MNT2" pin="1"/>
-      <node ref="CON1" pin="6"/>
-      <node ref="CON1" pin="G1"/>
-      <node ref="CON1" pin="G2"/>
-      <node ref="CON1" pin="G4"/>
-      <node ref="C25" pin="2"/>
-      <node ref="C27" pin="2"/>
-      <node ref="C24" pin="2"/>
-      <node ref="C4" pin="2"/>
-      <node ref="U1" pin="74"/>
-      <node ref="U1" pin="27"/>
-      <node ref="U1" pin="20"/>
-      <node ref="U1" pin="10"/>
-      <node ref="C13" pin="2"/>
-      <node ref="U1" pin="99"/>
-      <node ref="C5" pin="2"/>
-      <node ref="D2" pin="C"/>
-      <node ref="C1" pin="2"/>
-      <node ref="C3" pin="2"/>
-      <node ref="C12" pin="2"/>
-    </net>
-    <net code="2" name="Net-(C3-Pad1)">
-      <node ref="C3" pin="1"/>
+    <net code="1" name="Net-(C3-Pad1)">
       <node ref="U1" pin="73"/>
+      <node ref="C3" pin="1"/>
     </net>
-    <net code="3" name="Net-(C1-Pad1)">
-      <node ref="U1" pin="49"/>
+    <net code="2" name="Net-(C1-Pad1)">
       <node ref="C1" pin="1"/>
+      <node ref="U1" pin="49"/>
     </net>
-    <net code="4" name="+3.3V">
-      <node ref="U1" pin="6"/>
-      <node ref="U1" pin="50"/>
-      <node ref="U1" pin="11"/>
-      <node ref="U1" pin="21"/>
-      <node ref="U1" pin="100"/>
-      <node ref="U1" pin="22"/>
-      <node ref="R9" pin="1"/>
-      <node ref="R3" pin="1"/>
-      <node ref="C17" pin="1"/>
-      <node ref="U2" pin="5"/>
-      <node ref="R9" pin="3"/>
-      <node ref="R9" pin="4"/>
-      <node ref="R9" pin="2"/>
-      <node ref="C20" pin="1"/>
-      <node ref="CON1" pin="4"/>
-      <node ref="R11" pin="1"/>
-      <node ref="R10" pin="1"/>
-      <node ref="C13" pin="1"/>
-      <node ref="U5" pin="B1"/>
-      <node ref="U5" pin="F1"/>
+    <net code="3" name="+3.3V">
       <node ref="U5" pin="G1"/>
-      <node ref="C27" pin="1"/>
-      <node ref="U1" pin="75"/>
-      <node ref="U1" pin="28"/>
-      <node ref="C25" pin="1"/>
-      <node ref="U1" pin="19"/>
-      <node ref="C4" pin="1"/>
-      <node ref="C5" pin="1"/>
-      <node ref="C12" pin="1"/>
-      <node ref="C10" pin="1"/>
-      <node ref="C11" pin="1"/>
-      <node ref="C9" pin="1"/>
-      <node ref="C6" pin="1"/>
-      <node ref="C7" pin="1"/>
-      <node ref="C8" pin="1"/>
+      <node ref="U5" pin="F1"/>
+      <node ref="U5" pin="B1"/>
+      <node ref="R11" pin="1"/>
+      <node ref="R9" pin="2"/>
+      <node ref="R9" pin="3"/>
+      <node ref="R3" pin="1"/>
+      <node ref="C20" pin="1"/>
+      <node ref="R9" pin="1"/>
       <node ref="X2" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C11" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="Q1" pin="C"/>
+      <node ref="C17" pin="1"/>
+      <node ref="R9" pin="4"/>
+      <node ref="R12" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="U2" pin="5"/>
+      <node ref="U1" pin="28"/>
+      <node ref="C12" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="U1" pin="22"/>
+      <node ref="U1" pin="100"/>
+      <node ref="U1" pin="19"/>
+      <node ref="U1" pin="75"/>
+      <node ref="C25" pin="1"/>
+      <node ref="U1" pin="21"/>
+      <node ref="U1" pin="11"/>
+      <node ref="U1" pin="50"/>
+      <node ref="U1" pin="6"/>
+      <node ref="CON1" pin="4"/>
+      <node ref="C27" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C13" pin="1"/>
+    </net>
+    <net code="4" name="Net-(U1-Pad13)">
+      <node ref="X1" pin="3"/>
+      <node ref="U1" pin="13"/>
     </net>
     <net code="5" name="Net-(U1-Pad12)">
       <node ref="U1" pin="12"/>
       <node ref="X1" pin="1"/>
     </net>
-    <net code="6" name="Net-(U1-Pad13)">
-      <node ref="U1" pin="13"/>
-      <node ref="X1" pin="3"/>
-    </net>
-    <net code="7" name="Net-(U1-Pad39)">
+    <net code="6" name="Net-(U1-Pad39)">
       <node ref="U1" pin="39"/>
     </net>
-    <net code="8" name="D3">
-      <node ref="U5" pin="G4"/>
+    <net code="7" name="D3">
       <node ref="U1" pin="98"/>
+      <node ref="U5" pin="G4"/>
     </net>
-    <net code="9" name="Net-(U1-Pad38)">
+    <net code="8" name="Net-(U1-Pad38)">
       <node ref="U1" pin="38"/>
     </net>
-    <net code="10" name="D2">
-      <node ref="U1" pin="97"/>
+    <net code="9" name="D2">
       <node ref="U5" pin="F4"/>
+      <node ref="U1" pin="97"/>
     </net>
-    <net code="11" name="Net-(U1-Pad46)">
-      <node ref="U1" pin="46"/>
-    </net>
-    <net code="12" name="D7">
-      <node ref="U5" pin="G6"/>
-      <node ref="U1" pin="96"/>
-    </net>
-    <net code="13" name="PIXCK">
-      <node ref="U5" pin="E3"/>
-      <node ref="U1" pin="31"/>
-    </net>
-    <net code="14" name="PWR_EN">
-      <node ref="U1" pin="70"/>
-      <node ref="U3" pin="3"/>
-      <node ref="U4" pin="3"/>
-    </net>
-    <net code="15" name="UART_TX">
-      <node ref="U1" pin="68"/>
-    </net>
-    <net code="16" name="UART_RX">
-      <node ref="U1" pin="69"/>
-    </net>
-    <net code="17" name="SIO_C">
-      <node ref="R10" pin="2"/>
-      <node ref="U5" pin="C2"/>
-      <node ref="U1" pin="47"/>
-    </net>
-    <net code="18" name="SIO_D">
-      <node ref="U1" pin="48"/>
-      <node ref="R11" pin="2"/>
-      <node ref="U5" pin="C1"/>
-    </net>
-    <net code="19" name="SWO">
-      <node ref="U1" pin="89"/>
+    <net code="10" name="SWO">
       <node ref="X2" pin="6"/>
+      <node ref="U1" pin="89"/>
     </net>
-    <net code="20" name="D6">
-      <node ref="U1" pin="95"/>
-      <node ref="U5" pin="F5"/>
-    </net>
-    <net code="21" name="SWDIO">
-      <node ref="X2" pin="2"/>
-      <node ref="U1" pin="72"/>
-    </net>
-    <net code="22" name="SWDCLK">
-      <node ref="X2" pin="4"/>
-      <node ref="U1" pin="76"/>
-    </net>
-    <net code="23" name="MICROSD_D2">
-      <node ref="U1" pin="78"/>
-      <node ref="CON1" pin="1"/>
-      <node ref="R9" pin="5"/>
-    </net>
-    <net code="24" name="XCLK">
-      <node ref="U1" pin="67"/>
-      <node ref="U5" pin="C4"/>
-    </net>
-    <net code="25" name="AMBIENT_LIGHT">
-      <node ref="U1" pin="15"/>
-    </net>
-    <net code="26" name="STROBE">
-      <node ref="U1" pin="88"/>
-      <node ref="U5" pin="A6"/>
-    </net>
-    <net code="27" name="EXPSTB">
-      <node ref="U1" pin="91"/>
-      <node ref="U5" pin="A2"/>
-    </net>
-    <net code="28" name="FREX">
-      <node ref="U5" pin="B2"/>
-      <node ref="U1" pin="90"/>
-    </net>
-    <net code="29" name="MICROSD_CMD">
-      <node ref="U1" pin="83"/>
-      <node ref="CON1" pin="3"/>
-    </net>
-    <net code="30" name="MICROSD_DETECT">
-      <node ref="CON1" pin="G3"/>
-      <node ref="U1" pin="81"/>
-    </net>
-    <net code="31" name="MICROSD_CK">
-      <node ref="CON1" pin="5"/>
-      <node ref="U1" pin="80"/>
-    </net>
-    <net code="32" name="MICROSD_D3">
-      <node ref="CON1" pin="2"/>
-      <node ref="U1" pin="79"/>
-      <node ref="R9" pin="6"/>
-    </net>
-    <net code="33" name="MICROSD_D1">
-      <node ref="CON1" pin="8"/>
-      <node ref="U1" pin="66"/>
-      <node ref="R9" pin="8"/>
-    </net>
-    <net code="34" name="MICROSD_D0">
-      <node ref="R9" pin="7"/>
-      <node ref="CON1" pin="7"/>
-      <node ref="U1" pin="65"/>
-    </net>
-    <net code="35" name="RESET">
-      <node ref="U1" pin="1"/>
-      <node ref="U5" pin="C6"/>
-    </net>
-    <net code="36" name="PWDN">
-      <node ref="U5" pin="B6"/>
-      <node ref="U1" pin="2"/>
-    </net>
-    <net code="37" name="D0">
-      <node ref="U5" pin="F3"/>
-      <node ref="U1" pin="63"/>
-    </net>
-    <net code="38" name="D1">
-      <node ref="U1" pin="64"/>
-      <node ref="U5" pin="G3"/>
-    </net>
-    <net code="39" name="D4">
-      <node ref="U1" pin="3"/>
-      <node ref="U5" pin="E5"/>
-    </net>
-    <net code="40" name="D5">
+    <net code="11" name="D5">
       <node ref="U1" pin="92"/>
       <node ref="U5" pin="G5"/>
     </net>
-    <net code="41" name="VSYNC">
-      <node ref="U1" pin="93"/>
+    <net code="12" name="VSYNC">
       <node ref="U5" pin="D2"/>
+      <node ref="U1" pin="93"/>
     </net>
-    <net code="42" name="/Microcontroller/BOOT0">
+    <net code="13" name="D7">
+      <node ref="U5" pin="G6"/>
+      <node ref="U1" pin="96"/>
+    </net>
+    <net code="14" name="PIXCK">
+      <node ref="U5" pin="E3"/>
+      <node ref="U1" pin="31"/>
+    </net>
+    <net code="15" name="PWR_EN">
+      <node ref="U3" pin="3"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U1" pin="70"/>
+    </net>
+    <net code="16" name="UART_TX">
+      <node ref="U1" pin="68"/>
+      <node ref="P1" pin="4"/>
+    </net>
+    <net code="17" name="UART_RX">
+      <node ref="U1" pin="69"/>
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="18" name="SIO_C">
+      <node ref="R11" pin="2"/>
+      <node ref="U5" pin="C2"/>
+      <node ref="U1" pin="47"/>
+    </net>
+    <net code="19" name="SIO_D">
+      <node ref="R12" pin="2"/>
+      <node ref="U1" pin="48"/>
+      <node ref="U5" pin="C1"/>
+    </net>
+    <net code="20" name="SWDIO">
+      <node ref="X2" pin="2"/>
+      <node ref="U1" pin="72"/>
+    </net>
+    <net code="21" name="SWDCLK">
+      <node ref="U1" pin="76"/>
+      <node ref="X2" pin="4"/>
+    </net>
+    <net code="22" name="MICROSD_DETECT">
+      <node ref="U1" pin="81"/>
+      <node ref="CON1" pin="G3"/>
+    </net>
+    <net code="23" name="REBOOT_LATCH">
+      <node ref="U1" pin="95"/>
+    </net>
+    <net code="24" name="D6">
+      <node ref="U5" pin="F5"/>
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="25" name="Net-(D2-PadA)">
+      <node ref="D2" pin="A"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="26" name="XCLK">
+      <node ref="U1" pin="67"/>
+      <node ref="U5" pin="C4"/>
+    </net>
+    <net code="27" name="AMBIENT_LIGHT">
+      <node ref="Q1" pin="E"/>
+      <node ref="R10" pin="1"/>
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="28" name="STROBE">
+      <node ref="U5" pin="A6"/>
+      <node ref="U1" pin="88"/>
+    </net>
+    <net code="29" name="EXPSTB">
+      <node ref="U5" pin="A2"/>
+      <node ref="U1" pin="91"/>
+    </net>
+    <net code="30" name="FREX">
+      <node ref="U1" pin="90"/>
+      <node ref="U5" pin="B2"/>
+    </net>
+    <net code="31" name="MICROSD_CMD">
+      <node ref="U1" pin="83"/>
+      <node ref="CON1" pin="3"/>
+    </net>
+    <net code="32" name="MICROSD_CK">
+      <node ref="U1" pin="80"/>
+      <node ref="CON1" pin="5"/>
+    </net>
+    <net code="33" name="MICROSD_D3">
+      <node ref="CON1" pin="2"/>
+      <node ref="R9" pin="6"/>
+      <node ref="U1" pin="79"/>
+    </net>
+    <net code="34" name="MICROSD_D2">
+      <node ref="CON1" pin="1"/>
+      <node ref="U1" pin="78"/>
+      <node ref="R9" pin="5"/>
+    </net>
+    <net code="35" name="MICROSD_D1">
+      <node ref="U1" pin="66"/>
+      <node ref="R9" pin="8"/>
+      <node ref="CON1" pin="8"/>
+    </net>
+    <net code="36" name="MICROSD_D0">
+      <node ref="CON1" pin="7"/>
+      <node ref="R9" pin="7"/>
+      <node ref="U1" pin="65"/>
+    </net>
+    <net code="37" name="RESET">
+      <node ref="U5" pin="C6"/>
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="38" name="PWDN">
+      <node ref="U1" pin="2"/>
+      <node ref="U5" pin="B6"/>
+    </net>
+    <net code="39" name="D0">
+      <node ref="U1" pin="63"/>
+      <node ref="U5" pin="F3"/>
+    </net>
+    <net code="40" name="D1">
+      <node ref="U5" pin="G3"/>
+      <node ref="U1" pin="64"/>
+    </net>
+    <net code="41" name="D4">
+      <node ref="U5" pin="E5"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="42" name="GND">
+      <node ref="CON1" pin="G1"/>
+      <node ref="U4" pin="2"/>
+      <node ref="R10" pin="2"/>
+      <node ref="CON1" pin="6"/>
+      <node ref="MNT1" pin="1"/>
+      <node ref="MNT4" pin="1"/>
+      <node ref="MNT2" pin="1"/>
+      <node ref="U3" pin="2"/>
+      <node ref="MNT3" pin="1"/>
+      <node ref="C26" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="U5" pin="E4"/>
+      <node ref="U5" pin="A4"/>
+      <node ref="U5" pin="A3"/>
+      <node ref="U5" pin="A1"/>
+      <node ref="U5" pin="G2"/>
+      <node ref="C21" pin="2"/>
+      <node ref="C20" pin="2"/>
+      <node ref="CON1" pin="G4"/>
+      <node ref="CON1" pin="G2"/>
+      <node ref="C23" pin="2"/>
+      <node ref="C25" pin="2"/>
+      <node ref="C27" pin="2"/>
+      <node ref="C24" pin="2"/>
+      <node ref="C19" pin="2"/>
+      <node ref="D2" pin="C"/>
+      <node ref="P1" pin="2"/>
+      <node ref="R8" pin="2"/>
+      <node ref="X1" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="D1" pin="C"/>
+      <node ref="C2" pin="2"/>
+      <node ref="X2" pin="5"/>
+      <node ref="X2" pin="3"/>
+      <node ref="C11" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C9" pin="2"/>
+      <node ref="U1" pin="37"/>
+      <node ref="U1" pin="10"/>
+      <node ref="C4" pin="2"/>
+      <node ref="U1" pin="99"/>
+      <node ref="U1" pin="27"/>
+      <node ref="U1" pin="74"/>
+      <node ref="C17" pin="2"/>
+      <node ref="U1" pin="20"/>
+      <node ref="C5" pin="2"/>
+      <node ref="C13" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="R4" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="C18" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="U2" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C16" pin="2"/>
+    </net>
+    <net code="43" name="/Microcontroller/BOOT0">
       <node ref="U1" pin="94"/>
     </net>
-    <net code="43" name="IRCUT_A">
+    <net code="44" name="IRCUT_A">
       <node ref="U1" pin="58"/>
-      <node ref="P1" pin="1"/>
       <node ref="U1" pin="57"/>
       <node ref="U1" pin="56"/>
+      <node ref="P2" pin="1"/>
       <node ref="U1" pin="55"/>
     </net>
-    <net code="44" name="IRCUT_B">
-      <node ref="U1" pin="60"/>
-      <node ref="U1" pin="62"/>
-      <node ref="P1" pin="2"/>
+    <net code="45" name="IRCUT_B">
       <node ref="U1" pin="61"/>
+      <node ref="U1" pin="60"/>
+      <node ref="P2" pin="2"/>
       <node ref="U1" pin="59"/>
+      <node ref="U1" pin="62"/>
     </net>
-    <net code="45" name="Net-(X2-Pad9)">
+    <net code="46" name="Net-(X2-Pad9)">
       <node ref="X2" pin="9"/>
     </net>
-    <net code="46" name="Net-(X2-Pad8)">
+    <net code="47" name="Net-(X2-Pad8)">
       <node ref="X2" pin="8"/>
     </net>
-    <net code="47" name="Net-(X2-Pad7)">
+    <net code="48" name="Net-(X2-Pad7)">
       <node ref="X2" pin="7"/>
     </net>
-    <net code="48" name="HREF">
-      <node ref="U5" pin="C3"/>
+    <net code="49" name="HREF">
       <node ref="U1" pin="29"/>
+      <node ref="U5" pin="C3"/>
     </net>
-    <net code="49" name="Net-(U1-Pad23)">
+    <net code="50" name="Net-(U1-Pad23)">
       <node ref="U1" pin="23"/>
     </net>
-    <net code="50" name="STATUS0">
+    <net code="51" name="STATUS0">
       <node ref="U1" pin="24"/>
       <node ref="R1" pin="1"/>
     </net>
-    <net code="51" name="STATUS1">
-      <node ref="U1" pin="25"/>
+    <net code="52" name="STATUS1">
       <node ref="R2" pin="1"/>
+      <node ref="U1" pin="25"/>
     </net>
-    <net code="52" name="Net-(U1-Pad26)">
+    <net code="53" name="Net-(U1-Pad26)">
       <node ref="U1" pin="26"/>
     </net>
-    <net code="53" name="FLASH_DAC">
+    <net code="54" name="FLASH_DAC">
       <node ref="U1" pin="30"/>
     </net>
-    <net code="54" name="Net-(U1-Pad44)">
-      <node ref="U1" pin="44"/>
+    <net code="55" name="Net-(U1-Pad45)">
+      <node ref="U1" pin="45"/>
     </net>
-    <net code="55" name="NRST">
+    <net code="56" name="NRST">
       <node ref="U1" pin="14"/>
-      <node ref="C2" pin="1"/>
       <node ref="X2" pin="10"/>
-    </net>
-    <net code="56" name="Net-(U1-Pad33)">
-      <node ref="U1" pin="33"/>
+      <node ref="C2" pin="1"/>
     </net>
     <net code="57" name="Net-(U1-Pad18)">
       <node ref="U1" pin="18"/>
@@ -2024,67 +2198,66 @@
     <net code="60" name="Net-(U1-Pad34)">
       <node ref="U1" pin="34"/>
     </net>
-    <net code="61" name="Net-(U1-Pad9)">
+    <net code="61" name="Net-(U1-Pad33)">
+      <node ref="U1" pin="33"/>
+    </net>
+    <net code="62" name="Net-(U1-Pad9)">
       <node ref="U1" pin="9"/>
     </net>
-    <net code="62" name="Net-(U1-Pad8)">
+    <net code="63" name="Net-(U1-Pad8)">
       <node ref="U1" pin="8"/>
     </net>
-    <net code="63" name="Net-(U1-Pad7)">
+    <net code="64" name="Net-(U1-Pad7)">
       <node ref="U1" pin="7"/>
     </net>
-    <net code="64" name="Net-(U1-Pad36)">
+    <net code="65" name="Net-(U1-Pad36)">
       <node ref="U1" pin="36"/>
     </net>
-    <net code="65" name="Net-(U1-Pad45)">
-      <node ref="U1" pin="45"/>
+    <net code="66" name="Net-(U1-Pad46)">
+      <node ref="U1" pin="46"/>
     </net>
-    <net code="66" name="Net-(U1-Pad43)">
+    <net code="67" name="Net-(U1-Pad44)">
+      <node ref="U1" pin="44"/>
+    </net>
+    <net code="68" name="Net-(U1-Pad43)">
       <node ref="U1" pin="43"/>
     </net>
-    <net code="67" name="Net-(U1-Pad42)">
+    <net code="69" name="Net-(U1-Pad42)">
       <node ref="U1" pin="42"/>
     </net>
-    <net code="68" name="Net-(U1-Pad41)">
+    <net code="70" name="Net-(U1-Pad41)">
       <node ref="U1" pin="41"/>
     </net>
-    <net code="69" name="Net-(U1-Pad40)">
+    <net code="71" name="Net-(U1-Pad40)">
       <node ref="U1" pin="40"/>
     </net>
-    <net code="70" name="Net-(U1-Pad5)">
+    <net code="72" name="Net-(U1-Pad5)">
       <node ref="U1" pin="5"/>
     </net>
-    <net code="71" name="Net-(U1-Pad4)">
-      <node ref="U1" pin="4"/>
-    </net>
-    <net code="72" name="Net-(U1-Pad87)">
+    <net code="73" name="Net-(U1-Pad87)">
       <node ref="U1" pin="87"/>
     </net>
-    <net code="73" name="Net-(U1-Pad86)">
+    <net code="74" name="Net-(U1-Pad86)">
       <node ref="U1" pin="86"/>
     </net>
-    <net code="74" name="Net-(U1-Pad85)">
+    <net code="75" name="Net-(U1-Pad85)">
       <node ref="U1" pin="85"/>
     </net>
-    <net code="75" name="Net-(U1-Pad84)">
+    <net code="76" name="Net-(U1-Pad84)">
       <node ref="U1" pin="84"/>
     </net>
-    <net code="76" name="Net-(U1-Pad82)">
+    <net code="77" name="Net-(U1-Pad82)">
       <node ref="U1" pin="82"/>
     </net>
-    <net code="77" name="Net-(D2-PadA)">
-      <node ref="D2" pin="A"/>
-      <node ref="R2" pin="2"/>
-    </net>
     <net code="78" name="Net-(D1-PadA)">
-      <node ref="R1" pin="2"/>
       <node ref="D1" pin="A"/>
+      <node ref="R1" pin="2"/>
     </net>
-    <net code="79" name="Net-(U1-Pad54)">
-      <node ref="U1" pin="54"/>
-    </net>
-    <net code="80" name="Net-(U1-Pad35)">
+    <net code="79" name="Net-(U1-Pad35)">
       <node ref="U1" pin="35"/>
+    </net>
+    <net code="80" name="Net-(U1-Pad54)">
+      <node ref="U1" pin="54"/>
     </net>
     <net code="81" name="Net-(U1-Pad53)">
       <node ref="U1" pin="53"/>
@@ -2104,63 +2277,70 @@
     <net code="86" name="Net-(U1-Pad32)">
       <node ref="U1" pin="32"/>
     </net>
-    <net code="87" name="Net-(R5-Pad2)">
-      <node ref="U3" pin="4"/>
-      <node ref="R5" pin="2"/>
-      <node ref="R6" pin="1"/>
+    <net code="87" name="Net-(R3-Pad2)">
+      <node ref="U2" pin="4"/>
+      <node ref="R3" pin="2"/>
+      <node ref="R4" pin="1"/>
     </net>
-    <net code="88" name="+BATT">
-      <node ref="U2" pin="1"/>
-      <node ref="C15" pin="1"/>
-      <node ref="U2" pin="3"/>
-      <node ref="U3" pin="1"/>
-      <node ref="C14" pin="1"/>
-      <node ref="C16" pin="1"/>
-      <node ref="U4" pin="1"/>
+    <net code="88" name="+1.3V">
+      <node ref="C19" pin="1"/>
+      <node ref="U5" pin="F6"/>
+      <node ref="R7" pin="1"/>
+      <node ref="U5" pin="F2"/>
+      <node ref="U4" pin="5"/>
+      <node ref="C23" pin="1"/>
     </net>
     <net code="89" name="Net-(R7-Pad2)">
       <node ref="R8" pin="1"/>
-      <node ref="U4" pin="4"/>
       <node ref="R7" pin="2"/>
+      <node ref="U4" pin="4"/>
     </net>
-    <net code="90" name="Net-(R3-Pad2)">
-      <node ref="U2" pin="4"/>
-      <node ref="R4" pin="1"/>
-      <node ref="R3" pin="2"/>
+    <net code="90" name="Net-(R5-Pad2)">
+      <node ref="R5" pin="2"/>
+      <node ref="R6" pin="1"/>
+      <node ref="U3" pin="4"/>
     </net>
-    <net code="91" name="+2.8V">
-      <node ref="C24" pin="1"/>
-      <node ref="U5" pin="B5"/>
-      <node ref="U3" pin="5"/>
-      <node ref="C18" pin="1"/>
-      <node ref="R5" pin="1"/>
+    <net code="91" name="Net-(P1-Pad5)">
+      <node ref="P1" pin="5"/>
+    </net>
+    <net code="92" name="Net-(P1-Pad6)">
+      <node ref="P1" pin="6"/>
+    </net>
+    <net code="93" name="+2.8V">
       <node ref="U5" pin="B4"/>
-      <node ref="C26" pin="1"/>
+      <node ref="U3" pin="5"/>
       <node ref="U5" pin="B3"/>
+      <node ref="R5" pin="1"/>
+      <node ref="C18" pin="1"/>
+      <node ref="C26" pin="1"/>
+      <node ref="U5" pin="B5"/>
+      <node ref="C24" pin="1"/>
     </net>
-    <net code="92" name="+1.3V">
-      <node ref="U5" pin="F6"/>
-      <node ref="C23" pin="1"/>
-      <node ref="R7" pin="1"/>
-      <node ref="U5" pin="F2"/>
-      <node ref="C19" pin="1"/>
-      <node ref="U4" pin="5"/>
+    <net code="94" name="+BATT">
+      <node ref="U3" pin="1"/>
+      <node ref="U4" pin="1"/>
+      <node ref="P1" pin="1"/>
+      <node ref="C15" pin="1"/>
+      <node ref="C16" pin="1"/>
+      <node ref="C14" pin="1"/>
+      <node ref="U2" pin="1"/>
+      <node ref="U2" pin="3"/>
     </net>
-    <net code="93" name="Net-(C22-Pad1)">
-      <node ref="U5" pin="C5"/>
+    <net code="95" name="Net-(C22-Pad1)">
       <node ref="C22" pin="1"/>
+      <node ref="U5" pin="C5"/>
     </net>
-    <net code="94" name="Net-(C21-Pad1)">
+    <net code="96" name="Net-(C21-Pad1)">
       <node ref="U5" pin="A5"/>
       <node ref="C21" pin="1"/>
     </net>
-    <net code="95" name="Net-(U5-PadD6)">
+    <net code="97" name="Net-(U5-PadD6)">
       <node ref="U5" pin="D6"/>
     </net>
-    <net code="96" name="Net-(U5-PadE1)">
+    <net code="98" name="Net-(U5-PadE1)">
       <node ref="U5" pin="E1"/>
     </net>
-    <net code="97" name="Net-(U5-PadE2)">
+    <net code="99" name="Net-(U5-PadE2)">
       <node ref="U5" pin="E2"/>
     </net>
   </nets>
