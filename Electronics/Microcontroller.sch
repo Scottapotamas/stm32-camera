@@ -84,24 +84,6 @@ $EndComp
 NoConn ~ 3600 8750
 Text Notes 13850 975  0    60   ~ 12
 Bootloader Boot-strap Circuit
-$Comp
-L CSTCE8M00G55Z X1
-U 1 1 58C74CCA
-P 1000 1800
-F 0 "X1" V 954 1927 50  0000 L CNN
-F 1 "CSTCE8M00G55Z" V 1045 1927 50  0000 L CNN
-F 2 "Applidyne_Crystal:OSCSC-CSCTE-CERALOCK" H 1000 1800 60  0001 C CNN
-F 3 "http://docs-asia.electrocomponents.com/webdocs/0655/0900766b80655dc4.pdf" H 1000 1380 60  0001 C CNN
-F 4 "Murata" H 1000 1130 60  0001 C CNN "manf"
-F 5 "CSTCE8M00G55Z-R0" H 1000 1010 60  0001 C CNN "manf#"
-F 6 "RS Online" H 1000 900 60  0001 C CNN "Supplier"
-F 7 "792-6533" H 1000 790 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.rs-online.com/web/p/ceramic-resonators/7926533/" H 1000 690 60  0001 C CNN "Supplier URL"
-F 9 "0.43" H 1000 580 60  0001 C CNN "Supplier Price"
-F 10 "5" H 1000 460 60  0001 C CNN "Supplier Price Break"
-	1    1000 1800
-	0    1    1    0   
-$EndComp
 Text GLabel 1500 4600 0    60   Input ~ 0
 SWDIO
 Text GLabel 1500 4700 0    60   Input ~ 0
@@ -112,14 +94,6 @@ Wire Wire Line
 	1900 3800 1500 3800
 Wire Wire Line
 	1900 3700 1500 3700
-Wire Wire Line
-	1900 3600 1500 3600
-Wire Wire Line
-	1900 3500 1500 3500
-Wire Wire Line
-	1900 3400 1500 3400
-Wire Wire Line
-	1900 3300 1500 3300
 Text GLabel 9500 4200 0    60   BiDi ~ 0
 MICROSD_D1
 Text GLabel 9500 4300 0    60   BiDi ~ 0
@@ -132,7 +106,7 @@ Text GLabel 9500 4100 0    60   BiDi ~ 0
 MICROSD_D0
 Text GLabel 9500 5700 0    60   Output ~ 0
 MICROSD_CMD
-Text GLabel 9500 5500 0    60   Input ~ 0
+Text GLabel 9500 9300 0    60   Input ~ 0
 MICROSD_DETECT
 Wire Wire Line
 	1075 1050 1075 1000
@@ -197,7 +171,7 @@ Connection ~ 10150 1250
 Wire Wire Line
 	10450 1250 10450 1500
 Connection ~ 10450 1250
-Text Notes 13900 2650 0    60   ~ 0
+Text Notes 13650 2850 0    60   ~ 0
 BOOT1    BOOT0\n   x         0     Main Mem\n   0         1     System Mem
 NoConn ~ 3000 8850
 $Comp
@@ -344,9 +318,9 @@ F 10 "100" V 11090 1400 20  0001 C CNN "Supplier Price Break"
 	1    10750 1500
 	1    0    0    -1  
 $EndComp
-Text GLabel 9500 8100 0    60   Output ~ 0
+Text GLabel 1500 4500 0    60   Output ~ 0
 PWDN
-Text GLabel 9500 8000 0    60   Output ~ 0
+Text GLabel 1500 4400 0    60   Output ~ 0
 RESET
 Text GLabel 1500 4100 0    60   Output ~ 0
 XCLK
@@ -356,11 +330,11 @@ Text GLabel 1500 6200 0    60   Input ~ 0
 VSYNC
 Text GLabel 1500 3900 0    60   Input ~ 0
 PIXCK
-Text GLabel 9500 6200 0    60   Input ~ 0
+Text GLabel 1600 6900 0    60   Input ~ 0
 STROBE
-Text GLabel 1500 5900 0    60   Output ~ 0
+Text GLabel 9500 6300 0    60   Output ~ 0
 FREX
-Text GLabel 1500 6000 0    60   Output ~ 0
+Text GLabel 1600 7000 0    60   Output ~ 0
 EXPSTB
 Text GLabel 9500 3900 0    60   Input ~ 0
 D0
@@ -476,9 +450,9 @@ Text GLabel 4650 8400 1    60   Input ~ 0
 STATUS0
 Text GLabel 5650 8400 1    60   Input ~ 0
 STATUS1
-Text GLabel 1500 3400 0    60   Output ~ 0
+Text GLabel 1600 6700 0    60   Output ~ 0
 STATUS0
-Text GLabel 1500 3500 0    60   Output ~ 0
+Text GLabel 1600 6800 0    60   Output ~ 0
 STATUS1
 Text Notes 4900 7800 0    79   ~ 16
 Status Leds
@@ -490,7 +464,7 @@ Text GLabel 1500 3800 0    60   Output ~ 0
 FLASH_DAC
 Text GLabel 9500 3300 0    60   Input ~ 0
 AMBIENT_LIGHT
-Text GLabel 1500 4400 0    60   Input ~ 0
+Text GLabel 1500 4800 0    60   Input ~ 0
 PWR_EN
 $Comp
 L STM32F429VET6 U1
@@ -938,31 +912,31 @@ Wire Wire Line
 Connection ~ 11675 1950
 Text Label 1550 1350 0    60   ~ 0
 BOOT0
-Text Label 13500 1700 0    60   ~ 0
+Text Label 13200 1850 0    60   ~ 0
 BOOT0
 Wire Wire Line
-	13500 1700 13950 1700
+	13200 1850 14650 1850
 Wire Wire Line
 	1900 5700 1550 5700
 Text Label 1550 5700 0    60   ~ 0
 BOOT1
-Text Label 13500 1900 0    60   ~ 0
+Text Label 13200 2050 0    60   ~ 0
 BOOT1
 Wire Wire Line
-	13500 1900 13950 1900
+	13200 2050 13650 2050
 $Comp
 L GND #PWR017
 U 1 1 5950530F
-P 13950 2050
-F 0 "#PWR017" H 13950 1800 50  0001 C CNN
-F 1 "GND" H 13955 1877 50  0000 C CNN
-F 2 "" H 13950 2050 60  0000 C CNN
-F 3 "" H 13950 2050 60  0000 C CNN
-	1    13950 2050
+P 13650 2250
+F 0 "#PWR017" H 13650 2000 50  0001 C CNN
+F 1 "GND" H 13655 2077 50  0000 C CNN
+F 2 "" H 13650 2250 60  0000 C CNN
+F 3 "" H 13650 2250 60  0000 C CNN
+	1    13650 2250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	13950 1900 13950 2050
+	13650 2050 13650 2250
 Text Notes 13325 1425 0    60   ~ 0
 To update firmware, send request to micro.\nMicro will latch BOOT0 high, and then nvReset.\nWill boot into ST Bootloader and accept update \nover USART1. Once complete, power cycle the camera.
 $Comp
@@ -1068,10 +1042,6 @@ Wire Wire Line
 Wire Wire Line
 	10000 3900 9500 3900
 Wire Wire Line
-	9500 8100 10000 8100
-Wire Wire Line
-	10000 8000 9500 8000
-Wire Wire Line
 	9500 4100 10000 4100
 Wire Wire Line
 	10000 4200 9500 4200
@@ -1082,19 +1052,13 @@ Wire Wire Line
 Wire Wire Line
 	9500 4500 10000 4500
 Wire Wire Line
-	9500 5500 10000 5500
-Wire Wire Line
 	9500 5700 10000 5700
-Text Notes 7300 9350 0    60   ~ 0
+Text Notes 7800 9850 0    60   ~ 0
 Manual pg136 discusses pin current.\nWe can get +-8mA per pin at VDD level.\nCan get +-20mA with relaxed output voltage (VDD-1.3).
-Text Notes 7400 8900 0    60   ~ 0
+Text Notes 7800 8900 0    60   ~ 0
 Use parallel IO to make\nH-Bridge for IR-Filter.\nUse direct port operations to ensure\nsafe switching.
 Wire Wire Line
-	1500 5900 1900 5900
-Wire Wire Line
-	1900 6000 1500 6000
-Wire Wire Line
-	9500 6200 10000 6200
+	9500 6300 10000 6300
 Wire Wire Line
 	9500 3300 10000 3300
 Wire Wire Line
@@ -1121,12 +1085,116 @@ Text Notes 3250 10400 0    60   ~ 0
 Use internal temp sensor for logging environmental factors.
 Text Notes 4550 10100 0    79   ~ 16
 Notes
-Text Notes 14150 1850 0    60   ~ 0
-LATCH OR CAPACITOR TO HOLD \nBOOT0 HIGH AFTER MICRO ASKS
 Wire Wire Line
 	9500 8300 10000 8300
 Text GLabel 1500 6300 0    60   Output ~ 0
 REBOOT_LATCH
-Text GLabel 14500 2000 2    60   Input ~ 0
+Text GLabel 13900 1650 0    60   Input ~ 0
 REBOOT_LATCH
+Wire Wire Line
+	13900 1650 14100 1650
+Wire Wire Line
+	14100 1650 14100 1850
+Connection ~ 14100 1850
+Wire Wire Line
+	14300 1850 14300 1950
+Connection ~ 14300 1850
+Wire Wire Line
+	14300 2150 14300 2250
+$Comp
+L GND #PWR019
+U 1 1 5950F7A9
+P 14300 2250
+F 0 "#PWR019" H 14300 2000 50  0001 C CNN
+F 1 "GND" H 14305 2077 50  0000 C CNN
+F 2 "" H 14300 2250 60  0000 C CNN
+F 3 "" H 14300 2250 60  0000 C CNN
+	1    14300 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 510K_1005M R13
+U 1 1 5950FF05
+P 14650 1900
+F 0 "R13" H 14723 1785 50  0000 L CNN
+F 1 "510K_1005M" H 14723 1705 35  0000 L CNN
+F 2 "Applidyne_Resistor:RESC1005X40N" V 14760 1750 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1911175.pdf" V 14785 1750 20  0001 C CNN
+F 4 "PANASONIC" V 14835 1750 20  0001 C CNN "manf"
+F 5 "ERJ2RKF5103X" V 14860 1750 20  0001 C CNN "manf#"
+F 6 "Element14" V 14885 1750 20  0001 C CNN "Supplier"
+F 7 "2302919" V 14910 1750 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/erj2rkf5103x/res-thick-film-510k-1-0-1w-0402/dp/2302919" V 14935 1750 20  0001 C CNN "Supplier URL"
+F 9 "0.011" V 14960 1750 20  0001 C CNN "Supplier Price"
+F 10 "50" V 14985 1750 20  0001 C CNN "Supplier Price Break"
+	1    14650 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14650 2200 14650 2250
+$Comp
+L GND #PWR020
+U 1 1 595100F1
+P 14650 2250
+F 0 "#PWR020" H 14650 2000 50  0001 C CNN
+F 1 "GND" H 14655 2077 50  0000 C CNN
+F 2 "" H 14650 2250 60  0000 C CNN
+F 3 "" H 14650 2250 60  0000 C CNN
+	1    14650 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14650 1850 14650 1900
+$Comp
+L 1UF_X5R_1005M C28
+U 1 1 595105DA
+P 14300 1950
+F 0 "C28" H 14378 1885 50  0000 L CNN
+F 1 "1UF_X5R_1005M" H 14378 1805 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 14415 1850 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 14440 1850 20  0001 C CNN
+F 4 "TDK" V 14490 1850 20  0001 C CNN "manf"
+F 5 "C1005X5R1V105K050BC" V 14515 1850 20  0001 C CNN "manf#"
+F 6 "Element14" V 14540 1850 20  0001 C CNN "Supplier"
+F 7 "2346885" V 14565 1850 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/tdk/c1005x5r1v105k050bc/cap-mlcc-x5r-1uf-35v-0402/dp/2346885" V 14590 1850 20  0001 C CNN "Supplier URL"
+F 9 "0.101" V 14615 1850 20  0001 C CNN "Supplier Price"
+F 10 "100" V 14640 1850 20  0001 C CNN "Supplier Price Break"
+	1    14300 1950
+	-1   0    0    -1  
+$EndComp
+Text Notes 14150 1750 0    60   ~ 0
+510k and 1uF = 0.510 sec RC time
+Wire Wire Line
+	1500 4500 1900 4500
+Wire Wire Line
+	1900 4800 1500 4800
+Wire Wire Line
+	9500 9300 10000 9300
+Wire Wire Line
+	1600 6700 1900 6700
+Wire Wire Line
+	1900 6800 1600 6800
+Wire Wire Line
+	1600 6900 1900 6900
+Wire Wire Line
+	1900 7000 1600 7000
+$Comp
+L CSTCE16M0V53A X1
+U 1 1 5951CCB6
+P 1000 1800
+F 0 "X1" V 954 1927 50  0000 L CNN
+F 1 "CSTCE16M0V53A" V 1045 1927 50  0000 L CNN
+F 2 "Applidyne_Crystal:OSCSC-CSCTE-CERALOCK" H 1000 1250 60  0001 C CNN
+F 3 "http://au.rs-online.com/webdocs/0ef2/0900766b80ef2ca9.pdf" H 1000 1380 60  0001 C CNN
+F 4 "Murata" H 1000 1130 60  0001 C CNN "manf"
+F 5 "CSTCE16M0V53A-R0" H 1000 1010 60  0001 C CNN "manf#"
+F 6 "RS Online" H 1000 900 60  0001 C CNN "Supplier"
+F 7 "721-4818" H 1000 790 60  0001 C CNN "Supplier Part No"
+F 8 "http://au.rs-online.com/web/p/ceramic-resonators/7214818/" H 1000 690 60  0001 C CNN "Supplier URL"
+F 9 "0.696" H 1000 580 60  0001 C CNN "Supplier Price"
+F 10 "5" H 1000 460 60  0001 C CNN "Supplier Price Break"
+	1    1000 1800
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
