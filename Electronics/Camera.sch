@@ -631,24 +631,6 @@ F 3 "" H 7025 3100 60  0000 C CNN
 	1    7025 3100
 	1    0    0    -1  
 $EndComp
-$Comp
-L 4.7UF_X5R_1608M C23
-U 1 1 594D1663
-P 8350 1350
-F 0 "C23" H 8428 1285 50  0000 L CNN
-F 1 "4.7UF_X5R_1608M" H 8428 1205 35  0000 L CNN
-F 2 "Applidyne_Capacitor:CAPC1608X90L" V 8465 1250 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2291921.pdf" V 8490 1250 20  0001 C CNN
-F 4 "TDK" V 8540 1250 20  0001 C CNN "manf"
-F 5 "C1608X5R1C475K080AC" V 8565 1250 20  0001 C CNN "manf#"
-F 6 "Element14" V 8590 1250 20  0001 C CNN "Supplier"
-F 7 "2211173" V 8615 1250 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/tdk/c1608x5r1c475k080ac/cap-mlcc-x5r-4-7uf-16v-0603/dp/2211173" V 8640 1250 20  0001 C CNN "Supplier URL"
-F 9 "0.179" V 8665 1250 20  0001 C CNN "Supplier Price"
-F 10 "100" V 8690 1250 20  0001 C CNN "Supplier Price Break"
-	1    8350 1350
-	1    0    0    -1  
-$EndComp
 Text Notes 1150 2400 0    59   ~ 12
 IR-Cut Switchable Filter\nLens Mount
 Text Notes 800  2600 0    60   ~ 0
@@ -669,6 +651,24 @@ F 8 "https://www.aliexpress.com/item/Full-Metal-High-Quality-CCTV-Camera-IP-came
 F 9 "3.07" H 1650 2050 60  0001 C CNN "Supplier Price"
 F 10 "2" H 1650 1950 60  0001 C CNN "Supplier Price Break"
 	1    1650 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4.7UF_X5R_1005M C23
+U 1 1 59526835
+P 8350 1350
+F 0 "C23" H 8428 1285 50  0000 L CNN
+F 1 "4.7UF_X5R_1005M" H 8428 1205 35  0000 L CNN
+F 2 "Applidyne_Capacitor:CAPC1005X60N" V 8465 1250 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2047949.pdf" V 8490 1250 20  0001 C CNN
+F 4 "MURATA" V 8540 1250 20  0001 C CNN "manf"
+F 5 "GRM155R60J475ME47D" V 8565 1250 20  0001 C CNN "manf#"
+F 6 "Element14" V 8590 1250 20  0001 C CNN "Supplier"
+F 7 "2426952" V 8615 1250 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/murata/grm155r60j475me47d/cap-mlcc-x5r-4-7uf-6-3v-0402/dp/2426952" V 8640 1250 20  0001 C CNN "Supplier URL"
+F 9 "0.083" V 8665 1250 20  0001 C CNN "Supplier Price"
+F 10 "100" V 8690 1250 20  0001 C CNN "Supplier Price Break"
+	1    8350 1350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
