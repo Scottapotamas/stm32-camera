@@ -156,8 +156,8 @@ Text GLabel 6225 3350 2    60   Input ~ 0
 PIXCK
 Text GLabel 6225 3450 2    60   Output ~ 0
 VSYNC
-Text Notes 6325 2650 0    60   ~ 0
-PIXCK - Pixel clock from sensor\nVSYNC - Active FRAME\nHREF - Active Pixels/Line
+Text Notes 5800 2500 0    60   ~ 0
+PIXCK - Pixel clock from sensor\n6Mhz = 2.5fps\n36Mhz = 15fps\n\nVSYNC - Active FRAME\nHREF - Active Pixels/Line\nSee page 7 of overview appnote
 Text GLabel 4150 1950 1    60   Output ~ 0
 D7
 Text GLabel 4250 1950 1    60   Output ~ 0
