@@ -2,7 +2,7 @@
 
   (general
     (links 185)
-    (no_connects 118)
+    (no_connects 105)
     (area 89.900001 93.54 208.228571 138.767143)
     (thickness 1.6)
     (drawings 11)
@@ -40,7 +40,7 @@
     (46 B.CrtYd user hide)
     (47 F.CrtYd user hide)
     (48 B.Fab user hide)
-    (49 F.Fab user hide)
+    (49 F.Fab user)
   )
 
   (setup
@@ -1247,7 +1247,7 @@
   )
 
   (module Applidyne_Connector_Molex:MOLEX_47309-2651 (layer F.Cu) (tedit 594E5B4D) (tstamp 594FA354)
-    (at 134.4 113.35 270)
+    (at 134.4 113.55 270)
     (descr http://www.molex.com/pdm_docs/sd/473092651_sd.pdf)
     (tags "SMD SD Card socket compact")
     (path /587213A7/594E6989)
@@ -3012,7 +3012,7 @@
   )
 
   (dimension 28 (width 0.14) (layer Dwgs.User)
-    (gr_text "28.000 mm" (at 93.870001 118 270) (layer Dwgs.User) (tstamp 595758E2)
+    (gr_text "28.000 mm" (at 93.870001 118 270) (layer Dwgs.User) (tstamp 59589301)
       (effects (font (size 0.9 0.9) (thickness 0.14)))
     )
     (feature1 (pts (xy 104 132) (xy 93.140001 132)))
@@ -3027,7 +3027,7 @@
     (effects (font (size 2.5 2.5) (thickness 0.4)) (justify left))
   )
   (dimension 36 (width 0.14) (layer Dwgs.User)
-    (gr_text "36.000 mm" (at 118 94.27) (layer Dwgs.User) (tstamp 595758E3)
+    (gr_text "36.000 mm" (at 118 94.27) (layer Dwgs.User) (tstamp 59589302)
       (effects (font (size 0.9 0.9) (thickness 0.14)))
     )
     (feature1 (pts (xy 136 104) (xy 136 93.54)))
