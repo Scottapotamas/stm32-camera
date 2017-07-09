@@ -330,11 +330,11 @@ Text GLabel 1500 6200 0    60   Input ~ 0
 VSYNC
 Text GLabel 1500 3900 0    60   Input ~ 0
 PIXCK
-Text GLabel 1600 6900 0    60   Input ~ 0
+Text GLabel 1600 6700 0    60   Input ~ 0
 STROBE
-Text GLabel 9500 6300 0    60   Output ~ 0
+Text GLabel 1600 6900 0    60   Output ~ 0
 FREX
-Text GLabel 1600 7000 0    60   Output ~ 0
+Text GLabel 1600 6800 0    60   Output ~ 0
 EXPSTB
 Text GLabel 9500 3900 0    60   Input ~ 0
 D0
@@ -1058,8 +1058,6 @@ Manual pg136 discusses pin current.\nWe can get +-8mA per pin at VDD level.\nCan
 Text Notes 7800 8900 0    60   ~ 0
 Use parallel IO to make\nH-Bridge for IR-Filter.\nUse direct port operations to ensure\nsafe switching.
 Wire Wire Line
-	9500 6300 10000 6300
-Wire Wire Line
 	9500 3300 10000 3300
 Wire Wire Line
 	1500 4100 1900 4100
@@ -1177,8 +1175,6 @@ Wire Wire Line
 	1900 6800 1600 6800
 Wire Wire Line
 	1600 6900 1900 6900
-Wire Wire Line
-	1900 7000 1600 7000
 $Comp
 L CSTCE16M0V53A X1
 U 1 1 5951CCB6
