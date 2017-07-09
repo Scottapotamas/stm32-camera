@@ -256,7 +256,7 @@ Text Notes 5950 1150 0    118  ~ 24
 IR Flash Driver
 Text Notes 5050 1550 0    60   ~ 0
 Allow the board to drive a IR flash.\nOnboard driver is potentially limiting, so provide header\nso the end-user can connect their own driver or expansion board
-Text GLabel 5600 1900 0    60   Input ~ 0
+Text GLabel 5750 1900 0    60   Input ~ 0
 FLASH_DAC
 Text GLabel 2150 1900 0    60   Input ~ 0
 IRCUT_A
@@ -484,25 +484,6 @@ F 3 "" H 5600 6450 60  0000 C CNN
 $EndComp
 Text Notes 5000 2450 0    60   ~ 0
 DAC output pin is also capable of PWM, and normal GPIO push pull.
-$Comp
-L VEMT3700 Q1
-U 1 1 594F0B89
-P 9900 1900
-F 0 "Q1" H 10096 1938 40  0000 L CNN
-F 1 "VEMT3700" H 10096 1862 40  0000 L CNN
-F 2 "Applidyne_Device:VISHAY_VEMT3700N" H 9825 2000 29  0001 R CNN
-F 3 "http://www.vishay.com/docs/81478/vemt3700.pdf" V 10125 1900 20  0001 C CNN
-F 4 "VISHAY" V 10175 1900 20  0001 C CNN "manf"
-F 5 "Vishay Phototransistor, NPN, 120degrees, 2-Pin PLCC package" V 10150 1900 20  0001 C CNN "desc"
-F 6 "VEMT3700-GS08" V 10200 1900 20  0001 C CNN "manf#"
-F 7 "RS Online" V 10225 1900 20  0001 C CNN "Supplier"
-F 8 "710-3948" V 10250 1900 20  0001 C CNN "Supplier Part No"
-F 9 "http://au.rs-online.com/web/p/phototransistors/7103948" V 10275 1900 20  0001 C CNN "Supplier URL"
-F 10 "0.347" V 10300 1900 20  0001 C CNN "Supplier Price"
-F 11 "10" V 10325 1900 20  0001 C CNN "Supplier Price Break"
-	1    9900 1900
-	1    0    0    -1  
-$EndComp
 Text Notes 8400 2600 0    60   ~ 0
 TODO: Switch to a 0603/0805 \npackage transistor
 $Comp
@@ -557,23 +538,23 @@ Wire Wire Line
 $Comp
 L GND #PWR055
 U 1 1 594F2D3A
-P 6050 2000
-F 0 "#PWR055" H 6050 1750 50  0001 C CNN
-F 1 "GND" H 6055 1827 50  0000 C CNN
-F 2 "" H 6050 2000 60  0000 C CNN
-F 3 "" H 6050 2000 60  0000 C CNN
-	1    6050 2000
+P 6050 2100
+F 0 "#PWR055" H 6050 1850 50  0001 C CNN
+F 1 "GND" H 6055 1927 50  0000 C CNN
+F 2 "" H 6050 2100 60  0000 C CNN
+F 3 "" H 6050 2100 60  0000 C CNN
+	1    6050 2100
 	1    0    0    -1  
 $EndComp
 $Comp
 L +3.3V #PWR056
 U 1 1 594F2D65
-P 6050 1800
-F 0 "#PWR056" H 6050 1760 30  0001 C CNN
-F 1 "+3.3V" H 6059 1938 30  0000 C CNN
-F 2 "" H 6050 1800 60  0000 C CNN
-F 3 "" H 6050 1800 60  0000 C CNN
-	1    6050 1800
+P 6050 1700
+F 0 "#PWR056" H 6050 1660 30  0001 C CNN
+F 1 "+3.3V" H 6059 1838 30  0000 C CNN
+F 2 "" H 6050 1700 60  0000 C CNN
+F 3 "" H 6050 1700 60  0000 C CNN
+	1    6050 1700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -592,6 +573,45 @@ F 8 "http://au.element14.com/murata/grm188r61h225ke11d/cap-mlcc-x5r-2-2uf-50v-06
 F 9 "0.0256" V 7515 5300 20  0001 C CNN "Supplier Price"
 F 10 "10" V 7540 5300 20  0001 C CNN "Supplier Price Break"
 	1    7200 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X03 P3
+U 1 1 5961D8F1
+P 6450 1900
+F 0 "P3" H 6600 1800 50  0000 C CNN
+F 1 "CONN_01X03" H 6800 1950 50  0000 C CNN
+F 2 "Applidyne_Header:Pin_Header_Straight_1x03" H 7500 1850 50  0000 C CNN
+F 3 "" H 6450 1900 50  0000 C CNN
+	1    6450 1900
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5750 1900 6250 1900
+Wire Wire Line
+	6250 1800 6050 1800
+Wire Wire Line
+	6050 1800 6050 1700
+Wire Wire Line
+	6050 2100 6050 2000
+Wire Wire Line
+	6050 2000 6250 2000
+$Comp
+L TEMT7000X01 Q1
+U 1 1 59620A40
+P 9900 1900
+F 0 "Q1" H 10096 1938 40  0000 L CNN
+F 1 "TEMT7000X01" H 10096 1862 40  0000 L CNN
+F 2 "Applidyne_Special:TEMT7000X" H 9825 2000 29  0001 R CNN
+F 3 "http://www.farnell.com/datasheets/2244024.pdf" V 10125 1900 20  0001 C CNN
+F 4 "VISHAY" V 10175 1900 20  0001 C CNN "manf"
+F 5 "TEMT7000X01" V 10200 1900 20  0001 C CNN "manf#"
+F 6 "Element14" V 10225 1900 20  0001 C CNN "Supplier"
+F 7 "1798513" V 10250 1900 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/vishay/temt7000x01/transistor-photo-npn-850nm-0805/dp/1798513" V 10275 1900 20  0001 C CNN "Supplier URL"
+F 9 "0.862" V 10300 1900 20  0001 C CNN "Supplier Price"
+F 10 "10" V 10325 1900 20  0001 C CNN "Supplier Price Break"
+	1    9900 1900
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -364,7 +364,7 @@ U 1 1 5948E009
 P 4650 9100
 F 0 "D1" V 4696 8992 50  0000 R CNN
 F 1 "LED_GREEN_1608M" V 4605 8992 50  0000 R CNN
-F 2 "Applidyne_LED:LEDC1608X80L40N" H 4550 9100 50  0001 C CNN
+F 2 "Applidyne_LED:LEDC1608X80L40L" H 4550 9100 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 4650 8890 50  0001 C CNN
 F 4 "DIALIGHT" H 4650 8680 60  0001 C CNN "manf"
 F 5 "5988070107F" H 4650 8590 60  0001 C CNN "manf#"
@@ -450,9 +450,9 @@ Text GLabel 4650 8400 1    60   Input ~ 0
 STATUS0
 Text GLabel 5650 8400 1    60   Input ~ 0
 STATUS1
-Text GLabel 1600 6700 0    60   Output ~ 0
+Text GLabel 1500 5500 0    60   Output ~ 0
 STATUS0
-Text GLabel 1600 6800 0    60   Output ~ 0
+Text GLabel 1500 5600 0    60   Output ~ 0
 STATUS1
 Text Notes 4900 7800 0    79   ~ 16
 Status Leds
@@ -1069,7 +1069,7 @@ U 1 1 594E9581
 P 5650 9100
 F 0 "D2" V 5696 8992 50  0000 R CNN
 F 1 "LED_RED_1608M" V 5605 8992 50  0000 R CNN
-F 2 "Applidyne_LED:LEDC1608X80L40N" H 5650 9300 50  0001 C CNN
+F 2 "Applidyne_LED:LEDC1608X80L40L" H 5650 9300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1720200.pdf" H 5650 8890 50  0001 C CNN
 F 4 "DIALIGHT" H 5650 8680 60  0001 C CNN "manf"
 F 5 "5988010107F" H 5650 8590 60  0001 C CNN "manf#"
@@ -1081,9 +1081,9 @@ F 10 "10" H 5650 8110 60  0001 C CNN "Supplier Price Break"
 	1    5650 9100
 	0    -1   -1   0   
 $EndComp
-Text Notes 3250 10400 0    60   ~ 0
+Text Notes 3200 10700 0    60   ~ 0
 Use internal temp sensor for logging environmental factors.
-Text Notes 4550 10100 0    79   ~ 16
+Text Notes 4500 10400 0    79   ~ 16
 Notes
 Wire Wire Line
 	9500 8300 10000 8300
@@ -1197,4 +1197,26 @@ F 10 "5" H 1000 460 60  0001 C CNN "Supplier Price Break"
 	1    1000 1800
 	0    1    1    0   
 $EndComp
+$Comp
+L B3U-1000P_SPST-NO_SMD SW1
+U 1 1 5961F9F2
+P 3300 9850
+F 0 "SW1" H 3325 10092 50  0000 C CNN
+F 1 "B3U-1000P_SPST-NO_SMD" H 3325 10001 50  0000 C CNN
+F 2 "Applidyne_Switch:B3U-1000P" H 3300 9610 20  0001 C CNN
+F 3 "http://www.farnell.com/cad/1520836.pdf" H 3300 9585 20  0001 C CNN
+F 4 "OMRON" H 3300 9535 20  0001 C CNN "manf"
+F 5 "B3U-1000P" H 3300 9510 20  0001 C CNN "manf#"
+F 6 "Element 14" H 3300 9485 20  0001 C CNN "Supplier"
+F 7 "1333652" H 3300 9460 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/omron-electronic-components/b3u-1000p/switch-spst-no-0-05a-12v-smd/dp/1333652" H 3300 9435 20  0001 C CNN "Supplier URL"
+F 9 "0.546" H 3300 9410 20  0001 C CNN "Supplier Price"
+F 10 "5" H 3300 9385 20  0001 C CNN "Supplier Price Break"
+	1    3300 9850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 5600 1500 5600
+Wire Wire Line
+	1500 5500 1900 5500
 $EndSCHEMATC

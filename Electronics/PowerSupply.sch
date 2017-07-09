@@ -645,24 +645,6 @@ F 10 "100" V 8535 5675 20  0001 C CNN "Supplier Price Break"
 	1    0    0    -1  
 $EndComp
 $Comp
-L HEADER_MALE_2MM_01X06 P1
-U 1 1 594EB88C
-P 2250 2800
-F 0 "P1" H 2328 2841 50  0000 L CNN
-F 1 "HEADER_MALE_2MM_01X06" H 2328 2750 50  0000 L CNN
-F 2 "Applidyne_Connector:HDRV6W50P200_6X1_1200X200H400" H 2150 3050 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1693770.pdf" H 2250 2000 50  0001 C CNN
-F 4 "HARWIN" H 2200 2200 60  0001 C CNN "manf"
-F 5 "M22-2510605" H 2250 2100 60  0001 C CNN "manf#"
-F 6 "Element14" H 2250 1900 60  0001 C CNN "Supplier"
-F 7 "2289779" H 2250 1800 60  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/harwin/m22-2510605/header-board-board-6way/dp/2289779" H 2250 1700 60  0001 C CNN "Supplier URL"
-F 9 "0.7" H 2250 1550 60  0001 C CNN "Supplier Price"
-F 10 "1" H 2250 1400 60  0001 C CNN "Supplier Price Break"
-	1    2250 2800
-	-1   0    0    -1  
-$EndComp
-$Comp
 L GND #PWR039
 U 1 1 594EBD75
 P 2850 2650
@@ -700,4 +682,15 @@ Wire Wire Line
 	2450 2850 2600 2850
 Text Notes 1500 2150 0    60   ~ 0
 This mimics the 2mm pitch of the adafruit VC0706\nmodule. Unsure if this should attempt to be pin-compatible or not...
+$Comp
+L CONN_01X08 P1
+U 1 1 5961CC25
+P 2250 2900
+F 0 "P1" H 2328 2986 50  0000 L CNN
+F 1 "CONN_01X08" H 2328 2895 50  0000 L CNN
+F 2 "Applidyne_Header:Socket_Strip_Straight_1x08" H 2328 2804 50  0000 L CNN
+F 3 "" H 2250 2900 50  0000 C CNN
+	1    2250 2900
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
