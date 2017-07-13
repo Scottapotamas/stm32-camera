@@ -271,60 +271,6 @@ AMBIENT_LIGHT
 $Comp
 L 47K_QUAD_ARRAY_1608M R9
 U 4 1 594A8889
-P 3025 3875
-F 0 "R9" V 2900 3650 50  0000 L CNN
-F 1 "47K_QUAD_ARRAY_1608M" V 3125 3425 35  0000 L CNN
-F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3225 3740 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3250 3740 20  0001 C CNN
-F 4 "PANASONIC" V 3300 3740 20  0001 C CNN "manf"
-F 5 "EXB38V473JV" V 3325 3740 20  0001 C CNN "manf#"
-F 6 "Element14" V 3350 3740 20  0001 C CNN "Supplier"
-F 7 "2060111" V 3375 3740 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 3400 3740 20  0001 C CNN "Supplier URL"
-F 9 "0.081" V 3425 3740 20  0001 C CNN "Supplier Price"
-F 10 "1" V 3450 3740 20  0001 C CNN "Supplier Price Break"
-	4    3025 3875
-	1    0    0    -1  
-$EndComp
-$Comp
-L 47K_QUAD_ARRAY_1608M R9
-U 3 1 594A8B4E
-P 3375 3875
-F 0 "R9" V 3250 3650 50  0000 L CNN
-F 1 "47K_QUAD_ARRAY_1608M" V 3475 3425 35  0000 L CNN
-F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3575 3740 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3600 3740 20  0001 C CNN
-F 4 "PANASONIC" V 3650 3740 20  0001 C CNN "manf"
-F 5 "EXB38V473JV" V 3675 3740 20  0001 C CNN "manf#"
-F 6 "Element14" V 3700 3740 20  0001 C CNN "Supplier"
-F 7 "2060111" V 3725 3740 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 3750 3740 20  0001 C CNN "Supplier URL"
-F 9 "0.081" V 3775 3740 20  0001 C CNN "Supplier Price"
-F 10 "1" V 3800 3740 20  0001 C CNN "Supplier Price Break"
-	3    3375 3875
-	1    0    0    -1  
-$EndComp
-$Comp
-L 47K_QUAD_ARRAY_1608M R9
-U 2 1 594A8B8B
-P 3725 3875
-F 0 "R9" V 3600 3650 50  0000 L CNN
-F 1 "47K_QUAD_ARRAY_1608M" V 3825 3425 35  0000 L CNN
-F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3925 3740 20  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3950 3740 20  0001 C CNN
-F 4 "PANASONIC" V 4000 3740 20  0001 C CNN "manf"
-F 5 "EXB38V473JV" V 4025 3740 20  0001 C CNN "manf#"
-F 6 "Element14" V 4050 3740 20  0001 C CNN "Supplier"
-F 7 "2060111" V 4075 3740 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 4100 3740 20  0001 C CNN "Supplier URL"
-F 9 "0.081" V 4125 3740 20  0001 C CNN "Supplier Price"
-F 10 "1" V 4150 3740 20  0001 C CNN "Supplier Price Break"
-	2    3725 3875
-	1    0    0    -1  
-$EndComp
-$Comp
-L 47K_QUAD_ARRAY_1608M R9
-U 1 1 594A8BD3
 P 4075 3875
 F 0 "R9" V 3950 3650 50  0000 L CNN
 F 1 "47K_QUAD_ARRAY_1608M" V 4175 3425 35  0000 L CNN
@@ -337,7 +283,61 @@ F 7 "2060111" V 4425 3740 20  0001 C CNN "Supplier Part No"
 F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 4450 3740 20  0001 C CNN "Supplier URL"
 F 9 "0.081" V 4475 3740 20  0001 C CNN "Supplier Price"
 F 10 "1" V 4500 3740 20  0001 C CNN "Supplier Price Break"
-	1    4075 3875
+	4    4075 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L 47K_QUAD_ARRAY_1608M R9
+U 3 1 594A8B4E
+P 3725 3875
+F 0 "R9" V 3600 3650 50  0000 L CNN
+F 1 "47K_QUAD_ARRAY_1608M" V 3825 3425 35  0000 L CNN
+F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3925 3740 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3950 3740 20  0001 C CNN
+F 4 "PANASONIC" V 4000 3740 20  0001 C CNN "manf"
+F 5 "EXB38V473JV" V 4025 3740 20  0001 C CNN "manf#"
+F 6 "Element14" V 4050 3740 20  0001 C CNN "Supplier"
+F 7 "2060111" V 4075 3740 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 4100 3740 20  0001 C CNN "Supplier URL"
+F 9 "0.081" V 4125 3740 20  0001 C CNN "Supplier Price"
+F 10 "1" V 4150 3740 20  0001 C CNN "Supplier Price Break"
+	3    3725 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L 47K_QUAD_ARRAY_1608M R9
+U 2 1 594A8B8B
+P 3025 3875
+F 0 "R9" V 2900 3650 50  0000 L CNN
+F 1 "47K_QUAD_ARRAY_1608M" V 3125 3425 35  0000 L CNN
+F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3225 3740 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3250 3740 20  0001 C CNN
+F 4 "PANASONIC" V 3300 3740 20  0001 C CNN "manf"
+F 5 "EXB38V473JV" V 3325 3740 20  0001 C CNN "manf#"
+F 6 "Element14" V 3350 3740 20  0001 C CNN "Supplier"
+F 7 "2060111" V 3375 3740 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 3400 3740 20  0001 C CNN "Supplier URL"
+F 9 "0.081" V 3425 3740 20  0001 C CNN "Supplier Price"
+F 10 "1" V 3450 3740 20  0001 C CNN "Supplier Price Break"
+	2    3025 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L 47K_QUAD_ARRAY_1608M R9
+U 1 1 594A8BD3
+P 3375 3875
+F 0 "R9" V 3250 3650 50  0000 L CNN
+F 1 "47K_QUAD_ARRAY_1608M" V 3475 3425 35  0000 L CNN
+F 2 "Applidyne_Resistor:R_Array_Concave_4x1608M" V 3575 3740 20  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2085571.pdf" V 3600 3740 20  0001 C CNN
+F 4 "PANASONIC" V 3650 3740 20  0001 C CNN "manf"
+F 5 "EXB38V473JV" V 3675 3740 20  0001 C CNN "manf#"
+F 6 "Element14" V 3700 3740 20  0001 C CNN "Supplier"
+F 7 "2060111" V 3725 3740 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/panasonic-electronic-components/exb38v473jv/resistance-47kohm/dp/2060111" V 3750 3740 20  0001 C CNN "Supplier URL"
+F 9 "0.081" V 3775 3740 20  0001 C CNN "Supplier Price"
+F 10 "1" V 3800 3740 20  0001 C CNN "Supplier Price Break"
+	1    3375 3875
 	1    0    0    -1  
 $EndComp
 $Comp

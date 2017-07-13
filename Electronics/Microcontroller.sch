@@ -1196,23 +1196,48 @@ $EndComp
 $Comp
 L B3U-1000P_SPST-NO_SMD SW1
 U 1 1 5961F9F2
-P 3300 9850
-F 0 "SW1" H 3325 10092 50  0000 C CNN
-F 1 "B3U-1000P_SPST-NO_SMD" H 3325 10001 50  0000 C CNN
-F 2 "Applidyne_Switch:B3U-1000P" H 3300 9610 20  0001 C CNN
-F 3 "http://www.farnell.com/cad/1520836.pdf" H 3300 9585 20  0001 C CNN
-F 4 "OMRON" H 3300 9535 20  0001 C CNN "manf"
-F 5 "B3U-1000P" H 3300 9510 20  0001 C CNN "manf#"
-F 6 "Element 14" H 3300 9485 20  0001 C CNN "Supplier"
-F 7 "1333652" H 3300 9460 20  0001 C CNN "Supplier Part No"
-F 8 "http://au.element14.com/omron-electronic-components/b3u-1000p/switch-spst-no-0-05a-12v-smd/dp/1333652" H 3300 9435 20  0001 C CNN "Supplier URL"
-F 9 "0.546" H 3300 9410 20  0001 C CNN "Supplier Price"
-F 10 "5" H 3300 9385 20  0001 C CNN "Supplier Price Break"
-	1    3300 9850
-	1    0    0    -1  
+P 6750 8900
+F 0 "SW1" H 6775 9142 50  0000 C CNN
+F 1 "B3U-1000P_SPST-NO_SMD" H 6775 9051 50  0000 C CNN
+F 2 "Applidyne_Switch:B3U-1000P" H 6750 8660 20  0001 C CNN
+F 3 "http://www.farnell.com/cad/1520836.pdf" H 6750 8635 20  0001 C CNN
+F 4 "OMRON" H 6750 8585 20  0001 C CNN "manf"
+F 5 "B3U-1000P" H 6750 8560 20  0001 C CNN "manf#"
+F 6 "Element 14" H 6750 8535 20  0001 C CNN "Supplier"
+F 7 "1333652" H 6750 8510 20  0001 C CNN "Supplier Part No"
+F 8 "http://au.element14.com/omron-electronic-components/b3u-1000p/switch-spst-no-0-05a-12v-smd/dp/1333652" H 6750 8485 20  0001 C CNN "Supplier URL"
+F 9 "0.546" H 6750 8460 20  0001 C CNN "Supplier Price"
+F 10 "5" H 6750 8435 20  0001 C CNN "Supplier Price Break"
+	1    6750 8900
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	1900 5600 1500 5600
 Wire Wire Line
 	1500 5500 1900 5500
+Text GLabel 6750 8400 1    60   Input ~ 0
+BUTTON0
+$Comp
+L GND #PWR?
+U 1 1 59677744
+P 6750 9450
+F 0 "#PWR?" H 6750 9200 50  0001 C CNN
+F 1 "GND" H 6755 9277 50  0000 C CNN
+F 2 "" H 6750 9450 60  0000 C CNN
+F 3 "" H 6750 9450 60  0000 C CNN
+	1    6750 9450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 9450 6750 9350
+Wire Wire Line
+	6750 8500 6750 8400
+Text GLabel 9500 5800 0    60   Input ~ 0
+BUTTON0
+Wire Wire Line
+	9500 5800 10000 5800
+Text Notes 6400 7800 0    79   ~ 16
+User Button
+Text Notes 6600 9400 1    60   ~ 0
+Use internal pullup.
 $EndSCHEMATC
