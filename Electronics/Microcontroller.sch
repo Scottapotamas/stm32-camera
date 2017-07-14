@@ -14,7 +14,6 @@ LIBS:appli_fuse
 LIBS:appli_inductor
 LIBS:appli_linear
 LIBS:appli_link
-LIBS:appli_logic_devices
 LIBS:appli_logo
 LIBS:appli_memory
 LIBS:appli_mount
@@ -1218,10 +1217,10 @@ Wire Wire Line
 Text GLabel 6750 8400 1    60   Input ~ 0
 BUTTON0
 $Comp
-L GND #PWR?
+L GND #PWR021
 U 1 1 59677744
 P 6750 9450
-F 0 "#PWR?" H 6750 9200 50  0001 C CNN
+F 0 "#PWR021" H 6750 9200 50  0001 C CNN
 F 1 "GND" H 6755 9277 50  0000 C CNN
 F 2 "" H 6750 9450 60  0000 C CNN
 F 3 "" H 6750 9450 60  0000 C CNN
@@ -1240,4 +1239,33 @@ Text Notes 6400 7800 0    79   ~ 16
 User Button
 Text Notes 6600 9400 1    60   ~ 0
 Use internal pullup.
+Text GLabel 9500 5600 0    60   BiDi ~ 0
+EXP_0
+Text GLabel 9500 5500 0    60   BiDi ~ 0
+EXP_1
+Wire Wire Line
+	9500 5600 10000 5600
+Wire Wire Line
+	10000 5500 9500 5500
+NoConn ~ 10000 8400
+NoConn ~ 10000 8100
+NoConn ~ 10000 8000
+NoConn ~ 1900 4000
+NoConn ~ 1900 5900
+NoConn ~ 1900 6000
+NoConn ~ 1900 7000
+NoConn ~ 1900 3600
+NoConn ~ 1900 3500
+NoConn ~ 1900 3400
+NoConn ~ 1900 3300
+NoConn ~ 10000 4600
+NoConn ~ 10000 4700
+NoConn ~ 10000 4800
+NoConn ~ 10000 3400
+NoConn ~ 10000 3500
+NoConn ~ 10000 3600
+NoConn ~ 10000 3700
+NoConn ~ 10000 3800
+Text Notes 8475 5300 0    60   ~ 0
+Expansion IO allow for CAN\nor normal GPIO functions
 $EndSCHEMATC
