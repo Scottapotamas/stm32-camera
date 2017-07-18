@@ -2,10 +2,10 @@
 
   (general
     (links 194)
-    (no_connects 3)
+    (no_connects 0)
     (area 89.900001 93.54 208.228571 138.797143)
     (thickness 1.6)
-    (drawings 19)
+    (drawings 20)
     (tracks 901)
     (zones 0)
     (modules 62)
@@ -20,8 +20,8 @@
 
   (layers
     (0 F.Cu signal)
-    (1 In1.Cu signal hide)
-    (2 In2.Cu signal hide)
+    (1 In1.Cu signal)
+    (2 In2.Cu signal)
     (31 B.Cu signal)
     (34 B.Paste user)
     (35 F.Paste user)
@@ -3154,6 +3154,9 @@
     )
   )
 
+  (gr_text "V1.0.0\nScott Rapson\n" (at 102.85 108.25 270) (layer F.SilkS) (tstamp 596E1DCE)
+    (effects (font (size 0.9 0.9) (thickness 0.14)) (justify left))
+  )
   (gr_text E1 (at 108.95 103.85) (layer F.SilkS) (tstamp 596AF08F)
     (effects (font (size 0.9 0.9) (thickness 0.14)))
   )
@@ -3214,6 +3217,8 @@
   (gr_line (start 136 104) (end 136 132) (layer Edge.Cuts) (width 0.1))
   (gr_line (start 104.1 100) (end 132 100) (layer Edge.Cuts) (width 0.1))
 
+  (segment (start 128.4 119.495) (end 128.4 118.774998) (width 0.2) (layer F.Cu) (net 1))
+  (via (at 128.4 118.774998) (size 0.6) (drill 0.3) (layers F.Cu B.Cu) (net 1))
   (segment (start 129.525 118.325) (end 129.4 118.45) (width 0.2) (layer F.Cu) (net 1))
   (segment (start 130.45 118.325) (end 129.525 118.325) (width 0.2) (layer F.Cu) (net 1))
   (via (at 129.4 118.45) (size 0.6) (drill 0.3) (layers F.Cu B.Cu) (net 1))
@@ -3313,8 +3318,6 @@
   (segment (start 121.55 134.83) (end 121.55 133.55) (width 0.2) (layer F.Cu) (net 1))
   (via (at 121.5 133.5) (size 0.6) (drill 0.3) (layers F.Cu B.Cu) (net 1))
   (segment (start 121.55 133.55) (end 121.5 133.5) (width 0.2) (layer F.Cu) (net 1))
-  (segment (start 128.4 119.495) (end 128.4 118.7) (width 0.2) (layer F.Cu) (net 1))
-  (via (at 128.4 118.7) (size 0.6) (drill 0.3) (layers F.Cu B.Cu) (net 1))
   (segment (start 127.2 119.495) (end 127.2 118.7) (width 0.2) (layer F.Cu) (net 1))
   (via (at 127.2 118.7) (size 0.6) (drill 0.3) (layers F.Cu B.Cu) (net 1))
   (segment (start 134.4 111.9) (end 133.1 111.9) (width 0.3) (layer F.Cu) (net 1))
