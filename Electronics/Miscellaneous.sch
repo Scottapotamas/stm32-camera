@@ -42,11 +42,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 5
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "STM32 Camera Board"
+Date "2017-07-18"
+Rev "1.0.0"
+Comp "Scott Rapson"
+Comment1 "https://github.com/Scottapotamas/stm32-camera"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -155,9 +155,9 @@ Wire Wire Line
 Wire Wire Line
 	4400 5100 4150 5100
 Wire Wire Line
-	4150 4600 4150 5100
+	4150 5100 4150 4600
 Wire Wire Line
-	2825 4600 4150 4600
+	4150 4600 2825 4600
 Wire Wire Line
 	2825 4900 4075 4900
 Wire Wire Line
@@ -179,9 +179,9 @@ Wire Wire Line
 Wire Wire Line
 	4400 5800 4150 5800
 Wire Wire Line
-	4150 6100 4150 5800
+	4150 5800 4150 6100
 Wire Wire Line
-	2825 6100 4150 6100
+	4150 6100 2825 6100
 Wire Wire Line
 	4800 6400 2825 6400
 Wire Wire Line
@@ -251,7 +251,7 @@ $EndComp
 Text Notes 2350 1150 0    118  ~ 24
 IR Cut Filter Driver
 Text Notes 2000 1600 0    60   ~ 0
-Hardware switching IR-Cut is bistable solenoid.\nUse a H-Bridge style drive for control. Approx 100mA rating.\nSee the electronics readme for test info.\n
+Hardware switching IR-Cut is bistable solenoid.\nUse a H-Bridge style drive for control. Approx 60mA required.\nSee the electronics readme for test info.\n
 Text GLabel 2850 1800 0    60   Input ~ 0
 IRCUT_A
 Text GLabel 2850 2300 0    60   Input ~ 0
@@ -355,9 +355,9 @@ $EndComp
 Wire Wire Line
 	3925 2000 3825 2000
 Wire Wire Line
-	3825 1800 3825 2000
+	3825 2000 3825 1800
 Wire Wire Line
-	2850 1800 3825 1800
+	3825 1800 2850 1800
 Wire Wire Line
 	3925 2100 3825 2100
 Wire Wire Line
@@ -476,8 +476,8 @@ F 3 "" H 5600 6450 60  0000 C CNN
 	1    5600 6450
 	1    0    0    -1  
 $EndComp
-Text Notes 6300 2550 0    60   ~ 0
-TODO: Switch to a 0603/0805 \npackage transistor
+Text Notes 8350 2525 0    60   ~ 0
+Experimentally determine\nwhat level of gain is required.
 $Comp
 L 10K_1005M R10
 U 1 1 594F0F97
@@ -615,4 +615,8 @@ Wire Wire Line
 Wire Wire Line
 	3350 2250 3350 2300
 Connection ~ 3350 2300
+Text Notes 9550 3750 0    60   ~ 0
+N/A for V1.0.0
+Text Notes 9350 6200 0    60   ~ 0
+Text only at this stage
 $EndSCHEMATC

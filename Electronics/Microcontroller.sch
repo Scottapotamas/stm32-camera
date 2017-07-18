@@ -42,11 +42,11 @@ EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
 Sheet 2 5
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "STM32 Camera Board"
+Date "2017-07-18"
+Rev "1.0.0"
+Comp "Scott Rapson"
+Comment1 "https://github.com/Scottapotamas/stm32-camera"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -1079,8 +1079,8 @@ F 10 "10" H 5650 8110 60  0001 C CNN "Supplier Price Break"
 	1    5650 9100
 	0    -1   -1   0   
 $EndComp
-Text Notes 3200 10700 0    60   ~ 0
-Use internal temp sensor for logging environmental factors.
+Text Notes 3325 10875 0    60   ~ 0
+Use internal temp sensor for logging environmental factors.\n\nWe don't include a RTC, so timestamping saved images relies on\nthe system host to provide a time.
 Text Notes 4500 10400 0    79   ~ 16
 Notes
 Wire Wire Line
@@ -1269,4 +1269,6 @@ NoConn ~ 10000 3700
 NoConn ~ 10000 3800
 Text Notes 8475 5300 0    60   ~ 0
 Expansion IO allow for CAN\nor normal GPIO functions
+Text Notes 2275 9500 0    60   ~ 0
+Header is removed from BoM for cost saving.\nFirmware updates or flashing over UART.\n\nSWD programmers are great for debug.\nUses standard CORTEX 10-pin header.\n
 $EndSCHEMATC

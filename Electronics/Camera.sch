@@ -42,11 +42,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "STM32 Camera Board"
+Date "2017-07-18"
+Rev "1.0.0"
+Comp "Scott Rapson"
+Comment1 "https://github.com/Scottapotamas/stm32-camera"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -105,7 +105,7 @@ PWDN
 Text GLabel 4050 5000 3    60   Input ~ 0
 RESET
 Text Notes 1725 5175 0    60   ~ 0
-RESET Active Low (internal pullup?)\nPWDN Active High (internal pulldown?)\nSTROBE indicates flash LED (no pull R)\n\nPull Up/Down specified in main pinout.\nSpecified as not included in hardware appnote.
+RESET Active Low (internal pullup?)\nPWDN Active High (internal pulldown?)\nSTROBE indicates flash LED (no pull R)\n\nPull Up/Down specified in main pinout.\nSpecified as not included in hardware appnote.\nMicrocontroller pins can be configured \nas pullup or pulldown if required.
 Text GLabel 7600 3750 2    60   BiDi ~ 0
 SIO_D
 Text GLabel 7600 3650 2    60   Input ~ 0
@@ -566,7 +566,7 @@ Analog Frontend
 Text Notes 1150 950  0    59   ~ 12
 Camera Specifications
 Text Notes 7475 5850 0    60   ~ 0
-If micro is disabling/enabling regs sequentially, ensure turn on order is:\n3.3V -> 1.3V -> 2.8V or the camera gets angry.\nAfter last supply is on for 3ms, the reset line on the OV2460 can go high.\n
+If micro is disabling/enabling regs sequentially, ensure turn on order is:\n3.3V -> 1.3V -> 2.8V or the camera gets angry.\n\nAfter last supply is on for 3ms, the reset line on the OV2460 can go high.\n
 $Comp
 L +3.3V #PWR65
 U 1 1 594A76B0
@@ -634,7 +634,7 @@ $EndComp
 Text Notes 1150 2400 0    59   ~ 12
 IR-Cut Switchable Filter\nLens Mount
 Text Notes 800  2600 0    60   ~ 0
-Bisable Solenoid drive and connector on last page
+Bisable Solenoid drive and connector on misc page
 $Comp
 L M12_LENS_MOUNT_IR_SWITCHNG MP1
 U 1 1 594F9921

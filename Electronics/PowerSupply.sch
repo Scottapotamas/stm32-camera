@@ -42,11 +42,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 5
-Title ""
-Date ""
-Rev "A"
-Comp ""
-Comment1 ""
+Title "STM32 Camera Board"
+Date "2017-07-18"
+Rev "1.0.0"
+Comp "Scott Rapson"
+Comment1 "https://github.com/Scottapotamas/stm32-camera"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -146,8 +146,6 @@ F 3 "" H 9525 3950 60  0000 C CNN
 $EndComp
 Text Notes 7125 3575 0    63   ~ 13
 2.8V Regulator
-Text Notes 1825 4475 0    79   ~ 16
-Input Filter and polarity/esd protection???\nCurrently incredibly plain. Assume user is intelligent.
 Text Notes 2375 1900 0    63   ~ 13
 Main Connector
 $Comp
@@ -681,7 +679,7 @@ Wire Wire Line
 Wire Wire Line
 	2450 2850 2600 2850
 Text Notes 1500 2150 0    60   ~ 0
-This mimics the 2mm pitch of the adafruit VC0706\nmodule. Unsure if this should attempt to be pin-compatible or not...
+Main power and IO connection.\nConsider using a 'stackable' style header to add a IR LED flash ring.
 $Comp
 L CONN_01X08 P1
 U 1 1 5961CC25
@@ -702,7 +700,7 @@ EXP_0
 Text Notes 3250 3100 0    60   ~ 0
 DAC output pin is also timer and ADC capable.
 Text Notes 3250 3250 0    60   ~ 0
-EXP pins are generic I/O (and also CAN pins)
+EXP pins are generic I/O (and also CAN HL pins)
 Wire Wire Line
 	2600 3050 2450 3050
 Wire Wire Line
@@ -722,4 +720,8 @@ F 3 "" H 3125 2950 60  0000 C CNN
 	1    3125 2950
 	0    -1   -1   0   
 $EndComp
+Text Notes 3025 5725 0    60   ~ 0
+Input capacitors on regulators might not all be required.\nEvaluate behaviour with scope and optionally remove from BoM.
+Text Notes 3050 4450 0    60   ~ 0
+Low voltage regs can be disabled by micro.\nHelps reduce quiescent power draw and control\npower to the camera IC.\n\nLogic High to enable.
 $EndSCHEMATC

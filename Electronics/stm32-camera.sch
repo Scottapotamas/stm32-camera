@@ -42,11 +42,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 5
-Title ""
-Date "2017-03-04"
-Rev ""
-Comp ""
-Comment1 ""
+Title "STM32 Camera Board"
+Date "2017-07-18"
+Rev "1.0.0"
+Comp "Scott Rapson"
+Comment1 "https://github.com/Scottapotamas/stm32-camera"
 Comment2 ""
 Comment3 ""
 Comment4 ""
