@@ -145,8 +145,8 @@ F 3 "" H 9525 3950 60  0000 C CNN
 $EndComp
 Text Notes 7125 3575 0    63   ~ 13
 2.8V Regulator
-Text Notes 2425 5000 0    60   ~ 0
-Input Filter and polarity/esd protection???
+Text Notes 1825 4475 0    79   ~ 16
+Input Filter and polarity/esd protection???\nCurrently incredibly plain. Assume user is intelligent.
 Text Notes 2375 1900 0    63   ~ 13
 Main Connector
 $Comp
