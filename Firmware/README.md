@@ -1,6 +1,6 @@
 # Software Notes
 
-General implementation notes during development
+General implementation notes during development.
 
 # SD Card
 
@@ -10,3 +10,11 @@ This thread discusses using DMA for high performance non-blocking use.
 https://community.st.com/thread/39133-high-performance-sdiosdmmc-driver-using-dma-for-freertos-anyone
 
 Also this tutorial: http://thehackerworkshop.com/?p=1103
+
+Detection relies on the internal pullup on that GPIO pin.
+
+# Other notes
+
+https://github.com/nothings/stb
+
+Seems like a possible option for direct jpeg manipulation.
