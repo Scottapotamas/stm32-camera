@@ -42,6 +42,24 @@ CubeMX is designed to take the effort out of setting up and configuring the peri
 
 If pinouts are being changed or settings modified, make sure the changes are actually reflected in the app_hal source as I don't use the CubeMX generated wrappers for init etc. By rolling (mostly) the same code in my own hal layer, there are fewer issues with regenerating cubemx and allows for dynamic init/deinit of peripherals to reduce power when they are unused.
 
+## Unit Tests
+
+TODO: describe how to run tests
+
+## Firmware Flashing without SWD
+
+The microcontroller supports firmware updates using the internal read-only bootloader which is present on all STM32 chips. This functionality means the board is 'unbrickable'. This same functionality allows a 'host' microcontroller to update the camera board firmware in the field.
+
+Normally the BOOT0 pin is held high during startup and the micro will enter the bootloader. On this board, the micro has the ability to enter the bootloader from software, which is done by charging a capacitor then calling for a reboot. The cap holds BOOT0 high long enough for the STM upgrade utility to start.
+
+The microcontroller can be commanded to enter this mode through the command line. TODO:by holding the user-button for 5 seconds during boot.
+
+A UART cable can be used with the [ST Demonstration Flasher32 Application DB2875](http://www.st.com/en/development-tools/flasher-stm32.html) to perform firmware updates with a PC.
+
+The protocol for the bootloader is defined in the [ST AN3155 appnote](http://www.st.com/content/ccc/resource/technical/document/application_note/51/5f/03/1e/bd/9b/45/be/CD00264342.pdf/files/CD00264342.pdf/jcr:content/translations/en.CD00264342.pdf).
+
+If you've flashed some software that prevents the micro from being able to start the upgrade proceedure, you can manually force BOOT0 high by conecting the outside side of C28 to 3.3V (or use SWD and a real programmer).
+
 ___
 
 # SD Card
