@@ -19,6 +19,7 @@
 #include "status.h"
 #include "hal_gpio.h"
 #include "hal_watchdog.h"
+#include "hal_adc.h"
 
 /* -------------------------------------------------------------------------- */
 
@@ -33,11 +34,11 @@ app_hardware_init( void )
     status_green( true );
     status_red( true );
 
+    hal_adc_init();
+
     /* Start the watchdog for around 10s timeout */
     hal_watchdog_init( 20000 );
 
-    /* Configure external I2C pins */
-    //hal_gpio_configure_i2c_defaults();
     //TODO init i2c and camera pin states here
     hal_systick_init();
 }
