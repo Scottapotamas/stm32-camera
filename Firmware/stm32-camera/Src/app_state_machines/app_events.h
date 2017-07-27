@@ -31,6 +31,8 @@ extern "C" {
 #include "hal_i2c.h"
 #include "auxiliary.h"
 #include "hal_uart.h"
+#include "ff.h"
+#include "auxiliary.h"
 
 /* -------------------------------------------------------------------------- */
 
@@ -87,6 +89,26 @@ typedef struct KeyboardEvent__
 } KeyboardEvent;
 
 /* -------------------------------------------------------------------------- */
+
+/** File System Status Event Structures */
+typedef struct FileSystemRequestEvent__
+{
+    StateEvent super;             /**< Encapsulated event reference */
+    StateTask  *task;             /**< Task pointer making the request.
+                                       Should not be more than 1 per task */
+} FileSystemRequestEvent;
+
+/* -------------------------------------------------------------------------- */
+
+/** File System Status Event Structures */
+typedef struct FileSystemStatusEvent__
+{
+    StateEvent super;             /**< Encapsulated event reference */
+    FRESULT    f_result;          /**< FatFS FRESULT of mount/unmount */
+    uint8_t    number_of_mounts;  /**< Number of tasks with an open mount */
+    uint32_t   space_total_KiB;   /**< Total KiB for disk */
+    uint32_t   space_free_KiB;    /**< Free KiB on disk */
+} FileSystemStatusEvent;
 
 /* ----- End ---------------------------------------------------------------- */
 
