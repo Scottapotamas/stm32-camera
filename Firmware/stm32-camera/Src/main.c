@@ -48,7 +48,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
-#include "adc.h"
 #include "dcmi.h"
 #include "dma.h"
 #include "fatfs.h"
@@ -116,7 +115,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_DMA_Init();
-  MX_ADC1_Init();
   MX_DCMI_Init();
   MX_SDIO_SD_Init();
   MX_FATFS_Init();
