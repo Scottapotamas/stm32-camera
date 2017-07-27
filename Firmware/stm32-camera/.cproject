@@ -14,7 +14,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="Development Settings" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1622743953" name="Debug" parent="fr.ac6.managedbuild.config.gnu.cross.exe.debug" postannouncebuildStep="Generating binary and Printing size information:" postbuildStep="arm-none-eabi-objcopy -O binary &quot;${BuildArtifactFileBaseName}.elf&quot; &quot;${BuildArtifactFileBaseName}.bin&quot; &amp;&amp; arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;" preannouncebuildStep="Generate version info header file" prebuildStep="cmd.exe /c &quot;..\CreateBuildInfo.bat&quot;">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="Development Settings" id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1622743953" name="Debug" parent="fr.ac6.managedbuild.config.gnu.cross.exe.debug" postannouncebuildStep="Generating binary and Printing size information:" postbuildStep="arm-none-eabi-objcopy -O binary &quot;${BuildArtifactFileBaseName}.elf&quot; &quot;${BuildArtifactFileBaseName}.bin&quot; &amp;&amp; arm-none-eabi-objcopy -O ihex &quot;${BuildArtifactFileBaseName}.elf&quot; &quot;${BuildArtifactFileBaseName}.hex&quot; &amp;&amp; arm-none-eabi-size &quot;${BuildArtifactFileName}&quot;" preannouncebuildStep="Generate version info header file" prebuildStep="cmd.exe /c &quot;..\CreateBuildInfo.bat&quot;">
 					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1622743953." name="/" resourcePath="">
 						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.662090953" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="fr.ac6.managedbuild.option.gnu.cross.prefix.1421335639" name="Prefix" superClass="fr.ac6.managedbuild.option.gnu.cross.prefix" value="arm-none-eabi-" valueType="string"/>
@@ -24,7 +24,7 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1764843285" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu" value="fr.ac6.managedbuild.option.gnu.cross.fpu.fpv4-sp-d16" valueType="enumerated"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.948328829" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.hard" valueType="enumerated"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.1476526375" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/stm32-camera}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1935845229" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+							<builder buildPath="${workspace_loc:/stm32-camera}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1935845229" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" stopOnErr="true" superClass="fr.ac6.managedbuild.builder.gnu.cross">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
@@ -34,18 +34,18 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.221709530" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="fr.ac6.managedbuild.gnu.c.optimization.level.debug" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.904809918" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1067340367" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_drivers"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_hal"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_state_machines"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_utility"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/STM32F4xx_HAL_Driver/Inc"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/STM32F4xx_HAL_Driver/Inc/Legacy"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/Third_Party/FatFs/src/drivers"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/CMSIS/Device/ST/STM32F4xx/Include"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/Third_Party/FatFs/src"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/CMSIS/Include"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/Third_Party/minIni"/>
+									<listOptionValue builtIn="false" value="../Src"/>
+									<listOptionValue builtIn="false" value="../Src/app_drivers"/>
+									<listOptionValue builtIn="false" value="../Src/app_hal"/>
+									<listOptionValue builtIn="false" value="../Src/app_state_machines"/>
+									<listOptionValue builtIn="false" value="../Src/app_utility"/>
+									<listOptionValue builtIn="false" value="../Middlewares/STM32F4xx_HAL_Driver/Inc"/>
+									<listOptionValue builtIn="false" value="../Middlewares/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src/drivers"/>
+									<listOptionValue builtIn="false" value="../Middlewares/CMSIS/Device/ST/STM32F4xx/Include"/>
+									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src"/>
+									<listOptionValue builtIn="false" value="../Middlewares/CMSIS/Include"/>
+									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/minIni"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.555550248" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__weak=__attribute__((weak))"/>
@@ -55,6 +55,8 @@
 								</option>
 								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other.751352490" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-fmessage-length=0" valueType="string"/>
 								<option id="gnu.c.compiler.option.dialect.std.30666710" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.c99" valueType="enumerated"/>
+								<option id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.fdata.1468234465" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.fdata" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.c.compiler.option.warnings.extrawarn.38101836" superClass="gnu.c.compiler.option.warnings.extrawarn" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.113846276" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.636491120" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
 							</tool>
@@ -74,19 +76,19 @@
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1308971154" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.103609666" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.642972205" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
+							<tool command="as" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="fr.ac6.managedbuild.tool.gnu.cross.assembler.642972205" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler">
 								<option id="gnu.both.asm.option.include.paths.162348322" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_drivers"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_hal"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_state_machines"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Src/app_utility"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/STM32F4xx_HAL_Driver/Inc"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/STM32F4xx_HAL_Driver/Inc/Legacy"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/Third_Party/FatFs/src/drivers"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/CMSIS/Device/ST/STM32F4xx/Include"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/Third_Party/FatFs/src"/>
-									<listOptionValue builtIn="false" value="C:/Projects/stm32-camera/Firmware/stm32-camera/Middlewares/CMSIS/Include"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Src"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Src/app_drivers"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Src/app_hal"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Src/app_state_machines"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Src/app_utility"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/STM32F4xx_HAL_Driver/Inc"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/Third_Party/FatFs/src/drivers"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/CMSIS/Device/ST/STM32F4xx/Include"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/Third_Party/FatFs/src"/>
+									<listOptionValue builtIn="false" value="${ProjName}/Middlewares/CMSIS/Include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.873827174" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.1081469614" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
@@ -225,4 +227,5 @@
 		</configuration>
 		<configuration configurationName="Release"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
