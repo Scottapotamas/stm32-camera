@@ -80,6 +80,12 @@ PRIVATE void AppTaskSupervisor_initial( AppTaskSupervisor *me,
     /* Detect user activities */
     eventSubscribe( (StateTask*)me, BUTTON_NORMAL_SIGNAL );
 
+    /* File System Status Responses */
+    eventSubscribe( (StateTask*)me, FILE_SYSTEM_MOUNTED );
+    eventSubscribe( (StateTask*)me, FILE_SYSTEM_UNMOUNTED );
+
+    eventSubscribe( (StateTask*)me, TERMINAL_INPUT_CHAR_SIGNAL );
+
 
     /* High Level Commands */
 

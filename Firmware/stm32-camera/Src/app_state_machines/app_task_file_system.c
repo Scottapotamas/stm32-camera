@@ -254,7 +254,7 @@ PRIVATE STATE AppTaskFileSystem_mount( AppTaskFileSystem *me,
 
         case STATE_INIT_SIGNAL:
             me->retry = 0;
-            STATE_INIT( AppTaskFileSystem_mounting_power_on );
+            STATE_INIT( AppTaskFileSystem_mounting );
             return 0;
 
         case FILE_SYSTEM_CMD_MOUNT:
@@ -274,33 +274,6 @@ PRIVATE STATE AppTaskFileSystem_mount( AppTaskFileSystem *me,
 
 /* -------------------------------------------------------------------------- */
 
-PRIVATE STATE AppTaskFileSystem_mounting_power_on( AppTaskFileSystem *me,
-                                                   const StateEvent *e )
-{
-    switch( e->signal )
-    {
-        case STATE_ENTRY_SIGNAL:
-
-            eventTimerStartOnce( &me->timer,
-                                 (StateTask* )me,
-                                 (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
-                                 MS_TO_TICKS( TIME_APPLICATION_USB_POWERON ) );
-            //TODO find nice wait time for sd card 'power on'
-            return 0;
-
-        case STATE_TIMEOUT1_SIGNAL:
-            STATE_TRAN( AppTaskFileSystem_mounting );
-            return 0;
-
-        case STATE_EXIT_SIGNAL:
-            eventTimerStopIfActive( &me->timer );
-            return 0;
-    }
-    return (STATE)AppTaskFileSystem_mount;
-}
-
-/* -------------------------------------------------------------------------- */
-
 PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
                                           const StateEvent *e )
 {
@@ -311,7 +284,7 @@ PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
            eventTimerStartOnce( &me->timer,
                                  (StateTask* )me,
                                  (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
-                                 MS_TO_TICKS( TIME_APPLICATION_USB_DETECT ) );
+                                 MS_TO_TICKS( 500 ) );
             return 0;
 
         case STATE_TIMEOUT1_SIGNAL:
@@ -319,7 +292,7 @@ PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
             LOG( FILE_SYSTEM,
                  LOG_ERROR,
                  "USB Not responding (timeout %ds)",
-                 TIME_APPLICATION_USB_DETECT / 1000 );
+                 500 );
             STATE_TRAN( AppTaskFileSystem_mounting_retry );
             return 0;
 
@@ -346,7 +319,7 @@ PRIVATE STATE AppTaskFileSystem_mounting_retry( AppTaskFileSystem *me,
             me->retry++;
             if( me->retry < 5 )
             {
-                STATE_TRAN( AppTaskFileSystem_mounting_power_on );
+                STATE_TRAN( AppTaskFileSystem_mounting );
             }
             else
             {
@@ -390,16 +363,16 @@ PRIVATE STATE AppTaskFileSystem_mounted( AppTaskFileSystem *me,
 
         case STATE_STEP1_SIGNAL:
             /* Device ready to communicate. Mount file system */
-            me->f_result = f_mount( &me->fs[SD_DRIVE], (TCHAR*)APP_CONFIG_USB_DRIVE, 1 );
+            me->f_result = f_mount( &me->fs[SD_DRIVE], (TCHAR*)APP_CONFIG_SD_DRIVE, 1 );
             if( me->f_result == FR_OK )
             {
                 DWORD free_clusters;
                 FATFS *fs;
 
-                f_chdrive( (TCHAR*)APP_CONFIG_USB_DRIVE );
+                f_chdrive( (TCHAR*)APP_CONFIG_SD_DRIVE );
 
                 /* Get total and free space in KiB */
-                me->f_result = f_getfree( (TCHAR*)APP_CONFIG_USB_DRIVE,
+                me->f_result = f_getfree( (TCHAR*)APP_CONFIG_SD_DRIVE,
                                           &free_clusters,
                                           &fs );
                 if( me->f_result == FR_OK )
@@ -459,7 +432,7 @@ PRIVATE STATE AppTaskFileSystem_mounted_standby( AppTaskFileSystem *me,
             eventTimerStartEvery( &me->timer,
                                   (StateTask* )me,
                                   (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
-                                  MS_TO_TICKS( TIME_APPLICATION_USB_IDLE ) );
+                                  MS_TO_TICKS( 500 ) );
 
             /* See if there were any events queued */
             stateTaskPostReservedEvent( STATE_STEP1_SIGNAL );
@@ -490,7 +463,7 @@ PRIVATE STATE AppTaskFileSystem_mounted_standby( AppTaskFileSystem *me,
             else
             {
                 eventTimerRestart( &me->timer,
-                                   MS_TO_TICKS( TIME_APPLICATION_USB_IDLE ) );
+                                   MS_TO_TICKS( 500 ) );
             }
             return 0;
 
@@ -498,7 +471,7 @@ PRIVATE STATE AppTaskFileSystem_mounted_standby( AppTaskFileSystem *me,
         {
             /* Still mounted. ACK request directly. */
             eventTimerRestart( &me->timer,
-                               MS_TO_TICKS( TIME_APPLICATION_USB_IDLE ) );
+                               MS_TO_TICKS( 500 ) );
             FileSystemRequestEvent *fsre = (FileSystemRequestEvent*)e;
             me->mounts[ fsre->task->id ] = true;
             AppTaskFileSystemHelper_send_mounted_status( me, fsre->task );
@@ -511,7 +484,7 @@ PRIVATE STATE AppTaskFileSystem_mounted_standby( AppTaskFileSystem *me,
             me->mounts[ fsre->task->id ] = false;
             AppTaskFileSystemHelper_send_unmounted_status( me, fsre->task );
             eventTimerRestart( &me->timer,
-                               MS_TO_TICKS( TIME_APPLICATION_USB_IDLE ) );
+                               MS_TO_TICKS( 500 ) );
             return 0;
         }
 
@@ -535,7 +508,7 @@ PRIVATE STATE AppTaskFileSystem_unmounting( AppTaskFileSystem *me,
 
         case STATE_STEP1_SIGNAL:
             me->mounted = false;
-            f_mount( NULL, (TCHAR*)APP_CONFIG_USB_DRIVE, 0 );
+            f_mount( NULL, (TCHAR*)APP_CONFIG_SD_DRIVE, 0 );
             me->space[SD_DRIVE].free_KiB = 0;
             me->space[SD_DRIVE].total_KiB = 0;
             LOG( FILE_SYSTEM, LOG_INFO, "USB Media unmounted for ALL tasks" );

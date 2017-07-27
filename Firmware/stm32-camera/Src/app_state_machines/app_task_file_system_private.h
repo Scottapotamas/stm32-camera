@@ -31,8 +31,6 @@ PRIVATE STATE AppTaskFileSystem_unmounted( AppTaskFileSystem *me,
                                            const StateEvent *e );
 PRIVATE STATE AppTaskFileSystem_mount( AppTaskFileSystem *me,
                                        const StateEvent *e );
-PRIVATE STATE AppTaskFileSystem_mounting_power_on( AppTaskFileSystem *me,
-                                                   const StateEvent *e );
 PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
                                           const StateEvent *e );
 PRIVATE STATE AppTaskFileSystem_mounting_retry( AppTaskFileSystem *me,

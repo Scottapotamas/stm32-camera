@@ -42,6 +42,21 @@ extern "C" {
 #define APP_CONFIG_BAUDRATE_MONITOR       115200
 
 /* -------------------------------------------------------------------------- */
+/* --- File System Paths                                                  --- */
+/* -------------------------------------------------------------------------- */
+
+/** Drive Name */
+#define APP_CONFIG_SD_DRIVE                "0:"
+
+/** Directory Paths */
+#define APP_CONFIG_PATH_PHOTOS             "Photos"
+#define APP_CONFIG_PATH_LOGS               "Logs"
+
+/** File Names */
+#define APP_CONFIG_FILE_CONFIG_INI         "config.ini"
+
+
+/* -------------------------------------------------------------------------- */
 /* --- Tick Timer Conversion Macros                                       --- */
 /* -------------------------------------------------------------------------- */
 
