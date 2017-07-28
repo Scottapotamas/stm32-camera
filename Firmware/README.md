@@ -6,7 +6,11 @@ General implementation notes during development. Some hardware related notes are
 
 ## Toolchain and Install
 
-I use the [SW4 System Workbench for STM32](http://www.openstm32.org/System+Workbench+for+STM32) for development and debugging. Follow the install instructions from openstm and everything should be reasonably easy to get working. The Eclipse project includes the config file for the debugging setup.
+I use the [SW4 System Workbench for STM32](http://www.openstm32.org/System+Workbench+for+STM32) for development and debugging. Follow the install instructions from openstm and everything should be reasonably easy to get working. The Eclipse project includes the config file for the debugging setup with both STLink and J-Link.
+
+If you use a STLink programmer (either standalone or on a ST Discovery/Nucleo board) this should be all you need.
+
+I use the SEGGER J-Link, so installing the J-Link software and the Eclipse plugin (Use Eclipse's "Install new software" and use the http://gnu-mcu-eclipse.netlify.com/v4-neon-updates source. I only install the J-Link plugin)
 
 ## Importing and navigating source
 
@@ -36,6 +40,7 @@ Adafruit sell a [suitable cable](https://www.adafruit.com/product/1675), and [ad
 
 Using a STM32 discovery as a programmer, or the cheap chinese STLink clones will also work, but you will need to make a suitable cable.
 
+
 ## STM32 CubeMX
 
 CubeMX is designed to take the effort out of setting up and configuring the peripherals and pins on STM32 micros. This is pretty standard in many STM based projects and should be easy enough to follow.
@@ -45,6 +50,8 @@ If pinouts are being changed or settings modified, make sure the changes are act
 ## Unit Tests
 
 TODO: describe how to run tests
+
+TODO: actually add a testing framework and write tests...
 
 ## Firmware Flashing without SWD
 
