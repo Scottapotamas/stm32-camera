@@ -41,10 +41,6 @@ struct AppTaskSupervisor
     EventTimer       timer2;                ///< Local state timer 2
 
     // ~~~ Task Variables ~~~
-    uint8_t          counter;
-
-    bool              user_interactive;
-    float             temperature_C;
 
 };
 

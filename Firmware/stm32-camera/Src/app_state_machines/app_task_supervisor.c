@@ -116,7 +116,6 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
         	//TODO develop image printout capability
 
-            me->counter = 0;
 
         	return 0;
         }
@@ -125,7 +124,6 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 		   switch( ((ButtonPressedEvent*)e)->id )
 		   {
 			   case BUTTON_0:
-				   me->counter++;
 		           STATE_TRAN( &AppTaskSupervisor_placeholder );
 				   return 0;
 
