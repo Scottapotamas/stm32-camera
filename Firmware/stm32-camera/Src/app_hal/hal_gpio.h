@@ -57,8 +57,8 @@ typedef enum
 {
 	//Board hardware
     _BTN,
-    _STATUS_0,            /* Output: LED RED */
-    _STATUS_1,            /* Output: LED GREEN */
+    _STATUS_1,            /* Output: LED RED */
+    _STATUS_0,            /* Output: LED GREEN */
 
 	//AUX IO pins
 	_AUX_GPIO_1,
