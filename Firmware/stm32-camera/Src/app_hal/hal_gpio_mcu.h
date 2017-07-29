@@ -35,6 +35,12 @@ hal_gpio_mcu_init( const HalGpioPortNr_t port_nr,
 
 /* -------------------------------------------------------------------------- */
 
+PUBLIC void
+hal_gpio_mcu_deinit( const HalGpioPortNr_t port_nr,
+                   const HalGpioPinNr_t  pin_nr );
+
+/* -------------------------------------------------------------------------- */
+
 /** Return true when input pin is high, false when input is low */
 
 PUBLIC bool

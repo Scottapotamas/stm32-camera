@@ -33,7 +33,7 @@ typedef enum
 {
     TYPE_NONE = 0,
     TYPE_GPIO,
-    TYPE_I2C,
+//    TYPE_I2C,
 } HalGpioType_t;
 
 
@@ -74,8 +74,8 @@ typedef enum
 
 typedef struct
 {
-    unsigned type    : 2;      /* GPIO or I2C */
-    unsigned mode    : 2;      /* GPIO Mode (Input, Output Push Pull, etc. ) */
+    unsigned type    : 1;      /* GPIO or I2C TODO reset type to a 2-bit setting to allow i2c*/
+    unsigned mode    : 3;      /* GPIO Mode (Input, Output Push Pull, etc. ) TODO work out analog pin mode requiring more bits*/
     unsigned port    : 4;      /* GPIO Port */
     unsigned pin     : 5;      /* Pin Number within port or i2C device */
     unsigned initial : 1;      /* Initialisation level for outputs */

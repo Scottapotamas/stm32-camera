@@ -47,6 +47,7 @@ typedef enum
 {
     MODE_INPUT = 0, /* Normal input */
     MODE_INPUT_PU,  /* Input with pullup */
+	MODE_ANALOG,	/* Analog Mode	*/
     MODE_OUT_PP,    /* Push-Pull Output */
     MODE_OUT_OD     /* Open drain Output */
 } HalGpioMode_t;
@@ -107,6 +108,13 @@ hal_gpio_configure_i2c_defaults( void );
 
 PUBLIC void
 hal_gpio_init( HalGpioPortPin_t gpio_port_pin_nr, HalGpioMode_t mode, bool initial );
+
+/* -------------------------------------------------------------------------- */
+
+/** Tear down a pin's configuration */
+
+PUBLIC void
+hal_gpio_deinit( HalGpioPortPin_t gpio_port_pin_nr);
 
 /* -------------------------------------------------------------------------- */
 
