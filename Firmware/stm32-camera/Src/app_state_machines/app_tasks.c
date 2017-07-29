@@ -35,6 +35,8 @@
 #include "hal_systick.h"
 #include "hal_delay.h"
 #include "app_version.h"
+#include "hal_adc.h"
+#
 /* -------------------------------------------------------------------------- */
 
 //DEFINE_THIS_FILE; /* Used for ASSERT checks to define __FILE__ only once */
@@ -101,7 +103,9 @@ void app_tasks_init( void )
     stateTaskerAddTask( &mainTasker, t, TASK_SUPERVISOR, "Super" );
     stateTaskerStartTask( &mainTasker, t );
 
+
     hal_systick_hook( eventTimerTick );
+    hal_systick_hook( hal_adc_tick );
 }
 
 /* -------------------------------------------------------------------------- */

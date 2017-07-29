@@ -51,6 +51,13 @@ board_sensor_disable( void );
 PUBLIC float
 board_sensor_temperature_C( void );
 
+/* -------------------------------------------------------------------------- */
+
+/** Return light value from phototransistor */
+
+PUBLIC float
+board_sensor_light( void );
+
 /* ----- End ---------------------------------------------------------------- */
 
 #ifdef __cplusplus
