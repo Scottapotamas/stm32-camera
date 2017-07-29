@@ -30,6 +30,10 @@
 
 /* Application Tasks */
 #include "app_task_supervisor.h"
+#include "app_task_file_system.h"
+#include "app_task_camera.h"
+#include "app_task_auxiliary.h"
+
 #include "button.h"
 #include "hal_button.h"
 #include "hal_systick.h"
@@ -62,6 +66,22 @@ EventsSmallType  eventsSmall[150];//  __attribute__ ((section (".ccmram")));
 EventSubscribers eventSubscriberList[STATE_MAX_SIGNAL];
 
 // ~~~ Task Control Blocks & Event Queues ~~~
+AppTaskFileSystem          appTaskFileSystem;
+StateEvent *               appTaskFileSystemEventQueue[20];
+StateEvent *               appTaskFileSystemRequestQueue[20];
+
+AppTaskAuxiliary           appTaskAuxiliaryA;
+StateEvent *               appTaskAuxiliaryAEventQueue[20];
+
+AppTaskAuxiliary           appTaskAuxiliaryB;
+StateEvent *               appTaskAuxiliaryBEventQueue[20];
+
+AppTaskAuxiliary           appTaskAuxiliaryC;
+StateEvent *               appTaskAuxiliaryCEventQueue[20];
+
+AppTaskCamera              appTaskCamera;
+StateEvent *               appTaskCameraEventQueue[20];
+
 AppTaskSupervisor          appTaskSupervisor;
 StateEvent *               appTaskSupervisorEventQueue[60];
 
@@ -96,6 +116,42 @@ void app_tasks_init( void )
 
     /* ~~~ State Machines Initialisation ~~~ */
     StateTask *t;
+
+    t = appTaskFileSystemCreate( &appTaskFileSystem,
+                                 appTaskFileSystemEventQueue,
+                                 DIM(appTaskFileSystemEventQueue),
+                                 appTaskFileSystemRequestQueue,
+                                 DIM(appTaskFileSystemRequestQueue) );
+    stateTaskerAddTask( &mainTasker, t, TASK_FILE_SYSTEM, "FileSys" );
+    stateTaskerStartTask( &mainTasker, t );
+
+    t = appTaskAuxiliaryCreate( &appTaskAuxiliaryA,
+                                appTaskAuxiliaryAEventQueue,
+                                DIM(appTaskAuxiliaryAEventQueue),
+								AUX_PORT_ANALOG );
+    stateTaskerAddTask( &mainTasker, t, TASK_AUXILIARY_A, "AuxA" );
+    stateTaskerStartTask( &mainTasker, t );
+
+    t = appTaskAuxiliaryCreate( &appTaskAuxiliaryB,
+                                appTaskAuxiliaryBEventQueue,
+                                DIM(appTaskAuxiliaryAEventQueue),
+								AUX_PORT_EXP_0 );
+    stateTaskerAddTask( &mainTasker, t, TASK_AUXILIARY_B, "AuxB" );
+    stateTaskerStartTask( &mainTasker, t );
+
+    t = appTaskAuxiliaryCreate( &appTaskAuxiliaryC,
+                                appTaskAuxiliaryCEventQueue,
+                                DIM(appTaskAuxiliaryBEventQueue),
+								AUX_PORT_EXP_1 );
+    stateTaskerAddTask( &mainTasker, t, TASK_AUXILIARY_C, "AuxC" );
+    stateTaskerStartTask( &mainTasker, t );
+
+    t = appTaskCameraCreate( &appTaskCamera,
+                             appTaskCameraEventQueue,
+                             DIM(appTaskCameraEventQueue) );
+    stateTaskerAddTask( &mainTasker, t, TASK_CAMERA, "Camera" );
+    stateTaskerStartTask( &mainTasker, t );
+
 
     t = appTaskSupervisorCreate( &appTaskSupervisor,
                                  appTaskSupervisorEventQueue,
