@@ -26,13 +26,13 @@
 /* ----- Defines ------------------------------------------------------------ */
 
 PRIVATE const char CONFIG_SECTION_AUXILIARY_A[]    	= "auxiliary A";
-PRIVATE const char CONFIG_SECTION_AUXILIARY_B[]    	= "auxiliary B";
-PRIVATE const char CONFIG_SECTION_AUXILIARY_C[]    	= "auxiliary C";
+PRIVATE const char CONFIG_SECTION_AUXILIARY_B[]    	= "auxiliary 0";
+PRIVATE const char CONFIG_SECTION_AUXILIARY_C[]    	= "auxiliary 1";
 PRIVATE const char CONFIG_AUXILIARY_MODE[]         	= "mode";
 PRIVATE const char CONFIG_AUXILIARY_MODE_NONE[]    	= "none";
-PRIVATE const char CONFIG_AUXILIARY_MODE_DAC[] 		= "analog out";
-PRIVATE const char CONFIG_AUXILIARY_MODE_PWM[] 		= "pwm out";
-PRIVATE const char CONFIG_AUXILIARY_MODE_IO[] 		= "basic io";
+PRIVATE const char CONFIG_AUXILIARY_MODE_DAC[] 		= "analog";
+PRIVATE const char CONFIG_AUXILIARY_MODE_PWM[] 		= "pwm";
+PRIVATE const char CONFIG_AUXILIARY_MODE_IO[] 		= "gpio";
 
 PRIVATE const char CONFIG_SECTION_CAMERA[]         	= "camera";
 
@@ -50,11 +50,23 @@ config_ini_auxiliary_get_mode( AuxiliaryPort_t port,
 {
     char            buffer[25];
     AuxiliaryMode_t mode = default_mode;
-    const char * section = port
-                           ? CONFIG_SECTION_AUXILIARY_A
-                           : CONFIG_SECTION_AUXILIARY_B;
 
-    //TODO Handle AuxC pin in config settings read
+    const char * section = 0;
+
+    switch(port)
+    {
+		case AUX_PORT_ANALOG:
+			section = CONFIG_SECTION_AUXILIARY_A;
+			break;
+
+		case AUX_PORT_EXP_0:
+			section = CONFIG_SECTION_AUXILIARY_B;
+			break;
+
+		case AUX_PORT_EXP_1:
+			section = CONFIG_SECTION_AUXILIARY_C;
+			break;
+    }
 
     ini_gets( section,
               CONFIG_AUXILIARY_MODE,
@@ -97,11 +109,22 @@ config_ini_auxiliary_set_mode(  AuxiliaryPort_t port,
                                 AuxiliaryMode_t auxiliary_mode )
 {
     int status = 0;
-    const char * section = port
-                           ? CONFIG_SECTION_AUXILIARY_A
-                           : CONFIG_SECTION_AUXILIARY_B;
+    const char * section = 0;
 
-    //TODO Handle AuxC pin in config settings set
+    switch(port)
+    {
+		case AUX_PORT_ANALOG:
+			section = CONFIG_SECTION_AUXILIARY_A;
+			break;
+
+		case AUX_PORT_EXP_0:
+			section = CONFIG_SECTION_AUXILIARY_B;
+			break;
+
+		case AUX_PORT_EXP_1:
+			section = CONFIG_SECTION_AUXILIARY_C;
+			break;
+    }
 
     switch( auxiliary_mode )
     {
