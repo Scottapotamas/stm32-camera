@@ -46,7 +46,7 @@ const HalGpioDef_t HalGpioHardwareMap[] =
     [ _AUX_GPIO_0      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_1 },	//Label E0
     [ _AUX_GPIO_1      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_0 },	//Label E1
 
-	[ _SD_DETECT       ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_B, .pin = PIN_1 },
+	[ _SD_DETECT       ] = { .type = TYPE_GPIO, .mode = MODE_INPUT_PU, .port = PORT_E, .pin = PIN_15 },
 
 	[ _AMBIENT_LIGHT   ] = { .type = TYPE_GPIO, .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
     [ _REBOOT_LATCH    ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
