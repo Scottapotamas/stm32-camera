@@ -46,20 +46,20 @@ const HalGpioDef_t HalGpioHardwareMap[] =
     [ _AUX_GPIO_0      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_1 },	//Label E0
     [ _AUX_GPIO_1      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_0 },	//Label E1
 
-	[ _SD_DETECT      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_B, .pin = PIN_1 },
+	[ _SD_DETECT       ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_B, .pin = PIN_1 },
 
-	[ _AMBIENT_LIGHT 	] = { .type = TYPE_GPIO, .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
-    [ _REBOOT_LATCH  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
+	[ _AMBIENT_LIGHT   ] = { .type = TYPE_GPIO, .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
+    [ _REBOOT_LATCH    ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
 
 	/* --- I2C Sensor Control --- */
-    [ _I2C_SDA    ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_11, .initial = 1 },
-    [ _I2C_SCL    ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_10, .initial = 1 },
+    [ _I2C_SDA      ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_11, .initial = 1 },
+    [ _I2C_SCL      ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_10, .initial = 1 },
 
     [ _PWR_EN     	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_15, .initial = 0 },
     [ _CAM_STROBE  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_14, .initial = 0 },
     [ _CAM_EXPST  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_15, .initial = 0 },
-    [ _CAM_FREX  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_D, .pin = PIN_8, .initial = 0 },
-    [ _CAM_XCLK  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_8, .initial = 0 },
+    [ _CAM_FREX  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_D, .pin = PIN_8,  .initial = 0 },
+    [ _CAM_XCLK  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_8,  .initial = 0 },
     [ _CAM_RESET  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_11, .initial = 0 },
     [ _CAM_PWDN  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_12, .initial = 0 }
 };
