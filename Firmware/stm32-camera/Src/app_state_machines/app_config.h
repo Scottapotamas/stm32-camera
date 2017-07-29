@@ -60,7 +60,7 @@ extern "C" {
 /* --- Tick Timer Conversion Macros                                       --- */
 /* -------------------------------------------------------------------------- */
 
-#ifdef STM32F407xx
+#ifdef STM32F429xx
 //! Application uses 1ms timer ticks on the ARM platform with SysTick
 #define MS_PER_TICK             1U
 #else
