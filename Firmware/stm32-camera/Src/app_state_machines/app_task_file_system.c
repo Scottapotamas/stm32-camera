@@ -288,10 +288,10 @@ PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
             return 0;
 
         case STATE_TIMEOUT1_SIGNAL:
-            /* No response from USB device. Turn it OFF and ON to retry */
+            /* No response from device. Retry */
             LOG( FILE_SYSTEM,
                  LOG_ERROR,
-                 "USB Not responding (timeout %ds)",
+                 "SD Not responding (timeout %ds)",
                  500 );
             STATE_TRAN( AppTaskFileSystem_mounting_retry );
             return 0;
@@ -323,7 +323,7 @@ PRIVATE STATE AppTaskFileSystem_mounting_retry( AppTaskFileSystem *me,
             }
             else
             {
-                LOG( FILE_SYSTEM, LOG_ERROR, "USB media not detected!" );
+                LOG( FILE_SYSTEM, LOG_ERROR, "Media not detected!" );
 
                 /* Signal that we have a problem to the first requesting task */
                 AppTaskFileSystemHelper_send_unmounted_status( me,
@@ -350,7 +350,7 @@ PRIVATE STATE AppTaskFileSystem_mounting_retry( AppTaskFileSystem *me,
 }
 
 /* -------------------------------------------------------------------------- */
-
+//TODO work out how we go from mounting to mounted.
 PRIVATE STATE AppTaskFileSystem_mounted( AppTaskFileSystem *me,
                                          const StateEvent *e )
 {
@@ -375,13 +375,14 @@ PRIVATE STATE AppTaskFileSystem_mounted( AppTaskFileSystem *me,
                 me->f_result = f_getfree( (TCHAR*)APP_CONFIG_SD_DRIVE,
                                           &free_clusters,
                                           &fs );
+
                 if( me->f_result == FR_OK )
                 {
                     me->space[SD_DRIVE].total_KiB = ((fs->n_fatent - 2) * fs->csize) / 2;
                     me->space[SD_DRIVE].free_KiB = (free_clusters * fs->csize) / 2;
                     LOG( FILE_SYSTEM,
                          LOG_INFO,
-                         "USB Media mounted with %"PRIu32"MB (%"PRIu32"MB free)",
+                         "SD Media mounted with %"PRIu32"MB (%"PRIu32"MB free)",
                          me->space[SD_DRIVE].total_KiB/1024,
                          me->space[SD_DRIVE].free_KiB/1024 );
 
