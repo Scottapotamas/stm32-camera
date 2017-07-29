@@ -53,6 +53,24 @@ typedef struct ButtonPressedEvent__
 
 /* -------------------------------------------------------------------------- */
 
+/** Camera Capture Cmd Event Structures */
+typedef struct CameraCaptureEvent__
+{
+    StateEvent          super;          /**< Encapsulated event reference */
+    uint16_t            trigger_delay_ms;   /**< Time in ms to wait before taking picture */
+} CameraCaptureEvent;
+
+/* -------------------------------------------------------------------------- */
+
+/** Camera Save Event Structures */
+typedef struct CameraSaveEvent__
+{
+    StateEvent      super;              /**< Encapsulated event reference */
+    uint8_t         percent_saved;      /**< Percentage of image saved */
+} CameraSaveEvent;
+
+/* -------------------------------------------------------------------------- */
+
 /** Report changes in auxillary mode */
 typedef struct AuxiliaryModeEvent__
 {

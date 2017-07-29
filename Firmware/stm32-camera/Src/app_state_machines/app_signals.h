@@ -27,24 +27,37 @@ enum AppSignals
 {
     /* System Command Signals */
     SYSTEM_CMD_POWER_OFF = STATE_USER_SIGNAL, // Signal 8 - First Custom Signal,
-    SYSTEM_CMD_ARM,
-    SYSTEM_CMD_DISARM,
 
     /* System Status Signals */
+    SYSTEM_STATUS_ERROR,
+    SYSTEM_STATUS_SETUP,
 
+    /* Terminal character received */
     TERMINAL_INPUT_CHAR_SIGNAL,
 	TERMINAL_MODE_SIGNAL,
 
     AUXILIARY_MODE_SIGNAL,
 
+    /* File System Triggers */
     FILE_SYSTEM_CMD_MOUNT,
     FILE_SYSTEM_CMD_UNMOUNT,
     FILE_SYSTEM_MOUNTED,
     FILE_SYSTEM_UNMOUNTED,
 
-    SYSTEM_STATUS_ERROR,
-    SYSTEM_STATUS_PASSIVE,
-    SYSTEM_STATUS_SETUP,
+    /* Configuration setting changed */
+    CONFIG_SETTING_CHANGED_SIGNAL,
+
+    /* Camera */
+    CAMERA_CMD_ON,
+    CAMERA_CMD_CAPTURE_NORMAL,
+    CAMERA_CMD_OFF,
+    CAMERA_STATUS_OFF,
+    CAMERA_STATUS_ERROR,
+    CAMERA_STATUS_READY,
+    CAMERA_STATUS_CAPTURING,
+    CAMERA_STATUS_CAPTURED,
+    CAMERA_STATUS_SAVING,
+    CAMERA_STATUS_SAVE_DONE,
 
     /* Button Signals */
     BUTTON_EVENT_SIGNAL,            /* Internal button activity event */

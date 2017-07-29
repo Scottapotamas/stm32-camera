@@ -45,7 +45,9 @@ enum AppTaskID
 
     TASK_AUX_IO,   /* Auxiliary port B (former MONITOR) */
 
-    TASK_MONITOR,   /* Auxiliary Port A */
+    TASK_MONITOR,   /*UART Connection */
+
+	TASK_CAMERA,	/* Camera Handling */
 
     TASK_FILE_SYSTEM, /* In charge of mounts/dismounting the USB file
      system and powering in the USB as required
