@@ -43,7 +43,9 @@ enum AppTaskID
 {
     TASK_IDLE = 0, /* Default system IDLE */
 
-    TASK_AUX_IO,   /* Auxiliary port B (former MONITOR) */
+	TASK_AUXILIARY_A,
+	TASK_AUXILIARY_B,
+	TASK_AUXILIARY_C,
 
     TASK_MONITOR,   /*UART Connection */
 
