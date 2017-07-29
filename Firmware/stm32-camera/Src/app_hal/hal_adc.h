@@ -29,15 +29,8 @@ extern "C" {
 
 typedef enum
 {
-    HAL_ADC_INPUT_VBACKUPBAT,   /* ADC1 - RANK 1 */
-    HAL_ADC_INPUT_VREFINT,      /* ADC1 - RANK 2 */
-    HAL_ADC_INPUT_TEMPERATURE,  /* ADC1 - RANK 3 */
-    HAL_ADC_INPUT_PWR_I5,       /* ADC1 - RANK 4 */
-    HAL_ADC_INPUT_PWR_I3V3,     /* ADC1 - RANK 5 */
-    HAL_ADC_INPUT_M1_CURRENT,   /* ADC3 - RANK 1 */
-    HAL_ADC_INPUT_M2_CURRENT,   /* ADC3 - RANK 2 */
-    HAL_ADC_INPUT_PWR_VBAT,     /* ADC3 - RANK 3 */
-    HAL_ADC_INPUT_SPARE,        /* ADC3 - RANK 4 */
+    HAL_ADC_INPUT_TEMPERATURE,  /* ADC1 - RANK 1 */
+    HAL_ADC_INPUT_PHOTOSENSOR,  /* ADC1 - RANK 2 */
     HAL_ADC_INPUT_NUM
 } HalAdcInput_t;
 
@@ -80,6 +73,13 @@ hal_adc_stop( HalAdcInput_t input );
 
 PUBLIC void
 hal_adc_tick( void );
+
+/* -------------------------------------------------------------------------- */
+
+/** HAL Functions copied over from adc.h */
+//TODO build these functions into init() (if the hal library weak links can be modified?)
+void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle);
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle);
 
 /* ------------------------- End -------------------------------------------- */
 

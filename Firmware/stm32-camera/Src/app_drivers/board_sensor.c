@@ -47,6 +47,8 @@ PUBLIC void
 board_sensor_enable( void )
 {
 	hal_adc_start( HAL_ADC_INPUT_TEMPERATURE );
+	hal_adc_start( HAL_ADC_INPUT_PHOTOSENSOR );
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -57,6 +59,7 @@ PUBLIC void
 board_sensor_disable( void )
 {
 	hal_adc_stop( HAL_ADC_INPUT_TEMPERATURE );
+	hal_adc_stop( HAL_ADC_INPUT_PHOTOSENSOR );
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,5 +73,15 @@ board_sensor_temperature_C( void )
                 hal_adc_read_avg( HAL_ADC_INPUT_TEMPERATURE ) );
 }
 
+/* -------------------------------------------------------------------------- */
+
+/** Return light reading */
+
+PUBLIC float
+board_sensor_light( void )
+{
+	//TODO normalise light readings into something more sensible
+    return hal_adc_read_avg( HAL_ADC_INPUT_PHOTOSENSOR );
+}
 /* ----- End ---------------------------------------------------------------- */
 
