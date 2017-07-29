@@ -46,6 +46,12 @@ PRIVATE void
 hal_gpio_mcu_init_as_input_with_pullup( HalGpioPortNr_t port_nr,
                                         HalGpioPinNr_t  pin_nr );
 
+/** Init as analog */
+
+PRIVATE void
+hal_gpio_mcu_init_as_analog( HalGpioPortNr_t port_nr,
+        					 HalGpioPinNr_t  pin_nr );
+
 /** Init as open drain output */
 
 PRIVATE void
@@ -59,6 +65,7 @@ PRIVATE void
 hal_gpio_mcu_init_as_output_pp( HalGpioPortNr_t port_nr,
                                 HalGpioPinNr_t  pin_nr,
                                 bool            initial_state );
+
 
 /* ----- Private Data ------------------------------------------------------- */
 
@@ -87,6 +94,10 @@ hal_gpio_mcu_init( const HalGpioPortNr_t port_nr,
             hal_gpio_mcu_init_as_input_with_pullup( port_nr, pin_nr );
             break;
 
+        case MODE_ANALOG:
+            hal_gpio_mcu_init_as_analog( port_nr, pin_nr );
+            break;
+
         case MODE_OUT_OD:
             hal_gpio_mcu_init_as_output_od( port_nr, pin_nr, initial_state );
             break;
@@ -95,6 +106,19 @@ hal_gpio_mcu_init( const HalGpioPortNr_t port_nr,
             hal_gpio_mcu_init_as_output_pp( port_nr, pin_nr, initial_state );
             break;
     }
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_gpio_mcu_deinit( const HalGpioPortNr_t port_nr,
+                     const HalGpioPinNr_t  pin_nr )
+{
+    ENSURE( port_nr <= PORT_H );
+    ENSURE( pin_nr <= PIN_15 );
+
+	HAL_GPIO_DeInit( hal_gpio_mcu_port(port_nr),
+					 HAL_GPIO_PIN_MASK(pin_nr) );
 }
 
 /* -------------------------------------------------------------------------- */
@@ -214,6 +238,23 @@ hal_gpio_mcu_init_as_input_with_pullup( HalGpioPortNr_t port_nr,
 
 /* -------------------------------------------------------------------------- */
 
+/** @brief Configure as analog pin */
+
+PRIVATE void
+hal_gpio_mcu_init_as_analog( HalGpioPortNr_t port_nr,
+                            HalGpioPinNr_t  pin_nr )
+{
+    GPIO_InitTypeDef GPIO_InitStruct;
+
+    GPIO_InitStruct.Pin  = HAL_GPIO_PIN_MASK( pin_nr );
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init( hal_gpio_mcu_port( port_nr ),
+                   &GPIO_InitStruct );
+}
+
+/* -------------------------------------------------------------------------- */
+
 /** @brief Configure as output */
 
 PRIVATE void
@@ -253,6 +294,7 @@ hal_gpio_mcu_init_as_output_pp( HalGpioPortNr_t port_nr,
 
     hal_gpio_mcu_write_pin( port_nr, pin_nr, initial_state );
 }
+
 
 /* ----- End ---------------------------------------------------------------- */
 

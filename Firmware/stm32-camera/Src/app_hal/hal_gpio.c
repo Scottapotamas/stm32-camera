@@ -48,7 +48,7 @@ const HalGpioDef_t HalGpioHardwareMap[] =
 
 	[ _SD_DETECT      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_B, .pin = PIN_1 },
 
-	[ _AMBIENT_LIGHT 	] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_C, .pin = PIN_0 },
+	[ _AMBIENT_LIGHT 	] = { .type = TYPE_GPIO, .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
     [ _REBOOT_LATCH  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
 
 	/* --- I2C Sensor Control --- */
@@ -93,6 +93,14 @@ hal_gpio_init( HalGpioPortPin_t gpio_port_pin_nr,
     const HalGpioDef_t m = HalGpioHardwareMap[gpio_port_pin_nr];
 
     hal_gpio_mcu_init( m.port, m.pin, mode, initial_state );
+}
+
+PUBLIC void
+hal_gpio_deinit( HalGpioPortPin_t gpio_port_pin_nr )
+{
+    const HalGpioDef_t m = HalGpioHardwareMap[gpio_port_pin_nr];
+
+    hal_gpio_mcu_deinit( m.port, m.pin );
 }
 
 /* -------------------------------------------------------------------------- */
