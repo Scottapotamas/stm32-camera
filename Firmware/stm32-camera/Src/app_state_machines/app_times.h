@@ -17,8 +17,6 @@ extern "C" {
 
 /* ----- Types -------------------------------------------------------------- */
 
-#include "app_config.h" // For MS_TO_TICKS macro
-
 /* -------------------------------------------------------------------------- */
 
 enum AppTimeoutsMs
@@ -35,6 +33,21 @@ enum AppTimeoutsMs
   TIME_BUTTON_DEFAULTS_ACTIVATE_MS    =   5000, /* ms */
   TIME_BUTTON_NORMAL_PRESS            =     50, /* ms */
   TIME_BUTTON_LONG_PRESS              =   1500, /* ms */
+
+  TIME_APPLICATION_SD_MOUNT_POLL 		  = 500,
+
+  //TODO set reasonable timeouts
+  TIME_CAMERA_RESPONSE_TIMEOUT 		  = 500,
+  TIME_CAMERA_POWER_UP_DELAY		  = 500,
+  TIME_CAMERA_RESET_TIMEOUT			  = 500,
+};
+
+/* -------------------------------------------------------------------------- */
+
+enum AppCounters
+{
+    COUNT_CAMERA_RETRIES                =     2,
+    COUNT_POWER_OFF                     =    10,
 };
 
 /* ----------------------- End --------------------------------------------- */
