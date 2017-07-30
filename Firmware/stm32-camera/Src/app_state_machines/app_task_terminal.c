@@ -127,18 +127,6 @@ AppTaskTerminal_main( AppTaskTerminal *me,
                 stateTaskPostReservedEvent( STATE_STEP1_SIGNAL );
             }
             return 0;
-
-/*
-        case TERMINAL_MODE_SIGNAL:
-            {
-                TerminalModeEvent *ame = (TerminalModeEvent*)e;
-                if( ame->port == me->instance )
-                {
-                	//TODO Handle baud rate switching
-                }
-            }
-            return 0;
-*/
     }
     return (STATE)hsmTop;
 }

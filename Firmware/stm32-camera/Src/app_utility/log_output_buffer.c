@@ -46,8 +46,7 @@ log_output_buffer_init( uint8_t * buffer, size_t buffer_size )
      * other messages that are there and then dump the full crash log
      * (including any faults) to the USB log buffer */
 
-    hal_rtc_backup_enable_ram_access();
-    message = hal_rtc_backup_crash_log_get();
+
 
 //    /* Check if the message makes sense (i.e. not corrupted) */
 //    message_ok = true;
@@ -68,8 +67,7 @@ log_output_buffer_init( uint8_t * buffer, size_t buffer_size )
         fifo_write( &log_buffer_fifo, message, strlen( message ) );
     }
 
-    /* Empty out the backup memory log */
-    hal_rtc_backup_crash_log_clear();
+
 
     /* Write restarting message to initial log */
     char * restart_message = "\r\n*** SYSTEM RESTART ***\r\n\r\n";

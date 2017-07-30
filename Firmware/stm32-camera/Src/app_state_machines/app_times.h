@@ -36,6 +36,8 @@ enum AppTimeoutsMs
 
   TIME_APPLICATION_SD_MOUNT_POLL 		  = 500,
 
+  TIME_REBOOT_CAP_CHARGE			  = 200, /* ms */
+
   //TODO set reasonable timeouts
   TIME_CAMERA_RESPONSE_TIMEOUT 		  = 500,
   TIME_CAMERA_POWER_UP_DELAY		  = 500,

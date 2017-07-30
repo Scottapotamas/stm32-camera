@@ -20,13 +20,13 @@
 #include "hal_gpio.h"
 #include "hal_watchdog.h"
 #include "hal_adc.h"
+#include "filesystem.h"
 
 /* -------------------------------------------------------------------------- */
 
 PUBLIC void
 app_hardware_init( void )
 {
-	//TODO start the clocks for the GPIO peripherals etc here, instead of the stm32 mx_gpio
     /* Configure internal GPIO pins */
     hal_gpio_configure_mcu_defaults();
 
@@ -35,6 +35,8 @@ app_hardware_init( void )
     status_red( true );
 
     hal_adc_init();
+
+    filesystem_init();
 
     /* Start the watchdog for around 10s timeout */
     hal_watchdog_init( 20000 );

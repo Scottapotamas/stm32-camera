@@ -32,7 +32,7 @@ PUBLIC void
 log_output_terminal( const LOG_LEVEL log_level __attribute__((unused)),
                      const char *    message   __attribute__((unused)) )
 {
-    /* @TODO */
+
 }
 
 /* ----- End ---------------------------------------------------------------- */

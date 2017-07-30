@@ -3,14 +3,7 @@
  *
  * @ingroup   tasks
  *
- * @brief     Application Task Supervisor
- *
- *            Top level supervisory task for the main trap states and
- *            transitioning between them.
- *
- * @author    Marco Hess <marcoh@applidyne.com.au>
- *
- * @copyright (c) 2015 Applidyne Pty. Ltd. - All rights reserved.
+
  */
 
 /* ----- System Includes ---------------------------------------------------- */
@@ -27,15 +20,23 @@
 #include "app_events.h"
 #include "app_version.h"
 
-#include "hal_uuid.h"
 #include "app_task_supervisor.h"
 #include "app_task_supervisor_private.h"
 
+#include "app_task_file_system.h"
+#include "app_task_camera.h"
+#include "log.h"
+
+#include "hal_power.h"
+#include "hal_uuid.h"
+#include "cmd_config.h"
+#include "board_sensor.h"
 #include "status.h"
+#include "config.h"
 
 /* -------------------------------------------------------------------------- */
 
-//DEFINE_THIS_FILE; /* Used for ASSERT checks to define __FILE__ only once */
+DEFINE_THIS_FILE; /* Used for ASSERT checks to define __FILE__ only once */
 
 /* ----- Public Functions --------------------------------------------------- */
 
@@ -84,11 +85,7 @@ PRIVATE void AppTaskSupervisor_initial( AppTaskSupervisor *me,
     eventSubscribe( (StateTask*)me, FILE_SYSTEM_MOUNTED );
     eventSubscribe( (StateTask*)me, FILE_SYSTEM_UNMOUNTED );
 
-    eventSubscribe( (StateTask*)me, TERMINAL_INPUT_CHAR_SIGNAL );
-
-
     /* High Level Commands */
-
 
     STATE_INIT( &AppTaskSupervisor_main );
 }
@@ -105,16 +102,26 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
         	//General list of things that need doing
 
-        	//TODO import sd card handling and fatfs management
-        	//TODO linkup aux, terminal, fatfs tasks in background/main state machines
-        	//TODO cleanup ADC abstraction and readings
+        	//TODO fatfs task handling
+        	//TODO sd card handling and fatfs integration
+        	//TODO speed testing SD card
 
-        	//TODO flesh out commands interface for terminal use
-        	//TODO config handling and cleanup
-        	//TODO develop startup sequence for hardware
+        	//TODO develop hal/driver to use port manipulation for flash 'h-bridge'
+        	//TODO develop reboot handling code with timeout. Validate
+        	//TODO driver to handle switching the IR filter based on background illumination etc
+
+        	//TODO get i2c/sscb working with the camera's configuration registers
+        	//TODO convenience functions with camera for control over key settings
+        	//TODO camera IO handling for flash/snapshot mode, reset pins etc.
         	//TODO add dcmi hal code to remove the cubemx one
-
         	//TODO develop image printout capability
+
+        	//TODO save image to SD card
+        	//TODO competent file naming schemes
+        	//TODO protocol to send photo over serial
+        	//TODO protocol to allow camera control over serial
+
+        	status_green(false);
 
 
         	return 0;
@@ -124,7 +131,7 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 		   switch( ((ButtonPressedEvent*)e)->id )
 		   {
 			   case BUTTON_0:
-		           STATE_TRAN( &AppTaskSupervisor_placeholder );
+
 				   return 0;
 
 			   default:
@@ -133,7 +140,7 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 		   break;
 
         case STATE_INIT_SIGNAL:
-            STATE_INIT( &AppTaskSupervisor_placeholder );
+            STATE_INIT( &AppTaskSupervisor_load_config );
             return 0;
 
     }
@@ -142,25 +149,82 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
 /* -------------------------------------------------------------------------- */
 
-PRIVATE STATE AppTaskSupervisor_placeholder( AppTaskSupervisor *me,
+PRIVATE STATE AppTaskSupervisor_load_config( AppTaskSupervisor *me,
                                          	 const StateEvent *e )
 {
     switch( e->signal )
     {
         case STATE_ENTRY_SIGNAL:
+            config_defaults();
 
+            f_mount_request( (StateTask*)me );
+
+            eventTimerStartEvery( &me->cardTimer,
+                                  (StateTask* )me,
+                                  (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
+                                  MS_TO_TICKS( 500 ) );
+            //TODO decide on a consistent SD timeout
 
         	return 0;
 
+        case STATE_TIMEOUT1_SIGNAL:
+			//Mount timed out
+			f_mount_request( (StateTask*)me );
+			return 0;
+
+		case FILE_SYSTEM_UNMOUNTED:
+			eventTimerStopIfActive( &me->cardTimer );
+			LOG( SUPERVISOR, LOG_NOTICE, "System using default config data" );
+			STATE_TRAN( AppTaskSupervisor_check_camera );
+			return 0;
+
+		case FILE_SYSTEM_MOUNTED:
+			eventTimerStopIfActive( &me->cardTimer );
+			LOG( SUPERVISOR, LOG_NOTICE, "System loading config data" );
+			config_load();
+			STATE_TRAN( AppTaskSupervisor_check_camera );
+			return 0;
+
+		case STATE_EXIT_SIGNAL:
+			eventTimerStopIfActive( &me->cardTimer );
+
+			f_unmount_request( (StateTask*)me );
+			return 0;
+    }
+    return (STATE)AppTaskSupervisor_main;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE STATE AppTaskSupervisor_check_camera( AppTaskSupervisor *me,
+                                              const StateEvent *e )
+{
+    switch( e->signal )
+    {
+        case STATE_ENTRY_SIGNAL:
+            LOG( SUPERVISOR, LOG_NOTICE, "Camera check starting..." );
+            eventPublish( EVENT_NEW( StateEvent, CAMERA_CMD_ON ) );
+            //publish/request a camera check event or something
+            return 0;
+
+
+        case CAMERA_STATUS_READY:
+            LOG( SUPERVISOR, LOG_INFO, "Camera OK" );
+
+            return 0;
+
+        case CAMERA_STATUS_ERROR:
+            LOG( SUPERVISOR, LOG_ERROR, "Camera ERROR" );
+
+            return 0;
+
         case STATE_EXIT_SIGNAL:
-
-
+            LOG( SUPERVISOR, LOG_NOTICE, "Check complete." );
 
             return 0;
     }
     return (STATE)AppTaskSupervisor_main;
 }
-
 
 /* -------------------------------------------------------------------------- */
 
