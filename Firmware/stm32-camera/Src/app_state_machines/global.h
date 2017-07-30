@@ -139,7 +139,7 @@ typedef union                           ///< Allow mapping int16 to uint16
 //! \def CRITICAL_SECTION_START()
 /// Save the current interrupt state and then disable interrupts to
 /// enter a critical region of code.
-#ifdef STM32F407xx
+#ifdef STM32F429xx
 #define CRITICAL_SECTION_VAR()    uint8_t cpuSR
 #else
 #define CRITICAL_SECTION_VAR()
@@ -148,7 +148,7 @@ typedef union                           ///< Allow mapping int16 to uint16
 //! \def CRITICAL_SECTION_START()
 /// Save the current interrupt state and then disable interrupts to
 /// enter a critical region of code.
-#ifdef STM32F407xx
+#ifdef STM32F429xx
 #define CRITICAL_SECTION_START()              \
         do {                                  \
           asm (                               \
@@ -164,7 +164,7 @@ typedef union                           ///< Allow mapping int16 to uint16
 //! \def CRITICAL_SECTION_END()
 /// Exit critical section of code and restore interrupt state
 /// to what it was before \ref CRITICAL_SECTION_START.
-#ifdef STM32F407xx
+#ifdef STM32F429xx
 #define CRITICAL_SECTION_END()               \
         do{                                   \
           asm (                               \
