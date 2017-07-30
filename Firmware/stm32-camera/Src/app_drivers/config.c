@@ -82,7 +82,7 @@ typedef struct ConfigSystem__
 typedef struct Config__
 {
     bool                loaded;
-    ConfigAuxiliary_t   auxiliary[2];
+    ConfigAuxiliary_t   auxiliary[3];
     ConfigCamera_t      camera;
     ConfigLog_t         log;
     ConfigSystem_t      system;
@@ -110,7 +110,7 @@ PUBLIC void
 config_defaults( void )
 {
     /* AUXILIARY */
-    config.auxiliary[AUX_PORT_ANALOG].mode     = CONFIG_DEFAULT_AUXILIARY_A_MODE;
+    config.auxiliary[AUX_PORT_ANALOG].mode    = CONFIG_DEFAULT_AUXILIARY_A_MODE;
 	config.auxiliary[AUX_PORT_EXP_0].mode     = CONFIG_DEFAULT_AUXILIARY_B_MODE;
 	config.auxiliary[AUX_PORT_EXP_1].mode     = CONFIG_DEFAULT_AUXILIARY_B_MODE;
 
@@ -146,7 +146,6 @@ config_load( void )
 	config.auxiliary[ AUX_PORT_EXP_1 ].mode =
 	   config_ini_auxiliary_get_mode( AUX_PORT_EXP_1,
 									  CONFIG_DEFAULT_AUXILIARY_C_MODE );
-
 
     /* CAMERA INFORMATION */
 
