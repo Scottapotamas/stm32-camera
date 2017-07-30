@@ -55,6 +55,7 @@ PRIVATE HalUart_t hal_uart[HAL_UART_NUM_PORTS];
 
 //PRIVATE HalUart_t *
 //hal_uart_port( USART_TypeDef * usart );
+
 PRIVATE void
 hal_uart_init_usart1_io_and_isr( void );
 
@@ -366,6 +367,8 @@ hal_uart_read( HalUartPort_t port, uint8_t * data, uint32_t maxlength )
 //	  }
 //}
 
+/* -------------------------------------------------------------------------- */
+
 PRIVATE void
 hal_uart_init_usart1_io_and_isr( void )
 {
@@ -547,6 +550,14 @@ hal_uart_port( USART_TypeDef * usart )
         }
     }
     return NULL;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+USART1_IRQHandler( void )
+{
+    hal_usart_irq_handler( hal_uart_port( USART1 ) );
 }
 
 /* -------------------------------------------------------------------------- */

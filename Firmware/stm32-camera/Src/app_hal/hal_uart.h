@@ -29,7 +29,6 @@ extern "C" {
 typedef enum
 {
     HAL_UART_PORT_MAIN,
-	HAL_UART_PORT_SECONDARY,
     HAL_UART_NUM_PORTS
 } HalUartPort_t;
 
