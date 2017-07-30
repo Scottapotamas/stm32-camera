@@ -47,11 +47,6 @@ typedef enum
 
 /* ----- Public Functions --------------------------------------------------- */
 
-PUBLIC void
-hal_power_camera( bool on );
-
-/* -------------------------------------------------------------------------- */
-
 PUBLIC HalPowerResetReason_t
 hal_power_reset_reason( void );
 
