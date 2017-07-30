@@ -27,7 +27,7 @@
 
 PRIVATE const char * aux_mode_names[] =
 {
-   [ AUX_MODE_NONE ]         = "OFF",
+   [ AUX_MODE_NONE ]        = "OFF",
    [ AUX_MODE_DAC ]      	= "ANALOG OUT",
    [ AUX_MODE_PWM ]      	= "PWM OUT",
    [ AUX_MODE_IO ]      	= "BASIC IO",
@@ -74,6 +74,7 @@ auxiliary_gpio_mode( AuxiliaryGpio_t pin, AuxiliaryGpioMode_t mode )
 {
     const HalGpioMode_t gpio_mode = ( mode == AUX_GPIO_MODE_INPUT )
                                     ? MODE_INPUT : MODE_OUT_PP;
+    //TODO support special output modes on aux 2
     switch( pin )
     {
         case AUX_GPIO_0:

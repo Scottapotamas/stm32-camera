@@ -605,9 +605,11 @@ command_chdrive( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 2 )
     {
-        FRESULT f_result;
-        f_result = f_chdrive( (TCHAR*)cmd_get_argv( me, 1 ) );
-        command_print_fatfs_result( me, f_result );
+        cmd_printf( me, "chdrive unavailable with one disk\r\n" );
+
+//        FRESULT f_result;
+//        f_result = f_chdrive( (TCHAR*)cmd_get_argv( me, 1 ) );
+//        command_print_fatfs_result( me, f_result );
     }
     else
     {
