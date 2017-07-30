@@ -26,12 +26,12 @@
 #include "app_signals.h"
 #include "app_events.h"
 #include "app_version.h"
+#include "hal_systick.h"
 
 #include "app_task_terminal.h"
 #include "app_task_terminal_private.h"
 #include "commands.h"
-#include "hal_uart.h"
-#include "hal_systick.h"
+#include "log.h"
 #include "config.h"
 
 /* -------------------------------------------------------------------------- */
@@ -91,79 +91,20 @@ AppTaskTerminal_main( AppTaskTerminal *me,
     switch( e->signal )
     {
         case STATE_ENTRY_SIGNAL:
-        	//TODO put some logging here or something
-            return 0;
 
-        case STATE_INIT_SIGNAL:
-            switch( config_terminal_baudrate( me->instance ) )
-            {
-            //TODO Handle a 'disabled' uart port
-                case HAL_UART_PORT_MAIN:
-                    STATE_INIT( AppTaskTerminal_mode_active );
-                    break;
+        	cmd_init( &me->monitor, commands );
 
-                case HAL_UART_PORT_SECONDARY:
-                    STATE_INIT( AppTaskTerminal_mode_active );
-                    break;
-            }
-            return 0;
+            hal_uart_init( me->instance );
+            hal_uart_baudrate( me->instance, config_terminal_baudrate( me->instance ) );
+            hal_uart_set_rx_handler( me->instance, AppTaskTerminal_rx_callback );
 
-        case TERMINAL_MODE_SIGNAL:
-            {
-                TerminalModeEvent *ame = (TerminalModeEvent*)e;
-                if( ame->port == me->instance )
-                {
-                    //TODO Handle a 'disabled' uart port
-                    STATE_TRAN_DYN( AppTaskTerminal_mode_active );
-                }
-            }
-            return 0;
-
-    }
-    return (STATE)hsmTop;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* State Machine Mode None */
-PRIVATE STATE
-AppTaskTerminal_mode_none( AppTaskTerminal *me, const StateEvent *e )
-{
-    switch( e->signal )
-    {
-        case STATE_ENTRY_SIGNAL:
-        	//TODO set instance to uninitialised
-
-            return 0;
-    }
-    return (STATE)AppTaskTerminal_main;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* State Machine Mode Monitor */
-PRIVATE STATE
-AppTaskTerminal_mode_active( AppTaskTerminal *me, const StateEvent *e )
-{
-    switch( e->signal )
-    {
-        case STATE_ENTRY_SIGNAL:
-            cmd_init( &me->monitor, commands );
-
-            if( me->instance == HAL_UART_PORT_MAIN || me->instance == HAL_UART_PORT_SECONDARY)
-            {
-                hal_uart_init( me->instance );
-
-                hal_uart_baudrate( me->instance, config_terminal_baudrate( me->instance ) );
-                hal_uart_set_rx_handler( me->instance, AppTaskTerminal_rx_callback );
-
-                cmd_set_output_put( &me->monitor, AppTaskTerminal_tx_put_a );
-                cmd_set_output_flush( &me->monitor,  AppTaskTerminal_tx_flush_a );
-            }
-
-
+            cmd_set_output_put( &me->monitor, AppTaskTerminal_tx_put );
+            cmd_set_output_flush( &me->monitor,  AppTaskTerminal_tx_flush );
 
             cmd_set_echo( &me->monitor, true );
+
+//            command_log_set_mask( &me->monitor, 0xFFFF, 0xFFFF );
+
             cmd_printf( &me->monitor,
                         "\r\n*** %s - %s (%s) %s ***\r\n\r\n",
                         ProgramName,
@@ -171,6 +112,7 @@ AppTaskTerminal_mode_active( AppTaskTerminal *me, const StateEvent *e )
                         ProgramBuildDate,
                         ProgramBuildType );
             cmd_input_func( &me->monitor, '\r' );
+
             return 0;
 
         case TERMINAL_INPUT_CHAR_SIGNAL:
@@ -185,17 +127,30 @@ AppTaskTerminal_mode_active( AppTaskTerminal *me, const StateEvent *e )
                 stateTaskPostReservedEvent( STATE_STEP1_SIGNAL );
             }
             return 0;
+
+/*
+        case TERMINAL_MODE_SIGNAL:
+            {
+                TerminalModeEvent *ame = (TerminalModeEvent*)e;
+                if( ame->port == me->instance )
+                {
+                	//TODO Handle baud rate switching
+                }
+            }
+            return 0;
+*/
     }
-    return (STATE)AppTaskTerminal_main;
+    return (STATE)hsmTop;
 }
 
 /* -------------------------------------------------------------------------- */
 
+//TODO write state machine to handle changing baud rate
 
 /* ----- Callback Helper Functions ------------------------------------------ */
 
 PRIVATE bool
-AppTaskTerminal_tx_put_a( uint8_t c )
+AppTaskTerminal_tx_put( uint8_t c )
 {
     return hal_uart_put( HAL_UART_PORT_MAIN, c );
 }
@@ -203,7 +158,7 @@ AppTaskTerminal_tx_put_a( uint8_t c )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE void
-AppTaskTerminal_tx_flush_a( void )
+AppTaskTerminal_tx_flush( void )
 {
     hal_uart_flush( HAL_UART_PORT_MAIN );
 }
@@ -224,7 +179,7 @@ AppTaskTerminal_rx_callback( HalUartPort_t port, uint8_t c )
             e->ch = c;
             if( port == HAL_UART_PORT_MAIN )
             {
-                stateTaskPostFIFO( app_task_by_id( TASK_MONITOR ),
+                stateTaskPostFIFO( app_task_by_id( TASK_TERMINAL ),
                                    (StateEvent*)e );
             }
 

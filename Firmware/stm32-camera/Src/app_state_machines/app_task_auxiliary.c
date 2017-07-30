@@ -31,7 +31,7 @@
 #include "app_signals.h"
 #include "app_events.h"
 #include "app_version.h"
-#include "commands.h"
+
 #include "log.h"
 #include "auxiliary.h"
 #include "debounce.h"

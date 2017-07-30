@@ -27,6 +27,7 @@ extern "C"
 #include "global.h"
 #include "state_task.h"
 #include "event_timer.h"
+#include "hal_uart.h"
 #include "cmd.h"
 
 /* ----- State Task Control Block ------------------------------------------- */

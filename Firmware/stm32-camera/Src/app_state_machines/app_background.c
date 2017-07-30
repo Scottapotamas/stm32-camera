@@ -18,7 +18,6 @@
 #include "app_signals.h"
 #include "button.h"
 #include "hal_button.h"
-#include "hal_terminal.h"
 #include "timer.h"
 
 /* -------------------------------------------------------------------------- */
@@ -31,7 +30,7 @@ PUBLIC void
 app_background_init( void )
 {
     timerStart( &button_timer, 50 );
-    hal_terminal_init( 115200 );
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -46,7 +45,7 @@ app_background( void )
 
     /* Scan buttons */
     button_process();
-    hal_terminal_process();
+
 }
 
 /* ----- End ---------------------------------------------------------------- */
