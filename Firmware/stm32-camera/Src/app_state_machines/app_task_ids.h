@@ -47,7 +47,7 @@ enum AppTaskID
 	TASK_AUXILIARY_B,
 	TASK_AUXILIARY_C,
 
-    TASK_MONITOR,   /*UART Connection */
+    TASK_TERMINAL,   /*UART Connection */
 
 	TASK_CAMERA,	/* Camera Handling */
 

@@ -33,6 +33,7 @@
 #include "app_task_file_system.h"
 #include "app_task_camera.h"
 #include "app_task_auxiliary.h"
+#include "app_task_terminal.h"
 
 #include "button.h"
 #include "hal_button.h"
@@ -40,7 +41,9 @@
 #include "hal_delay.h"
 #include "app_version.h"
 #include "hal_adc.h"
-#
+#include "log.h"
+#include "config.h"
+
 /* -------------------------------------------------------------------------- */
 
 //DEFINE_THIS_FILE; /* Used for ASSERT checks to define __FILE__ only once */
@@ -71,16 +74,19 @@ StateEvent *               appTaskFileSystemEventQueue[20];
 StateEvent *               appTaskFileSystemRequestQueue[20];
 
 AppTaskAuxiliary           appTaskAuxiliaryA;
-StateEvent *               appTaskAuxiliaryAEventQueue[20];
+StateEvent *               appTaskAuxiliaryAEventQueue[10];
 
 AppTaskAuxiliary           appTaskAuxiliaryB;
-StateEvent *               appTaskAuxiliaryBEventQueue[20];
+StateEvent *               appTaskAuxiliaryBEventQueue[10];
 
 AppTaskAuxiliary           appTaskAuxiliaryC;
-StateEvent *               appTaskAuxiliaryCEventQueue[20];
+StateEvent *               appTaskAuxiliaryCEventQueue[10];
 
 AppTaskCamera              appTaskCamera;
 StateEvent *               appTaskCameraEventQueue[20];
+
+AppTaskTerminal            appTaskTerminal;
+StateEvent *               appTaskTerminalEventQueue[20];
 
 AppTaskSupervisor          appTaskSupervisor;
 StateEvent *               appTaskSupervisorEventQueue[60];
@@ -107,6 +113,12 @@ void app_tasks_init( void )
 
     /* ~~~ Event Subscription Tables Initialisation ~~~ */
     eventSubscribeInit( eventSubscriberList, STATE_MAX_SIGNAL );
+
+    /* ~~~ Set configuration data to sensible defaults ~~~ */
+    config_init();
+
+    /* ~~~ Enable the logging subsystem ~~~ */
+    log_init();
 
     /* ~~~ Event Timers Initialisation ~~~ */
     eventTimerInit();
@@ -152,6 +164,12 @@ void app_tasks_init( void )
     stateTaskerAddTask( &mainTasker, t, TASK_CAMERA, "Camera" );
     stateTaskerStartTask( &mainTasker, t );
 
+    t = appTaskTerminalCreate( &appTaskTerminal,
+                             appTaskTerminalEventQueue,
+                             DIM(appTaskTerminalEventQueue),
+							 HAL_UART_PORT_MAIN );
+    stateTaskerAddTask( &mainTasker, t, TASK_TERMINAL, "Terminal" );
+    stateTaskerStartTask( &mainTasker, t );
 
     t = appTaskSupervisorCreate( &appTaskSupervisor,
                                  appTaskSupervisorEventQueue,

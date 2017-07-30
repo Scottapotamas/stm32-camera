@@ -68,7 +68,7 @@ log_get_sub_system_label( LOG_SUB_SYSTEM sub_system )
     if( sub_system & FILE_SYSTEM ) return "FILE";
     if( sub_system & CONFIG      ) return "CONFIG";
     if( sub_system & LOGGING     ) return "LOG";
-    if( sub_system & MONITOR     ) return "MONITOR";
+    if( sub_system & TERMINAL    ) return "TERMINAL";
     if( sub_system & AUXILIARY   ) return "AUXILIARY";
     if( sub_system & SUPERVISOR  ) return "SYSTEM";
     if( sub_system & CAMERA      ) return "CAMERA";

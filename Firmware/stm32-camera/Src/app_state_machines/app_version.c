@@ -19,8 +19,8 @@ extern "C" {
 #include "global.h"
 #include "app_version.h"
 
-//#define USE_GIT_BUILD_INFO
-//TODO Use git build script for better info
+#define USE_GIT_BUILD_INFO
+
 #ifdef USE_GIT_BUILD_INFO
 #include "build_info.h"
 #endif // USE_GIT_BUILD
