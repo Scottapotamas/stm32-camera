@@ -16,13 +16,8 @@
 #include "stm32f4xx_hal.h"
 #include "hal_gpio.h"
 
-//TODO streamline DAC gpio manip calls
-#include "hal_gpio_mcu.h"
-#include "hal_gpio_types.h"
-
 /* ----- Defines ------------------------------------------------------------ */
 
-//TODO remove dac pin/port defines in file
 /* ----- Private Functions -------------------------------------------------- */
 
 PRIVATE uint32_t
@@ -98,8 +93,6 @@ hal_dacp_setting( const float voltage )
 }
 
 /* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
 
 PRIVATE void
 hal_dacp_init( void  )
@@ -119,32 +112,19 @@ hal_dacp_init( void  )
 PUBLIC void
 HAL_DAC_MspInit( DAC_HandleTypeDef* dacHandle )
 {
-    GPIO_InitTypeDef GPIO_InitStruct;
-
     if( dacHandle->Instance == DAC )
     {
         __HAL_RCC_DAC_CLK_ENABLE();
-
-        //TODO use the hal_gpio.h function instead of going above it
-
-        hal_gpio_mcu_init(PORT_A, PIN_5, MODE_INPUT, 0);
-		/* Switch pin to analogue for DAC output */
-        GPIO_InitStruct.Pin  = FLASH_OUTPUT_Pin;
-        GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-        GPIO_InitStruct.Pull = GPIO_NOPULL;
-        HAL_GPIO_Init( FLASH_OUTPUT_GPIO_Port, &GPIO_InitStruct );
+        hal_gpio_init(_AUX_GPIO_2, MODE_ANALOG, 0);
     }
 }
 
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
 PRIVATE void
 hal_dacp_deinit( void  )
 {
     hdac.Instance = DAC;
-
     HAL_DAC_DeInit( &hdac ); /* Calls HAL_DAC_MspDeInit */
 }
 
@@ -157,21 +137,9 @@ HAL_DAC_MspDeInit( DAC_HandleTypeDef* dacHandle )
     {
         __HAL_RCC_DAC_CLK_DISABLE();
 
-        GPIO_InitTypeDef GPIO_InitStruct;
-
         /* Switch pin back to output and force low */
-        GPIO_InitStruct.Pin  = FLASH_OUTPUT_Pin;
-        GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-        GPIO_InitStruct.Pull = GPIO_NOPULL;
-        GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
-        HAL_GPIO_Init( FLASH_OUTPUT_GPIO_Port,
-                       &GPIO_InitStruct );
-
-        HAL_GPIO_WritePin( FLASH_OUTPUT_GPIO_Port,
-						   FLASH_OUTPUT_Pin,
-                           GPIO_PIN_RESET );
+        hal_gpio_init(_AUX_GPIO_2, MODE_OUT_PP, 0);
     }
 }
 
 /* ----- End ---------------------------------------------------------------- */
-
