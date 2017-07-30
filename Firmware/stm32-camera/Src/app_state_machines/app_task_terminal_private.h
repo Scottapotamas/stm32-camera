@@ -30,19 +30,13 @@ AppTaskTerminal_initial( AppTaskTerminal *me, const StateEvent *e );
 PRIVATE STATE
 AppTaskTerminal_main( AppTaskTerminal *me, const StateEvent *e );
 
-    PRIVATE STATE
-	AppTaskTerminal_mode_none( AppTaskTerminal *me, const StateEvent *e );
-
-    PRIVATE STATE
-	AppTaskTerminal_mode_active( AppTaskTerminal *me, const StateEvent *e );
-
 /* ----- Private Helper Function Declarations ------------------------------- */
 
 PRIVATE bool
-AppTaskTerminal_tx_put_a( uint8_t c );
+AppTaskTerminal_tx_put( uint8_t c );
 
 PRIVATE void
-AppTaskTerminal_tx_flush_a( void );
+AppTaskTerminal_tx_flush( void );
 
 PRIVATE void
 AppTaskTerminal_rx_callback( HalUartPort_t port, uint8_t c );
