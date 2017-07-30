@@ -55,13 +55,19 @@
 
 /* USER CODE BEGIN Includes */
 #include "global.h"
+#include "qassert.h"
 #include "app_tasks.h"
 #include "app_hardware.h"
 #include "status.h"
 #include "hal_gpio.h"
 #include "hal_watchdog.h"
 
+/* Assert printout requirements */
+#include <string.h>
+#include <stdarg.h>
+#include "hal_uart.h"
 #include "hal_delay.h"
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -117,7 +123,6 @@ int main(void)
   MX_DMA_Init();
   MX_DCMI_Init();
   MX_SDIO_SD_Init();
-  MX_FATFS_Init();
 
   /* USER CODE BEGIN 2 */
   app_hardware_init();
@@ -220,6 +225,22 @@ void onAssert__( const char * file,
                  const char * fmt,
                  ... )
 {
+    va_list args;
+    char message[32];
+    int len;
+    memset( message, 0, sizeof(message) );
+
+    /* Format the printf part */
+    if( fmt && ( strlen( fmt ) > 0 ) )
+    {
+        va_start( args, fmt );
+        len = vsnprintf( message, sizeof(message), fmt, args );
+        va_end( args );
+    }
+
+	/* Show assert in terminal  */
+    hal_uart_printf_direct( HAL_UART_PORT_MAIN, "ASSERT: %s, line %d (%s)\r\n\r\n", file, line, message );
+
     /* Blinking lights while we wait for the watch dog to bite */
     status_red( true );
     status_green( false );
@@ -260,8 +281,8 @@ void _Error_Handler(char * file, int line)
 void assert_failed(uint8_t* file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-    ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	onAssert__( (const char *)file, line, "assert_failed" );
+
   /* USER CODE END 6 */
 
 }
