@@ -264,7 +264,7 @@ void _Error_Handler(char * file, int line)
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
   {
-	  //TODO Add output of error over UART for better debugging
+
   }
   /* USER CODE END Error_Handler_Debug */ 
 }

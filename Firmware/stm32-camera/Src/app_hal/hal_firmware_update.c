@@ -1,11 +1,6 @@
 /**
  * @file      hal_firmware_update.c
  *
- * @brief     Access the ADC with the internal temperature sensor.
- *
- * @author    Scott Rapson <scottr@applidyne.com.au>
- *
- * @copyright (c) 2015 Applidyne Pty. Ltd. - All rights reserved.
  */
 
 /* ----- System Includes ---------------------------------------------------- */
@@ -19,6 +14,7 @@
 #include "hal_gpio.h"
 #include "hal_delay.h"
 #include "stm32f4xx_hal.h"
+#include "app_times.h"
 
 /* ----- Defines ------------------------------------------------------------ */
 
@@ -31,14 +27,13 @@
 PUBLIC void
 hal_firmware_update()
 {
-    /* Update the watch dog one last time while we have not corrupted any
-     * memory yet. This ensure that the watch dog does not kick while we do
-     * the reset sequence. */
+    /* This ensure that the watch dog does not kick while reset. */
     hal_watchdog_refresh();
 
+    //Charge the cap on the BOOT0 pin and then ensure the output doesn't drain it during reboot
     hal_gpio_write_pin(_REBOOT_LATCH, true);
-    hal_delay_ms(20); 	//TODO work out how long we need to power the cap for
-    //TODO make reboot_latch a input to hold it high over a reboot maybe?
+    hal_delay_ms( TIME_REBOOT_CAP_CHARGE );
+    hal_gpio_init(_REBOOT_LATCH, MODE_ANALOG, 0);
 
     /* Go straight to the CORE_CM4 inline function for a reset */
     NVIC_SystemReset();

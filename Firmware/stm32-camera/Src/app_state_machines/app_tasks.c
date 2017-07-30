@@ -104,8 +104,7 @@ void app_tasks_init( void )
     stateTaskerInit( &mainTasker, mainTaskTable, TASK_MAX );
 
     /* ~~~ Dynamic Event Pools Initialisation ~~~ */
-    eventPoolInit( eventPool,
-                   DIM(eventPool) );
+    eventPoolInit( eventPool, DIM(eventPool) );
 
     eventPoolAddStorage( (StateEvent*)&eventsSmall,
                                  DIM(eventsSmall),

@@ -393,7 +393,7 @@ PRIVATE bool command_camera_flash_level( CmdHandler *me )
 PRIVATE bool command_camera_flash_off( CmdHandler *me )
 {
     cmd_printf( me, "Flash OFF\r\n" );
-    //TODO Disable flash output
+    //Disable flash output
     return true;
 }
 /* -------------------------------------------------------------------------- */
@@ -401,7 +401,7 @@ PRIVATE bool command_camera_flash_off( CmdHandler *me )
 PRIVATE bool command_camera_flash_on( CmdHandler *me )
 {
     cmd_printf( me, "Flash ON\r\n" );
-    //TODO Enable flash output
+    //Enable flash output
     return true;
 }
 
@@ -413,9 +413,9 @@ PRIVATE bool command_camera_flash_timed( CmdHandler *me )
     {
         uint16_t flashtime = (uint16_t)cmd_get_argv_int( me, 1 );
         cmd_printf( me, "Flashed for %dms\r\n", flashtime );
-        //TODO Enable flash output
+        //Enable flash output
         hal_delay_ms( flashtime );
-        //TODO Disable flash output
+        //Disable flash output
     }
     else
     {

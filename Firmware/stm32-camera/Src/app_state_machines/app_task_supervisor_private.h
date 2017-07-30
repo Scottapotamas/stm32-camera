@@ -26,7 +26,10 @@ PRIVATE void AppTaskSupervisor_initial( AppTaskSupervisor *me,
 PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
                                       const StateEvent *e );
 
-PRIVATE STATE AppTaskSupervisor_placeholder( AppTaskSupervisor *me,
+PRIVATE STATE AppTaskSupervisor_load_config( AppTaskSupervisor *me,
+                                      const StateEvent *e );
+
+PRIVATE STATE AppTaskSupervisor_check_camera( AppTaskSupervisor *me,
                                       const StateEvent *e );
 
 

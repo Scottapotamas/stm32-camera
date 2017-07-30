@@ -39,7 +39,7 @@ struct AppTaskSupervisor
     // ~~~ Task Timers ~~~
     EventTimer       timer1;                ///< Local state timer 1
     EventTimer       timer2;                ///< Local state timer 2
-
+    EventTimer		 cardTimer;	//SD card timeouts
     // ~~~ Task Variables ~~~
 
 };
