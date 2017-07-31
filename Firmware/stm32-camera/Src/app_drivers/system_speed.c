@@ -18,6 +18,11 @@
 #include "simple_state_machine.h"
 #include "hal_system_speed.h"
 
+#include "hal_systick.h"
+#include "hal_uart.h"
+#include "hal_gpio.h"
+#include "stm32f4xx_hal.h"
+
 /* ----- Private Types ------------------------------------------------------ */
 
 typedef enum
@@ -73,6 +78,7 @@ system_speed_set( SystemSpeed_t speed )
                     STATE_NEXT( SYSTEM_SPEED_STATE_HIGH );
                 }
             STATE_EXIT_ACTION
+				system_speed_cleanup();
             STATE_END
             break;
 
@@ -92,11 +98,11 @@ system_speed_set( SystemSpeed_t speed )
                     }
                 }
             STATE_EXIT_ACTION
+				system_speed_cleanup();
             STATE_END
             break;
     }
 }
-
 
 /* -------------------------------------------------------------------------- */
 
@@ -117,6 +123,21 @@ system_speed_get( void )
     }
     return speed;
 }
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+system_speed_cleanup( void )
+{
+	//Re-initalise the clocks for the various peripherals affected by clock change
+	hal_systick_init();
+
+	__HAL_RCC_USART1_CLK_ENABLE();
+
+	//hal_uart_init(HAL_UART_PORT_MAIN);
+
+}
+
 
 /* ----- End ---------------------------------------------------------------- */
 

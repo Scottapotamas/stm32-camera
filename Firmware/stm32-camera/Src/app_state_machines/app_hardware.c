@@ -21,12 +21,15 @@
 #include "hal_watchdog.h"
 #include "hal_adc.h"
 #include "filesystem.h"
-
+#include "system_speed.h"
 /* -------------------------------------------------------------------------- */
 
 PUBLIC void
 app_hardware_init( void )
 {
+	hal_system_speed_init();	//setup cpu load timer etc
+	system_speed_init();		//setup state machine for clock changes
+
     /* Configure internal GPIO pins */
     hal_gpio_configure_mcu_defaults();
 
