@@ -26,7 +26,11 @@ extern "C" {
 /** Function to trigger a firmware update.
  */
 PUBLIC void
-hal_firmware_update();
+hal_firmware_update_hardware();
+
+
+PUBLIC void
+hal_firmware_update_software();
 
 /* ----- End ---------------------------------------------------------------- */
 

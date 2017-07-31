@@ -1205,8 +1205,28 @@ command_system_speed( CmdHandler *me )
 PRIVATE bool
 command_system_upgrade_firmware( CmdHandler *me )
 {
-	cmd_printf( me, "Firmware upgrade starting...\r\n" );
-	hal_firmware_update();
+    if( cmd_get_argc( me ) > 1 )
+    {
+    	cmd_printf( me, "Firmware upgrade starting...\r\n" );
+
+        if( cmd_get_argv_int( me, 1 ) == 0 )
+        {
+
+        	cmd_printf( me, "Using hardware method.\r\n" );
+        	hal_firmware_update_hardware();
+        }
+        else if( cmd_get_argv_int( me, 1 ) > 0 )
+        {
+        	cmd_printf( me, "Using software method.\r\n" );
+        	hal_firmware_update_software();
+        }
+    }
+    else
+    {
+    	cmd_printf( me, "Usage: system upgrade <value>\r\n" );
+    	cmd_printf( me, "<hardware reboot>: 0\r\n" );
+    	cmd_printf( me, "<software jump>: 1\r\n" );
+    }
 
     return true;
 }
