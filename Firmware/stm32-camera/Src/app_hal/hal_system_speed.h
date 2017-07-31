@@ -2,10 +2,9 @@
  * @file      hal_system_speed.h
  *
  * @brief     Low level control of the system clock speed for power saving purposes.
- *            Essentially like the original SystemClock_Config but with two
- *            configurations.
+ *            Also includes helper functions for getting clock speed and CPU load.
  *
- * @author    Marco Hess <marcoh@applidyne.com.au>
+ * @author    Scott Rapson <scottr@applidyne.com.au>
  *
  * @copyright (c) 2017 Applidyne Pty. Ltd. - All rights reserved.
  */
@@ -46,8 +45,6 @@ typedef struct {
 	uint16_t PLLQ; // PLL Q parameter. Between 2 and 15.
 	uint16_t PLLR; // PLL R parameter. Between 2 and 7. Only available on STM32F446 devices.
 } SystemSpeed_RCC_PLL_t;
-
-PRIVATE SystemSpeed_RCC_PLL_t pll_working;	//TODO rename this local variable
 
 /* -------------------------------------------------------------------------- */
 

@@ -47,6 +47,11 @@ system_speed_set( SystemSpeed_t speed );
 PUBLIC SystemSpeed_t
 system_speed_get( void );
 
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+system_speed_cleanup( void );
+
 /* ----- End ---------------------------------------------------------------- */
 
 #ifdef __cplusplus

@@ -2,10 +2,9 @@
  * @file      hal_system_speed.h
  *
  * @brief     Low level control of the system clock speed for power saving purposes.
- *            Essentially like the original SystemClock_Config but with two
- *            configurations.
+ *            Also includes helper functions for getting clock speed and CPU load.
  *
- * @author    Marco Hess <marcoh@applidyne.com.au>
+ * @author    Scott Rapson <scottr@applidyne.com.au>
  *
  * @copyright (c) 2017 Applidyne Pty. Ltd. - All rights reserved.
  */
@@ -18,8 +17,6 @@
 
 #include "hal_system_speed.h"
 #include "stm32f4xx_hal.h"
-#include "hal_systick.h"
-#include "hal_uart.h"
 
 /* ----- Private Types ------------------------------------------------------ */
 
@@ -31,6 +28,8 @@ volatile uint32_t cc_when_sleeping;		//timestamp when we go to sleep
 volatile uint32_t cc_when_woken = 0; 	//timestamp when we wake up
 volatile uint32_t cc_awake_time = 0;	//duration of 'active'
 volatile uint32_t cc_asleep_time = 0;	//duration of 'sleep'
+
+PRIVATE SystemSpeed_RCC_PLL_t pll_working;	//TODO rename this local variable
 
 /* ----- Public Functions --------------------------------------------------- */
 
@@ -66,7 +65,7 @@ hal_system_speed_set_pll( SystemSpeed_RCC_PLL_t* pll_settings )
 
 	// Ensure the HSI is ready
 	timeout = 0xFFFF;
-	while (!hal_system_speed_hsi_ready && timeout--);
+	while (!hal_system_speed_hsi_ready() && timeout--);
 
 	// Use the HSI48 internal clock as main clock because the current PLL clock will stop.
 	RCC->CFGR = (RCC->CFGR & ~(RCC_CFGR_SW)) | RCC_CFGR_SW_HSI;
@@ -208,17 +207,5 @@ hal_system_speed_low( void )
 	hal_system_speed_set_pll(&pll_working);
 }
 
-/* -------------------------------------------------------------------------- */
-
-PUBLIC void
-hal_system_speed_regenerate( void )
-{
-	//Changing the PLL and swapping clock means all the peripheral clocks using PLL will need a reset
-	//By doing this they should adapt to the new frequency
-	hal_systick_init();
-
-	hal_uart_init(HAL_UART_PORT_MAIN);
-	//TODO reinit other clocks, this is possibly a task for a state machine up higher
-}
 /* ----- End ---------------------------------------------------------------- */
 

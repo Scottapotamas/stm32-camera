@@ -128,7 +128,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   app_hardware_init();
   app_tasks_init();
-  hal_system_speed_init();
   PERMIT();
   /* USER CODE END 2 */
 
