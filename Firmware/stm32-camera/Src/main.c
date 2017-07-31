@@ -62,6 +62,7 @@
 #include "hal_gpio.h"
 #include "hal_watchdog.h"
 #include "hal_system_speed.h"
+#include "filesystem.h"
 
 /* Assert printout requirements */
 #include <string.h>
@@ -123,6 +124,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_DMA_Init();
   MX_DCMI_Init();
+  filesystem_init();
   MX_SDIO_SD_Init();
 
   /* USER CODE BEGIN 2 */
