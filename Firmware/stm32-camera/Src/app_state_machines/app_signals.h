@@ -47,6 +47,10 @@ enum AppSignals
     /* Configuration setting changed */
     CONFIG_SETTING_CHANGED_SIGNAL,
 
+    /* Logging Triggers */
+    LOG_BUFFER_SIGNAL,
+
+
     /* Camera */
     CAMERA_CMD_ON,
     CAMERA_CMD_CAPTURE_NORMAL,

@@ -33,6 +33,7 @@ extern "C" {
 #include "hal_uart.h"
 #include "ff.h"
 #include "auxiliary.h"
+#include "log.h"
 
 /* -------------------------------------------------------------------------- */
 
@@ -78,6 +79,17 @@ typedef struct AuxiliaryModeEvent__
     AuxiliaryPort_t  port;           /**< Aux port for mode switch */
     AuxiliaryMode_t  mode;           /**< Aux mode to switch to */
 } AuxiliaryModeEvent;
+
+/* -------------------------------------------------------------------------- */
+
+/** Log Buffer Event - Generated when a log message occurs */
+typedef struct LogBufferEvent__
+{
+    StateEvent      super;              /**< Encapsulated event reference */
+    LOG_LEVEL       level;              /**< Log Message Level */
+    uint32_t        used;               /**< Log buffer space used */
+    uint32_t        percent;            /**< Log Buffer percentage used */
+} LogBufferEvent;
 
 /* -------------------------------------------------------------------------- */
 
