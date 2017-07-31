@@ -44,7 +44,9 @@
 #include "hal_uuid.h"
 #include "hal_systick.h"
 #include "minIni.h"
+#include "cmd.h"
 #include "system_speed.h"
+#include "hal_system_speed.h"
 #include "tick_timer.h"
 
 /* ----- Private Functions -------------------------------------------------- */
@@ -97,6 +99,7 @@ PRIVATE bool command_sd_unmount( CmdHandler *me );
 /** SYSTEM COMMANDS */
 PRIVATE bool command_system_uuid( CmdHandler *me );
 PRIVATE bool command_system_tasks( CmdHandler *me );
+PRIVATE bool command_system_load( CmdHandler *me );
 PRIVATE bool command_system_speed( CmdHandler *me );
 PRIVATE bool command_system_upgrade_firmware( CmdHandler *me );
 
@@ -169,6 +172,10 @@ PRIVATE const CmdEntry SystemCmdTable[] =
     CmdEntryAction(  "speed",
                      command_system_speed,
                      "show system speed mode" ),
+
+	CmdEntryAction(  "load",
+					 command_system_load,
+					 "show cpu utilisation" ),
 
     CmdEntryAction(  "tasks",
                      command_system_tasks,
@@ -1108,6 +1115,18 @@ command_system_tasks( CmdHandler *me )
     {
         app_task_clear_statistics();
     }
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE bool
+command_system_load( CmdHandler *me )
+{
+    cmd_printf( me,
+                "CPU: %f%%\r\n",
+				hal_system_speed_get_load()
+				);
     return true;
 }
 
