@@ -36,7 +36,7 @@ hal_temperature_degrees_C( uint32_t raw_adc )
 {
     float   Vsense = ( (float)raw_adc * 3.3f ) / 4096.0f;
 
-    return  ( ( ( Vsense - V25 ) / AVG_SLOPE ) + 25.0f );
+    return  ( ( ( Vsense - V25 ) / AVG_SLOPE ) );
 }
 
 /* ----- End ---------------------------------------------------------------- */
