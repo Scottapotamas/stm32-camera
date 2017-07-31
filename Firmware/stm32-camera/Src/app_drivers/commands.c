@@ -66,7 +66,9 @@ PRIVATE bool command_camera_off( CmdHandler *me );
 PRIVATE bool command_camera_capture( CmdHandler *me );
 
 /** BOARD SENSORS */
-PRIVATE bool command_board( CmdHandler *me );
+PRIVATE bool command_board_on( CmdHandler *me );
+PRIVATE bool command_board_off( CmdHandler *me );
+PRIVATE bool command_board_read( CmdHandler *me );
 
 /** CONFIG LOG COMMANDS */
 PRIVATE bool command_config_log( CmdHandler *me );
@@ -162,6 +164,25 @@ PRIVATE const CmdEntry CameraCmdTable[] =
 
 /* -------------------------------------------------------------------------- */
 
+/** SD COMMANDS */
+PRIVATE const CmdEntry BoardCmdTable[] =
+{
+    CmdEntryAction(  "on",
+    				 command_board_on,
+                     "enable onboard sensors" ),
+
+    CmdEntryAction(  "off",
+                     command_board_off,
+                     "disable onboard sensors" ),
+
+    CmdEntryAction(  "read",
+                     command_board_read,
+                     "print board sensors" ),
+
+    CmdEntryTerminator()
+};
+/* -------------------------------------------------------------------------- */
+
 /** SYSTEM COMMANDS */
 PRIVATE const CmdEntry SystemCmdTable[] =
 {
@@ -231,12 +252,12 @@ PRIVATE const CmdEntry SdCmdTable[] =
 
 PRIVATE const CmdEntry topCmdTable[] =
 {
-    CmdEntrySubMenu( "auxiliary io",
+    CmdEntrySubMenu( "auxiliary",
                      AuxiliaryGpioCmdTable,
                      "control auxiliary port items" ),
 
-    CmdEntryAction(  "board",
-                     command_board,
+	CmdEntrySubMenu( "board",
+                     BoardCmdTable,
                      "show board sensor data" ),
 
     CmdEntrySubMenu( "camera",
@@ -1175,13 +1196,30 @@ command_system_upgrade_firmware( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_board( CmdHandler *me )
+command_board_on( CmdHandler *me )
 {
     board_sensor_enable();
+    cmd_printf( me, "SENSORS STARTING\r\n");
+    return true;
+}
 
-    hal_delay_ms( 50 );
+/* -------------------------------------------------------------------------- */
 
-    cmd_printf( me, "Temp:    % 2.1fC\r\n", board_sensor_temperature_C() );
+PRIVATE bool
+command_board_off( CmdHandler *me )
+{
+    board_sensor_disable();
+    cmd_printf( me, "SENSORS STOPPED\r\n");
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE bool
+command_board_read( CmdHandler *me )
+{
+    cmd_printf( me, "Temperature: %2.1fC\r\n", board_sensor_temperature_C() );
+    cmd_printf( me, "Light: %f\r\n", board_sensor_light() );
 
     return true;
 }
