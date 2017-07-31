@@ -61,6 +61,7 @@
 #include "status.h"
 #include "hal_gpio.h"
 #include "hal_watchdog.h"
+#include "hal_system_speed.h"
 
 /* Assert printout requirements */
 #include <string.h>
@@ -127,6 +128,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   app_hardware_init();
   app_tasks_init();
+  hal_system_speed_init();
   PERMIT();
   /* USER CODE END 2 */
 
@@ -142,7 +144,7 @@ int main(void)
       {
           status_red(false);
           hal_watchdog_refresh();
-          HAL_PWR_EnterSLEEPMode( PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI );
+          hal_system_speed_sleep();
       }
       hal_watchdog_refresh();
       status_red(true);
