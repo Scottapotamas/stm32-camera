@@ -34,6 +34,7 @@
 #include "app_task_camera.h"
 #include "app_task_auxiliary.h"
 #include "app_task_terminal.h"
+#include "app_task_log.h"
 
 #include "button.h"
 #include "hal_button.h"
@@ -85,6 +86,9 @@ StateEvent *               appTaskAuxiliaryCEventQueue[10];
 AppTaskCamera              appTaskCamera;
 StateEvent *               appTaskCameraEventQueue[20];
 
+AppTaskLog                 appTaskLog;
+StateEvent *               appTaskLogEventQueue[100];
+
 AppTaskTerminal            appTaskTerminal;
 StateEvent *               appTaskTerminalEventQueue[20];
 
@@ -134,6 +138,12 @@ void app_tasks_init( void )
                                  appTaskFileSystemRequestQueue,
                                  DIM(appTaskFileSystemRequestQueue) );
     stateTaskerAddTask( &mainTasker, t, TASK_FILE_SYSTEM, "FileSys" );
+    stateTaskerStartTask( &mainTasker, t );
+
+    t = appTaskLogCreate( &appTaskLog,
+                          appTaskLogEventQueue,
+                          DIM(appTaskLogEventQueue) );
+    stateTaskerAddTask( &mainTasker, t, TASK_LOG, "Log" );
     stateTaskerStartTask( &mainTasker, t );
 
     t = appTaskAuxiliaryCreate( &appTaskAuxiliaryA,

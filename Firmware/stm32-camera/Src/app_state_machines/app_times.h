@@ -42,6 +42,11 @@ enum AppTimeoutsMs
   TIME_CAMERA_RESPONSE_TIMEOUT 		  = 500,
   TIME_CAMERA_POWER_UP_DELAY		  = 500,
   TIME_CAMERA_RESET_TIMEOUT			  = 500,
+
+  TIME_LOG_WRITE_DELAY                = 300000, /* 5 minutes */
+  TIME_LOG_WRITE_DELAY_SHORT          =  20000, /* 20 seconds */
+
+
 };
 
 /* -------------------------------------------------------------------------- */
