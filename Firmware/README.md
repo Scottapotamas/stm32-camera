@@ -69,6 +69,34 @@ If you've flashed some software that prevents the micro from being able to start
 
 ___
 
+# Clock Speed and Performance
+
+The F429 was originally selected due to DCMI, SDIO peripherals, and best internal RAM/$ for the QFP100 package.
+
+As one of the goals of this board is low quiescent power consumption, I've made an effort to build tools early on to validate power usage.
+
+## SLEEP Mode
+
+Low hanging fruit (micro into sleep mode when waiting for events) makes the largest difference, cutting the 220mW starting draw to ~110mW. 
+
+TODO: Consider not waking on systick interupts?
+
+## 'Underclocking' the core
+
+By adding a CPU load measurement, I was able to watch task requirements and processing time, and drop the clock speed of the micro.
+
+By measuring the power consumption (micro powered directly from lab supply) against clock frequency I noticed how substantial savings could be for idle operation. 
+
+![Core Speed vs Power](Firmware/F429_power_vs_clock.png)
+
+From here, dynamic clock speed handling was developed to help reduce wasted energy when we aren't doing much.
+
+## STOP mode
+
+When we know (or the host controlling us) that we aren't needed, STOP mode represents another drop in average idle consumption by stopping clocks and peripherals altogether.
+
+Intend for wake on the USART1 interupt. Need to profile power consumption and startup times to see if this is acceptable.
+
 # SD Card
 
 We use the SDIO interface in 4-bit mode.
