@@ -45,6 +45,104 @@ hal_system_speed_init(  )
 
 /* -------------------------------------------------------------------------- */
 
+//Measured to take about 200us to execute
+
+PUBLIC void
+hal_system_speed_set_pll( SystemSpeed_RCC_PLL_t* pll_settings )
+{
+	uint16_t timeout;
+	SystemSpeed_RCC_PLL_t tmp;
+
+	// Read the existing PLL registers
+	hal_system_speed_get_pll(&tmp);
+
+	if ( memcmp(pll_settings, &tmp, sizeof(SystemSpeed_RCC_PLL_t)) == 0 )
+	{
+		return; // Don't change PLL settings if settings are the same
+	}
+
+	//Enable the HSI48
+	RCC->CR |= RCC_CR_HSION;
+
+	// Ensure the HSI is ready
+	timeout = 0xFFFF;
+	while (!hal_system_speed_hsi_ready && timeout--);
+
+	// Use the HSI48 internal clock as main clock because the current PLL clock will stop.
+	RCC->CFGR = (RCC->CFGR & ~(RCC_CFGR_SW)) | RCC_CFGR_SW_HSI;
+
+	//Disable the PLL
+	RCC->CR &= ~RCC_CR_PLLON;
+
+	// Set PLL settings from structure
+	if (pll_settings->PLLM)
+	{
+		RCC->PLLCFGR = ( RCC->PLLCFGR & ~RCC_PLLM_MASK ) | ( (pll_settings->PLLM << RCC_PLLM_POS) & RCC_PLLM_MASK );
+	}
+
+	if (pll_settings->PLLN)
+	{
+		RCC->PLLCFGR = ( RCC->PLLCFGR & ~RCC_PLLN_MASK ) | ( (pll_settings->PLLN << RCC_PLLN_POS) & RCC_PLLN_MASK );
+	}
+
+	if (pll_settings->PLLP)
+	{
+		RCC->PLLCFGR = ( RCC->PLLCFGR & ~RCC_PLLP_MASK ) | ( (((pll_settings->PLLP >> 1) - 1) << RCC_PLLP_POS) & RCC_PLLP_MASK );
+	}
+
+	if (pll_settings->PLLQ)
+	{
+		RCC->PLLCFGR = ( RCC->PLLCFGR & ~RCC_PLLQ_MASK) | ( (pll_settings->PLLQ << RCC_PLLQ_POS) & RCC_PLLQ_MASK );
+	}
+
+	if (pll_settings->PLLR)
+	{
+		RCC->PLLCFGR = ( RCC->PLLCFGR & ~RCC_PLLR_MASK ) | ( (pll_settings->PLLR << RCC_PLLR_POS) & RCC_PLLR_MASK );
+	}
+
+	//Enable the PLL
+	RCC->CR |= RCC_CR_PLLON;
+
+	//Blocking wait until PLL is ready
+	timeout = 0xFFFF;
+	while (!hal_system_speed_pll_ready() && timeout--);
+
+	//Enable PLL as main clock
+	RCC->CFGR = ( RCC->CFGR & ~(RCC_CFGR_SW) ) | RCC_CFGR_SW_PLL;
+
+	//Update system core clock variable
+	SystemCoreClockUpdate();
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_system_speed_get_pll( SystemSpeed_RCC_PLL_t* pll_settings )
+{
+	pll_settings->PLLM = ( RCC->PLLCFGR & RCC_PLLM_MASK ) >> RCC_PLLM_POS;
+	pll_settings->PLLN = ( RCC->PLLCFGR & RCC_PLLN_MASK ) >> RCC_PLLN_POS;
+	pll_settings->PLLP = (((RCC->PLLCFGR & RCC_PLLP_MASK ) >> RCC_PLLP_POS) + 1) << 1;
+	pll_settings->PLLQ = ( RCC->PLLCFGR & RCC_PLLQ_MASK ) >> RCC_PLLQ_POS;
+	pll_settings->PLLR = ( RCC->PLLCFGR & RCC_PLLR_MASK ) >> RCC_PLLR_POS;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC bool
+hal_system_speed_pll_ready( void )
+{
+	return ( RCC->CR & RCC_CR_PLLRDY );
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC bool
+hal_system_speed_hsi_ready( void )
+{
+	return ( RCC->CR & RCC_CR_HSIRDY );
+}
+/* -------------------------------------------------------------------------- */
+
 PUBLIC void
 hal_system_speed_sleep( void )
 {
@@ -89,7 +187,12 @@ hal_system_speed_get_speed( void )
 PUBLIC void
 hal_system_speed_high( void )
 {
-    /* TODO change clock speed to high speed */
+	hal_system_speed_get_pll(&pll_working);
+
+	//New value for PLLN
+	pll_working.PLLN = 180;
+
+	hal_system_speed_set_pll(&pll_working);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -97,8 +200,25 @@ hal_system_speed_high( void )
 PUBLIC void
 hal_system_speed_low( void )
 {
-    /* TODO change clock speed to low speed */
+	hal_system_speed_get_pll(&pll_working);
+
+	//New value for PLLN
+	pll_working.PLLN = 72;
+
+	hal_system_speed_set_pll(&pll_working);
 }
 
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_system_speed_regenerate( void )
+{
+	//Changing the PLL and swapping clock means all the peripheral clocks using PLL will need a reset
+	//By doing this they should adapt to the new frequency
+	hal_systick_init();
+
+	hal_uart_init(HAL_UART_PORT_MAIN);
+	//TODO reinit other clocks, this is possibly a task for a state machine up higher
+}
 /* ----- End ---------------------------------------------------------------- */
 
