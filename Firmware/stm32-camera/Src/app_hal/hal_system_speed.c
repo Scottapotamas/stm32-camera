@@ -12,12 +12,14 @@
 
 /* ----- System Includes ---------------------------------------------------- */
 #include <inttypes.h>
+#include <stdbool.h>
 
 /* ----- Local Includes ----------------------------------------------------- */
 
 #include "hal_system_speed.h"
 #include "stm32f4xx_hal.h"
-
+#include "hal_systick.h"
+#include "hal_uart.h"
 
 /* ----- Private Types ------------------------------------------------------ */
 
@@ -72,6 +74,14 @@ hal_system_speed_get_load( void )
 	cc_awake_time = 0;
 
 	return cpu_util;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC uint32_t
+hal_system_speed_get_speed( void )
+{
+	return HAL_RCC_GetSysClockFreq();
 }
 
 /* -------------------------------------------------------------------------- */
