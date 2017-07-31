@@ -101,6 +101,7 @@ PRIVATE bool command_sd_unmount( CmdHandler *me );
 /** SYSTEM COMMANDS */
 PRIVATE bool command_system_uuid( CmdHandler *me );
 PRIVATE bool command_system_tasks( CmdHandler *me );
+PRIVATE bool command_system_clock( CmdHandler *me );
 PRIVATE bool command_system_load( CmdHandler *me );
 PRIVATE bool command_system_speed( CmdHandler *me );
 PRIVATE bool command_system_upgrade_firmware( CmdHandler *me );
@@ -193,6 +194,10 @@ PRIVATE const CmdEntry SystemCmdTable[] =
     CmdEntryAction(  "speed",
                      command_system_speed,
                      "show system speed mode" ),
+
+	CmdEntryAction(  "clock",
+					 command_system_clock,
+					 "show cpu clock frequency" ),
 
 	CmdEntryAction(  "load",
 					 command_system_load,
@@ -1142,14 +1147,27 @@ command_system_tasks( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
+command_system_clock( CmdHandler *me )
+{
+    cmd_printf( me,
+                "CPU: %3.2f\r\n",
+				(float)hal_system_speed_get_speed() / 1000000
+				);
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE bool
 command_system_load( CmdHandler *me )
 {
     cmd_printf( me,
-                "CPU: %f%%\r\n",
+                "CPU: %3.2f%%\r\n",
 				hal_system_speed_get_load()
 				);
     return true;
 }
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -1219,7 +1237,7 @@ PRIVATE bool
 command_board_read( CmdHandler *me )
 {
     cmd_printf( me, "Temperature: %2.1fC\r\n", board_sensor_temperature_C() );
-    cmd_printf( me, "Light: %f\r\n", board_sensor_light() );
+    cmd_printf( me, "Light: %3.1f\r\n", board_sensor_light() );
 
     return true;
 }
