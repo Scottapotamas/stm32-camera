@@ -103,6 +103,7 @@ system_speed_process( void )
                STATE_ENTRY_ACTION
                    me->speed_map = 0;
                    hal_system_speed_low();
+                   hal_systick_init();
                    hal_uart_reinit( HAL_UART_PORT_MAIN );
                STATE_TRANSITION_TEST
                     if( me->speed_map != 0 )
@@ -116,6 +117,7 @@ system_speed_process( void )
            case SYSTEM_SPEED_STATE_HIGH:
                STATE_ENTRY_ACTION
                    hal_system_speed_high();
+                   hal_systick_init();
                    hal_uart_reinit( HAL_UART_PORT_MAIN );
                 STATE_TRANSITION_TEST
                     if( me->speed_map == 0 )
