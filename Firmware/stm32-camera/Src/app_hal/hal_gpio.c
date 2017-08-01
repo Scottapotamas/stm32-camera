@@ -35,7 +35,7 @@
 const HalGpioDef_t HalGpioHardwareMap[] =
 {
 	/* --- BUTTONS --- */
-	[ _BTN             ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_3 },
+	[ _BTN             ] = { .type = TYPE_GPIO, .mode = MODE_INPUT_PU, .port = PORT_D, .pin = PIN_3 },
 
     /* --- STATUS Indication --- */
     [ _STATUS_0        ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_0, .initial = 0 },
