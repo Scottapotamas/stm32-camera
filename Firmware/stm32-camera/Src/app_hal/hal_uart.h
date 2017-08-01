@@ -45,6 +45,13 @@ hal_uart_init( HalUartPort_t port );
 
 /* -------------------------------------------------------------------------- */
 
+/* Reset the UART (for after clock speed change) */
+
+PUBLIC void
+hal_uart_reinit( HalUartPort_t port );
+
+/* -------------------------------------------------------------------------- */
+
 /** Activate the UART peripheral */
 
 PUBLIC void

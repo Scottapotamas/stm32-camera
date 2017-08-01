@@ -124,6 +124,23 @@ hal_uart_init( HalUartPort_t port )
 
 /* -------------------------------------------------------------------------- */
 
+/* Reset the UART */
+
+PUBLIC void
+hal_uart_reinit( HalUartPort_t port )
+{
+    HalUart_t * h = &hal_uart[port];
+
+    if( h->usart.Instance )
+    {
+        __HAL_UART_DISABLE_IT( &h->usart, UART_IT_RXNE );
+        HAL_UART_Init( &h->usart );
+        __HAL_UART_ENABLE_IT( &h->usart, UART_IT_RXNE );
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+
 /* Change the UART baudrate */
 
 PUBLIC void

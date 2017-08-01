@@ -71,6 +71,8 @@ system_speed_set( SystemSpeed_t speed )
            STATE_ENTRY_ACTION
                me->high_speed_requested = 0;
                hal_system_speed_low();
+               hal_uart_reinit( HAL_UART_PORT_MAIN );
+
            STATE_TRANSITION_TEST
                 if( speed == SYSTEM_SPEED_FULL )
                 {
@@ -78,13 +80,14 @@ system_speed_set( SystemSpeed_t speed )
                     STATE_NEXT( SYSTEM_SPEED_STATE_HIGH );
                 }
             STATE_EXIT_ACTION
-				system_speed_cleanup();
             STATE_END
             break;
 
        case SYSTEM_SPEED_STATE_HIGH:
            STATE_ENTRY_ACTION
                hal_system_speed_high();
+               hal_uart_reinit( HAL_UART_PORT_MAIN );
+
             STATE_TRANSITION_TEST
                 if( speed == SYSTEM_SPEED_FULL )
                 {
@@ -98,7 +101,6 @@ system_speed_set( SystemSpeed_t speed )
                     }
                 }
             STATE_EXIT_ACTION
-				system_speed_cleanup();
             STATE_END
             break;
     }
