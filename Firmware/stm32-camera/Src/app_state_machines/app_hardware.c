@@ -26,7 +26,6 @@
 PUBLIC void
 app_hardware_init( void )
 {
-	hal_system_speed_init();	//setup cpu load timer etc
 	system_speed_init();		//setup state machine for clock changes
 
     /* Configure internal GPIO pins */

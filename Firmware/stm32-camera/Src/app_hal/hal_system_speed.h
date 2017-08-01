@@ -79,6 +79,11 @@ hal_system_speed_sleep( void );
 
 /* -------------------------------------------------------------------------- */
 
+PUBLIC void
+hal_system_speed_stop( void );
+
+/* -------------------------------------------------------------------------- */
+
 PUBLIC float
 hal_system_speed_get_load( void );
 

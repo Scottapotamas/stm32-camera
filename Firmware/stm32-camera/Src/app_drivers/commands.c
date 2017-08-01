@@ -1150,7 +1150,7 @@ PRIVATE bool
 command_system_clock( CmdHandler *me )
 {
     cmd_printf( me,
-                "CPU: %3.2f\r\n",
+                "CPU: %3.2fMHz\r\n",
 				(float)hal_system_speed_get_speed() / 1000000
 				);
     return true;
@@ -1190,13 +1190,14 @@ command_system_speed( CmdHandler *me )
 {
     if( cmd_get_argc( me ) > 1 )
     {
-        system_speed_set( ( cmd_get_argv_int( me, 1 ) > 0 )
+        system_speed_set( TASK_AUXILIARY_A,
+                          ( cmd_get_argv_int( me, 1 ) > 0 )
                           ? SYSTEM_SPEED_FULL
-                          : SYSTEM_SPEED_LOW_POWER );
+                          : SYSTEM_SPEED_LOW );
     }
     cmd_printf( me, "System speed: %s\r\n", system_speed_get()
                                             ? "FULL"
-                                            : "LOW POWER" );
+                                            : "LOW" );
     return true;
 }
 

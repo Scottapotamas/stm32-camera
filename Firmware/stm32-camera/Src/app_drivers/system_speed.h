@@ -28,7 +28,7 @@ extern "C" {
 
 typedef enum
 {
-    SYSTEM_SPEED_LOW_POWER = 0,
+    SYSTEM_SPEED_LOW = 0,
     SYSTEM_SPEED_FULL
 } SystemSpeed_t;
 
@@ -39,18 +39,24 @@ system_speed_init( void );
 
 /* -------------------------------------------------------------------------- */
 
+/** Set the system state in terms of clock speed */
+
 PUBLIC void
-system_speed_set( SystemSpeed_t speed );
+system_speed_set( uint8_t id, SystemSpeed_t speed );
 
 /* -------------------------------------------------------------------------- */
+
+/** Get the current system state in terms of clock speed */
 
 PUBLIC SystemSpeed_t
 system_speed_get( void );
 
 /* -------------------------------------------------------------------------- */
 
+/** Process the clock switch state machine */
+
 PUBLIC void
-system_speed_cleanup( void );
+system_speed_process( void );
 
 /* ----- End ---------------------------------------------------------------- */
 
