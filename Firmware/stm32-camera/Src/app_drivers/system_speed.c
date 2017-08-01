@@ -126,20 +126,5 @@ system_speed_get( void )
     return speed;
 }
 
-/* -------------------------------------------------------------------------- */
-
-PUBLIC void
-system_speed_cleanup( void )
-{
-	//Re-initalise the clocks for the various peripherals affected by clock change
-	hal_systick_init();
-
-	__HAL_RCC_USART1_CLK_ENABLE();
-
-	//hal_uart_init(HAL_UART_PORT_MAIN);
-
-}
-
-
 /* ----- End ---------------------------------------------------------------- */
 

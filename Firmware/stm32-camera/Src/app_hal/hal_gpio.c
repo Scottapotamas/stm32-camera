@@ -56,7 +56,7 @@ const HalGpioDef_t HalGpioHardwareMap[] =
     [ _I2C_SCL      ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_10, .initial = 1 },
 
     [ _PWR_EN     	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_15, .initial = 0 },
-    [ _CAM_STROBE  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_14, .initial = 0 },
+    [ _CAM_STROBE  	] = { .type = TYPE_GPIO, .mode = MODE_INPUT,  .port = PORT_B, .pin = PIN_14, },
     [ _CAM_EXPST  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_15, .initial = 0 },
     [ _CAM_FREX  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_D, .pin = PIN_8,  .initial = 0 },
     [ _CAM_XCLK  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_8,  .initial = 0 },

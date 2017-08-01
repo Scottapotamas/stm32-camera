@@ -21,9 +21,27 @@ extern "C" {
 
 /* -------------------------------------------------------------------------- */
 
-/* Enable power to the camera */
+    /* Enable/disable 1.3V and 2.5V regulators. */
 PUBLIC void
 hal_camera_power( bool on );
+
+/* -------------------------------------------------------------------------- */
+
+/* Get the strobe state from the sensor */
+PUBLIC bool
+hal_camera_strobe( void );
+
+/* -------------------------------------------------------------------------- */
+
+/* Control the reset line */
+PUBLIC void
+hal_camera_reset( bool on );
+
+/* -------------------------------------------------------------------------- */
+
+/* Control the sensor's snapshot mode */
+PUBLIC void
+hal_camera_snapshot( bool on );
 
 /* ----- End ---------------------------------------------------------------- */
 
