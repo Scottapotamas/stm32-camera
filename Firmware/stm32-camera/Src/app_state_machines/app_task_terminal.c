@@ -94,17 +94,20 @@ AppTaskTerminal_main( AppTaskTerminal *me,
 
         	cmd_init( &me->monitor, commands );
 
+        	//configure the uart
             hal_uart_init( me->instance );
             hal_uart_baudrate( me->instance, config_terminal_baudrate( me->instance ) );
             hal_uart_set_rx_handler( me->instance, AppTaskTerminal_rx_callback );
 
+            //configure the terminal interface
             cmd_set_output_put( &me->monitor, AppTaskTerminal_tx_put );
             cmd_set_output_flush( &me->monitor,  AppTaskTerminal_tx_flush );
-
             cmd_set_echo( &me->monitor, true );
 
-//            command_log_set_mask( &me->monitor, 0xFFFF, 0xFFFF );
+            //Logging system can use this monitor as the output.
+            command_log_set_mask( &me->monitor, 0xFFFF, LOG_MASK_ALL );
 
+            //print board info to terminal
             cmd_printf( &me->monitor,
                         "\r\n*** %s - %s (%s) %s ***\r\n\r\n",
                         ProgramName,

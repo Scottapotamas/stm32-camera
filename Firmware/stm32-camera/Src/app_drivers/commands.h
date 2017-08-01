@@ -34,6 +34,9 @@ extern const CmdEntry *commands;
 
 /* -------------------------------------------------------------------------- */
 
+PUBLIC uint16_t
+command_log_set_mask( CmdHandler *me, uint16_t system_mask,
+                                      uint16_t log_mask );
 
 /* ----- End ---------------------------------------------------------------- */
 

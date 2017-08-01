@@ -73,7 +73,7 @@ PRIVATE bool command_board_read( CmdHandler *me );
 /** CONFIG LOG COMMANDS */
 PRIVATE bool command_config_log( CmdHandler *me );
 PRIVATE bool command_log( CmdHandler *me );
-PRIVATE uint16_t command_log_set_mask( CmdHandler *me, uint16_t system_mask, uint16_t log_mask );
+//PRIVATE uint16_t command_log_set_mask( CmdHandler *me, uint16_t system_mask, uint16_t log_mask );
 
 /** DEBUG COMMANDS */
 PRIVATE bool command_type( CmdHandler *me );
