@@ -162,11 +162,22 @@ hal_system_speed_sleep( void )
 
 /* -------------------------------------------------------------------------- */
 
+PUBLIC void
+hal_system_speed_stop( void )
+{
+    //TODO stop the clocks and other peripherals before we sleep
+    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+    //TODO start clocks and continue running
+}
+/* -------------------------------------------------------------------------- */
+
 //return a 0-100% value for CPU load
 PUBLIC float
 hal_system_speed_get_load( void )
 {
-	float cpu_util = (float)cc_awake_time / (float)(cc_asleep_time + cc_awake_time) * 100;
+	float cpu_util = (float)cc_awake_time
+	                 /
+	                 (float)(cc_asleep_time + cc_awake_time) * 100;
 	cc_asleep_time = 0;
 	cc_awake_time = 0;
 
