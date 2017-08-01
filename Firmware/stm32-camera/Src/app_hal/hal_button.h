@@ -28,7 +28,6 @@ extern "C" {
 typedef enum
 {
 	BUTTON_0,
-	BUTTON_1,
 	BUTTON_MAX
 } ButtonId_t;
 
