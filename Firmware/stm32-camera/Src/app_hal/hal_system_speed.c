@@ -24,10 +24,10 @@
 
 /* ----- Private Data ------------------------------------------------------- */
 
-volatile uint32_t cc_when_sleeping;		//timestamp when we go to sleep
-volatile uint32_t cc_when_woken = 0; 	//timestamp when we wake up
-volatile uint32_t cc_awake_time = 0;	//duration of 'active'
-volatile uint32_t cc_asleep_time = 0;	//duration of 'sleep'
+volatile uint32_t cc_when_sleeping;     //timestamp when we go to sleep
+volatile uint32_t cc_when_woken = 0;    //timestamp when we wake up
+volatile uint32_t cc_awake_time = 0;    //duration of 'active'
+volatile uint32_t cc_asleep_time = 0;   //duration of 'sleep'
 
 PRIVATE SystemSpeed_RCC_PLL_t pll_working;	//TODO rename this local variable
 

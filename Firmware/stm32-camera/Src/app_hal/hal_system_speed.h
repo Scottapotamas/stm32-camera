@@ -38,7 +38,8 @@ extern "C" {
 #define RCC_PLLR_MASK    ((uint32_t)0x70000000)
 #define RCC_PLLR_POS     28
 
-typedef struct {
+typedef struct
+{
 	uint16_t PLLM; // PLL M parameter. Between 2 and 63.
 	uint16_t PLLN; // PLL N parameter. Between 192 and 432.
 	uint16_t PLLP; // PLL P parameter. Use 2, 4, 6 or 8.
