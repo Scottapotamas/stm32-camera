@@ -28,41 +28,17 @@ extern "C" {
 
 /* -------------------------------------------------------------------------- */
 
-#ifndef USE_HAL_I2C_MASTER_HARDWARE
-//#define USE_HAL_I2C_MASTER_HARDWARE     1
-#endif
+#include "hal_i2c_master_sw.h"
 
-/* -------------------------------------------------------------------------- */
-
-#ifdef  USE_HAL_I2C_MASTER_HARDWARE
-
-    #include "hal_i2c_master_hw.h"
-
-    #define hal_i2c_master_init(a,b,c)  hal_i2c_master_hw_init(a)
-    #define hal_i2c_master_reset        hal_i2c_master_hw_reset
-    #define hal_i2c_master_clock_speed  hal_i2c_master_hw_clock_speed
-    #define hal_i2c_master_transmit     hal_i2c_master_hw_transmit
-    #define hal_i2c_master_receive      hal_i2c_master_hw_receive
-    #define hal_i2c_master_abort        hal_i2c_master_hw_abort
-    #define hal_i2c_master_get_state    hal_i2c_master_hw_get_state
-    #define hal_i2c_master_get_error    hal_i2c_master_hw_get_error
-    #define hal_i2c_master_set_callback hal_i2c_master_hw_set_callback
-
-#else
-
-    #include "hal_i2c_master_sw.h"
-
-    #define hal_i2c_master_init(a,b,c)  hal_i2c_master_sw_init(a,b,c)
-    #define hal_i2c_master_reset        hal_i2c_master_sw_reset
-    #define hal_i2c_master_clock_speed  hal_i2c_master_sw_clock_speed
-    #define hal_i2c_master_transmit     hal_i2c_master_sw_transmit
-    #define hal_i2c_master_receive      hal_i2c_master_sw_receive
-    #define hal_i2c_master_abort        hal_i2c_master_sw_abort
-    #define hal_i2c_master_get_state    hal_i2c_master_sw_get_state
-    #define hal_i2c_master_get_error    hal_i2c_master_sw_get_error
-    #define hal_i2c_master_set_callback hal_i2c_master_sw_set_callback
-
-#endif
+#define hal_i2c_master_init(a,b,c)  hal_i2c_master_sw_init(a,b,c)
+#define hal_i2c_master_reset        hal_i2c_master_sw_reset
+#define hal_i2c_master_clock_speed  hal_i2c_master_sw_clock_speed
+#define hal_i2c_master_transmit     hal_i2c_master_sw_transmit
+#define hal_i2c_master_receive      hal_i2c_master_sw_receive
+#define hal_i2c_master_abort        hal_i2c_master_sw_abort
+#define hal_i2c_master_get_state    hal_i2c_master_sw_get_state
+#define hal_i2c_master_get_error    hal_i2c_master_sw_get_error
+#define hal_i2c_master_set_callback hal_i2c_master_sw_set_callback
 
 /* ----- End ---------------------------------------------------------------- */
 

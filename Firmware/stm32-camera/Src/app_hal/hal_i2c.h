@@ -37,8 +37,8 @@ extern "C" {
 
 typedef enum
 {
-    I2C_BUS_1,          /* I/O Expanders */
-    I2C_BUS_2,          /* LIDAR's */
+	I2C_BUS_1,          /* Unused */
+    I2C_BUS_2,          /* Camera SSCB */
     I2C_BUS_MAX,
 } HalI2cBusId_t;
 
