@@ -102,24 +102,34 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
         	//General list of things that need doing
 
-        	//TODO fatfs task handling
-        	//TODO sd card handling and fatfs integration
+        	//TODO get sd card to mount properly...
         	//TODO speed testing SD card
 
-        	//TODO develop hal/driver to use port manipulation for flash 'h-bridge'
-        	//TODO develop reboot handling code with timeout. Validate
-        	//TODO driver to handle switching the IR filter based on background illumination etc
+        	//TODO develop driver to use port manipulation for flash 'h-bridge'
+            //TODO driver to handle switching the IR filter
+            //TODO validate button works
+            //TODO tie button to a useful function?
 
-        	//TODO get i2c/sscb working with the camera's configuration registers
+            //TODO test auxillary IO control (set high/low or read, change input/output/etc)
+            //TODO add DAC support to analog aux pin in aux state machine
+            //TODO add pwm support to aux pin?
+            //TODO add wake interrupt input support on aux pins?
+
+            //TODO find vref to use in the temperature conversion manager
+
+        	//TODO get i2c/sscb working
+            //TODO Flesh out driver using camera's configuration registers
         	//TODO convenience functions with camera for control over key settings
-        	//TODO camera IO handling for flash/snapshot mode, reset pins etc.
         	//TODO add dcmi hal code to remove the cubemx one
-        	//TODO develop image printout capability
+        	//TODO develop image readout capability
 
         	//TODO save image to SD card
         	//TODO competent file naming schemes
         	//TODO protocol to send photo over serial
         	//TODO protocol to allow camera control over serial
+
+            //TODO stop mode support and waking with usart interrupt
+            //TODO use DMA on rx and tx of usart for warm fuzzies
 
         	status_green(false);
 
