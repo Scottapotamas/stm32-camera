@@ -118,7 +118,6 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
             //TODO find vref to use in the temperature conversion manager
 
         	//TODO get i2c/sscb working
-            //TODO Flesh out driver using camera's configuration registers
         	//TODO convenience functions with camera for control over key settings
         	//TODO add dcmi hal code to remove the cubemx one
         	//TODO develop image readout capability
