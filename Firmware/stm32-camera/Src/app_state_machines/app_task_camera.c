@@ -75,6 +75,11 @@ appTaskCameraCreate( AppTaskCamera *me,
 PUBLIC bool
 appTaskCameraTakePictureNormal()
 {
+
+    ov2640_init();
+    ov2640_start();
+
+
     AppTaskCamera *me = (AppTaskCamera*)app_task_by_id( TASK_CAMERA );
 
     /* If we are already capturing, ignore this request */

@@ -16,6 +16,8 @@
 DCMI_HandleTypeDef hdcmi;
 DMA_HandleTypeDef hdma_dcmi;
 
+uint32_t camera_buffer[160*120];
+
 /* ------------------------- Functions -------------------------------------- */
 
 /* DCMI init function */
@@ -41,6 +43,58 @@ hal_dcmi_init(void)
   }
 
 }
+
+PUBLIC void
+hal_dcmi_start( void )
+{
+    //TODO remove this rough memset
+    for (int i = 0; i <160*120; i++)
+    {
+        camera_buffer[i] = 0xbeef;
+    }
+    //TODO accept pointer and size for mem buffer reference
+    HAL_DCMI_Start_DMA(&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) camera_buffer, 19200);
+
+}
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_dcmi_stop( void )
+{
+    HAL_DCMI_Stop( &hdcmi );
+    HAL_DMA_DeInit( &hdma_dcmi );
+
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Line Event Callback */
+
+void HAL_DCMI_LineEventCallback(DCMI_HandleTypeDef *hdcmi)
+{
+
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* VSYNC Callback */
+
+void HAL_DCMI_VsyncEventCallback(DCMI_HandleTypeDef *hdcmi)
+{
+
+
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Frame Event Callback */
+
+void HAL_DCMI_FrameEventCallback(DCMI_HandleTypeDef *hdcmi)
+{
+
+}
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -115,10 +169,6 @@ void HAL_DCMI_MspInit(DCMI_HandleTypeDef* dcmiHandle)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
-
-    //TODO put dcmi into DCMI_MODE_SNAPSHOT
-
-    //TODO interrupt handling from DCMI x3
 
     __HAL_LINKDMA(dcmiHandle,DMA_Handle,hdma_dcmi);
 
