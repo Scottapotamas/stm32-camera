@@ -25,17 +25,21 @@ hal_dcmi_init(void)
 {
   hdcmi.Instance = DCMI;
   hdcmi.Init.SynchroMode = DCMI_SYNCHRO_HARDWARE;
-  hdcmi.Init.PCKPolarity = DCMI_PCKPOLARITY_FALLING;
-  hdcmi.Init.VSPolarity = DCMI_VSPOLARITY_LOW;
-  hdcmi.Init.HSPolarity = DCMI_HSPOLARITY_LOW;
-  hdcmi.Init.CaptureRate = DCMI_CR_ALL_FRAME;
+
+  hdcmi.Init.SynchroMode = DCMI_SYNCHRO_HARDWARE;
+  hdcmi.Init.PCKPolarity = DCMI_PCKPOLARITY_RISING; //changed to rising
+  hdcmi.Init.VSPolarity = DCMI_VSPOLARITY_HIGH;     //changed to high
+  hdcmi.Init.HSPolarity = DCMI_HSPOLARITY_LOW;      //low
+  hdcmi.Init.CaptureRate = DCMI_CR_ALL_FRAME;       // all frames, instead of every second or 4th
   hdcmi.Init.ExtendedDataMode = DCMI_EXTEND_DATA_8B;
   hdcmi.Init.JPEGMode = DCMI_JPEG_ENABLE;
+//        DCMI_InitStructure.DCMI_CaptureMode = DCMI_CaptureMode_SnapShot; //DCMI_CaptureMode_SnapShot
 
   if (HAL_DCMI_Init(&hdcmi) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -90,26 +94,36 @@ void HAL_DCMI_MspInit(DCMI_HandleTypeDef* dcmiHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* DCMI DMA Init */
-    /* DCMI Init */
     hdma_dcmi.Instance = DMA2_Stream1;
     hdma_dcmi.Init.Channel = DMA_CHANNEL_1;
     hdma_dcmi.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_dcmi.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_dcmi.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_dcmi.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_dcmi.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_dcmi.Init.Mode = DMA_CIRCULAR;
+
+    hdma_dcmi.Init.Mode = DMA_NORMAL;   //CHANGED TO NORMAL FROM CIRCULAR
     hdma_dcmi.Init.Priority = DMA_PRIORITY_HIGH;
-    hdma_dcmi.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    hdma_dcmi.Init.FIFOMode = DMA_FIFOMODE_ENABLE;  //CHANGED TO ENABLE
+    hdma_dcmi.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;  //ADDED
+
+    hdma_dcmi.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_dcmi.Init.PeriphBurst = DMA_PBURST_SINGLE;    //ADDED
+    hdma_dcmi.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+
+    hdma_dcmi.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_dcmi.Init.MemBurst = DMA_MBURST_SINGLE;    //ADDED
+    hdma_dcmi.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+
     if (HAL_DMA_Init(&hdma_dcmi) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
     }
 
+    //TODO put dcmi into DCMI_MODE_SNAPSHOT
+
+    //TODO interrupt handling from DCMI x3
+
     __HAL_LINKDMA(dcmiHandle,DMA_Handle,hdma_dcmi);
 
     /* DCMI interrupt Init */
-    HAL_NVIC_SetPriority(DCMI_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(DCMI_IRQn, 2, 2);
     HAL_NVIC_EnableIRQ(DCMI_IRQn);
   }
 }
