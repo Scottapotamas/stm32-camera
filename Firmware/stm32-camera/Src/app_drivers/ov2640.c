@@ -90,7 +90,7 @@ ov2640_init( void )
 
 	//TODO configure DCMI and DMA streams
     hal_mco_init(); //TODO allow selectable MCO frequencies
-    ov2640_configure_SSCB();
+    ov2640_sscb_init();
 
 	//TODO use hal_camera hardware to set starting pin state
 }
@@ -228,7 +228,7 @@ ov2640_configure_grayscale_filter( ov2640ModeGreyscaleEffect_t mode )
 /** Init the camera configuration comms */
 
 PRIVATE void
-ov2640_configure_SSCB( void )
+ov2640_sscb_init( void )
 {
     hal_gpio_i2c_bus_init( I2C_BUS_1, _I2C_SDA, _I2C_SCL );
 
