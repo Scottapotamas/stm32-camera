@@ -28,14 +28,16 @@ extern "C" {
 
 /* ----- Types ------------------------------------------------------------- */
 
-/** Define if this GPIO is operational, internal or via I2C */
+/** Operational mode for pins */
+
 typedef enum
 {
-    TYPE_NONE = 0,
-    TYPE_GPIO,
-//    TYPE_I2C,
-} HalGpioType_t;
-
+    MODE_INPUT = 0, /* Normal input */
+    MODE_INPUT_PU = 0, /* Input with PU */
+    MODE_ANALOG,    /* Analog Mode  */
+    MODE_OUT_PP,    /* Push-Pull Output */
+    MODE_OUT_OD     /* Open drain Output */
+} HalGpioMode_t;
 
 /** Port Number */
 typedef enum
@@ -74,11 +76,10 @@ typedef enum
 
 typedef struct
 {
-    unsigned type    : 1;      /* GPIO or I2C TODO reset type to a 2-bit setting to allow i2c*/
-    unsigned mode    : 3;      /* GPIO Mode (Input, Output Push Pull, etc. ) TODO work out analog pin mode requiring more bits*/
-    unsigned port    : 4;      /* GPIO Port */
-    unsigned pin     : 5;      /* Pin Number within port or i2C device */
-    unsigned initial : 1;      /* Initialisation level for outputs */
+    unsigned mode       : 3;      /* GPIO Mode (Input, Output Push Pull, etc. ) TODO work out analog pin mode requiring more bits*/
+    unsigned port       : 4;      /* GPIO Port */
+    unsigned pin        : 5;      /* Pin Number within port or i2C device */
+    unsigned initial    : 1;      /* Initialisation level for outputs */
 } HalGpioDef_t;
 
 /* ----- End ---------------------------------------------------------------- */
