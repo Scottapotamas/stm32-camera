@@ -21,7 +21,7 @@
 #include "ov2640.h"
 
 #include "hal_camera.h"
-
+#include "hal_mco.h"
 
 //#include "hal_dcmi.h"
 //#include "hal_dma.h"
@@ -82,36 +82,17 @@ const ov2640SettingSingle grayscaleFilterSettings[] =
 
 /* ------------------------ Implementation ---------------------------------- */
 
-/** Init the camera configuration comms */
-
-PUBLIC void
-ov2640_configure_SSCB( void )
-{
-    hal_gpio_i2c_bus_init( I2C_BUS_1, _I2C_SDA, _I2C_SCL );
-
-    memset( &hal_gpio_sscb, 0, sizeof(hal_gpio_sscb) );
-
-    me->bus = I2C_BUS_2;
-
-    hal_i2c_master_init( me->bus, _I2C_SDA, _I2C_SCL );
-    hal_i2c_master_clock_speed( me->bus, 100000 );
-
-}
-
-/* -------------------------------------------------------------------------- */
-
 /** Init the camera driver */
 
 PUBLIC void
 ov2640_init( void )
 {
 
-	//TODO configure DCMI here
-	//TODO configure MCO here
-	//TODO configure DMA streams here
-	//TODO configure peripheral clocks etc
-	//TODO use hal_camera hardware to set starting pin state
+	//TODO configure DCMI and DMA streams
+    hal_mco_init(); //TODO allow selectable MCO frequencies
+    ov2640_configure_SSCB();
 
+	//TODO use hal_camera hardware to set starting pin state
 }
 
 /* -------------------------------------------------------------------------- */
@@ -240,6 +221,23 @@ ov2640_configure_grayscale_filter( ov2640ModeGreyscaleEffect_t mode )
 	ov2640_sscb_register_write( 0x7C, 0x05 );
 	ov2640_sscb_register_write( 0x7D, 0x80 );
 	ov2640_sscb_register_write( 0x7D, 0x80 );
+}
+
+/* -------------------------------------------------------------------------- */
+
+/** Init the camera configuration comms */
+
+PRIVATE void
+ov2640_configure_SSCB( void )
+{
+    hal_gpio_i2c_bus_init( I2C_BUS_1, _I2C_SDA, _I2C_SCL );
+
+    memset( &hal_gpio_sscb, 0, sizeof(hal_gpio_sscb) );
+
+    me->bus = I2C_BUS_2;
+
+    hal_i2c_master_init( me->bus, _I2C_SDA, _I2C_SCL );
+    hal_i2c_master_clock_speed( me->bus, 100000 );
 }
 
 /* -------------------------------------------------------------------------- */
