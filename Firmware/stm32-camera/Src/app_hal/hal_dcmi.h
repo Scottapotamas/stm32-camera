@@ -29,6 +29,16 @@ extern DCMI_HandleTypeDef hdcmi;
 PUBLIC void
 hal_dcmi_init( void );
 
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_dcmi_start( void );
+
+/* -------------------------------------------------------------------------- */
+
+PUBLIC void
+hal_dcmi_stop( void );
+
 /* ------------------------- End -------------------------------------------- */
 
 #ifdef __cplusplus
