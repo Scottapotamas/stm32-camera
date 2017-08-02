@@ -33,7 +33,7 @@ extern "C" {
 typedef enum
 {
     MODE_INPUT = 0, /* Normal input */
-    MODE_INPUT_PU = 0, /* Input with PU */
+    MODE_INPUT_PU, /* Input with PU */
     MODE_ANALOG,    /* Analog Mode  */
     MODE_OUT_PP,    /* Push-Pull Output */
     MODE_OUT_OD     /* Open drain Output */
