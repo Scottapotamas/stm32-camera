@@ -105,6 +105,8 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
         	//TODO get sd card to mount properly...
         	//TODO speed testing SD card
 
+            //TODO implement clock watching and recovery with HAL_RCC_EnableCSS and handling the error flag?
+
         	//TODO develop driver to use port manipulation for flash 'h-bridge'
             //TODO driver to handle switching the IR filter
             //TODO validate button works
@@ -115,11 +117,7 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
             //TODO add pwm support to aux pin?
             //TODO add wake interrupt input support on aux pins?
 
-            //TODO find vref to use in the temperature conversion manager
-
         	//TODO get i2c/sscb working
-        	//TODO convenience functions with camera for control over key settings
-        	//TODO add dcmi hal code to remove the cubemx one
         	//TODO develop image readout capability
 
         	//TODO save image to SD card
@@ -129,6 +127,7 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
             //TODO stop mode support and waking with usart interrupt
             //TODO use DMA on rx and tx of usart for warm fuzzies
+            //TODO find vref to use in the temperature conversion manager
 
         	status_green(false);
 
