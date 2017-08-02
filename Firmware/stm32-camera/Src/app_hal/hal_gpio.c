@@ -35,34 +35,47 @@
 const HalGpioDef_t HalGpioHardwareMap[] =
 {
 	/* --- BUTTONS --- */
-	[ _BTN             ] = { .type = TYPE_GPIO, .mode = MODE_INPUT_PU, .port = PORT_D, .pin = PIN_3 },
+	[ _BTN             ] = { .mode = MODE_INPUT_PU, .port = PORT_D, .pin = PIN_3 },
 
     /* --- STATUS Indication --- */
-    [ _STATUS_0        ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_0, .initial = 0 },
-    [ _STATUS_1        ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_1, .initial = 0 },
+    [ _STATUS_0        ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_0, .initial = 0 },
+    [ _STATUS_1        ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_1, .initial = 0 },
 
     /* --- Aux IO --- */
-    [ _AUX_GPIO_2      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_A, .pin = PIN_5 },	//High performance DAC/Timer/Etc label A
-    [ _AUX_GPIO_0      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_1 },	//Label E0
-    [ _AUX_GPIO_1      ] = { .type = TYPE_GPIO, .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_0 },	//Label E1
+    [ _AUX_GPIO_2      ] = { .mode = MODE_INPUT, .port = PORT_A, .pin = PIN_5 },	//High performance DAC/Timer/Etc label A
+    [ _AUX_GPIO_0      ] = { .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_1 },	//Label E0
+    [ _AUX_GPIO_1      ] = { .mode = MODE_INPUT, .port = PORT_D, .pin = PIN_0 },	//Label E1
 
-	[ _SD_DETECT       ] = { .type = TYPE_GPIO, .mode = MODE_INPUT_PU, .port = PORT_E, .pin = PIN_15 },
+	[ _SD_DETECT       ] = { .mode = MODE_INPUT_PU, .port = PORT_E, .pin = PIN_15 },
 
-	[ _AMBIENT_LIGHT   ] = { .type = TYPE_GPIO, .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
-    [ _REBOOT_LATCH    ] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
+	[ _AMBIENT_LIGHT   ] = { .mode = MODE_ANALOG, .port = PORT_C, .pin = PIN_0 },
+    [ _REBOOT_LATCH    ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_8, .initial = 0 },
 
 	/* --- I2C Sensor Control --- */
-    [ _I2C_SDA      ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_11, .initial = 1 },
-    [ _I2C_SCL      ] = { .type = TYPE_GPIO, .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_10, .initial = 1 },
+    [ _I2C_SDA      ] = { .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_11, .initial = 1 },
+    [ _I2C_SCL      ] = { .mode = MODE_OUT_OD, .port = PORT_B, .pin = PIN_10, .initial = 1 },
 
     /* --- Camera Control --- */
-    [ _PWR_EN     	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_15, .initial = 0 },
-    [ _CAM_STROBE  	] = { .type = TYPE_GPIO, .mode = MODE_INPUT,  .port = PORT_B, .pin = PIN_14, },
-    [ _CAM_EXPST  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_15, .initial = 0 },
-    [ _CAM_FREX  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_D, .pin = PIN_8,  .initial = 0 },
-    [ _CAM_XCLK  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_8,  .initial = 0 },
-    [ _CAM_RESET  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_11, .initial = 0 },
-    [ _CAM_PWDN  	] = { .type = TYPE_GPIO, .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_12, .initial = 0 }
+    [ _PWR_EN     	] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_15, .initial = 0 },
+    [ _CAM_STROBE  	] = { .mode = MODE_INPUT,  .port = PORT_B, .pin = PIN_14, },
+    [ _CAM_EXPST  	] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_15, .initial = 0 },
+    [ _CAM_FREX  	] = { .mode = MODE_OUT_PP, .port = PORT_D, .pin = PIN_8,  .initial = 0 },
+    [ _CAM_XCLK  	] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_8,  .initial = 0 },
+    [ _CAM_RESET  	] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_11, .initial = 0 },
+    [ _CAM_PWDN  	] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_12, .initial = 0 },
+
+    [ _CAM_HSYNC     ] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_4, .initial = 0 },
+    [ _CAM_PIXCK     ] = { .mode = MODE_OUT_PP, .port = PORT_A, .pin = PIN_6, .initial = 0 },
+    [ _CAM_VSYNC     ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_7, .initial = 0 },
+    [ _CAM_D0        ] = { .mode = MODE_OUT_PP, .port = PORT_C, .pin = PIN_6, .initial = 0 },
+    [ _CAM_D1        ] = { .mode = MODE_OUT_PP, .port = PORT_C, .pin = PIN_7, .initial = 0 },
+    [ _CAM_D2        ] = { .mode = MODE_OUT_PP, .port = PORT_E, .pin = PIN_0, .initial = 0 },
+    [ _CAM_D3        ] = { .mode = MODE_OUT_PP, .port = PORT_E, .pin = PIN_1, .initial = 0 },
+    [ _CAM_D4        ] = { .mode = MODE_OUT_PP, .port = PORT_E, .pin = PIN_4, .initial = 0 },
+    [ _CAM_D5        ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_6, .initial = 0 },
+    [ _CAM_D6        ] = { .mode = MODE_OUT_PP, .port = PORT_E, .pin = PIN_5, .initial = 0 },
+    [ _CAM_D7        ] = { .mode = MODE_OUT_PP, .port = PORT_B, .pin = PIN_9, .initial = 0 },
+
 };
 
 /* -------------------------------------------------------------------------- */
@@ -75,10 +88,8 @@ hal_gpio_configure_mcu_defaults( void )
                           portpin++ )
     {
         const HalGpioDef_t m = HalGpioHardwareMap[portpin];
-        if( m.type == TYPE_GPIO )
-        {
-           hal_gpio_mcu_init( m.port, m.pin, m.mode, m.initial );
-        }
+
+        hal_gpio_mcu_init( m.port, m.pin, m.mode, m.initial );
     }
 }
 

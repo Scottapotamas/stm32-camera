@@ -41,16 +41,7 @@ extern "C" {
 
 /* ----- Types ------------------------------------------------------------- */
 
-/** Operational mode for pins */
 
-typedef enum
-{
-    MODE_INPUT = 0, /* Normal input */
-    MODE_INPUT_PU,  /* Input with pullup */
-	MODE_ANALOG,	/* Analog Mode	*/
-    MODE_OUT_PP,    /* Push-Pull Output */
-    MODE_OUT_OD     /* Open drain Output */
-} HalGpioMode_t;
 
 /** Enum with all the GPIO pins defined. */
 
@@ -74,7 +65,6 @@ typedef enum
 	//Camera Control and Misc
 	_I2C_SDA,
     _I2C_SCL,
-
 	_PWR_EN,
 	_CAM_STROBE,
 	_CAM_EXPST,
@@ -82,6 +72,19 @@ typedef enum
 	_CAM_XCLK,
 	_CAM_RESET,
 	_CAM_PWDN,
+
+    //Camera Data Interface
+	_CAM_HSYNC,
+	_CAM_PIXCK,
+	_CAM_VSYNC,
+	_CAM_D0,
+	_CAM_D1,
+	_CAM_D2,
+	_CAM_D3,
+	_CAM_D4,
+	_CAM_D5,
+	_CAM_D6,
+	_CAM_D7,
 
     /* --- Defining Total Entries --- */
     _NUMBER_OF_GPIO_PORT_PINS
