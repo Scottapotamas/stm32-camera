@@ -22,8 +22,8 @@
 
 #include "hal_camera.h"
 #include "hal_mco.h"
+#include "hal_dcmi.h"
 
-//#include "hal_dcmi.h"
 //#include "hal_dma.h"
 
 /* -------------------------------------------------------------------------- */
@@ -41,8 +41,8 @@ PRIVATE HalCameraSSCBData_t *me = &hal_gpio_sscb;
 /* ------------------------ Declarations ------------------------------------ */
 const ov2640SettingSingle resolutionSettings[] =
 {
-	  0xff, 0x00,	//TODO actually populate different resolutions, with each full map of settings
-	  0x2c, 0xff,
+	  {0xff, 0x00},	//TODO actually populate different resolutions, with each full map of settings
+	  {0x2c, 0xff},
 };
 
 
@@ -87,11 +87,9 @@ const ov2640SettingSingle grayscaleFilterSettings[] =
 PUBLIC void
 ov2640_init( void )
 {
-
-	//TODO configure DCMI and DMA streams
     hal_mco_init(); //TODO allow selectable MCO frequencies
     ov2640_sscb_init();
-
+    hal_dcmi_init();
 	//TODO use hal_camera hardware to set starting pin state
 }
 
@@ -145,7 +143,7 @@ ov2640_uuid_get( void )
 PUBLIC void
 ov2640_configure_resolution( ov2640ModeResolution_t mode )
 {
-    const ov2640SettingPair setting = resolutionSettings[mode];
+    //const ov2640SettingPair setting = resolutionSettings[mode];
 
     //consider rebooting the camera to ensure we are in a known state?
 
@@ -230,7 +228,7 @@ ov2640_configure_grayscale_filter( ov2640ModeGreyscaleEffect_t mode )
 PRIVATE void
 ov2640_sscb_init( void )
 {
-    hal_gpio_i2c_bus_init( I2C_BUS_1, _I2C_SDA, _I2C_SCL );
+    hal_gpio_i2c_bus_init( I2C_BUS_2, _I2C_SDA, _I2C_SCL );
 
     memset( &hal_gpio_sscb, 0, sizeof(hal_gpio_sscb) );
 
