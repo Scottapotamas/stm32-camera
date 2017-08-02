@@ -245,7 +245,7 @@ ov2640_configure_grayscale_filter( ov2640ModeGreyscaleEffect_t mode );
 /** SSCB (*cough* i2c *cough*) bit-banged interface for configuration get/set */
 
 PRIVATE void
-ov2640_configure_SSCB( void );
+ov2640_sscb_init( void );
 
 PRIVATE HalI2cStatus_t
 ov2640_sscb_register_write( const uint8_t i2c_register,
