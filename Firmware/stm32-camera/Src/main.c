@@ -49,7 +49,6 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "dma.h"
-#include "fatfs.h"
 #include "sdio.h"
 
 /* USER CODE BEGIN Includes */

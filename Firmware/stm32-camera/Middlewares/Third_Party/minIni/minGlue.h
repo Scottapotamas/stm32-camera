@@ -55,7 +55,9 @@ extern "C" {
 
     /* ------------------- FatFs Glue Mapping ------------------------------- */
 
-    #include <fatfs.h>
+    #include "ff.h"
+    #include "ff_gen_drv.h"
+    #include "sd_diskio.h"
     #include "minIni_rename.h"
 
     #define INI_FILETYPE                  FIL
