@@ -21,6 +21,8 @@
 #include "hal_watchdog.h"
 #include "hal_adc.h"
 #include "system_speed.h"
+#include "ir_filter.h"
+
 /* -------------------------------------------------------------------------- */
 
 PUBLIC void
@@ -36,6 +38,7 @@ app_hardware_init( void )
     status_red( true );
 
     hal_adc_init();
+    ir_filter_init();
 
     /* Start the watchdog for around 10s timeout */
     hal_watchdog_init( 20000 );

@@ -31,6 +31,7 @@
 #include "app_events.h"
 #include "auxiliary.h"
 #include "board_sensor.h"
+#include "ir_filter.h"
 #include "config.h"
 #include "ff_error_msg.h"
 #include "ff.h"
@@ -64,6 +65,8 @@ PRIVATE bool command_camera_flash_timed( CmdHandler *me );
 PRIVATE bool command_camera_on( CmdHandler *me );
 PRIVATE bool command_camera_off( CmdHandler *me );
 PRIVATE bool command_camera_capture( CmdHandler *me );
+
+PRIVATE bool command_camera_filter( CmdHandler *me );
 
 /** BOARD SENSORS */
 PRIVATE bool command_board_on( CmdHandler *me );
@@ -154,6 +157,9 @@ PRIVATE const CmdEntry CameraCmdTable[] =
     CmdEntrySubMenu( "flash",
                      CameraFlashCmdTable,
                      "flash level, off & on" ),
+    CmdEntryAction( "filter",
+                    command_camera_filter,
+                    "filter control" ),
     CmdEntryAction(  "off",
                      command_camera_off,
                      "camera OFF" ),
@@ -454,6 +460,24 @@ PRIVATE bool command_camera_flash_timed( CmdHandler *me )
     {
         cmd_printf( me, "Usage: camera flash timed [ms]\r\n" );
     }
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE bool
+command_camera_filter( CmdHandler *me )
+{
+    if( cmd_get_argc( me ) > 1 )
+    {
+        ir_filter_set( TASK_AUXILIARY_A,
+                          ( cmd_get_argv_int( me, 1 ) > 0 )
+                          ? FILTER_IR
+                          : FILTER_CLEAR );
+    }
+    cmd_printf( me, "IR Filter is: %s\r\n", ir_filter_get()
+                                            ? "BLOCKING"
+                                            : "CLEAR" );
     return true;
 }
 

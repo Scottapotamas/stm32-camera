@@ -41,8 +41,8 @@ typedef struct
 
 /* ----- Private Data ------------------------------------------------------- */
 
-SystemSpeedStateVars_t system_speed_state_machine;
-SystemSpeedStateVars_t *me = &system_speed_state_machine;
+PRIVATE SystemSpeedStateVars_t system_speed_state_machine;
+PRIVATE SystemSpeedStateVars_t *me = &system_speed_state_machine;
 
 /* ----- Public Functions --------------------------------------------------- */
 

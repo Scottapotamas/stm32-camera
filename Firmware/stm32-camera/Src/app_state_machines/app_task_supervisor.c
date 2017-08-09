@@ -107,8 +107,6 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
 
             //TODO implement clock watching and recovery with HAL_RCC_EnableCSS and handling the error flag?
 
-        	//TODO develop driver to use port manipulation for flash 'h-bridge'
-            //TODO driver to handle switching the IR filter
             //TODO validate button works
             //TODO tie button to a useful function?
 

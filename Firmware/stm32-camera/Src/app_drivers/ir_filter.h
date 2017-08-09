@@ -17,34 +17,46 @@ extern "C" {
 
 /* ----- System Includes ---------------------------------------------------- */
 
-//TODO CHANGE THIS FOR IR FILTER
+
 /* ----- Local Includes ----------------------------------------------------- */
 
 #include <stdbool.h>
 
-/* -------------------------------------------------------------------------- */
+/* ----- Public Functions --------------------------------------------------- */
 
 #include "global.h"
 
-/* -------------------------------------------------------------------------- */
-
-PUBLIC void
-filter_init( void );
-
-/* -------------------------------------------------------------------------- */
-
-PUBLIC void
-filter_clear( void);
+typedef enum
+{
+    FILTER_CLEAR = 0,
+    FILTER_IR
+} FilterPosition_t;
 
 /* -------------------------------------------------------------------------- */
 
 PUBLIC void
-filter_ir( void );
+ir_filter_init( void );
 
 /* -------------------------------------------------------------------------- */
 
+/** Set the active filter mode */
+
 PUBLIC void
-filter_toggle( );
+ir_filter_set( uint8_t id, FilterPosition_t mode );
+
+/* -------------------------------------------------------------------------- */
+
+/** Get the current filter mode */
+
+PUBLIC FilterPosition_t
+ir_filter_get( void );
+
+/* -------------------------------------------------------------------------- */
+
+/** Process the filter switch state machine */
+
+PUBLIC void
+ir_filter_process( void );
 
 /* ----- End ---------------------------------------------------------------- */
 
