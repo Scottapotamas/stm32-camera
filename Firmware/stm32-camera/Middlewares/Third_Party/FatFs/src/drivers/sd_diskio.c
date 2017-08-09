@@ -124,14 +124,20 @@ DSTATUS SD_status(BYTE lun)
   * @param  count: Number of sectors to read (1..128)
   * @retval DRESULT: Operation result
   */
-DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
+DRESULT SD_read(BYTE lun __attribute__((__unused__)) , BYTE *buff, DWORD sector, UINT count)
 {
   DRESULT res = RES_ERROR;
   uint32_t timeout = 100000;
 
-  if(BSP_SD_ReadBlocks((uint32_t*)buff, 
-                       (uint32_t) (sector), 
+#ifdef USE_SD_DMA_ACCESS
+  if( BSP_SD_ReadBlocks_DMA( (uint32_t*)buff,
+                             (uint32_t) (sector),
+                             count ) == MSD_OK)
+#else
+  if(BSP_SD_ReadBlocks((uint32_t*)buff,
+                       (uint32_t) (sector),
                        count, SD_DATATIMEOUT) == MSD_OK)
+#endif
   {
     while(BSP_SD_GetCardState()!= MSD_OK)
     {
@@ -142,7 +148,7 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
     }
     res = RES_OK;
   }
-  
+
   return res;
 }
 
@@ -155,14 +161,20 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
   * @retval DRESULT: Operation result
   */
 #if _USE_WRITE == 1
-DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
+DRESULT SD_write(BYTE lun __attribute__((__unused__)) , const BYTE *buff, DWORD sector, UINT count)
 {
-  DRESULT res = RES_ERROR;
-  uint32_t timeout = 100000;
+    DRESULT res = RES_ERROR;
+    uint32_t timeout = 100000;
 
-  if(BSP_SD_WriteBlocks((uint32_t*)buff, 
-                        (uint32_t)(sector), 
-                        count, SD_DATATIMEOUT) == MSD_OK)
+#ifdef USE_SD_DMA_ACCESS
+    if( BSP_SD_WriteBlocks_DMA( (uint32_t*)buff,
+                              (uint32_t)(sector),
+                              count ) == MSD_OK)
+#else
+    if(BSP_SD_WriteBlocks((uint32_t*)buff,
+                          (uint32_t)(sector),
+                           count, SD_DATATIMEOUT) == MSD_OK)
+#endif
   {
     while(BSP_SD_GetCardState()!= MSD_OK)
     {
@@ -170,10 +182,10 @@ DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
       {
         return RES_ERROR;
       }
-    }    
+    }
     res = RES_OK;
   }
-  
+
   return res;
 }
 #endif /* _USE_WRITE == 1 */
@@ -189,7 +201,7 @@ DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 DRESULT SD_ioctl(BYTE lun, BYTE cmd, void *buff)
 {
   DRESULT res = RES_ERROR;
-  BSP_SD_CardInfo CardInfo;
+  HAL_SD_CardInfoTypeDef CardInfo;
   
   if (Stat & STA_NOINIT) return RES_NOTRDY;
   
