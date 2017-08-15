@@ -100,35 +100,8 @@ PRIVATE STATE AppTaskSupervisor_main( AppTaskSupervisor *me,
         case STATE_ENTRY_SIGNAL:
         {
 
-        	//General list of things that need doing
-
-        	//TODO get sd card to mount properly...
-        	//TODO speed testing SD card
-
-            //TODO implement clock watching and recovery with HAL_RCC_EnableCSS and handling the error flag?
-
-            //TODO validate button works
-            //TODO tie button to a useful function?
-
-            //TODO test auxillary IO control (set high/low or read, change input/output/etc)
-            //TODO add DAC support to analog aux pin in aux state machine
-            //TODO add pwm support to aux pin?
-            //TODO add wake interrupt input support on aux pins?
-
-        	//TODO get i2c/sscb working
-        	//TODO develop image readout capability
-
-        	//TODO save image to SD card
-        	//TODO competent file naming schemes
-        	//TODO protocol to send photo over serial
-        	//TODO protocol to allow camera control over serial
-
-            //TODO stop mode support and waking with usart interrupt
-            //TODO use DMA on rx and tx of usart for warm fuzzies
-            //TODO find vref to use in the temperature conversion manager
-
-        	status_green(false);
-
+            //Todo actually do something in the supervisor state
+            status_green(false);
 
         	return 0;
         }
