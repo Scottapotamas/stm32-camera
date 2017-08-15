@@ -1283,6 +1283,7 @@ command_board_read( CmdHandler *me )
 {
     cmd_printf( me, "Temperature: %2.1fC\r\n", board_sensor_temperature_C() );
     cmd_printf( me, "Light: %3.1f\r\n", board_sensor_light() );
+    cmd_printf( me, "Vref: %3.1f\r\n", board_sensor_voltage_reference() );
 
     return true;
 }

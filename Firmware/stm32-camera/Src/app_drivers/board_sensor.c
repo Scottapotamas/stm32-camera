@@ -46,9 +46,9 @@ board_sensor_init( void )
 PUBLIC void
 board_sensor_enable( void )
 {
+    hal_adc_start( HAL_ADC_INPUT_VREF );
 	hal_adc_start( HAL_ADC_INPUT_TEMPERATURE );
 	hal_adc_start( HAL_ADC_INPUT_PHOTOSENSOR );
-
 }
 
 /* -------------------------------------------------------------------------- */
@@ -58,8 +58,20 @@ board_sensor_enable( void )
 PUBLIC void
 board_sensor_disable( void )
 {
+    hal_adc_stop( HAL_ADC_INPUT_VREF );
 	hal_adc_stop( HAL_ADC_INPUT_TEMPERATURE );
 	hal_adc_stop( HAL_ADC_INPUT_PHOTOSENSOR );
+}
+
+/* -------------------------------------------------------------------------- */
+
+/** Return internal reference voltage */
+
+PUBLIC float
+board_sensor_voltage_reference( void )
+{
+    //TODO normalise reference voltages into real unit
+    return hal_adc_read_avg( HAL_ADC_INPUT_VREF );
 }
 
 /* -------------------------------------------------------------------------- */
@@ -83,5 +95,6 @@ board_sensor_light( void )
 	//TODO normalise light readings into something more sensible
     return hal_adc_read_avg( HAL_ADC_INPUT_PHOTOSENSOR );
 }
+
 /* ----- End ---------------------------------------------------------------- */
 

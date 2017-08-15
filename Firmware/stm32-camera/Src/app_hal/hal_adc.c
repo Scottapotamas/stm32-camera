@@ -71,7 +71,7 @@ hal_adc_init( void )
     hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
     hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
     hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-    hadc1.Init.NbrOfConversion = 5;
+    hadc1.Init.NbrOfConversion = 3;
     hadc1.Init.DMAContinuousRequests = DISABLE;
     hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
 
@@ -80,7 +80,7 @@ hal_adc_init( void )
       _Error_Handler(__FILE__, __LINE__);
     }
 
-    sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
+    sConfig.Channel = ADC_CHANNEL_VREFINT;
     sConfig.Rank = 1;
     sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;
     if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -88,8 +88,16 @@ hal_adc_init( void )
       _Error_Handler(__FILE__, __LINE__);
     }
 
-    sConfig.Channel = ADC_CHANNEL_10;
+    sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
     sConfig.Rank = 2;
+    sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;
+    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+    {
+      _Error_Handler(__FILE__, __LINE__);
+    }
+
+    sConfig.Channel = ADC_CHANNEL_10;
+    sConfig.Rank = 3;
     if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
     {
       _Error_Handler(__FILE__, __LINE__);
@@ -230,7 +238,7 @@ hal_adc_tick( void )
         {
             adc_tick = 0;
             HAL_ADC_Stop_DMA( &hadc1 );
-            HAL_ADC_Start_DMA( &hadc1, &adc_dma[HAL_ADC_INPUT_TEMPERATURE], 2 );
+            HAL_ADC_Start_DMA( &hadc1, &adc_dma[HAL_ADC_INPUT_VREF], 3 );
         }
     }
 }
@@ -242,12 +250,12 @@ void HAL_ADC_ConvCpltCallback( ADC_HandleTypeDef* hadc )
     if( hadc == &hadc1 )
     {
         /* Freeze the DMA collected samples */
-        memcpy( &adc_channels[HAL_ADC_INPUT_TEMPERATURE],
-                &adc_dma[HAL_ADC_INPUT_TEMPERATURE],
-                2 * sizeof( adc_channels[0] ) );
+        memcpy( &adc_channels[HAL_ADC_INPUT_VREF],
+                &adc_dma[HAL_ADC_INPUT_VREF],
+                3 * sizeof( adc_channels[0] ) );
 
         /* Run them though the averaging */
-        for( uint8_t chan = HAL_ADC_INPUT_TEMPERATURE;
+        for( uint8_t chan = HAL_ADC_INPUT_VREF;
                      chan < HAL_ADC_INPUT_NUM;
                      chan++ )
         {

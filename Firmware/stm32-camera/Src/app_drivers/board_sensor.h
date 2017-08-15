@@ -46,6 +46,13 @@ board_sensor_disable( void );
 
 /* -------------------------------------------------------------------------- */
 
+/** Return reference voltage */
+
+PUBLIC float
+board_sensor_voltage_reference( void );
+
+/* -------------------------------------------------------------------------- */
+
 /** Return temperature */
 
 PUBLIC float
