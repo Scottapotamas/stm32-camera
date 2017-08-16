@@ -92,6 +92,7 @@ ir_filter_process( void )
                STATE_ENTRY_ACTION
                    me->filter_map = 0;
                    hal_solenoid_activate( false ); //drive the IR filter
+                   hal_delay_ms(10);
                    hal_solenoid_off();  //disable output to save power
 
                STATE_TRANSITION_TEST
@@ -106,6 +107,7 @@ ir_filter_process( void )
            case FILTER_STATE_IR:
                STATE_ENTRY_ACTION
                    hal_solenoid_activate( true );   //drive the IR filter
+               	   hal_delay_ms(10);
                    hal_solenoid_off();  //disable output to save power
                 STATE_TRANSITION_TEST
                     if( me->filter_map == 0 )
