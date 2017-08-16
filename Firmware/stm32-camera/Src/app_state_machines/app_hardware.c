@@ -38,7 +38,7 @@ app_hardware_init( void )
     status_red( true );
 
     hal_adc_init();
-    //ir_filter_init();
+    ir_filter_init();
 
     /* Start the watchdog for around 10s timeout */
     hal_watchdog_init( 20000 );

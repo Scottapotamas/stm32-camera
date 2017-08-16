@@ -50,7 +50,7 @@ hal_solenoid_activate( bool polarity )
 
     GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|
                           GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;    //configure push pull
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;    //configure push pull
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 
