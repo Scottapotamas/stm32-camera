@@ -43,6 +43,7 @@
 #include "hal_power.h"
 #include "hal_sd.h"
 #include "hal_uuid.h"
+#include "app_version.h"
 #include "hal_systick.h"
 #include "minIni.h"
 #include "cmd.h"
@@ -108,6 +109,8 @@ PRIVATE bool command_system_clock( CmdHandler *me );
 PRIVATE bool command_system_load( CmdHandler *me );
 PRIVATE bool command_system_speed( CmdHandler *me );
 PRIVATE bool command_system_upgrade_firmware( CmdHandler *me );
+PRIVATE bool command_system_info( CmdHandler *me );
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -220,6 +223,10 @@ PRIVATE const CmdEntry SystemCmdTable[] =
     CmdEntryAction(  "uuid",
                      command_system_uuid,
                      "display system Unique Universal ID" ),
+
+	CmdEntryAction(  "info",
+					 command_system_info,
+					 "display system version information" ),
 
     CmdEntryTerminator()
 };
@@ -1214,6 +1221,20 @@ PRIVATE bool command_system_uuid( CmdHandler *me )
                 HAL_UUID[1],
                 HAL_UUID[2] );
 
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/** UUID COMMANDS */
+PRIVATE bool command_system_info( CmdHandler *me )
+{
+    cmd_printf( me,
+                "%s\r\nBuild: %s\r\nDate: %s\r\nType: %s\r\n",
+                ProgramName,
+                ProgramBuildInfo,
+                ProgramBuildDate,
+                ProgramBuildType );
     return true;
 }
 
