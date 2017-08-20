@@ -52,7 +52,7 @@ typedef enum
 /** Current VT100 escape parsing mode */
 typedef enum
 {
-    CMD_VT100_STATE_NONE = 0,       ///< Not in VT100 escape sequece
+    CMD_VT100_STATE_NONE = 0,       ///< Not in VT100 escape sequence
     CMD_VT100_STATE_GOT_ESC,        ///< Got the esc[ sequence
     CMD_VT100_STATE_IN_CMD          ///< Parsing the VT100 command sequence.
 } CmdVt100;
@@ -180,7 +180,7 @@ cmd_set_prompt( CmdHandler *me, const char * prompt );
 PUBLIC void
 cmd_set_echo( CmdHandler *me, const bool echo );
 
-//! call this function to pass input charaters from the user terminal
+//! call this function to pass input characters from the user terminal
 PUBLIC void
 cmd_input_func( CmdHandler *me, unsigned char c );
 
@@ -223,7 +223,7 @@ PUBLIC char *
 cmd_get_argv( CmdHandler *me, int8_t argnum );
 
 //! as per cmd_get_argv but return the argument string converted to
-//  an integer number. The argument can use base overides like 0x for
+//  an integer number. The argument can use base overrides like 0x for
 //  hexadecimal numbers.
 //  Returns 0 if the argument cannot be converted or does not exist.
 PUBLIC int32_t

@@ -720,7 +720,7 @@ cmd_main_loop( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 // Command lookup and processing
 
-// Returs true if entry is a sub command, and in this case
+// Returns true if entry is a sub command, and in this case
 // it populates the subCommand pointer.
 // Otherwise it returns false, and does nothing with subCommand
 //

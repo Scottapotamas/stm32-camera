@@ -262,7 +262,7 @@ hsmStaticTransitionSetup( Hsm *me, Tran_ *tran, State target )
   }
 
   /// ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-  /// Check 4: Are we transitionining up to the parent of this state?
+  /// Check 4: Are we transitioning up to the parent of this state?
   ///          i.e. source->super == target
 
   if( sourceParent == target )
