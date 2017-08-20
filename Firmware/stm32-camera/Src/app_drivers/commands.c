@@ -553,11 +553,6 @@ command_config_log( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief  Helper command to print logging messages via the terminal output
- *         channel when the appropriate mask is set.
- * @return void
- */
 PRIVATE void
 command_log_output( LOG_SUB_SYSTEM system_mask,
                     LOG_LEVEL      log_mask,
@@ -644,12 +639,6 @@ command_log( CmdHandler *me )
 /* --- DIRECTORY COMMANDS  -------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Print a textual description of the file I/O result with the
- *          error message is needed.
- * @param   err FRESULT error code.
- * @return  void
- */
 PRIVATE void
 command_print_fatfs_result( CmdHandler *me, uint16_t err )
 {
@@ -667,10 +656,6 @@ command_print_fatfs_result( CmdHandler *me, uint16_t err )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Change directory.
- * @return  true when command done.
- */
 PRIVATE bool
 command_cd( CmdHandler *me )
 {
@@ -689,10 +674,6 @@ command_cd( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Change drive.
- * @return  true when command done.
- */
 PRIVATE bool
 command_chdrive( CmdHandler *me )
 {
@@ -713,10 +694,6 @@ command_chdrive( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Show a directory listing.
- * @return  true when command done.
- */
 PRIVATE bool
 command_dir( CmdHandler *me )
 {
@@ -826,10 +803,6 @@ command_dir( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Copy a file
- * @return  true when command done.
- */
 PRIVATE bool
 command_copy( CmdHandler *me )
 {
@@ -897,10 +870,6 @@ command_copy( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Show the current working directory.
- * @return  true when command done.
- */
 PRIVATE bool
 command_cwd( CmdHandler *me )
 {
@@ -917,10 +886,6 @@ command_cwd( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Create a new directory.
- * @return  true when command done.
- */
 PRIVATE bool
 command_mkdir( CmdHandler *me )
 {
@@ -939,10 +904,6 @@ command_mkdir( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Rename a file.
- * @return  true when command done.
- */
 PRIVATE bool
 command_mv( CmdHandler *me )
 {
@@ -962,10 +923,6 @@ command_mv( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Delete a directory.
- * @return  true when command done.
- */
 PRIVATE bool
 command_rmdir( CmdHandler *me )
 {
@@ -984,11 +941,6 @@ command_rmdir( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Deleted the indicated file.e
- * @return  true when command done.
-
- */
 PRIVATE bool
 command_del( CmdHandler *me )
 {
@@ -1007,10 +959,6 @@ command_del( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Type the content of a file.
- * @return  true when command done.
- */
 PRIVATE bool
 command_type( CmdHandler *me )
 {
@@ -1057,10 +1005,6 @@ command_type( CmdHandler *me )
 /* --- SD COMMANDS ---------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Request a mount of the USB file system
- * @return  true when command done.
- */
 PRIVATE bool
 command_sd_mount( CmdHandler *me )
 {
@@ -1069,11 +1013,6 @@ command_sd_mount( CmdHandler *me )
 }
 
 /* -------------------------------------------------------------------------- */
-
-/**
- * @brief   Detect SD card
- * @return  true when command done.
- */
 
 PRIVATE bool
 command_sd_present( CmdHandler *me )
@@ -1086,10 +1025,6 @@ command_sd_present( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief   Request a unmount of the SD file system
- * @return  true when command done.
- */
 PRIVATE bool
 command_sd_unmount( CmdHandler *me )
 {
@@ -1099,7 +1034,6 @@ command_sd_unmount( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-// Format the SD card
 PRIVATE bool
 command_sd_format( CmdHandler *me )
 {
@@ -1133,10 +1067,6 @@ command_ini_browse_callback( const char * section,
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief  Browse the content of an indicated INI file.
- * @return true when command is done.
- */
 PRIVATE bool
 command_config_browse( CmdHandler *me )
 {
@@ -1155,10 +1085,6 @@ command_config_browse( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief  Set a string value in an INI file via section / key / value.
- * @return true when command is done.
- */
 PRIVATE bool
 command_config_puts( CmdHandler *me )
 {
@@ -1241,7 +1167,6 @@ command_system_load( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/** UUID COMMANDS */
 PRIVATE bool command_system_uuid( CmdHandler *me )
 {
     cmd_printf( me,
@@ -1255,7 +1180,6 @@ PRIVATE bool command_system_uuid( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-/** UUID COMMANDS */
 PRIVATE bool command_system_info( CmdHandler *me )
 {
     cmd_printf( me,
@@ -1347,4 +1271,5 @@ command_sensor_read( CmdHandler *me )
 
     return true;
 }
+
 /* ----- End ---------------------------------------------------------------- */
