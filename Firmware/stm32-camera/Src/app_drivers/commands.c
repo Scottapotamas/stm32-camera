@@ -50,13 +50,14 @@
 #include "system_speed.h"
 #include "hal_system_speed.h"
 #include "tick_timer.h"
+#include "hal_camera.h"
 
 /* ----- Private Functions -------------------------------------------------- */
 
 /** AUXILIARY PORT COMMANDS */
-PRIVATE bool command_auxiliary_gpio_out( CmdHandler *me );
-PRIVATE bool command_auxiliary_gpio_in( CmdHandler *me );
-PRIVATE bool command_auxiliary_gpio_mode( CmdHandler *me );
+PRIVATE bool command_aux_gpio_out( CmdHandler *me );
+PRIVATE bool command_aux_gpio_in( CmdHandler *me );
+PRIVATE bool command_aux_gpio_mode( CmdHandler *me );
 
 /** CAMERA COMMANDS */
 PRIVATE bool command_camera_flash_level( CmdHandler *me );
@@ -70,9 +71,9 @@ PRIVATE bool command_camera_capture( CmdHandler *me );
 PRIVATE bool command_camera_filter( CmdHandler *me );
 
 /** BOARD SENSORS */
-PRIVATE bool command_board_on( CmdHandler *me );
-PRIVATE bool command_board_off( CmdHandler *me );
-PRIVATE bool command_board_read( CmdHandler *me );
+PRIVATE bool command_sensor_on( CmdHandler *me );
+PRIVATE bool command_sensor_off( CmdHandler *me );
+PRIVATE bool command_sensor_read( CmdHandler *me );
 
 /** CONFIG LOG COMMANDS */
 PRIVATE bool command_config_log( CmdHandler *me );
@@ -83,8 +84,8 @@ PRIVATE bool command_log( CmdHandler *me );
 PRIVATE bool command_type( CmdHandler *me );
 
 /** INI COMMANDS */
-PRIVATE bool command_ini_browse( CmdHandler *me );
-PRIVATE bool command_ini_puts( CmdHandler *me );
+PRIVATE bool command_config_browse( CmdHandler *me );
+PRIVATE bool command_config_puts( CmdHandler *me );
 
 /** FILE COMMANDS */
 PRIVATE bool command_cd( CmdHandler *me );
@@ -101,6 +102,7 @@ PRIVATE bool command_rmdir( CmdHandler *me );
 PRIVATE bool command_sd_present( CmdHandler *me );
 PRIVATE bool command_sd_mount( CmdHandler *me );
 PRIVATE bool command_sd_unmount( CmdHandler *me );
+PRIVATE bool command_sd_format( CmdHandler *me );
 
 /** SYSTEM COMMANDS */
 PRIVATE bool command_system_uuid( CmdHandler *me );
@@ -115,16 +117,16 @@ PRIVATE bool command_system_info( CmdHandler *me );
 /* -------------------------------------------------------------------------- */
 
 /** AUXILIARY GPIO COMMANDS */
-PRIVATE const CmdEntry AuxiliaryGpioCmdTable[] =
+PRIVATE const CmdEntry AuxGpioCmdTable[] =
 {
     CmdEntryAction(  "in",
-                     command_auxiliary_gpio_in,
+                     command_aux_gpio_in,
                      "input status" ),
     CmdEntryAction(  "mode",
-                     command_auxiliary_gpio_mode,
+                     command_aux_gpio_mode,
                      "mode setting" ),
     CmdEntryAction(  "out",
-                     command_auxiliary_gpio_out,
+                     command_aux_gpio_out,
                      "output control" ),
     CmdEntryTerminator()
 };
@@ -175,18 +177,18 @@ PRIVATE const CmdEntry CameraCmdTable[] =
 /* -------------------------------------------------------------------------- */
 
 /** SD COMMANDS */
-PRIVATE const CmdEntry BoardCmdTable[] =
+PRIVATE const CmdEntry SensorCmdTable[] =
 {
     CmdEntryAction(  "on",
-    				 command_board_on,
+    				 command_sensor_on,
                      "enable onboard sensors" ),
 
     CmdEntryAction(  "off",
-                     command_board_off,
+                     command_sensor_off,
                      "disable onboard sensors" ),
 
     CmdEntryAction(  "read",
-                     command_board_read,
+                     command_sensor_read,
                      "print board sensors" ),
 
     CmdEntryTerminator()
@@ -234,13 +236,13 @@ PRIVATE const CmdEntry SystemCmdTable[] =
 /* -------------------------------------------------------------------------- */
 
 /** INI COMMANDS */
-PRIVATE const CmdEntry IniCmdTable[] =
+PRIVATE const CmdEntry ConfigCmdTable[] =
 {
     CmdEntryAction(  "browse",
-                     command_ini_browse,
+                     command_config_browse,
                      "scan the indicated ini file contents" ),
     CmdEntryAction(  "puts",
-                     command_ini_puts,
+                     command_config_puts,
                      "write a section/key/value item to an ini file" ),
     CmdEntryTerminator()
 };
@@ -262,69 +264,89 @@ PRIVATE const CmdEntry SdCmdTable[] =
                      command_sd_unmount,
                      "unmount SD file system" ),
 
+	CmdEntryAction(  "format",
+					 command_sd_format,
+					 "format the SD card" ),
+
     CmdEntryTerminator()
 };
 
+/* -------------------------------------------------------------------------- */
+
+/** SD COMMANDS */
+PRIVATE const CmdEntry FileCmdTable[] =
+{
+	CmdEntryAction(  "cd",
+					 command_cd,
+					 "change directory" ),
+
+	CmdEntryAction(  "chdrive",
+					 command_chdrive,
+					 "change drive" ),
+
+	CmdEntryAction(  "copy",
+					 command_copy,
+					 "copy a file" ),
+
+	CmdEntryAction(  "cwd",
+					 command_cwd,
+					 "show the current working directory" ),
+
+	CmdEntryAction(  "del",
+					 command_del,
+					 "delete the indicated file" ),
+
+	CmdEntryAction(  "dir",
+					 command_dir,
+					 "show the indicated directory" ),
+
+	CmdEntryAction(  "mkdir",
+					 command_mkdir,
+					 "create the indicated directory" ),
+
+	CmdEntryAction(  "mv",
+					 command_mv,
+					 "rename a file" ),
+
+	CmdEntryAction(  "rmdir",
+					 command_rmdir,
+					 "remove the indicated directory" ),
+
+	 CmdEntryAction(  "type",
+					  command_type,
+					  "print the file contents to the terminal" ),
+
+    CmdEntryTerminator()
+};
+
+/* -------------------------------------------------------------------------- */
+
 /** TOP LEVEL COMMANDS - PUBLIC REFERENCE */
-
-
 PRIVATE const CmdEntry topCmdTable[] =
 {
-    CmdEntrySubMenu( "auxiliary",
-                     AuxiliaryGpioCmdTable,
-                     "control auxiliary port items" ),
+    CmdEntrySubMenu( "aux",
+                     AuxGpioCmdTable,
+                     "control auxiliary pins" ),
 
-	CmdEntrySubMenu( "board",
-                     BoardCmdTable,
-                     "show board sensor data" ),
+	CmdEntrySubMenu( "sensor",
+                     SensorCmdTable,
+                     "control/view board sensors" ),
 
     CmdEntrySubMenu( "camera",
                      CameraCmdTable,
                      "camera control" ),
 
-    CmdEntryAction(  "cd",
-                     command_cd,
-                     "change directory" ),
+    CmdEntrySubMenu( "config",
+                     ConfigCmdTable,
+                     "manage & view configuration files" ),
 
-    CmdEntryAction(  "chdrive",
-                     command_chdrive,
-                     "change drive" ),
-
-    CmdEntryAction(  "copy",
-                     command_copy,
-                     "copy a file" ),
-
-    CmdEntryAction(  "cwd",
-                     command_cwd,
-                     "show the current working directory" ),
-
-    CmdEntryAction(  "del",
-                     command_del,
-                     "delete the indicated file" ),
-
-    CmdEntryAction(  "dir",
-                     command_dir,
-                     "show the indicated directory" ),
-
-    CmdEntrySubMenu( "ini",
-                     IniCmdTable,
-                     "manage & view ini files" ),
+	CmdEntrySubMenu( "file",
+					 FileCmdTable,
+					 "filesystem manipulation commands to view/edit/delete" ),
 
     CmdEntryAction(  "log",
                      command_log,
                      "set system logging to  terminal" ),
-
-    CmdEntryAction(  "mkdir",
-                     command_mkdir,
-                     "create the indicated directory" ),
-
-    CmdEntryAction(  "mv",
-                     command_mv,
-                     "rename a file" ),
-
-    CmdEntryAction(  "rmdir",
-                     command_rmdir,
-                     "remove the indicated directory" ),
 
     CmdEntrySubMenu( "sd",
                      SdCmdTable,
@@ -334,10 +356,6 @@ PRIVATE const CmdEntry topCmdTable[] =
                      SystemCmdTable,
                      "system control commands" ),
 
-    CmdEntryAction(  "type",
-                     command_type,
-                     "print the file contents to the terminal" ),
-
     CmdEntryTerminator()
 };
 
@@ -346,12 +364,11 @@ PRIVATE const CmdEntry topCmdTable[] =
 
 PUBLIC const CmdEntry *commands = topCmdTable;
 
-
 /* -------------------------------------------------------------------------- */
 /* --- AUXILIARY COMMANDS --------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
-PRIVATE bool command_auxiliary_gpio_out( CmdHandler *me )
+PRIVATE bool command_aux_gpio_out( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 3 )
     {
@@ -371,7 +388,7 @@ PRIVATE bool command_auxiliary_gpio_out( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-PRIVATE bool command_auxiliary_gpio_in( CmdHandler *me )
+PRIVATE bool command_aux_gpio_in( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 2 )
     {
@@ -389,7 +406,7 @@ PRIVATE bool command_auxiliary_gpio_in( CmdHandler *me )
 
 /* -------------------------------------------------------------------------- */
 
-PRIVATE bool command_auxiliary_gpio_mode( CmdHandler *me )
+PRIVATE bool command_aux_gpio_mode( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 3 )
     {
@@ -503,7 +520,8 @@ command_camera_filter( CmdHandler *me )
 PRIVATE bool command_camera_off( CmdHandler *me )
 {
     cmd_printf( me, "Camera OFF\r\n" );
-    eventPublish( EVENT_NEW( StateEvent, CAMERA_CMD_OFF ) );
+    hal_camera_power(false);
+    //eventPublish( EVENT_NEW( StateEvent, CAMERA_CMD_OFF ) );
     return true;
 }
 
@@ -512,7 +530,8 @@ PRIVATE bool command_camera_off( CmdHandler *me )
 PRIVATE bool command_camera_on( CmdHandler *me )
 {
     cmd_printf( me, "Camera ON\r\n" );
-    eventPublish( EVENT_NEW( StateEvent, CAMERA_CMD_ON ) );
+    hal_camera_power(true);
+    //eventPublish( EVENT_NEW( StateEvent, CAMERA_CMD_ON ) );
     return true;
 }
 
@@ -1079,6 +1098,16 @@ command_sd_unmount( CmdHandler *me )
 }
 
 /* -------------------------------------------------------------------------- */
+
+// Format the SD card
+PRIVATE bool
+command_sd_format( CmdHandler *me )
+{
+    cmd_printf( me, "SD format TODO!\r\n" );
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
 /* --- INI COMMANDS --------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 
@@ -1109,7 +1138,7 @@ command_ini_browse_callback( const char * section,
  * @return true when command is done.
  */
 PRIVATE bool
-command_ini_browse( CmdHandler *me )
+command_config_browse( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 2 )
     {
@@ -1131,7 +1160,7 @@ command_ini_browse( CmdHandler *me )
  * @return true when command is done.
  */
 PRIVATE bool
-command_ini_puts( CmdHandler *me )
+command_config_puts( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 5 )
     {
@@ -1149,7 +1178,7 @@ command_ini_puts( CmdHandler *me )
     }
     else
     {
-        cmd_printf( me, "Usage: ini puts <filename> <section> <key> <value>\r\n" );
+        cmd_printf( me, "Usage: config puts <filename> <section> <key> <value>\r\n" );
     }
     return true;
 }
@@ -1290,7 +1319,7 @@ command_system_upgrade_firmware( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_board_on( CmdHandler *me )
+command_sensor_on( CmdHandler *me )
 {
     board_sensor_enable();
     cmd_printf( me, "SENSORS STARTING\r\n");
@@ -1300,7 +1329,7 @@ command_board_on( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_board_off( CmdHandler *me )
+command_sensor_off( CmdHandler *me )
 {
     board_sensor_disable();
     cmd_printf( me, "SENSORS STOPPED\r\n");
@@ -1310,7 +1339,7 @@ command_board_off( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_board_read( CmdHandler *me )
+command_sensor_read( CmdHandler *me )
 {
     cmd_printf( me, "Temperature: %2.1fC\r\n", board_sensor_temperature_C() );
     cmd_printf( me, "Light: %3.1f\r\n", board_sensor_light() );
