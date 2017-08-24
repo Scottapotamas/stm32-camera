@@ -59,7 +59,7 @@ filesystem_mount( FileSystem_t filesystem )
             DWORD free_clusters;
             FATFS *fs;
 
-            f_chdrive( (TCHAR*)fs_path[filesystem] );
+            //f_chdrive( (TCHAR*)fs_path[filesystem] );
 
             /* Get total and free space in KiB */
             result = f_getfree( (TCHAR*)fs_path[filesystem],
