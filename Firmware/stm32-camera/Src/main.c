@@ -116,7 +116,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  app_hardware_init();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -125,7 +125,6 @@ int main(void)
   MX_SDIO_SD_Init();
 
   /* USER CODE BEGIN 2 */
-  app_hardware_init();
   app_tasks_init();
   PERMIT();
   /* USER CODE END 2 */
