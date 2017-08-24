@@ -71,7 +71,7 @@ void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA2_Stream0_IRQn interrupt configuration - ADC */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 12, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
 
   /* DMA2_Stream1_IRQn interrupt configuration */
