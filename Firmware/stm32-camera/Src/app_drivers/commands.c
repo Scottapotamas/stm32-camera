@@ -494,21 +494,12 @@ command_camera_filter( CmdHandler *me )
 {
     if( cmd_get_argc( me ) > 1 )
     {
-    	if(cmd_get_argv_int( me, 1 ) == 2)
-    	{
-    		ir_filter_set( TASK_AUXILIARY_A, FILTER_IR);
-    		hal_delay_ms(20);
-    		ir_filter_set( TASK_AUXILIARY_A, FILTER_CLEAR);
-    	}
-    	else
-    	{
-            ir_filter_set( TASK_AUXILIARY_A,
-                              ( cmd_get_argv_int( me, 1 ) > 0 )
-                              ? FILTER_IR
-                              : FILTER_CLEAR );
-    	}
-
+		ir_filter_set( TASK_AUXILIARY_A,
+						  ( cmd_get_argv_int( me, 1 ) > 0 )
+						  ? FILTER_IR
+						  : FILTER_CLEAR );
     }
+
     cmd_printf( me, "IR Filter is: %s\r\n", ir_filter_get()
                                             ? "BLOCKING"
                                             : "CLEAR" );
