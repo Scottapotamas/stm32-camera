@@ -41,6 +41,7 @@
 #include "ff_gen_drv.h"
 #include "sd_diskio.h"
 #include "hal_sd.h"
+#include "filesystem.h"
 
 #include "app_task_file_system.h"
 #include "app_task_file_system_private.h"
@@ -126,16 +127,14 @@ f_unmount_request( StateTask *me )
 
 PUBLIC uint32_t AppTaskFileSystemGetAvailableKB( void )
 {
-    AppTaskFileSystem * me = (AppTaskFileSystem*)app_task_by_id( TASK_FILE_SYSTEM );
-    return me->space[SD_DRIVE].total_KiB;
+    return filesystem_space( SD_DRIVE );
 }
 
 /* -------------------------------------------------------------------------- */
 
 PUBLIC uint32_t AppTaskFileSystemGetFreeKB( void )
 {
-    AppTaskFileSystem * me = (AppTaskFileSystem*)app_task_by_id( TASK_FILE_SYSTEM );
-    return me->space[SD_DRIVE].free_KiB;
+    return filesystem_free( SD_DRIVE );
 }
 
 /* -------------------------------------------------------------------------- */
@@ -183,18 +182,23 @@ PRIVATE STATE AppTaskFileSystem_main( AppTaskFileSystem *me,
             return 0;
 
         case STATE_ENTRY_SIGNAL:
-			if( hal_sd_is_present() )
-			{
-				LOG( FILE_SYSTEM, LOG_INFO, "SD Card detected" );
-				// Warning. Take care not to do the FATFS_LinkDriver
-				// more than once or it will corrupt the driver structure
-				// data!
-				//FATFS_LinkDriver( &SD_Driver, APP_CONFIG_SD_DRIVE );
-				me->f_result = f_mount( &me->fs[SD_DRIVE], (TCHAR*)APP_CONFIG_SD_DRIVE, 1 );
-				LOG( FILE_SYSTEM,
-					 LOG_INFO, "SD Card mount %s",
-					 f_error_msg( me->f_result ) );
-			}
+            if( hal_sd_is_present() )
+            {
+                FRESULT fresult = filesystem_mount( SD_DRIVE );
+                LOG( FILE_SYSTEM,
+                     LOG_INFO,
+                     "SD Card detected. Status = %s",
+                     f_error_msg( fresult ) );
+
+                if( fresult == FR_OK )
+                {
+                    LOG( FILE_SYSTEM,
+                         LOG_INFO,
+                         "SD Card size %luMB (%luMB free)",
+                         filesystem_space( SD_DRIVE ) / 1024,
+                         filesystem_free( SD_DRIVE ) / 1024 );
+                }
+            }
             return 0;
     }
     return (STATE)hsmTop;
