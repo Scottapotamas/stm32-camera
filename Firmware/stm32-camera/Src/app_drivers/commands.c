@@ -84,8 +84,8 @@ PRIVATE bool command_log( CmdHandler *me );
 PRIVATE bool command_type( CmdHandler *me );
 
 /** INI COMMANDS */
-PRIVATE bool command_config_browse( CmdHandler *me );
-PRIVATE bool command_config_puts( CmdHandler *me );
+PRIVATE bool command_config_read( CmdHandler *me );
+PRIVATE bool command_config_write( CmdHandler *me );
 
 /** FILE COMMANDS */
 PRIVATE bool command_cd( CmdHandler *me );
@@ -242,11 +242,11 @@ PRIVATE const CmdEntry SystemCmdTable[] =
 /** INI COMMANDS */
 PRIVATE const CmdEntry ConfigCmdTable[] =
 {
-    CmdEntryAction(  "browse",
-                     command_config_browse,
+    CmdEntryAction(  "read",
+                     command_config_read,
                      "scan the indicated ini file contents" ),
-    CmdEntryAction(  "puts",
-                     command_config_puts,
+    CmdEntryAction(  "write",
+                     command_config_write,
                      "write a section/key/value item to an ini file" ),
     CmdEntryTerminator()
 };
@@ -1041,16 +1041,16 @@ command_sd_format( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 /**
- * @brief  Support function for Servercommand_ini_browse to show
+ * @brief  Support function for command_config_read to show
  *         content of an INI file using the ini_browse function.
  * @param  section  the section being parsed
  * @param  key      the key within that section being read
  * @param  value    the string value of the key in this section
  * @param  userdata pointer to user data passed to the callback. Not used.
- * @return 1 to indicate ini_browse needs to keep going.
+ * @return 1 to indicate ini_read needs to keep going.
  */
 PRIVATE int
-command_ini_browse_callback( const char * section,
+command_ini_read_callback( const char * section,
                              const char * key,
                              const char * value,
                              const void * userdata )
@@ -1063,17 +1063,17 @@ command_ini_browse_callback( const char * section,
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_config_browse( CmdHandler *me )
+command_config_read( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 2 )
     {
-        ini_browse( command_ini_browse_callback,
+        ini_browse( command_ini_read_callback,
                     me,
                     cmd_get_argv( me, 1 ) );
     }
     else
     {
-        cmd_printf( me, "Usage: ini browse <filename>\r\n" );
+        cmd_printf( me, "Usage: ini read <filename>\r\n" );
     }
     return true;
 }
@@ -1081,7 +1081,7 @@ command_config_browse( CmdHandler *me )
 /* -------------------------------------------------------------------------- */
 
 PRIVATE bool
-command_config_puts( CmdHandler *me )
+command_config_write( CmdHandler *me )
 {
     if( cmd_get_argc( me ) == 5 )
     {
@@ -1099,7 +1099,7 @@ command_config_puts( CmdHandler *me )
     }
     else
     {
-        cmd_printf( me, "Usage: config puts <filename> <section> <key> <value>\r\n" );
+        cmd_printf( me, "Usage: config write <filename> <section> <key> <value>\r\n" );
     }
     return true;
 }
