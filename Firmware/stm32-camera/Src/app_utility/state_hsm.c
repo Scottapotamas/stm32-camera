@@ -188,7 +188,7 @@ PUBLIC void
 hsmDispatch( Hsm *me, const StateEvent *e )
 {
   /// Execute the event in the current state and keep
-  /// passing the event up the ancestor hierachy chain
+  /// passing the event up the ancestor hierarchy chain
   /// until the event is handled (i.e. returns 0) or
   /// me->sourceState becomes 0 because we reached the
   /// top state HsmTop (which returns 0 for everything)
