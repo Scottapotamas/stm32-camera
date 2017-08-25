@@ -54,7 +54,14 @@ uint8_t	BSP_PlatformIsDetected(void) {
     status = (uint8_t)0x00;
   }
   /* USER CODE BEGIN 1 */
-  /* user code can be inserted here */
+  if( HAL_GPIO_ReadPin(SD_PORT,SD_PIN) == GPIO_PIN_RESET )
+  {
+    status = 1;
+  }
+  else
+  {
+    status = 0;
+  }
   /* USER CODE END 1 */ 
   return status;
 }  
