@@ -112,7 +112,7 @@ PRIVATE bool command_system_load( CmdHandler *me );
 PRIVATE bool command_system_speed( CmdHandler *me );
 PRIVATE bool command_system_upgrade_firmware( CmdHandler *me );
 PRIVATE bool command_system_info( CmdHandler *me );
-
+PRIVATE bool command_system_reboot( CmdHandler *me );
 
 /* -------------------------------------------------------------------------- */
 
@@ -229,6 +229,10 @@ PRIVATE const CmdEntry SystemCmdTable[] =
 	CmdEntryAction(  "info",
 					 command_system_info,
 					 "display system version information" ),
+
+	CmdEntryAction(  "reboot",
+					 command_system_reboot,
+					 "restart the system" ),
 
     CmdEntryTerminator()
 };
@@ -1227,6 +1231,18 @@ command_system_upgrade_firmware( CmdHandler *me )
     	cmd_printf( me, "<hardware reboot>: 0\r\n" );
     	cmd_printf( me, "<software jump>: 1\r\n" );
     }
+
+    return true;
+}
+
+/* -------------------------------------------------------------------------- */
+
+PRIVATE bool
+command_system_reboot( CmdHandler *me )
+{
+	cmd_printf( me, "Rebooting microcontroller!\r\n" );
+	hal_delay_ms(20);	//enough time to print to serial port
+	HAL_NVIC_SystemReset();
 
     return true;
 }
