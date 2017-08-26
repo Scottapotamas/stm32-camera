@@ -1003,7 +1003,16 @@ command_type( CmdHandler *me )
 PRIVATE bool
 command_sd_mount( CmdHandler *me )
 {
-    cmd_printf( me, "SD mount TODO!\r\n" );
+    cmd_printf( me, "Requesting SD mount!\r\n" );
+
+    if( f_mount_request( (StateTask*)me ) )
+	{
+		cmd_printf( me, "OK\r\n" );
+	}
+	else
+	{
+		cmd_printf( me, "ERROR\r\n" );
+	}
     return true;
 }
 
@@ -1023,7 +1032,15 @@ command_sd_present( CmdHandler *me )
 PRIVATE bool
 command_sd_unmount( CmdHandler *me )
 {
-    cmd_printf( me, "SD unmount TODO!\r\n" );
+    cmd_printf( me, "Requesting SD unmount!\r\n" );
+    if( f_unmount_request( (StateTask*)me ) )
+	{
+		cmd_printf( me, "OK\r\n" );
+	}
+	else
+	{
+		cmd_printf( me, "ERROR\r\n" );
+	}
     return true;
 }
 

@@ -163,10 +163,7 @@ PRIVATE void AppTaskFileSystem_initial( AppTaskFileSystem *me,
 {
     eventSubscribe( (StateTask*)me, FILE_SYSTEM_CMD_MOUNT );
     eventSubscribe( (StateTask*)me, FILE_SYSTEM_CMD_UNMOUNT );
-    // Warning. Take care not to do the FATFS_LinkDriver
-    // more than once or it will corrupt the driver structure
-    // data!
-    //FATFS_LinkDriver( &USBH_Driver, APP_CONFIG_USB_DRIVE );
+
     STATE_INIT( &AppTaskFileSystem_main );
 }
 
@@ -226,7 +223,7 @@ PRIVATE STATE AppTaskFileSystem_unmounted( AppTaskFileSystem *me,
                 me->requested[ me->mount_task->id ] = true;
                 LOG( FILE_SYSTEM,
                      LOG_INFO,
-                     "USB Media mounted requested for task %d (%s)",
+                     "SD Media mounted requested for task %d (%s)",
                      me->mount_task->id, me->mount_task->name );
             }
             STATE_TRAN( AppTaskFileSystem_mount );
@@ -516,7 +513,7 @@ PRIVATE STATE AppTaskFileSystem_unmounting( AppTaskFileSystem *me,
             f_mount( NULL, (TCHAR*)APP_CONFIG_SD_DRIVE, 0 );
             me->space[SD_DRIVE].free_KiB = 0;
             me->space[SD_DRIVE].total_KiB = 0;
-            LOG( FILE_SYSTEM, LOG_INFO, "USB Media unmounted for ALL tasks" );
+            LOG( FILE_SYSTEM, LOG_INFO, "SD Media unmounted for ALL tasks" );
 
             STATE_TRAN( AppTaskFileSystem_unmounted );
             return 0;
@@ -541,7 +538,7 @@ PRIVATE void AppTaskFileSystemHelper_send_mounted_status( AppTaskFileSystem *me,
     {
         LOG( FILE_SYSTEM,
              LOG_DEBUG,
-             "USB Media mounted for task %d (%s)",
+             "SD Media mounted for task %d (%s)",
              requesting_task->id,
              requesting_task->name );
 
@@ -567,7 +564,7 @@ PRIVATE void AppTaskFileSystemHelper_send_unmounted_status( AppTaskFileSystem *m
     {
         LOG( FILE_SYSTEM,
              LOG_DEBUG,
-             "USB Media unmounted for task %d (%s)",
+             "Media unmounted for task %d (%s)",
              requesting_task->id,
              requesting_task->name );
         me->requested[ requesting_task->id ] = false;
