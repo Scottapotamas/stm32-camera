@@ -34,7 +34,7 @@ enum AppTimeoutsMs
   TIME_BUTTON_NORMAL_PRESS            =     50, /* ms */
   TIME_BUTTON_LONG_PRESS              =   1500, /* ms */
 
-  TIME_APPLICATION_SD_MOUNT_POLL 		  = 500,
+  TIME_APPLICATION_SD_MOUNT_POLL 	  = 500,
 
   TIME_REBOOT_CAP_CHARGE			  = 200, /* ms */
 

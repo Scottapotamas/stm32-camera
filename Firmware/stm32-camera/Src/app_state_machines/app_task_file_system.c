@@ -288,7 +288,7 @@ PRIVATE STATE AppTaskFileSystem_mounting( AppTaskFileSystem *me,
            eventTimerStartOnce( &me->timer,
                                  (StateTask* )me,
                                  (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
-                                 MS_TO_TICKS( 500 ) );
+                                 MS_TO_TICKS( TIME_APPLICATION_SD_MOUNT_POLL ) );
             return 0;
 
         case STATE_TIMEOUT1_SIGNAL:
