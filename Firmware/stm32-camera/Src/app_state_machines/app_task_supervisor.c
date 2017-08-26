@@ -141,7 +141,7 @@ PRIVATE STATE AppTaskSupervisor_load_config( AppTaskSupervisor *me,
             eventTimerStartEvery( &me->cardTimer,
                                   (StateTask* )me,
                                   (StateEvent* )&stateEventReserved[ STATE_TIMEOUT1_SIGNAL ],
-                                  MS_TO_TICKS( 500 ) );
+                                  MS_TO_TICKS( TIME_APPLICATION_SD_MOUNT_POLL ) );
             //TODO decide on a consistent SD timeout
 
         	return 0;
